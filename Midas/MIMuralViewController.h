@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIMuralViewController : UIViewController
+@interface MIMuralViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *muralTableView;
 
 @end

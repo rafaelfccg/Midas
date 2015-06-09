@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIChatViewController : UIViewController
+@interface MIChatViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *chatTableView;
 
 @end

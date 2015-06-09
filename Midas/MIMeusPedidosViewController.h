@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIMeusPedidosViewController : UIViewController
+@interface MIMeusPedidosViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *pedidosTableView;
 
 @end

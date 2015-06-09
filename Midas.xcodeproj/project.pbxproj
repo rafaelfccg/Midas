@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		001580971B275E4700E03E94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580961B275E4700E03E94 /* main.m */; };
 		0015809A1B275E4700E03E94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580991B275E4700E03E94 /* AppDelegate.m */; };
-		0015809D1B275E4700E03E94 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015809C1B275E4700E03E94 /* ViewController.m */; };
 		001580A01B275E4700E03E94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0015809E1B275E4700E03E94 /* Main.storyboard */; };
 		001580A21B275E4700E03E94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001580A11B275E4700E03E94 /* Images.xcassets */; };
 		001580A51B275E4700E03E94 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 001580A31B275E4700E03E94 /* LaunchScreen.xib */; };
@@ -47,8 +46,6 @@
 		001580961B275E4700E03E94 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		001580981B275E4700E03E94 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		001580991B275E4700E03E94 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0015809B1B275E4700E03E94 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0015809C1B275E4700E03E94 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0015809F1B275E4700E03E94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		001580A11B275E4700E03E94 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		001580A41B275E4700E03E94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -126,44 +123,14 @@
 		001580931B275E4700E03E94 /* Midas */ = {
 			isa = PBXGroup;
 			children = (
+				1FE7D9741B2779A700656359 /* Controller */,
+				1FE7D9731B27796200656359 /* Model */,
 				001580981B275E4700E03E94 /* AppDelegate.h */,
 				001580991B275E4700E03E94 /* AppDelegate.m */,
-				0015809B1B275E4700E03E94 /* ViewController.h */,
-				0015809C1B275E4700E03E94 /* ViewController.m */,
 				0015809E1B275E4700E03E94 /* Main.storyboard */,
 				001580A11B275E4700E03E94 /* Images.xcassets */,
 				001580A31B275E4700E03E94 /* LaunchScreen.xib */,
 				001580941B275E4700E03E94 /* Supporting Files */,
-				001580C01B2771D400E03E94 /* MIMuralViewController.h */,
-				001580C11B2771D400E03E94 /* MIMuralViewController.m */,
-				001580C31B2771F800E03E94 /* MIMeusPedidosViewController.h */,
-				001580C41B2771F800E03E94 /* MIMeusPedidosViewController.m */,
-				001580C61B27721400E03E94 /* MIConfiguracoesViewController.h */,
-				001580C71B27721400E03E94 /* MIConfiguracoesViewController.m */,
-				001580C91B27726600E03E94 /* MIPedidoDetalhadoViewController.h */,
-				001580CA1B27726600E03E94 /* MIPedidoDetalhadoViewController.m */,
-				001580CC1B27728200E03E94 /* MIChatViewController.h */,
-				001580CD1B27728200E03E94 /* MIChatViewController.m */,
-				001580CF1B27729500E03E94 /* MINovoPedidoViewController.h */,
-				001580D01B27729500E03E94 /* MINovoPedidoViewController.m */,
-				001580D21B2772AB00E03E94 /* MIFinalizarPedidoViewController.h */,
-				001580D31B2772AB00E03E94 /* MIFinalizarPedidoViewController.m */,
-				001580D51B2772DF00E03E94 /* MIMeuPedidoDetalhadoViewController.h */,
-				001580D61B2772DF00E03E94 /* MIMeuPedidoDetalhadoViewController.m */,
-				001580D81B2772F600E03E94 /* MIEditarPedidoViewController.h */,
-				001580D91B2772F600E03E94 /* MIEditarPedidoViewController.m */,
-				001580DB1B2773B500E03E94 /* MIPedido.h */,
-				001580DC1B2773B500E03E94 /* MIPedido.m */,
-				001580DE1B2773EB00E03E94 /* MIMessage.h */,
-				001580DF1B2773EB00E03E94 /* MIMessage.m */,
-				001580E11B27740100E03E94 /* MIChat.h */,
-				001580E21B27740100E03E94 /* MIChat.m */,
-				001580E41B27742200E03E94 /* MIUser.h */,
-				001580E51B27742200E03E94 /* MIUser.m */,
-				001580E71B27743E00E03E94 /* MICloudController.h */,
-				001580E81B27743E00E03E94 /* MICloudController.m */,
-				001580EA1B27751B00E03E94 /* MIFiltrosDeBusca.h */,
-				001580EB1B27751B00E03E94 /* MIFiltrosDeBusca.m */,
 			);
 			path = Midas;
 			sourceTree = "<group>";
@@ -192,6 +159,50 @@
 				001580AF1B275E4700E03E94 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FE7D9731B27796200656359 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				001580DB1B2773B500E03E94 /* MIPedido.h */,
+				001580DC1B2773B500E03E94 /* MIPedido.m */,
+				001580DE1B2773EB00E03E94 /* MIMessage.h */,
+				001580DF1B2773EB00E03E94 /* MIMessage.m */,
+				001580E11B27740100E03E94 /* MIChat.h */,
+				001580E21B27740100E03E94 /* MIChat.m */,
+				001580E41B27742200E03E94 /* MIUser.h */,
+				001580E51B27742200E03E94 /* MIUser.m */,
+				001580EA1B27751B00E03E94 /* MIFiltrosDeBusca.h */,
+				001580EB1B27751B00E03E94 /* MIFiltrosDeBusca.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1FE7D9741B2779A700656359 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				001580C01B2771D400E03E94 /* MIMuralViewController.h */,
+				001580C11B2771D400E03E94 /* MIMuralViewController.m */,
+				001580C31B2771F800E03E94 /* MIMeusPedidosViewController.h */,
+				001580C41B2771F800E03E94 /* MIMeusPedidosViewController.m */,
+				001580C61B27721400E03E94 /* MIConfiguracoesViewController.h */,
+				001580C71B27721400E03E94 /* MIConfiguracoesViewController.m */,
+				001580C91B27726600E03E94 /* MIPedidoDetalhadoViewController.h */,
+				001580CA1B27726600E03E94 /* MIPedidoDetalhadoViewController.m */,
+				001580CC1B27728200E03E94 /* MIChatViewController.h */,
+				001580CD1B27728200E03E94 /* MIChatViewController.m */,
+				001580CF1B27729500E03E94 /* MINovoPedidoViewController.h */,
+				001580D01B27729500E03E94 /* MINovoPedidoViewController.m */,
+				001580D21B2772AB00E03E94 /* MIFinalizarPedidoViewController.h */,
+				001580D31B2772AB00E03E94 /* MIFinalizarPedidoViewController.m */,
+				001580D51B2772DF00E03E94 /* MIMeuPedidoDetalhadoViewController.h */,
+				001580D61B2772DF00E03E94 /* MIMeuPedidoDetalhadoViewController.m */,
+				001580D81B2772F600E03E94 /* MIEditarPedidoViewController.h */,
+				001580D91B2772F600E03E94 /* MIEditarPedidoViewController.m */,
+				001580E71B27743E00E03E94 /* MICloudController.h */,
+				001580E81B27743E00E03E94 /* MICloudController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,7 +310,6 @@
 				001580C21B2771D400E03E94 /* MIMuralViewController.m in Sources */,
 				001580EC1B27751B00E03E94 /* MIFiltrosDeBusca.m in Sources */,
 				001580D41B2772AB00E03E94 /* MIFinalizarPedidoViewController.m in Sources */,
-				0015809D1B275E4700E03E94 /* ViewController.m in Sources */,
 				001580C81B27721400E03E94 /* MIConfiguracoesViewController.m in Sources */,
 				001580D11B27729500E03E94 /* MINovoPedidoViewController.m in Sources */,
 				001580DD1B2773B500E03E94 /* MIPedido.m in Sources */,
@@ -506,6 +516,7 @@
 				001580B61B275E4700E03E94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		001580B71B275E4700E03E94 /* Build configuration list for PBXNativeTarget "MidasTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +525,7 @@
 				001580B91B275E4700E03E94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
