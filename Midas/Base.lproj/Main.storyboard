@@ -122,7 +122,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="Yqg-zp-wrO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" id="Yqg-zp-wrO">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yqg-zp-wrO" id="AJS-Af-hPl">
@@ -211,6 +211,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="pedidosSegmentedControl" destination="mgi-8I-KQl" id="iqy-yW-ajY"/>
                         <outlet property="pedidosTableView" destination="CGD-Lb-zYk" id="e2H-eN-uGc"/>
                         <segue destination="97h-Tt-OSG" kind="show" identifier="FromPedidosToPedidoSegue" id="qof-H5-qHX"/>
                         <segue destination="bhQ-qo-3i1" kind="show" identifier="FromMeusPedidosToChatSegue" id="xhW-XF-LFV"/>

@@ -7,6 +7,8 @@
 //
 
 #import "MIMeusPedidosViewController.h"
+#import "MIChatViewController.h"
+#import "MIMeuPedidoDetalhadoViewController.h"
 
 @interface MIMeusPedidosViewController ()
 
@@ -58,6 +60,28 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
+        [self performSegueWithIdentifier:@"FromPedidosToPedidoSegue" sender:self];
+    }else if (self.pedidosSegmentedControl.selectedSegmentIndex == 1){
+        [self performSegueWithIdentifier:@"FromMeusPedidosToChatSegue" sender:self];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"FromPedidosToPedidoSegue"])
+    {
+        // Get reference to the destination view controller
+        MIMeuPedidoDetalhadoViewController *vc = [segue destinationViewController];
+        
+    } else if ([[segue identifier] isEqualToString:@"FromMeusPedidosToChatSegue"]){
+        MIChatViewController *vc = [segue destinationViewController];
+    }
 }
 
 @end

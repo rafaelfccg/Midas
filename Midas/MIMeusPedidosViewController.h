@@ -10,5 +10,6 @@
 
 @interface MIMeusPedidosViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *pedidosTableView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *pedidosSegmentedControl;
 
 @end
