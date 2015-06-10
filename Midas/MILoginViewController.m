@@ -9,6 +9,8 @@
 #import "MILoginViewController.h"
 
 @interface MILoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *fieldUsername;
+@property (weak, nonatomic) IBOutlet UITextField *fieldPassword;
 
 @end
 
@@ -22,6 +24,30 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)loginAction:(id)sender {
+    [self actionLogin];
+}
+- (void)actionLogin
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    NSString *username = [_fieldUsername.text lowercaseString];
+    NSString *password = _fieldPassword.text;
+    //---------------------------------------------------------------------------------------------------------------------------------------------
+    if ([username length] == 0)	{ [ProgressHUD showError:@"Email must be set."]; return; }
+    if ([password length] == 0)	{ [ProgressHUD showError:@"Password must be set."]; return; }
+    //---------------------------------------------------------------------------------------------------------------------------------------------
+    [ProgressHUD show:@"Signing in..." Interaction:NO];
+    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error)
+     {
+         if (user != nil)
+         {
+             ParsePushUserAssign();
+             [ProgressHUD showSuccess:[NSString stringWithFormat:@"Welcome back, %@!", user[PF_USER_FULLNAME]]];
+             [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
+            }
+             else [ProgressHUD showError:error.userInfo[@"error"]];
+     }];
 }
 
 /*

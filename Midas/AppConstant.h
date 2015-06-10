@@ -25,7 +25,7 @@
 #define     PF_USER_AUTH_DATA                   @"authData"             //  authData
 #define		PF_USER_EMAIL						@"email"				//	String
 #define		PF_USER_EMAILVERIFIED				@"emailVerified"		//	Boolean
-#define		PF_USER_FULLNAME					@"fullname"				//	String
+#define		PF_USER_FULLNAME					@"fullName"				//	String
 #define		PF_USER_LOCATION					@"location"             //	GeoPoint
 #define		PF_USER_FACEBOOKID					@"facebookId"			//	String
 #define		PF_USER_PICTURE						@"picture"				//	File

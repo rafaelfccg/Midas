@@ -28,6 +28,9 @@
 		001580E61B27742200E03E94 /* MIUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580E51B27742200E03E94 /* MIUser.m */; };
 		001580E91B27743E00E03E94 /* MICloudController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580E81B27743E00E03E94 /* MICloudController.m */; };
 		001580EC1B27751B00E03E94 /* MIFiltrosDeBusca.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580EB1B27751B00E03E94 /* MIFiltrosDeBusca.m */; };
+		003B24451B28D66400743D0B /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B24441B28D66400743D0B /* ProgressHUD.m */; };
+		003B24471B28D66C00743D0B /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 003B24461B28D66C00743D0B /* ProgressHUD.bundle */; };
+		003B244A1B28D79100743D0B /* push.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B24491B28D79100743D0B /* push.m */; };
 		157363071B28C1E800259B11 /* MILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157363061B28C1E800259B11 /* MILoginViewController.m */; };
 		1FE7DA771B28D07600656359 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA711B28D07600656359 /* Bolts.framework */; };
 		1FE7DA781B28D07600656359 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA721B28D07600656359 /* Parse.framework */; };
@@ -105,6 +108,11 @@
 		001580E81B27743E00E03E94 /* MICloudController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MICloudController.m; sourceTree = "<group>"; };
 		001580EA1B27751B00E03E94 /* MIFiltrosDeBusca.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIFiltrosDeBusca.h; sourceTree = "<group>"; };
 		001580EB1B27751B00E03E94 /* MIFiltrosDeBusca.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIFiltrosDeBusca.m; sourceTree = "<group>"; };
+		003B24431B28D66400743D0B /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		003B24441B28D66400743D0B /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		003B24461B28D66C00743D0B /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		003B24481B28D79100743D0B /* push.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = push.h; sourceTree = "<group>"; };
+		003B24491B28D79100743D0B /* push.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = push.m; sourceTree = "<group>"; };
 		157363051B28C1E800259B11 /* MILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILoginViewController.h; sourceTree = "<group>"; };
 		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
 		1FE7D9751B28CB8300656359 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
@@ -194,6 +202,7 @@
 		001580931B275E4700E03E94 /* Midas */ = {
 			isa = PBXGroup;
 			children = (
+				003B24421B28D64C00743D0B /* Utils */,
 				1FE7D9741B2779A700656359 /* Controller */,
 				1FE7D9731B27796200656359 /* Model */,
 				001580981B275E4700E03E94 /* AppDelegate.h */,
@@ -231,6 +240,18 @@
 				001580AF1B275E4700E03E94 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		003B24421B28D64C00743D0B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				003B24461B28D66C00743D0B /* ProgressHUD.bundle */,
+				003B24431B28D66400743D0B /* ProgressHUD.h */,
+				003B24441B28D66400743D0B /* ProgressHUD.m */,
+				003B24481B28D79100743D0B /* push.h */,
+				003B24491B28D79100743D0B /* push.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		1FE7D9731B27796200656359 /* Model */ = {
@@ -388,6 +409,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003B24471B28D66C00743D0B /* ProgressHUD.bundle in Resources */,
 				001580A01B275E4700E03E94 /* Main.storyboard in Resources */,
 				001580A51B275E4700E03E94 /* LaunchScreen.xib in Resources */,
 				001580A21B275E4700E03E94 /* Images.xcassets in Resources */,
@@ -413,11 +435,13 @@
 				001580E31B27740100E03E94 /* MIChat.m in Sources */,
 				001580C21B2771D400E03E94 /* MIMuralViewController.m in Sources */,
 				001580EC1B27751B00E03E94 /* MIFiltrosDeBusca.m in Sources */,
+				003B244A1B28D79100743D0B /* push.m in Sources */,
 				001580D41B2772AB00E03E94 /* MIFinalizarPedidoViewController.m in Sources */,
 				001580C81B27721400E03E94 /* MIConfiguracoesViewController.m in Sources */,
 				001580D11B27729500E03E94 /* MINovoPedidoViewController.m in Sources */,
 				001580DD1B2773B500E03E94 /* MIPedido.m in Sources */,
 				001580E61B27742200E03E94 /* MIUser.m in Sources */,
+				003B24451B28D66400743D0B /* ProgressHUD.m in Sources */,
 				0015809A1B275E4700E03E94 /* AppDelegate.m in Sources */,
 				001580CB1B27726600E03E94 /* MIPedidoDetalhadoViewController.m in Sources */,
 				001580DA1B2772F600E03E94 /* MIEditarPedidoViewController.m in Sources */,

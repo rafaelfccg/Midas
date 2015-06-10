@@ -8,6 +8,7 @@
 
 #import "MIMuralViewController.h"
 #import "MIPedidoDetalhadoViewController.h"
+#import <Parse/Parse.h>
 
 @interface MIMuralViewController ()
 
@@ -21,6 +22,8 @@
     self.muralTableView.delegate = self;
     self.muralTableView.dataSource = self;
     // Do any additional setup after loading the view.
+    
+    NSLog(@"%@",[PFUser currentUser].email);
 }
 
 - (void)didReceiveMemoryWarning {
