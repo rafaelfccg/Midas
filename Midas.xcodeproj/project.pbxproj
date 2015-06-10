@@ -33,6 +33,7 @@
 		001580F41B28AA5500E03E94 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001580EF1B28AA5500E03E94 /* ParseFacebookUtils.framework */; };
 		001580F51B28AA5500E03E94 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001580F01B28AA5500E03E94 /* ParseFacebookUtilsV4.framework */; };
 		001580F61B28AA5500E03E94 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001580F11B28AA5500E03E94 /* ParseUI.framework */; };
+		157363071B28C1E800259B11 /* MILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157363061B28C1E800259B11 /* MILoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		001580EF1B28AA5500E03E94 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		001580F01B28AA5500E03E94 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		001580F11B28AA5500E03E94 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		157363051B28C1E800259B11 /* MILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILoginViewController.h; sourceTree = "<group>"; };
+		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +224,8 @@
 				001580D91B2772F600E03E94 /* MIEditarPedidoViewController.m */,
 				001580E71B27743E00E03E94 /* MICloudController.h */,
 				001580E81B27743E00E03E94 /* MICloudController.m */,
+				157363051B28C1E800259B11 /* MILoginViewController.h */,
+				157363061B28C1E800259B11 /* MILoginViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				157363071B28C1E800259B11 /* MILoginViewController.m in Sources */,
 				001580C51B2771F800E03E94 /* MIMeusPedidosViewController.m in Sources */,
 				001580E31B27740100E03E94 /* MIChat.m in Sources */,
 				001580C21B2771D400E03E94 /* MIMuralViewController.m in Sources */,
