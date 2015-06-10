@@ -7,6 +7,7 @@
 //
 
 #import "MILoginViewController.h"
+#import "MIDatabase.h"
 
 @interface MILoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *fieldUsername;
@@ -28,6 +29,7 @@
 - (IBAction)loginAction:(id)sender {
     [self actionLogin];
 }
+
 - (void)actionLogin
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
@@ -38,7 +40,7 @@
     if ([password length] == 0)	{ [ProgressHUD showError:@"Password must be set."]; return; }
     //---------------------------------------------------------------------------------------------------------------------------------------------
     [ProgressHUD show:@"Signing in..." Interaction:NO];
-    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error)
+    [[MIDatabase sharedInstance] logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error)
      {
          if (user != nil)
          {

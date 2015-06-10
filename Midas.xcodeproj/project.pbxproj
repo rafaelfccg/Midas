@@ -54,6 +54,7 @@
 		1FE7DA9C1B28D10600656359 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA9B1B28D10600656359 /* Foundation.framework */; };
 		1FE7DA9D1B28D21900656359 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA811B28D0A400656359 /* AdSupport.framework */; };
 		1FE7DA9E1B28D22000656359 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA7D1B28D09400656359 /* AudioToolbox.framework */; };
+		1FE7DAA11B28FC1600656359 /* MIDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA01B28FC1600656359 /* MIDatabase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,8 @@
 		1FE7DA971B28D0ED00656359 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1FE7DA991B28D10100656359 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FE7DA9B1B28D10600656359 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1FE7DA9F1B28FC1600656359 /* MIDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDatabase.h; sourceTree = "<group>"; };
+		1FE7DAA01B28FC1600656359 /* MIDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDatabase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +299,8 @@
 				001580E81B27743E00E03E94 /* MICloudController.m */,
 				157363051B28C1E800259B11 /* MILoginViewController.h */,
 				157363061B28C1E800259B11 /* MILoginViewController.m */,
+				1FE7DA9F1B28FC1600656359 /* MIDatabase.h */,
+				1FE7DAA01B28FC1600656359 /* MIDatabase.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				003B244A1B28D79100743D0B /* push.m in Sources */,
 				001580D41B2772AB00E03E94 /* MIFinalizarPedidoViewController.m in Sources */,
 				001580C81B27721400E03E94 /* MIConfiguracoesViewController.m in Sources */,
+				1FE7DAA11B28FC1600656359 /* MIDatabase.m in Sources */,
 				001580D11B27729500E03E94 /* MINovoPedidoViewController.m in Sources */,
 				001580DD1B2773B500E03E94 /* MIPedido.m in Sources */,
 				001580E61B27742200E03E94 /* MIUser.m in Sources */,
