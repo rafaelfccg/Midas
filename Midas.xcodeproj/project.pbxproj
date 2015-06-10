@@ -95,6 +95,7 @@
 		001580F11B28AA5500E03E94 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		157363051B28C1E800259B11 /* MILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILoginViewController.h; sourceTree = "<group>"; };
 		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
+		1FE7D9751B28CB8300656359 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +155,7 @@
 				001580A11B275E4700E03E94 /* Images.xcassets */,
 				001580A31B275E4700E03E94 /* LaunchScreen.xib */,
 				001580941B275E4700E03E94 /* Supporting Files */,
+				1FE7D9751B28CB8300656359 /* AppConstant.h */,
 			);
 			path = Midas;
 			sourceTree = "<group>";
