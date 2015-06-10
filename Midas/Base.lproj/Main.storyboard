@@ -535,12 +535,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3d-2x-JmP">
-                                <rect key="frame" x="285" y="523" width="30" height="30"/>
+                                <rect key="frame" x="224" y="529" width="30" height="30"/>
                                 <state key="normal" title="Ok">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="eHH-UR-7EN" kind="show" id="6Bd-xG-xcC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S13-HW-UMo">
+                                <rect key="frame" x="343" y="529" width="61" height="30"/>
+                                <state key="normal" title="Cancelar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eHH-UR-7EN" kind="show" id="C4T-FX-VeC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -549,10 +558,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usp-FB-xLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2242" y="1605"/>
+            <point key="canvasLocation" x="-2242" y="1681"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="C4T-FX-VeC"/>
         <segue reference="xhW-XF-LFV"/>
     </inferredMetricsTieBreakers>
 </document>
