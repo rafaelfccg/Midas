@@ -34,4 +34,8 @@
 }
 */
 
+-(IBAction)finalizarPedido:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 @end

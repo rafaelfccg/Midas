@@ -41,6 +41,7 @@
 }
 */
 
+
 - (void) iniciarNegociacao:(id)sender {
     [self performSegueWithIdentifier:@"FromInfoToChatSegue" sender:self];
 }

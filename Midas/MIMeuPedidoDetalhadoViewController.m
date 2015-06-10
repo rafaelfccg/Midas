@@ -7,6 +7,8 @@
 //
 
 #import "MIMeuPedidoDetalhadoViewController.h"
+#import "MIEditarPedidoViewController.h"
+#import "MIFinalizarPedidoViewController.h"
 
 @interface MIMeuPedidoDetalhadoViewController ()
 
@@ -16,6 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIBarButtonItem *editarButton = [[UIBarButtonItem alloc]
+                                      initWithTitle:@"Editar"
+                                      style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(editarPedido:)];
+    self.navigationItem.rightBarButtonItem = editarButton;
     // Do any additional setup after loading the view.
 }
 
@@ -33,5 +42,31 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (void) editarPedido:(id)sender {
+    [self performSegueWithIdentifier:@"FromMeuPedidoToEditSegue" sender:self];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"FromMeuPedidoToEditSegue"])
+    {
+        // Get reference to the destination view controller
+        MIEditarPedidoViewController *vc = [segue destinationViewController];
+        
+    } else if ([[segue identifier] isEqualToString:@"FromMeuPedidoToFinalizarSegue"])
+    {
+        // Get reference to the destination view controller
+        MIFinalizarPedidoViewController *vc = [segue destinationViewController];
+        
+    }
+}
+
+-(IBAction)finalizarPedido:(id)sender {
+    [self performSegueWithIdentifier:@"FromMeuPedidoToFinalizarSegue" sender:self];
+}
 
 @end

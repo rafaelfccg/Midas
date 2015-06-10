@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIBarButtonItem *concluirButton = [[UIBarButtonItem alloc]
+                                      initWithTitle:@"Concluir"
+                                      style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(criarNovoPedido:)];
+    self.navigationItem.rightBarButtonItem = concluirButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +40,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+- (void) criarNovoPedido:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 
 @end
