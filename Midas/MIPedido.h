@@ -11,12 +11,14 @@
 
 @interface MIPedido : NSObject
 
-@property (readonly) PFObject *_object;
-@property (readonly) PFUser *_owner;
-@property (readonly) NSString *_title;
-@property (readonly) NSString *_description;
-@property (readonly) NSString *_reward;
-@property (readonly) NSNumber *_status;
-@property (readonly) NSNumber *_quantity;
+@property (readonly) PFObject *object;
+@property (readonly) PFUser *owner;
+@property (readonly) NSString *title;
+@property (readonly) NSString *description;
+@property (readonly) NSString *reward;
+@property (readonly) NSNumber *status;
+@property (readonly) NSNumber *quantity;
+
+- (instancetype) initWithPFObject:(PFObject *)object;
 
 @end

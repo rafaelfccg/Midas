@@ -10,4 +10,15 @@
 
 @implementation MIPedido
 
+
+- (instancetype)initWithPFObject:(PFObject *)object {
+    
+    self = [super init];
+    
+    if (self) {
+        
+    }
+    
+    return self;
+}
 @end
