@@ -11,7 +11,12 @@
 
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
+#define HEXCOLOR(c) [UIColor colorWithRed:((c>>24)&0xFF)/255.0 green:((c>>16)&0xFF)/255.0 blue:((c>>8)&0xFF)/255.0 alpha:((c)&0xFF)/255.0]
+
 #define		DEFAULT_TAB							0
+
+#define		COLOR_OUTGOING						HEXCOLOR(0x007AFFFF)
+#define		COLOR_INCOMING						HEXCOLOR(0xE6E5EAFF)
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 #define		PF_INSTALLATION_CLASS_NAME			@"_Installation"		//	Class name
@@ -28,13 +33,14 @@
 #define		PF_USER_FULLNAME					@"fullName"				//	String
 #define		PF_USER_LOCATION					@"location"             //	GeoPoint
 #define		PF_USER_FACEBOOKID					@"facebookId"			//	String
-#define		PF_USER_PICTURE						@"picture"				//	File
+#define		PF_USER_IMAGE						@"image"				//	File
+#define     PF_USER_THUMBNAIL                   @"thumbnail"           //  File
 //-----------------------------------------------------------------------
 #define		PF_MESSAGE_CLASS_NAME				@"Message"				//	Class name
 #define		PF_MESSAGE_USER						@"user"					//	Pointer to User Class
 #define		PF_MESSAGE_CHATID					@"chatId"				//	String
 #define		PF_MESSAGE_TEXT						@"text"					//	String
-#define		PF_MESSAGE_PICTURE					@"picture"				//	File
+#define		PF_MESSAGE_IMAGE					@"image"				//	File
 #define		PF_MESSAGE_CREATEDAT				@"createdAt"			//	Date
 //-----------------------------------------------------------------------
 #define		PF_REQUEST_CLASS_NAME				@"Request"				//	Class name
@@ -43,7 +49,7 @@
 #define		PF_REQUEST_TITLE                    @"title"                //	String
 #define		PF_REQUEST_DESCRIPTION              @"description"          //	String
 #define		PF_REQUEST_REWARD                   @"reward"               //	String
-#define		PF_REQUEST_QUANTITY                 @"quantity"             //	Number
+#define		PF_REQUEST_QUANTITY                 @"quantity"             //	Number 
 #define		PF_REQUEST_IMAGE                    @"image"                //	File
 #define		PF_REQUEST_STATUS                   @"status"               //	Number
 #define		PF_REQUEST_FEEDBACKID               @"feedBackId"           //	String
@@ -52,7 +58,18 @@
 #define		PF_CHAT_CLASS_NAME                  @"Chat"                 //	Class name
 #define		PF_CHAT_REQUESTOWNER				@"requestOwner"			//	Pointer to User Class
 #define		PF_CHAT_REQUESTID					@"requestId"			//	String
+#define		PF_CHAT_REQUESTGIVER				@"requestGiver"			//	String
+
 //-----------------------------------------------------------------------
+#define		PF_RECENT_CLASS_NAME				@"Recent"				//	Class name
+#define		PF_RECENT_REQUESTOWNER				@"requestOwner"					//	Pointer to User Class
+#define		PF_RECENT_CHATID					@"chatId"				//	String
+#define		PF_RECENT_MEMBERS					@"members"				//	Array
+#define		PF_RECENT_DESCRIPTION				@"description"			//	String
+#define		PF_RECENT_REQUESTGIVER				@"requestGiver"				//	Pointer to User Class
+#define		PF_RECENT_LASTMESSAGE				@"lastMessage"			//	String
+#define		PF_RECENT_COUNTER					@"counter"				//	Number
+#define		PF_RECENT_UPDATEDACTION				@"updatedAction"		//	Date
 //----------------------------------------
 #define		NOTIFICATION_APP_STARTED			@"NCAppStarted"
 #define		NOTIFICATION_USER_LOGGED_IN			@"NCUserLoggedIn"

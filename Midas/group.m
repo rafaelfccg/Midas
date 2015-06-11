@@ -13,62 +13,48 @@
 
 #import "AppConstant.h"
 
-#import "push.h"
+#import "group.h"
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-void ParsePushUserAssign(void)
+/*void RemoveGroupMembers(PFUser *user1, PFUser *user2)
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-	PFInstallation *installation = [PFInstallation currentInstallation];
-	installation[PF_INSTALLATION_USER] = [PFUser currentUser];
-	[installation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+	PFQuery *query = [PFQuery queryWithClassName:PF_CHAT_CLASS_NAME];
+	[query whereKey:PF_CHAT_REQUESTOWNER equalTo:user1];
+	[query whereKey:PF_CHAT_REQUESTGIVER equalTo:user2];
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
 	{
-		if (error != nil)
+		if (error == nil)
 		{
-			NSLog(@"ParsePushUserAssign save error.");
+			for (PFObject *group in objects)
+			{
+				RemoveGroupMember(group, user2);
+			}
 		}
+		else NSLog(@"RemoveGroupMembers query error.");
 	}];
-}
+}*/
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-void ParsePushUserResign(void)
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-{
-	PFInstallation *installation = [PFInstallation currentInstallation];
-	[installation removeObjectForKey:PF_INSTALLATION_USER];
-	[installation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-	{
-		if (error != nil)
-		{
-			NSLog(@"ParsePushUserResign save error.");
-		}
-	}];
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-void SendPushNotification(NSString *groupId, NSString *text)
+/*void RemoveGroupMember(PFObject *group, PFUser *user)
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-	PFUser *user = [PFUser currentUser];
-	NSString *message = [NSString stringWithFormat:@"%@: %@", user[PF_USER_FULLNAME], text];
-
-	PFQuery *query = [PFQuery queryWithClassName:PF_RECENT_CLASS_NAME];
-	[query whereKey:PF_RECENT_CHATID equalTo:groupId];
-	[query whereKey:PF_RECENT_REQUESTOWNER notEqualTo:user];
-	[query includeKey:PF_RECENT_REQUESTOWNER];
-	[query setLimit:1000];
-
-	PFQuery *queryInstallation = [PFInstallation query];
-	[queryInstallation whereKey:PF_INSTALLATION_USER matchesKey:PF_RECENT_REQUESTOWNER inQuery:query];
-
-	PFPush *push = [[PFPush alloc] init];
-	[push setQuery:queryInstallation];
-	[push setMessage:message];
-	[push sendPushInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+	if ([group[PF_GROUP_MEMBERS] containsObject:user.objectId])
 	{
-		if (error != nil)
+		[group[PF_GROUP_MEMBERS] removeObject:user.objectId];
+		[group saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
 		{
-			NSLog(@"SendPushNotification send error.");
-		}
+			if (error != nil) NSLog(@"RemoveGroupMember save error.");
+		}];
+	}
+}*/
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+void RemoveGroupItem(PFObject *group)
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+	[group deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+	{
+		if (error != nil) NSLog(@"RemoveGroupItem delete error.");
 	}];
 }

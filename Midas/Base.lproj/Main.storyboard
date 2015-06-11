@@ -115,39 +115,14 @@
                         <viewControllerLayoutGuide type="bottom" id="Qpo-rn-T3h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YKf-d4-7ya">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cRN-vj-LAe">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" id="Yqg-zp-wrO">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yqg-zp-wrO" id="AJS-Af-hPl">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="cRN-vj-LAe" secondAttribute="trailing" constant="-16" id="Ysn-ue-h7z"/>
-                            <constraint firstItem="cRN-vj-LAe" firstAttribute="leading" secondItem="YKf-d4-7ya" secondAttribute="leadingMargin" constant="-16" id="Z6j-oB-CnU"/>
-                            <constraint firstItem="cRN-vj-LAe" firstAttribute="bottom" secondItem="YKf-d4-7ya" secondAttribute="bottomMargin" id="eEt-K9-Baz"/>
-                            <constraint firstItem="cRN-vj-LAe" firstAttribute="top" secondItem="YKf-d4-7ya" secondAttribute="topMargin" id="nur-ED-SIW"/>
-                        </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <connections>
-                        <outlet property="chatTableView" destination="cRN-vj-LAe" id="dT9-tV-4UF"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLb-41-PlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1972" y="729"/>
+            <point key="canvasLocation" x="1966" y="704"/>
         </scene>
         <!--Meus Pedidos-->
         <scene sceneID="l1r-rx-u1y">

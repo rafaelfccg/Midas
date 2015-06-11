@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIChatViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+#import "JSQMessages.h"
+#import "RNGridMenu.h"
+
+@interface MIChatViewController : JSQMessagesViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, RNGridMenuDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *chatTableView;
+
+- (id)initWith:(NSString *)groupId_;
 
 @end
