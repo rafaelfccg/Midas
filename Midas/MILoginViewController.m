@@ -34,7 +34,6 @@
     
     if ([PFUser currentUser] != nil)
     {
-        //[ProgressHUD show:@"Signing in..." Interaction:NO];
         [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
     }
 }

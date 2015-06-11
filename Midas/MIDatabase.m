@@ -42,4 +42,38 @@
     [user signUpInBackgroundWithBlock:block];
 }
 
+
+#pragma mark - Registering and Authentication
+
+
+- (void) getAllRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
+    PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+    [query includeKey:PF_REQUEST_USER];
+    [query orderByDescending:PF_REQUEST_UPDATEDACTION];
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
+- (void) getOpenRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
+    PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+    [query whereKey:PF_REQUEST_STATUS equalTo:@0];
+    [query includeKey:PF_REQUEST_USER];
+    [query orderByDescending:PF_REQUEST_UPDATEDACTION];
+    [query findObjectsInBackgroundWithBlock:block];
+
+}
+
+- (void) getRequestsWithFilters:(NSString *) filters block:(PF_NULLABLE_S PFArrayResultBlock)block {
+
+}
+
+- (void) getCurrentUserRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
+    PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+    [query whereKey:PF_REQUEST_STATUS equalTo:@0];
+    [query whereKey:PF_REQUEST_USER equalTo:[PFUser currentUser]];
+    [query includeKey:PF_REQUEST_USER];
+    [query orderByDescending:PF_REQUEST_UPDATEDACTION];
+    [query findObjectsInBackgroundWithBlock:block];
+    
+}
+
 @end
