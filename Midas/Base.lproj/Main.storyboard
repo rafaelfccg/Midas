@@ -481,12 +481,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jO4-oZ-eF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2242" y="716"/>
+            <point key="canvasLocation" x="-2438" y="716"/>
         </scene>
-        <!--View Controller-->
+        <!--Registrar User View Controller-->
         <scene sceneID="Hrd-vf-PD6">
             <objects>
-                <viewController id="g5R-Vm-X9Z" sceneMemberID="viewController">
+                <viewController id="g5R-Vm-X9Z" customClass="MIRegistrarUserViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RgD-91-oxs"/>
                         <viewControllerLayoutGuide type="bottom" id="hZW-SG-h5U"/>
@@ -495,7 +495,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Completo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uK4-K5-Oi2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uK4-K5-Oi2">
                                 <rect key="frame" x="60" y="50" width="470" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -543,7 +543,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eHH-UR-7EN" kind="show" id="6Bd-xG-xcC"/>
+                                    <action selector="registerUser:" destination="g5R-Vm-X9Z" eventType="touchUpInside" id="gUM-Wk-Gtv"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1v-VV-YYb">
@@ -560,7 +560,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eHH-UR-7EN" kind="show" id="C4T-FX-VeC"/>
+                                    <action selector="cancel:" destination="g5R-Vm-X9Z" eventType="touchUpInside" id="D9h-0M-hSX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -596,14 +596,19 @@
                             <constraint firstAttribute="trailingMargin" secondItem="5mP-aR-sqp" secondAttribute="trailing" constant="54" id="uQr-Kn-DBf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="5Ti-Te-5By" id="bG8-cJ-sSY"/>
+                        <outlet property="loginTextField" destination="Qm4-yW-5kH" id="aEP-Mg-Sei"/>
+                        <outlet property="nameTextField" destination="1hN-1p-fl0" id="kje-0b-a8M"/>
+                        <outlet property="passwordTextField" destination="c1v-VV-YYb" id="Ow4-9i-uhE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usp-FB-xLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2242" y="1681"/>
+            <point key="canvasLocation" x="-2438" y="1681"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="C4T-FX-VeC"/>
         <segue reference="xhW-XF-LFV"/>
     </inferredMetricsTieBreakers>
 </document>
