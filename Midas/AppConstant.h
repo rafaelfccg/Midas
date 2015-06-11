@@ -53,6 +53,7 @@
 #define		PF_REQUEST_IMAGE                    @"image"                //	File
 #define		PF_REQUEST_STATUS                   @"status"               //	Number
 #define		PF_REQUEST_FEEDBACKID               @"feedBackId"           //	String
+#define		PF_REQUEST_UPDATEDACTION			@"updatedAction"		//	Date
 
 //-----------------------------------------------------------------------
 #define		PF_CHAT_CLASS_NAME                  @"Chat"                 //	Class name

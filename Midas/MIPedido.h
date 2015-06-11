@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface MIPedido : NSObject
+
+@property (readonly) PFObject *_object;
+@property (readonly) PFUser *_owner;
+@property (readonly) NSString *_title;
+@property (readonly) NSString *_description;
+@property (readonly) NSString *_reward;
+@property (readonly) NSNumber *_status;
+@property (readonly) NSNumber *_quantity;
 
 @end

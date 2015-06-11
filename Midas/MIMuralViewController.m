@@ -8,9 +8,12 @@
 
 #import "MIMuralViewController.h"
 #import "MIPedidoDetalhadoViewController.h"
-#import <Parse/Parse.h>
+#import "MIDatabase.h"
+#import "ProgressHUD.h"
 
 @interface MIMuralViewController ()
+
+@property NSMutableArray *requests;
 
 @end
 
@@ -22,8 +25,18 @@
     self.muralTableView.delegate = self;
     self.muralTableView.dataSource = self;
     // Do any additional setup after loading the view.
+    self.requests = [[NSMutableArray alloc] init];
     
-    NSLog(@"%@",[PFUser currentUser].email);
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    
+    
+    [self.muralTableView addSubview:self.refreshControl];
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    [self.refreshControl beginRefreshing];
+    [self loadRequests];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,13 +67,16 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    cell.textLabel.text = @"teste";
+    PFObject *request = [_requests objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = request[PF_REQUEST_TITLE];
+    cell.detailTextLabel.text = ((PFUser *)request[PF_REQUEST_USER])[PF_USER_FULLNAME];
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [_requests count];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,4 +94,29 @@
     
     }
 }
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+- (void)loadRequests
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    
+    [[MIDatabase sharedInstance] getOpenRequestsWithBlock:^(NSArray *objects, NSError *error)
+     {
+         if (error == nil)
+         {
+             [_requests removeAllObjects];
+             [_requests addObjectsFromArray:objects];
+             [self.muralTableView reloadData];
+             
+         }
+         else [ProgressHUD showError:@"Network error."];
+         [self.refreshControl endRefreshing];
+     }];
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    [self loadRequests];
+}
+
 @end

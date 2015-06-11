@@ -27,9 +27,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) viewWillAppear:(BOOL)animated {
+- (void) viewDidAppear:(BOOL)animated {
     //if already logged in
-    if ([PFUser currentUser]){
+    
+    NSLog(@"%@",[PFUser currentUser]);
+    
+    if ([PFUser currentUser] != nil)
+    {
         [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
     }
 }
