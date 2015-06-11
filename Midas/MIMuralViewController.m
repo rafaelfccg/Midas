@@ -10,6 +10,7 @@
 #import "MIPedidoDetalhadoViewController.h"
 #import "MIDatabase.h"
 #import "ProgressHUD.h"
+#import "MIPedido.h"
 
 @interface MIMuralViewController ()
 
@@ -67,10 +68,10 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    PFObject *request = [_requests objectAtIndex:indexPath.row];
+    MIPedido *request = [_requests objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = request[PF_REQUEST_TITLE];
-    cell.detailTextLabel.text = ((PFUser *)request[PF_REQUEST_USER])[PF_USER_FULLNAME];
+    cell.textLabel.text = request.title;
+    cell.detailTextLabel.text = request.owner[PF_USER_FULLNAME];
     return cell;
 }
 
@@ -91,7 +92,6 @@
     {
         // Get reference to the destination view controller
         MIPedidoDetalhadoViewController *vc = [segue destinationViewController];
-    
     }
 }
 
@@ -106,7 +106,8 @@
          if (error == nil)
          {
              [_requests removeAllObjects];
-             [_requests addObjectsFromArray:objects];
+             NSArray *pedidos = [MIPedido pedidosArrayFromPFObjectArray:objects];
+             [_requests addObjectsFromArray:pedidos];
              [self.muralTableView reloadData];
              
          }

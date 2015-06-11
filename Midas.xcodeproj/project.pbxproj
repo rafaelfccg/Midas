@@ -25,7 +25,6 @@
 		001580DD1B2773B500E03E94 /* MIPedido.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580DC1B2773B500E03E94 /* MIPedido.m */; };
 		001580E01B2773EB00E03E94 /* MIMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580DF1B2773EB00E03E94 /* MIMessage.m */; };
 		001580E31B27740100E03E94 /* MIChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580E21B27740100E03E94 /* MIChat.m */; };
-		001580E61B27742200E03E94 /* MIUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580E51B27742200E03E94 /* MIUser.m */; };
 		001580EC1B27751B00E03E94 /* MIFiltrosDeBusca.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580EB1B27751B00E03E94 /* MIFiltrosDeBusca.m */; };
 		003B24451B28D66400743D0B /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B24441B28D66400743D0B /* ProgressHUD.m */; };
 		003B24471B28D66C00743D0B /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 003B24461B28D66C00743D0B /* ProgressHUD.bundle */; };
@@ -104,8 +103,6 @@
 		001580DF1B2773EB00E03E94 /* MIMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMessage.m; sourceTree = "<group>"; };
 		001580E11B27740100E03E94 /* MIChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIChat.h; sourceTree = "<group>"; };
 		001580E21B27740100E03E94 /* MIChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIChat.m; sourceTree = "<group>"; };
-		001580E41B27742200E03E94 /* MIUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIUser.h; sourceTree = "<group>"; };
-		001580E51B27742200E03E94 /* MIUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIUser.m; sourceTree = "<group>"; };
 		001580EA1B27751B00E03E94 /* MIFiltrosDeBusca.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIFiltrosDeBusca.h; sourceTree = "<group>"; };
 		001580EB1B27751B00E03E94 /* MIFiltrosDeBusca.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIFiltrosDeBusca.m; sourceTree = "<group>"; };
 		003B24431B28D66400743D0B /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
@@ -271,8 +268,6 @@
 				001580DF1B2773EB00E03E94 /* MIMessage.m */,
 				001580E11B27740100E03E94 /* MIChat.h */,
 				001580E21B27740100E03E94 /* MIChat.m */,
-				001580E41B27742200E03E94 /* MIUser.h */,
-				001580E51B27742200E03E94 /* MIUser.m */,
 				001580EA1B27751B00E03E94 /* MIFiltrosDeBusca.h */,
 				001580EB1B27751B00E03E94 /* MIFiltrosDeBusca.m */,
 			);
@@ -452,7 +447,6 @@
 				1FE7DAA11B28FC1600656359 /* MIDatabase.m in Sources */,
 				001580D11B27729500E03E94 /* MINovoPedidoViewController.m in Sources */,
 				001580DD1B2773B500E03E94 /* MIPedido.m in Sources */,
-				001580E61B27742200E03E94 /* MIUser.m in Sources */,
 				003B24451B28D66400743D0B /* ProgressHUD.m in Sources */,
 				1FE7DAA41B29016000656359 /* MIRegistrarUserViewController.m in Sources */,
 				0015809A1B275E4700E03E94 /* AppDelegate.m in Sources */,

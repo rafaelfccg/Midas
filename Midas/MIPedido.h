@@ -14,11 +14,12 @@
 @property (readonly) PFObject *object;
 @property (readonly) PFUser *owner;
 @property (readonly) NSString *title;
-@property (readonly) NSString *description;
+@property (readonly) NSString *descricao;
 @property (readonly) NSString *reward;
 @property (readonly) NSNumber *status;
 @property (readonly) NSNumber *quantity;
 
 - (instancetype) initWithPFObject:(PFObject *)object;
 
++ (NSArray *) pedidosArrayFromPFObjectArray:(NSArray *)array;
 @end
