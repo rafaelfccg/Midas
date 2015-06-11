@@ -939,7 +939,6 @@
 				TargetAttributes = {
 					001580901B275E4700E03E94 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 46HQV8ZA5C;
 					};
 					001580A91B275E4700E03E94 = {
 						CreatedOnToolsVersion = 6.3.1;
