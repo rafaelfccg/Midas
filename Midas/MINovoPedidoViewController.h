@@ -10,4 +10,9 @@
 
 @interface MINovoPedidoViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
+@property (weak, nonatomic) IBOutlet UITextField *rewardTextField;
+@property (weak, nonatomic) IBOutlet UITextField *quantityTextField;
+
 @end
