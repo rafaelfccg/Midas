@@ -67,6 +67,7 @@
     //---------------------------------------------------------------------------------------------------------------------------------------------
     avatarImageBlank = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"chat_blank"] diameter:30.0];
     //---------------------------------------------------------------------------------------------------------------------------------------------
+    //[self hidesBottomBarWhenPushed];
     isLoading = NO;
     initialized = NO;
     [self loadMessages];
@@ -83,7 +84,7 @@
 {
     [super viewDidAppear:animated];
     self.collectionView.collectionViewLayout.springinessEnabled = YES;
-    
+    self.tabBarController.tabBar.hidden = YES;
     timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(loadMessages) userInfo:nil repeats:YES];
     
 }
@@ -102,6 +103,7 @@
 {
     [super viewWillDisappear:animated];
     //ClearRecentCounter(chatId);
+    self.tabBarController.tabBar.hidden = NO;
     [timer invalidate];
 }
 

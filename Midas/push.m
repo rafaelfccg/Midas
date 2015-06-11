@@ -46,20 +46,19 @@ void ParsePushUserResign(void)
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-void SendPushNotification(NSString *groupId, NSString *text)
+void SendPushNotification(NSString *chatId, NSString *text)
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
 	PFUser *user = [PFUser currentUser];
 	NSString *message = [NSString stringWithFormat:@"%@: %@", user[PF_USER_FULLNAME], text];
 
 	PFQuery *query = [PFQuery queryWithClassName:PF_RECENT_CLASS_NAME];
-	[query whereKey:PF_RECENT_CHATID equalTo:groupId];
-	[query whereKey:PF_RECENT_REQUESTOWNER notEqualTo:user];
-	[query includeKey:PF_RECENT_REQUESTOWNER];
+	[query whereKey:PF_RECENT_CHATID equalTo:chatId];
+	[query includeKey:PF_RECENT_REQUESTGIVER];
 	[query setLimit:1000];
 
 	PFQuery *queryInstallation = [PFInstallation query];
-	[queryInstallation whereKey:PF_INSTALLATION_USER matchesKey:PF_RECENT_REQUESTOWNER inQuery:query];
+	[queryInstallation whereKey:PF_INSTALLATION_USER matchesKey:PF_RECENT_REQUESTGIVER inQuery:query];
 
 	PFPush *push = [[PFPush alloc] init];
 	[push setQuery:queryInstallation];
@@ -68,7 +67,7 @@ void SendPushNotification(NSString *groupId, NSString *text)
 	{
 		if (error != nil)
 		{
-			NSLog(@"SendPushNotification send error.");
+			NSLog(@"SendPushNotification send error.,%@",error);
 		}
 	}];
 }
