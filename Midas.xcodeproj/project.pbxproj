@@ -55,6 +55,7 @@
 		1FE7DA9E1B28D22000656359 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA7D1B28D09400656359 /* AudioToolbox.framework */; };
 		1FE7DAA11B28FC1600656359 /* MIDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA01B28FC1600656359 /* MIDatabase.m */; };
 		1FE7DAA41B29016000656359 /* MIRegistrarUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA31B29016000656359 /* MIRegistrarUserViewController.m */; };
+		1FE7DAA71B290C9C00656359 /* common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA61B290C9C00656359 /* common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,8 @@
 		1FE7DAA01B28FC1600656359 /* MIDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDatabase.m; sourceTree = "<group>"; };
 		1FE7DAA21B29016000656359 /* MIRegistrarUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRegistrarUserViewController.h; sourceTree = "<group>"; };
 		1FE7DAA31B29016000656359 /* MIRegistrarUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRegistrarUserViewController.m; sourceTree = "<group>"; };
+		1FE7DAA51B290C9C00656359 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		1FE7DAA61B290C9C00656359 /* common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = common.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +256,8 @@
 				003B24441B28D66400743D0B /* ProgressHUD.m */,
 				003B24481B28D79100743D0B /* push.h */,
 				003B24491B28D79100743D0B /* push.m */,
+				1FE7DAA51B290C9C00656359 /* common.h */,
+				1FE7DAA61B290C9C00656359 /* common.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 				001580CE1B27728200E03E94 /* MIChatViewController.m in Sources */,
 				001580E01B2773EB00E03E94 /* MIMessage.m in Sources */,
 				001580971B275E4700E03E94 /* main.m in Sources */,
+				1FE7DAA71B290C9C00656359 /* common.m in Sources */,
 				001580D71B2772DF00E03E94 /* MIMeuPedidoDetalhadoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

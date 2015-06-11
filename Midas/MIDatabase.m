@@ -41,4 +41,8 @@
     user[PF_USER_FULLNAME] = fullName;
     [user signUpInBackgroundWithBlock:block];
 }
+
+- (void)logOut {
+    [PFUser logOut];
+}
 @end

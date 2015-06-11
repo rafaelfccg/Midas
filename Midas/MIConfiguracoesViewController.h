@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIConfiguracoesViewController : UIViewController
+@interface MIConfiguracoesViewController : UIViewController <UIActionSheetDelegate>
 
 @end

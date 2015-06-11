@@ -338,7 +338,22 @@
                     <view key="view" contentMode="scaleToFill" id="zma-px-14N">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3c-6j-73U">
+                                <rect key="frame" x="277" y="319" width="49" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="uxC-b3-0WE" eventType="touchUpInside" id="DX1-xA-bWa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="c3c-6j-73U" secondAttribute="centerY" constant="-34" id="4bf-eT-nuV"/>
+                            <constraint firstAttribute="centerX" secondItem="c3c-6j-73U" secondAttribute="centerX" constant="-1.5" id="pX4-zU-R0J"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Configurações" id="Ogw-W2-Kqn"/>
                 </viewController>
@@ -403,7 +418,7 @@
         <!--Login View Controller-->
         <scene sceneID="1O5-xK-197">
             <objects>
-                <viewController id="eHH-UR-7EN" customClass="MILoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="eHH-UR-7EN" customClass="MILoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pMf-Em-YBJ"/>
                         <viewControllerLayoutGuide type="bottom" id="fQg-bW-vqu"/>

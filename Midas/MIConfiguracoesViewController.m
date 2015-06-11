@@ -7,7 +7,8 @@
 //
 
 #import "MIConfiguracoesViewController.h"
-
+#import "MIDatabase.h"
+#import "common.h"
 @interface MIConfiguracoesViewController ()
 
 @end
@@ -24,6 +25,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)logout:(id)sender {
+    [self actionLogout];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -33,5 +38,29 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)actionLogout
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"
+                                          destructiveButtonTitle:@"Log out" otherButtonTitles:nil];
+    [action showFromTabBar:[[self tabBarController] tabBar]];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    if (buttonIndex != actionSheet.cancelButtonIndex)
+    {
+        [[MIDatabase sharedInstance] logOut];
+        ParsePushUserResign();
+        PostNotification(NOTIFICATION_USER_LOGGED_OUT);
+        LoginUser(self);
+    }
+}
+
 
 @end

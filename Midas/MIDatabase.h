@@ -21,4 +21,6 @@
 
 - (void)signUpWithUsernameInBackground:(nonnull NSString *)username password:(nonnull NSString *) password email:(nonnull NSString *)email fullName:(nonnull NSString *)fullName block:(PF_NULLABLE PFBooleanResultBlock)block;
 
+- (void)logOut;
+
 @end
