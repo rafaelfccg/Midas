@@ -49,8 +49,11 @@
     
     //---------------------------------------------------------------------------------------------------------------------------------------------
     if ([fullname length] < 3)	{ [ProgressHUD showError:@"Name is too short."]; return; }
+    if ([fullname length] > 30)	{ [ProgressHUD showError:@"Name is too long(>30)."]; return; }
     if ([login length] < 4)		{ [ProgressHUD showError:@"Login is too short."]; return; }
+    if ([login length] > 20)	{ [ProgressHUD showError:@"Login is too long(>20)."]; return; }
     if ([password length] == 0)	{ [ProgressHUD showError:@"Password must be set."]; return; }
+    if ([password length] > 30)	{ [ProgressHUD showError:@"Password is too long(>30). "]; return; }
     if ([email length] == 0)	{ [ProgressHUD showError:@"Email must be set."]; return; }
     //---------------------------------------------------------------------------------------------------------------------------------------------
     [ProgressHUD show:@"Please wait..." Interaction:NO];

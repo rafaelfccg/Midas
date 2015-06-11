@@ -55,7 +55,7 @@
 {
     if (buttonIndex != actionSheet.cancelButtonIndex)
     {
-        [[MIDatabase sharedInstance] logOut];
+        [PFUser logOut];
         ParsePushUserResign();
         PostNotification(NOTIFICATION_USER_LOGGED_OUT);
         LoginUser(self);

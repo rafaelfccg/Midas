@@ -42,7 +42,4 @@
     [user signUpInBackgroundWithBlock:block];
 }
 
-- (void)logOut {
-    [PFUser logOut];
-}
 @end
