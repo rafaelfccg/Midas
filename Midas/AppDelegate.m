@@ -19,6 +19,7 @@
     // Override point for customization after application launch.
     [Parse setApplicationId:@"aoz5eEW1uaxCXiMF6aHfhLsWh6v6XyMG31v1Bnbp" clientKey:@"Pt1gy0IwJJz5VQynbIUSJs0hcfDhBxgXGtRY23Po"];
     
+    [[UITabBar appearance] setTintColor:[UIColor orangeColor]];
     return YES;
 }
 
