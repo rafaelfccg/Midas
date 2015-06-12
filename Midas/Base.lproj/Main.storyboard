@@ -72,7 +72,11 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Mural" id="43F-fr-cwf">
-                        <barButtonItem key="leftBarButtonItem" title="Busca" id="YDI-qQ-k5T"/>
+                        <barButtonItem key="leftBarButtonItem" title="Busca" id="YDI-qQ-k5T">
+                            <connections>
+                                <action selector="showNormalActionSheet:" destination="qdX-c5-C5H" id="FDB-E2-gc6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="muralTableView" destination="1AG-mV-2FH" id="dH0-zG-YId"/>
