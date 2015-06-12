@@ -43,7 +43,7 @@
 }
 
 
-#pragma mark - Registering and Authentication
+#pragma mark - Requests
 
 
 - (void) getAllRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
@@ -86,4 +86,9 @@
     
 }
 
+- (void) finalizeRequestWithPFObject:(nonnull PFObject *)pfobject block:(nullable PFBooleanResultBlock)block
+{
+    pfobject[PF_REQUEST_STATUS] = @1;
+    [pfobject saveInBackgroundWithBlock:block];
+}
 @end
