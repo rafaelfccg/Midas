@@ -9,8 +9,14 @@
 #import "MIMeusPedidosViewController.h"
 #import "MIChatViewController.h"
 #import "MIMeuPedidoDetalhadoViewController.h"
+#import "MIDatabase.h"
+#import "MIPedido.h"
+#import "ProgressHUD.h"
 
 @interface MIMeusPedidosViewController ()
+
+@property NSMutableArray *requests;
+@property MIPedido* selectedRequest;
 
 @end
 
@@ -21,7 +27,13 @@
     
     self.pedidosTableView.delegate = self;
     self.pedidosTableView.dataSource = self;
-    // Do any additional setup after loading the view.
+    
+    self.requests = [[NSMutableArray alloc] init];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.pedidosTableView addSubview:self.refreshControl];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,16 +41,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) viewWillAppear:(BOOL)animated {
+    [self.refreshControl beginRefreshing];
+    [self loadRequests];
 }
-*/
-
 
 #pragma mark - Table View
 
@@ -53,18 +59,31 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    cell.textLabel.text = @"teste";
+    if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
+        MIPedido *request = _requests[indexPath.row];
+        cell.textLabel.text = request.title;
+        cell.detailTextLabel.text = request.owner.username;
+        
+    }else if (self.pedidosSegmentedControl.selectedSegmentIndex == 1){
+        cell.textLabel.text = @"test";
+    }
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    NSInteger value = 0;
+    
+    if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
+        value = _requests.count;
+    }
+    return value;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
+        _selectedRequest = _requests[indexPath.row];
         [self performSegueWithIdentifier:@"FromPedidosToPedidoSegue" sender:self];
     }else if (self.pedidosSegmentedControl.selectedSegmentIndex == 1){
         [self performSegueWithIdentifier:@"FromMeusPedidosToChatSegue" sender:self];
@@ -78,10 +97,36 @@
     {
         // Get reference to the destination view controller
         MIMeuPedidoDetalhadoViewController *vc = [segue destinationViewController];
-        
+        vc.currentRequest = _selectedRequest;
     } else if ([[segue identifier] isEqualToString:@"FromMeusPedidosToChatSegue"]){
         MIChatViewController *vc = [segue destinationViewController];
     }
 }
 
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+- (void)loadRequests
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    
+    [[MIDatabase sharedInstance] getCurrentUserRequestsWithBlock:^(NSArray *objects, NSError *error)
+     {
+         if (error == nil)
+         {
+             [_requests removeAllObjects];
+             NSArray *pedidos = [MIPedido pedidosArrayFromPFObjectArray:objects];
+             [_requests addObjectsFromArray:pedidos];
+             [self.pedidosTableView reloadData];
+             
+         }
+         else [ProgressHUD showError:@"Network error."];
+         [self.refreshControl endRefreshing];
+     }];
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    [self loadRequests];
+}
+
 @end
+

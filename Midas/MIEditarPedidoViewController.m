@@ -24,6 +24,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void) viewWillAppear:(BOOL)animated {
+    NSLog(@"Editar pedido: %@", self.currentRequest.title);
+}
 /*
 #pragma mark - Navigation
 

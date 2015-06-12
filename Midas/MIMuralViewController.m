@@ -10,10 +10,12 @@
 #import "MIPedidoDetalhadoViewController.h"
 #import "MIDatabase.h"
 #import "ProgressHUD.h"
+#import "MIPedido.h"
 
 @interface MIMuralViewController ()
 
 @property NSMutableArray *requests;
+@property MIPedido* selectedRequest;
 
 @end
 
@@ -45,21 +47,21 @@
 }
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-#pragma mark - Table View 
+#pragma mark - Table View
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *identifier = @"muralCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-
+    
     if (cell == nil) {
         
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
@@ -67,10 +69,10 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    PFObject *request = [_requests objectAtIndex:indexPath.row];
+    MIPedido *request = [_requests objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = request[PF_REQUEST_TITLE];
-    cell.detailTextLabel.text = ((PFUser *)request[PF_REQUEST_USER])[PF_USER_FULLNAME];
+    cell.textLabel.text = request.title;
+    cell.detailTextLabel.text = request.owner.username;
     return cell;
 }
 
@@ -81,17 +83,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.selectedRequest = _requests[indexPath.row];
     [self performSegueWithIdentifier:@"PedidoInfoSegue" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
+    
     // Make sure your segue name in storyboard is the same as this line
     if ([[segue identifier] isEqualToString:@"PedidoInfoSegue"])
     {
         // Get reference to the destination view controller
         MIPedidoDetalhadoViewController *vc = [segue destinationViewController];
-    
+        vc.currentRequest = _selectedRequest;
     }
 }
 
@@ -106,7 +109,8 @@
          if (error == nil)
          {
              [_requests removeAllObjects];
-             [_requests addObjectsFromArray:objects];
+             NSArray *pedidos = [MIPedido pedidosArrayFromPFObjectArray:objects];
+             [_requests addObjectsFromArray:pedidos];
              [self.muralTableView reloadData];
              
          }

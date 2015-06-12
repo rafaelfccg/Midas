@@ -33,20 +33,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) viewWillAppear:(BOOL)animated {
+    NSLog(@"Meu Pedido detalhado: %@", self.currentRequest.title);
 }
-*/
-
 
 - (void) editarPedido:(id)sender {
     [self performSegueWithIdentifier:@"FromMeuPedidoToEditSegue" sender:self];
 }
+
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -56,11 +50,13 @@
     {
         // Get reference to the destination view controller
         MIEditarPedidoViewController *vc = [segue destinationViewController];
+        vc.currentRequest = self.currentRequest;
         
     } else if ([[segue identifier] isEqualToString:@"FromMeuPedidoToFinalizarSegue"])
     {
         // Get reference to the destination view controller
         MIFinalizarPedidoViewController *vc = [segue destinationViewController];
+        vc.currentRequest = self.currentRequest;
         
     }
 }
