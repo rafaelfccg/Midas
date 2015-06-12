@@ -66,6 +66,16 @@
 
 }
 
+- (void) getOpenRequestsFromOtherUsersWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
+    PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+    [query whereKey:PF_REQUEST_STATUS equalTo:@0];
+    [query whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
+    [query includeKey:PF_REQUEST_USER];
+    [query orderByDescending:PF_REQUEST_UPDATEDACTION];
+    [query findObjectsInBackgroundWithBlock:block];
+    
+}
+
 - (void) getCurrentUserRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
     PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
     [query whereKey:PF_REQUEST_STATUS equalTo:@0];

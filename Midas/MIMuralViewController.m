@@ -104,7 +104,7 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     
-    [[MIDatabase sharedInstance] getOpenRequestsWithBlock:^(NSArray *objects, NSError *error)
+    [[MIDatabase sharedInstance] getOpenRequestsFromOtherUsersWithBlock:^(NSArray *objects, NSError *error)
      {
          if (error == nil)
          {
