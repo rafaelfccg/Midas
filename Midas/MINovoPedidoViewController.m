@@ -92,18 +92,8 @@
     
     //---------------------------------------------------------------------------------------------------------------------------------------------
     
-    PFObject *request = [PFObject objectWithClassName:PF_REQUEST_CLASS_NAME];
     
-    request[PF_REQUEST_USER] = [PFUser currentUser];
-    //request[PF_REQUEST_CREATEDAT] = [NSDate date];
-    
-    request[PF_REQUEST_TITLE] = title;
-    request[PF_REQUEST_DESCRIPTION] = description;
-    request[PF_REQUEST_REWARD] = reward;
-    request[PF_REQUEST_QUANTITY] = quantity;
-    request[PF_REQUEST_STATUS] = @0;
-
-    [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [[MIDatabase sharedInstance]createNewPedidoInBackGrond:title description:description reward:reward quantity:quantity status:@0 block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
             [ProgressHUD showSuccess:@"Succeed."];
@@ -113,6 +103,28 @@
             // There was a problem, check error.description
         }
     }];
+    
+//    PFObject *request = [PFObject objectWithClassName:PF_REQUEST_CLASS_NAME];
+//    
+//    request[PF_REQUEST_USER] = [PFUser currentUser];
+//    //request[PF_REQUEST_CREATEDAT] = [NSDate date];
+//    
+//    request[PF_REQUEST_TITLE] = title;
+//    request[PF_REQUEST_DESCRIPTION] = description;
+//    request[PF_REQUEST_REWARD] = reward;
+//    request[PF_REQUEST_QUANTITY] = quantity;
+//    request[PF_REQUEST_STATUS] = @0;
+//
+//    [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (succeeded) {
+//            // The object has been saved.
+//            [ProgressHUD showSuccess:@"Succeed."];
+//            [self.navigationController popToRootViewControllerAnimated:YES];
+//        } else {
+//            [ProgressHUD showError:error.userInfo[@"error"]];
+//            // There was a problem, check error.description
+//        }
+//    }];
     
     
     
