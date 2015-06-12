@@ -99,6 +99,22 @@
 }
 
 
+- (IBAction)showNormalActionSheet:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"selecione um material:"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancelar"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Todos",@"Plastico", @"Metal", @"Papel", @"Vidro", @"Outros", nil];
+    
+    [actionSheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+    //implementar metodo de seleção aqui
+    NSLog(@"Index = %ld - Title = %@", (long)buttonIndex, [actionSheet buttonTitleAtIndex:buttonIndex]);
+}
+
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 - (void)loadRequests
 //-------------------------------------------------------------------------------------------------------------------------------------------------
