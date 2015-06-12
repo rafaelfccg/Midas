@@ -696,4 +696,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="xhW-XF-LFV"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="1" green="0.6707620634" blue="0.25552822269999997" alpha="1" colorSpace="calibratedRGB"/>
 </document>
