@@ -33,6 +33,8 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.pedidosTableView addSubview:self.refreshControl];
+    
+    [self.pedidosSegmentedControl addTarget:self action:@selector(valueChanged:) forControlEvents: UIControlEventValueChanged];
 
 }
 
@@ -128,5 +130,9 @@
     [self loadRequests];
 }
 
+
+- (void) valueChanged:(UISegmentedControl *)control {
+    [self loadRequests];
+}
 @end
 
