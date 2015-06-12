@@ -13,7 +13,7 @@
 
 @interface MIChatViewController : JSQMessagesViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, RNGridMenuDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *chatTableView;
-
+@property NSString *chatId;
 - (id)initWith:(NSString *)groupId_;
 
 @end

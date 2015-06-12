@@ -7,6 +7,7 @@
 //
 
 #import "MIDatabase.h"
+#import "MIPedido.h"
 
 @implementation MIDatabase
 
@@ -43,7 +44,7 @@
 }
 
 
-#pragma mark - Registering and Authentication
+#pragma mark - Gets
 
 
 - (void) getAllRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
@@ -85,5 +86,20 @@
     [query findObjectsInBackgroundWithBlock:block];
     
 }
+
+-(void) getChatOwnerToGiverFromRequest:(MIPedido *)pedido withBlock:(PF_NULLABLE_S PFArrayResultBlock)block{
+    PFObject* pfo = pedido.object;
+    PFUser* owner = pedido.owner;
+    PFQuery* query = [PFQuery queryWithClassName:PF_CHAT_CLASS_NAME ];
+    [query whereKey:PF_CHAT_REQUESTOWNER equalTo:owner];
+    [query whereKey:PF_CHAT_REQUESTGIVER equalTo:[PFUser currentUser]];
+    [query whereKey:PF_CHAT_REQUESTID equalTo:pfo.objectId];
+    [query includeKey:PF_CHAT_REQUESTOWNER];
+    [query includeKey:PF_CHAT_REQUESTGIVER];
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
+#pragma mark Save
+
 
 @end

@@ -28,8 +28,6 @@
     BOOL isLoading;
     BOOL initialized;
     
-    NSString *chatId;
-    
     NSMutableArray *users;
     NSMutableArray *messages;
     NSMutableDictionary *avatars;
@@ -44,7 +42,7 @@
 - (id)initWith:(NSString *)chatId_
 {
     self = [super init];
-    chatId = chatId_;
+    _chatId = chatId_;
     return self;
 }
 - (void)viewDidLoad {
@@ -59,7 +57,7 @@
     PFUser *user = [PFUser currentUser];
     self.senderId = user.objectId;
     self.senderDisplayName = user[PF_USER_FULLNAME];
-    chatId = @"hhBo727u17";
+    //_chatId = @"hhBo727u17";
     //---------------------------------------------------------------------------------------------------------------------------------------------
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
     bubbleImageOutgoing = [bubbleFactory outgoingMessagesBubbleImageWithColor:COLOR_OUTGOING];
@@ -119,7 +117,7 @@
         JSQMessage *message_last = [messages lastObject];
         
         PFQuery *query = [PFQuery queryWithClassName:PF_MESSAGE_CLASS_NAME];
-        [query whereKey:PF_MESSAGE_CHATID equalTo:chatId];
+        [query whereKey:PF_MESSAGE_CHATID equalTo:_chatId];
         if (message_last != nil) [query whereKey:PF_MESSAGE_CREATEDAT greaterThan:message_last.date];
         [query includeKey:PF_MESSAGE_USER];
         [query orderByDescending:PF_MESSAGE_CREATEDAT];
@@ -224,7 +222,7 @@
     //---------------------------------------------------------------------------------------------------------------------------------------------
     PFObject *object = [PFObject objectWithClassName:PF_MESSAGE_CLASS_NAME];
     object[PF_MESSAGE_USER] = [PFUser currentUser];
-    object[PF_MESSAGE_CHATID] = chatId;
+    object[PF_MESSAGE_CHATID] = _chatId;
     object[PF_MESSAGE_TEXT] = text;
     if (filePicture != nil) object[PF_MESSAGE_IMAGE] = filePicture;
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
@@ -237,7 +235,7 @@
          else [ProgressHUD showError:@"Network error."];;
      }];
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    SendPushNotification(chatId, text);
+    SendPushNotification(_chatId, text);
    // UpdateRecentCounter(chatId, 1, text);
     //---------------------------------------------------------------------------------------------------------------------------------------------
     [self finishSendingMessage];

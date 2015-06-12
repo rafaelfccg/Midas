@@ -60,6 +60,7 @@
 #define		PF_CHAT_REQUESTOWNER				@"requestOwner"			//	Pointer to User Class
 #define		PF_CHAT_REQUESTID					@"requestId"			//	String
 #define		PF_CHAT_REQUESTGIVER				@"requestGiver"			//	String
+#define     PF_CHAT_OBJECTID                    @"objectId"             //  String
 
 //-----------------------------------------------------------------------
 #define		PF_RECENT_CLASS_NAME				@"Recent"				//	Class name

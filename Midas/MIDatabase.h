@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "push.h"
 #import "AppConstant.h"
+#import "MIPedido.h"
 
 @interface MIDatabase : NSObject
 
@@ -32,5 +33,7 @@
 - (void) getOpenRequestsFromOtherUsersWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
 - (void) getCurrentUserRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
+
+-(void) getChatOwnerToGiverFromRequest:(nonnull MIPedido *)pedido withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
 @end

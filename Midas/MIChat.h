@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface MIChat : NSObject
+    @property (readonly) PFUser *requestOwner;
+    @property (readonly) PFUser *requestGiver;
+    @property (readonly) NSString * requestId;
+    @property (readonly) PFObject * object;
+
+
+
 
 @end
