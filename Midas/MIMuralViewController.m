@@ -15,6 +15,7 @@
 @interface MIMuralViewController ()
 
 @property NSMutableArray *requests;
+@property MIPedido* selectedRequest;
 
 @end
 
@@ -71,7 +72,7 @@
     MIPedido *request = [_requests objectAtIndex:indexPath.row];
     
     cell.textLabel.text = request.title;
-    cell.detailTextLabel.text = request.owner[PF_USER_FULLNAME];
+    cell.detailTextLabel.text = request.owner.username;
     return cell;
 }
 
@@ -82,6 +83,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.selectedRequest = _requests[indexPath.row];
     [self performSegueWithIdentifier:@"PedidoInfoSegue" sender:self];
 }
 
@@ -92,6 +94,7 @@
     {
         // Get reference to the destination view controller
         MIPedidoDetalhadoViewController *vc = [segue destinationViewController];
+        vc.currentRequest = _selectedRequest;
     }
 }
 

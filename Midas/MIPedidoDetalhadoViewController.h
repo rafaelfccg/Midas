@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIPedido.h"
 
 @interface MIPedidoDetalhadoViewController : UIViewController
+
+@property MIPedido *currentRequest;
 
 @end
