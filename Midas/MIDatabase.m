@@ -44,7 +44,7 @@
 }
 
 
-#pragma mark - Gets
+#pragma mark - Requests
 
 
 - (void) getAllRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
@@ -98,8 +98,28 @@
     [query includeKey:PF_CHAT_REQUESTGIVER];
     [query findObjectsInBackgroundWithBlock:block];
 }
+- (void) finalizeRequestWithPFObject:(nonnull PFObject *)pfobject block:(nullable PFBooleanResultBlock)block
+{
+    pfobject[PF_REQUEST_STATUS] = @1;
+    [pfobject saveInBackgroundWithBlock:block];
+}
 
 #pragma mark Save
+- (void) createNewPedidoInBackGrond:(NSString*)title description:(NSString*)description reward:(NSString*)reward quantity:(NSNumber*)quantity status:(NSNumber*)status block:(nullable PFBooleanResultBlock)block
+{
+    PFObject *request = [PFObject objectWithClassName:PF_REQUEST_CLASS_NAME];
+    
+    request[PF_REQUEST_USER] = [PFUser currentUser];
+    //request[PF_REQUEST_CREATEDAT] = [NSDate date];
+    
+    request[PF_REQUEST_TITLE] = title;
+    request[PF_REQUEST_DESCRIPTION] = description;
+    request[PF_REQUEST_REWARD] = reward;
+    request[PF_REQUEST_QUANTITY] = quantity;
+    request[PF_REQUEST_STATUS] = @0;
 
+    
+    [request saveInBackgroundWithBlock:block];
+}
 
 @end

@@ -36,4 +36,8 @@
 
 -(void) getChatOwnerToGiverFromRequest:(nonnull MIPedido *)pedido withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
+- (void) finalizeRequestWithPFObject:(nonnull PFObject *)pfobject block:(nullable PFBooleanResultBlock)block;
+
+- (void) createNewPedidoInBackGrond:(nonnull NSString*)title description:(nonnull NSString*)description reward:(nonnull NSString*)reward quantity:(nonnull NSNumber*)quantity status:(nonnull NSNumber*)status block:(nullable PFBooleanResultBlock)block;
+
 @end
