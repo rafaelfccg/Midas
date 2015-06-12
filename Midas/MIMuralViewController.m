@@ -100,13 +100,19 @@
 
 
 - (IBAction)showNormalActionSheet:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"What do you want to do with the file?"
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"selecione um material:"
                                                              delegate:self
-                                                    cancelButtonTitle:@"Cancel"
-                                               destructiveButtonTitle:@"Delete it"
-                                                    otherButtonTitles:@"Copy", @"Move", @"Duplicate", nil];
+                                                    cancelButtonTitle:@"Cancelar"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Todos",@"Plastico", @"Metal", @"Papel", @"Vidro", @"Outros", nil];
     
     [actionSheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+    //implementar metodo de seleção aqui
+    NSLog(@"Index = %ld - Title = %@", (long)buttonIndex, [actionSheet buttonTitleAtIndex:buttonIndex]);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
