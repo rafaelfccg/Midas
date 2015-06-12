@@ -16,7 +16,7 @@
 #import "common.h"
 #import "image.h"
 #import "push.h"
-//#import "recent.h"
+#import "recent.h"
 #import "ProfileView.h"
 #import "camera.h"
 
@@ -100,7 +100,7 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     [super viewWillDisappear:animated];
-    //ClearRecentCounter(chatId);
+    ClearRecentCounter(_chatId);
     self.tabBarController.tabBar.hidden = NO;
     [timer invalidate];
 }
@@ -236,7 +236,7 @@
      }];
     //---------------------------------------------------------------------------------------------------------------------------------------------
     SendPushNotification(_chatId, text);
-   // UpdateRecentCounter(chatId, 1, text);
+    UpdateRecentCounter(_chatId, 1, text);
     //---------------------------------------------------------------------------------------------------------------------------------------------
     [self finishSendingMessage];
 }

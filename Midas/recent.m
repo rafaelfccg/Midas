@@ -15,6 +15,7 @@
 #import "AppConstant.h"
 
 #import "recent.h"
+#import "MIPedido.h"
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 NSString* StartPrivateChat(PFUser *user1, PFUser *user2)
@@ -71,7 +72,7 @@ NSString* StartMultipleChat(NSMutableArray *users)
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-void CreateRecentItem(PFUser *user, NSString *groupId, NSArray *members, NSString *description)
+void CreateRecentItem(PFUser *user, NSString *groupId, MIPedido * pedido, NSString *description)
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
 	PFQuery *query = [PFQuery queryWithClassName:PF_RECENT_CLASS_NAME];
@@ -84,9 +85,9 @@ void CreateRecentItem(PFUser *user, NSString *groupId, NSArray *members, NSStrin
 			if ([objects count] == 0)
 			{
 				PFObject *recent = [PFObject objectWithClassName:PF_RECENT_CLASS_NAME];
-				recent[PF_RECENT_REQUESTOWNER] = user;
+				recent[PF_RECENT_RECENTUSER] = user;
 				recent[PF_RECENT_CHATID] = groupId;
-				recent[PF_RECENT_MEMBERS] = members;
+				recent[PF_RECENT_REQUESTOWNER] = pedido.owner;
 				recent[PF_RECENT_DESCRIPTION] = description;
 				recent[PF_RECENT_REQUESTGIVER] = [PFUser currentUser];
 				recent[PF_RECENT_LASTMESSAGE] = @"";

@@ -11,12 +11,16 @@
 #import "MIMeuPedidoDetalhadoViewController.h"
 #import "MIDatabase.h"
 #import "MIPedido.h"
+#import "MINegociation.h"
 #import "ProgressHUD.h"
 
 @interface MIMeusPedidosViewController ()
 
 @property NSMutableArray *requests;
+@property NSMutableArray *recents;
 @property MIPedido* selectedRequest;
+@property MINegociation * selectedChat;
+
 
 @end
 
@@ -29,7 +33,7 @@
     self.pedidosTableView.dataSource = self;
     
     self.requests = [[NSMutableArray alloc] init];
-    
+    self.recents = [[NSMutableArray alloc] init];
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.pedidosTableView addSubview:self.refreshControl];
@@ -67,7 +71,9 @@
         cell.detailTextLabel.text = request.owner.username;
         
     }else if (self.pedidosSegmentedControl.selectedSegmentIndex == 1){
-        cell.textLabel.text = @"test";
+        MINegociation *recent = _recents[indexPath.row];
+        cell.textLabel.text = recent.owner.username;
+        cell.detailTextLabel.text = recent.lastMessage;
     }
     return cell;
 }
@@ -78,6 +84,8 @@
     
     if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
         value = _requests.count;
+    }else{
+        value = _recents.count;
     }
     return value;
 }
@@ -88,6 +96,7 @@
         _selectedRequest = _requests[indexPath.row];
         [self performSegueWithIdentifier:@"FromPedidosToPedidoSegue" sender:self];
     }else if (self.pedidosSegmentedControl.selectedSegmentIndex == 1){
+        _selectedChat = _recents[indexPath.row];
         [self performSegueWithIdentifier:@"FromMeusPedidosToChatSegue" sender:self];
     }
 }
@@ -102,6 +111,7 @@
         vc.currentRequest = _selectedRequest;
     } else if ([[segue identifier] isEqualToString:@"FromMeusPedidosToChatSegue"]){
         MIChatViewController *vc = [segue destinationViewController];
+        vc.chatId = _selectedChat.chatId;
     }
 }
 
@@ -125,14 +135,32 @@
          [self.refreshControl endRefreshing];
      }];
 }
+- (void)loadRecents
+{
+    
+    [[MIDatabase sharedInstance] getRecentNegotioationsWithBlock:^(NSArray *objects, NSError *error)
+     {
+         if (error == nil)
+         {
+             [_recents removeAllObjects];
+             NSArray* recents =[MINegociation recentesArrayFromPFObjectArray:objects];
+             [_recents addObjectsFromArray:recents];
+             [self.pedidosTableView reloadData];
+
+         }
+         else [ProgressHUD showError:@"Network error."];
+         [self.refreshControl endRefreshing];
+     }];
+}
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    [self loadRequests];
-}
+    if(self.pedidosSegmentedControl.selectedSegmentIndex == 0)[self loadRequests];
+    else [self loadRecents];}
 
 
 - (void) valueChanged:(UISegmentedControl *)control {
-    [self loadRequests];
+    if(control.selectedSegmentIndex == 0)[self loadRequests];
+    else [self loadRecents];
 }
 @end
 

@@ -98,6 +98,22 @@
     [query includeKey:PF_CHAT_REQUESTGIVER];
     [query findObjectsInBackgroundWithBlock:block];
 }
+
+- (void)getRecentNegotioationsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block{
+    PFQuery *queryOwns = [PFQuery queryWithClassName:PF_RECENT_CLASS_NAME];
+    PFQuery *queryGiver = [PFQuery queryWithClassName:PF_RECENT_CLASS_NAME];
+    [queryOwns whereKey:PF_RECENT_REQUESTOWNER equalTo:[PFUser currentUser]];
+    //query whereKey
+    [queryGiver whereKey:PF_RECENT_REQUESTGIVER equalTo:[PFUser currentUser]];
+    
+    PFQuery * orQuery = [PFQuery orQueryWithSubqueries:@[queryOwns,queryGiver]];
+    [orQuery includeKey:PF_RECENT_REQUESTOWNER];
+    [orQuery includeKey:PF_RECENT_REQUESTGIVER];
+    [orQuery orderByDescending:PF_RECENT_UPDATEDACTION];
+    [orQuery findObjectsInBackgroundWithBlock:block];
+  
+}
+
 - (void) finalizeRequestWithPFObject:(nonnull PFObject *)pfobject block:(nullable PFBooleanResultBlock)block
 {
     pfobject[PF_REQUEST_STATUS] = @1;
