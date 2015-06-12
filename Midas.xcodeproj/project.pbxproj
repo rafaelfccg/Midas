@@ -33,6 +33,11 @@
 		001580F41B28AA5500E03E94 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001580EF1B28AA5500E03E94 /* ParseFacebookUtils.framework */; };
 		001580F51B28AA5500E03E94 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001580F01B28AA5500E03E94 /* ParseFacebookUtilsV4.framework */; };
 		001580F61B28AA5500E03E94 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001580F11B28AA5500E03E94 /* ParseUI.framework */; };
+		91878DB91B2A0FC700808866 /* garrafas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91878DB71B2A0FC700808866 /* garrafas.jpg */; };
+		91878DBA1B2A0FC700808866 /* pet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91878DB81B2A0FC700808866 /* pet.jpg */; };
+		91878DBC1B2A101F00808866 /* latas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91878DBB1B2A101F00808866 /* latas.jpg */; };
+		9191D6B21B28B18C0016553D /* MIMuralCellControllerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9191D6B01B28B18C0016553D /* MIMuralCellControllerTableViewCell.m */; };
+		9191D6B31B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9191D6B11B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +97,12 @@
 		001580EF1B28AA5500E03E94 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		001580F01B28AA5500E03E94 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		001580F11B28AA5500E03E94 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		91878DB71B2A0FC700808866 /* garrafas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = garrafas.jpg; sourceTree = "<group>"; };
+		91878DB81B2A0FC700808866 /* pet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pet.jpg; sourceTree = "<group>"; };
+		91878DBB1B2A101F00808866 /* latas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = latas.jpg; sourceTree = "<group>"; };
+		9191D6AF1B28B18C0016553D /* MIMuralCellControllerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMuralCellControllerTableViewCell.h; sourceTree = "<group>"; };
+		9191D6B01B28B18C0016553D /* MIMuralCellControllerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMuralCellControllerTableViewCell.m; sourceTree = "<group>"; };
+		9191D6B11B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMuralCellControllerTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +162,9 @@
 				001580A11B275E4700E03E94 /* Images.xcassets */,
 				001580A31B275E4700E03E94 /* LaunchScreen.xib */,
 				001580941B275E4700E03E94 /* Supporting Files */,
+				9191D6AF1B28B18C0016553D /* MIMuralCellControllerTableViewCell.h */,
+				9191D6B01B28B18C0016553D /* MIMuralCellControllerTableViewCell.m */,
+				9191D6B11B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib */,
 			);
 			path = Midas;
 			sourceTree = "<group>";
@@ -158,6 +172,9 @@
 		001580941B275E4700E03E94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				91878DB71B2A0FC700808866 /* garrafas.jpg */,
+				91878DBB1B2A101F00808866 /* latas.jpg */,
+				91878DB81B2A0FC700808866 /* pet.jpg */,
 				001580951B275E4700E03E94 /* Info.plist */,
 				001580961B275E4700E03E94 /* main.m */,
 			);
@@ -306,7 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				001580A01B275E4700E03E94 /* Main.storyboard in Resources */,
+				91878DBC1B2A101F00808866 /* latas.jpg in Resources */,
+				91878DB91B2A0FC700808866 /* garrafas.jpg in Resources */,
 				001580A51B275E4700E03E94 /* LaunchScreen.xib in Resources */,
+				91878DBA1B2A0FC700808866 /* pet.jpg in Resources */,
+				9191D6B31B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib in Resources */,
 				001580A21B275E4700E03E94 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +359,7 @@
 				001580CB1B27726600E03E94 /* MIPedidoDetalhadoViewController.m in Sources */,
 				001580DA1B2772F600E03E94 /* MIEditarPedidoViewController.m in Sources */,
 				001580E91B27743E00E03E94 /* MICloudController.m in Sources */,
+				9191D6B21B28B18C0016553D /* MIMuralCellControllerTableViewCell.m in Sources */,
 				001580CE1B27728200E03E94 /* MIChatViewController.m in Sources */,
 				001580E01B2773EB00E03E94 /* MIMessage.m in Sources */,
 				001580971B275E4700E03E94 /* main.m in Sources */,
