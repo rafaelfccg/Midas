@@ -63,11 +63,11 @@
 
 //-----------------------------------------------------------------------
 #define		PF_RECENT_CLASS_NAME				@"Recent"				//	Class name
-#define		PF_RECENT_REQUESTOWNER				@"requestOwner"					//	Pointer to User Class
+#define		PF_RECENT_REQUESTOWNER				@"requestOwner"			//	Pointer to User Class
 #define		PF_RECENT_CHATID					@"chatId"				//	String
 #define		PF_RECENT_MEMBERS					@"members"				//	Array
 #define		PF_RECENT_DESCRIPTION				@"description"			//	String
-#define		PF_RECENT_REQUESTGIVER				@"requestGiver"				//	Pointer to User Class
+#define		PF_RECENT_REQUESTGIVER				@"requestGiver"			//	Pointer to User Class
 #define		PF_RECENT_LASTMESSAGE				@"lastMessage"			//	String
 #define		PF_RECENT_COUNTER					@"counter"				//	Number
 #define		PF_RECENT_UPDATEDACTION				@"updatedAction"		//	Date

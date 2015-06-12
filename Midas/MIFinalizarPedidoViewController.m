@@ -7,7 +7,8 @@
 //
 
 #import "MIFinalizarPedidoViewController.h"
-
+#import "MIDatabase.h"
+#import "ProgressHUD.h"
 @interface MIFinalizarPedidoViewController ()
 
 @end
@@ -29,7 +30,17 @@
 }
 
 -(IBAction)finalizarPedido:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    [[MIDatabase sharedInstance] finalizeRequestWithPFObject:self.currentRequest.object
+     block:^(BOOL succeeded, NSError *error) {
+         
+         if(succeeded) {
+             [ProgressHUD showSuccess:[NSString stringWithFormat:@"Pedido finalizado com sucesso!"]];
+             [self.navigationController popToRootViewControllerAnimated:YES];
+         } else{
+             [ProgressHUD showError:error.userInfo[@"error"]];
+         }
+    }];
 }
 
 @end
