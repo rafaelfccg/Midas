@@ -72,7 +72,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Mural" id="43F-fr-cwf">
-                        <barButtonItem key="leftBarButtonItem" title="Busca" id="YDI-qQ-k5T">
+                        <barButtonItem key="leftBarButtonItem" image="BuscaIcon" id="YDI-qQ-k5T">
                             <connections>
                                 <action selector="showNormalActionSheet:" destination="qdX-c5-C5H" id="FDB-E2-gc6"/>
                             </connections>
@@ -182,8 +182,8 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Meus Pedidos" id="c2T-jl-4eA">
-                        <barButtonItem key="leftBarButtonItem" title="Busca" id="Vf4-8l-3ce"/>
-                        <barButtonItem key="rightBarButtonItem" title="Novo" id="3Sy-oz-J55">
+                        <barButtonItem key="leftBarButtonItem" image="BuscaIcon" id="Vf4-8l-3ce"/>
+                        <barButtonItem key="rightBarButtonItem" image="NovoIcon" id="3Sy-oz-J55">
                             <connections>
                                 <segue destination="9gN-Xw-wxM" kind="show" identifier="FromMeusPedidosToNovoPedido" id="LeH-eG-FzW"/>
                             </connections>
@@ -689,8 +689,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BuscaIcon" width="40" height="40"/>
         <image name="ConfigTabBarIcon" width="50" height="50"/>
         <image name="MuralTabBarIcon" width="50" height="50"/>
+        <image name="NovoIcon" width="40" height="40"/>
         <image name="PerfilTabBarIcon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>

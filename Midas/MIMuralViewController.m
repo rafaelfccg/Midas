@@ -100,11 +100,11 @@
 
 
 - (IBAction)showNormalActionSheet:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"selecione um material:"
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Selecione uma categoria:"
                                                              delegate:self
                                                     cancelButtonTitle:@"Cancelar"
                                                destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"Todos",@"Plastico", @"Metal", @"Papel", @"Vidro", @"Outros", nil];
+                                                    otherButtonTitles:@"Todos",@"Plástico", @"Metal", @"Papel", @"Vidro", @"Outros", nil];
     
     [actionSheet showInView:self.view];
 }
