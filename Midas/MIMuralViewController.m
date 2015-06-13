@@ -109,26 +109,13 @@
     
     [actionSheet showInView:self.view];
 }
-- (IBAction)didPressSearchButton:(id)sender {
-    [self.view endEditing:YES];
-    NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GPSIcon"] title:@"Todos"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"VidroIcon"] title:@"Vidro"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PlasticoIcon"] title:@"Plástico"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"MetalIcon"] title:@"Metal"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PapelIcon"] title:@"Papel"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"OutrosIcon"] title:@"Outros"]];
-    RNGridMenu *gridMenu = [[RNGridMenu alloc] initWithItems:menuItems];
-    gridMenu.delegate = self;
-    gridMenu.highlightColor = [UIColor darkGrayColor];
-    gridMenu.menuStyle = RNGridMenuStyleGrid;
-    [gridMenu showInViewController:self center:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/(2.f))];
-}
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-
+    
     //implementar metodo de seleção aqui
     NSLog(@"Index = %ld - Title = %@", (long)buttonIndex, [actionSheet buttonTitleAtIndex:buttonIndex]);
 }
+
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 - (void)loadRequests
@@ -156,8 +143,25 @@
 
 #pragma mark - RNGridDelegate
 //-------------------------------------------------------------------------------------------------------------------------------------------------
+
+- (IBAction)didPressSearchButton:(id)sender {
+    [self.view endEditing:YES];
+    NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GPSIcon"] title:@"Todos"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"VidroIcon"] title:@"Vidro"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PlasticoIcon"] title:@"Plástico"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"MetalIcon"] title:@"Metal"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PapelIcon"] title:@"Papel"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"OutrosIcon"] title:@"Outros"]];
+    RNGridMenu *gridMenu = [[RNGridMenu alloc] initWithItems:menuItems];
+    gridMenu.delegate = self;
+    gridMenu.highlightColor = [UIColor darkGrayColor];
+    gridMenu.menuStyle = RNGridMenuStyleGrid;
+    [gridMenu showInViewController:self center:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/(2.f))];
+}
+
+
+
 - (void)gridMenu:(RNGridMenu *)gridMenu willDismissWithSelectedItem:(RNGridMenuItem *)item atIndex:(NSInteger)itemIndex
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     [gridMenu dismissAnimated:NO];
     if ([item.title isEqualToString:@"Todos"])	NSLog(@"Todos");
