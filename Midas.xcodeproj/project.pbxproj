@@ -106,6 +106,7 @@
 		003B254F1B2A059200743D0B /* fileutil.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B254B1B2A059200743D0B /* fileutil.m */; };
 		003B25501B2A059200743D0B /* image.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B254D1B2A059200743D0B /* image.m */; };
 		003B25531B2A0E3A00743D0B /* recent.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B25521B2A0E3A00743D0B /* recent.m */; };
+		009363EA1B2B6C6A007D82AE /* MINegociation.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363E91B2B6C6A007D82AE /* MINegociation.m */; };
 		157363071B28C1E800259B11 /* MILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157363061B28C1E800259B11 /* MILoginViewController.m */; };
 		1FE7DA771B28D07600656359 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA711B28D07600656359 /* Bolts.framework */; };
 		1FE7DA781B28D07600656359 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA721B28D07600656359 /* Parse.framework */; };
@@ -343,6 +344,8 @@
 		003B254D1B2A059200743D0B /* image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = image.m; sourceTree = "<group>"; };
 		003B25511B2A0E3A00743D0B /* recent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recent.h; sourceTree = "<group>"; };
 		003B25521B2A0E3A00743D0B /* recent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recent.m; sourceTree = "<group>"; };
+		009363E81B2B6C6A007D82AE /* MINegociation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINegociation.h; sourceTree = "<group>"; };
+		009363E91B2B6C6A007D82AE /* MINegociation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINegociation.m; sourceTree = "<group>"; };
 		157363051B28C1E800259B11 /* MILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILoginViewController.h; sourceTree = "<group>"; };
 		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
 		1FE7D9751B28CB8300656359 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
@@ -811,6 +814,8 @@
 				001580DC1B2773B500E03E94 /* MIPedido.m */,
 				001580EA1B27751B00E03E94 /* MIFiltrosDeBusca.h */,
 				001580EB1B27751B00E03E94 /* MIFiltrosDeBusca.m */,
+				009363E81B2B6C6A007D82AE /* MINegociation.h */,
+				009363E91B2B6C6A007D82AE /* MINegociation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1067,6 +1072,7 @@
 				001580CE1B27728200E03E94 /* MIChatViewController.m in Sources */,
 				003B24A81B29E77800743D0B /* JSQPhotoMediaItem.m in Sources */,
 				001580971B275E4700E03E94 /* main.m in Sources */,
+				009363EA1B2B6C6A007D82AE /* MINegociation.m in Sources */,
 				003B24A41B29E77800743D0B /* JSQMediaItem.m in Sources */,
 				003B250A1B29E7FE00743D0B /* UIDevice+JSQMessages.m in Sources */,
 				003B24D71B29E7A700743D0B /* JSQMessagesComposerTextView.m in Sources */,

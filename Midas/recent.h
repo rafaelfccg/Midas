@@ -10,13 +10,14 @@
 // THE SOFTWARE.
 
 #import <Parse/Parse.h>
+#import "MIPedido.h"
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 NSString*		StartPrivateChat		(PFUser *user1, PFUser *user2);
 NSString*		StartMultipleChat		(NSMutableArray *users);
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-void			CreateRecentItem		(PFUser *user, NSString *groupId, NSArray *members, NSString *description);
+void			CreateRecentItem        (PFUser *user, NSString *groupId, MIPedido * pedido, NSString *description);
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 void			UpdateRecentCounter		(NSString *groupId, NSInteger amount, NSString *lastMessage);

@@ -10,6 +10,7 @@
 #import "MIChatViewController.h"
 #import "MIDatabase.h"
 #import "ProgressHUD.h"
+#import "recent.h"
 
 
 @interface MIPedidoDetalhadoViewController ()
@@ -45,8 +46,9 @@
      {
          if (error == nil)
          {
+             PFObject *object = [PFObject objectWithClassName:PF_CHAT_CLASS_NAME];
              if (objects == nil | [objects count] ==0) {
-                 PFObject *object = [PFObject objectWithClassName:PF_CHAT_CLASS_NAME];
+                 
                  object[PF_CHAT_REQUESTOWNER] = _currentRequest.owner;
                  object[PF_CHAT_REQUESTGIVER] = [PFUser currentUser];
                  object[PF_CHAT_REQUESTID] = _currentRequest.object.objectId;
@@ -56,7 +58,7 @@
                      [ProgressHUD showError:@"Network error."];
                      return ;
                  }
-                 
+                 CreateRecentItem([PFUser currentUser], _temporaryObjectID, _currentRequest, @"Negocia");
     
              }else if([objects count] ==1){
                  PFObject* chat=  [objects objectAtIndex:0];
@@ -64,6 +66,7 @@
              }else{
                  NSLog (@"%ld",[objects count]);
              }
+             
              [self performSegueWithIdentifier:@"FromInfoToChatSegue" sender:self];
             
              
