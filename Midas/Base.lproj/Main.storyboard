@@ -74,7 +74,7 @@
                     <navigationItem key="navigationItem" title="Mural" id="43F-fr-cwf">
                         <barButtonItem key="leftBarButtonItem" image="BuscaIcon" id="YDI-qQ-k5T">
                             <connections>
-                                <action selector="showNormalActionSheet:" destination="qdX-c5-C5H" id="FDB-E2-gc6"/>
+                                <action selector="showNormalActionSheet:" destination="qdX-c5-C5H" id="XDl-cr-uRV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

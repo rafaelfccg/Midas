@@ -11,8 +11,9 @@
 #import "MIDatabase.h"
 #import "ProgressHUD.h"
 #import "MIPedido.h"
+#import "RNGridMenu.h"
 
-@interface MIMuralViewController ()
+@interface MIMuralViewController () <RNGridMenuDelegate>
 
 @property NSMutableArray *requests;
 @property MIPedido* selectedRequest;
@@ -108,6 +109,20 @@
     
     [actionSheet showInView:self.view];
 }
+- (IBAction)didPressSearchButton:(id)sender {
+    [self.view endEditing:YES];
+    NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GPSIcon"] title:@"Todos"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"VidroIcon"] title:@"Vidro"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PlasticoIcon"] title:@"Plástico"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"MetalIcon"] title:@"Metal"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PapelIcon"] title:@"Papel"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"OutrosIcon"] title:@"Outros"]];
+    RNGridMenu *gridMenu = [[RNGridMenu alloc] initWithItems:menuItems];
+    gridMenu.delegate = self;
+    gridMenu.highlightColor = [UIColor darkGrayColor];
+    gridMenu.menuStyle = RNGridMenuStyleGrid;
+    [gridMenu showInViewController:self center:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/(2.f))];
+}
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
 
@@ -137,6 +152,20 @@
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
     [self loadRequests];
+}
+
+#pragma mark - RNGridDelegate
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+- (void)gridMenu:(RNGridMenu *)gridMenu willDismissWithSelectedItem:(RNGridMenuItem *)item atIndex:(NSInteger)itemIndex
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    [gridMenu dismissAnimated:NO];
+    if ([item.title isEqualToString:@"Todos"])	NSLog(@"Todos");
+    if ([item.title isEqualToString:@"Vidro"])	NSLog(@"Vidro");
+    if ([item.title isEqualToString:@"Plástico"])	NSLog(@"Plástico");
+    if ([item.title isEqualToString:@"Metal"])	NSLog(@"Metal");
+    if ([item.title isEqualToString:@"Papel"])	NSLog(@"Papel");
+    if ([item.title isEqualToString:@"Outros"])	NSLog(@"Outros");
 }
 
 @end
