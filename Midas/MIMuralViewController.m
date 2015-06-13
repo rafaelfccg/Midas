@@ -12,11 +12,13 @@
 #import "ProgressHUD.h"
 #import "MIPedido.h"
 #import "RNGridMenu.h"
+#import "MIFiltrosDeBusca.h"
 
 @interface MIMuralViewController () <RNGridMenuDelegate>
 
 @property NSMutableArray *requests;
 @property MIPedido* selectedRequest;
+@property MIFiltrosDeBusca* filtros;
 
 @end
 
@@ -35,6 +37,8 @@
     
     
     [self.muralTableView addSubview:self.refreshControl];
+    
+    self.filtros = [[MIFiltrosDeBusca alloc]init];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -99,27 +103,8 @@
     }
 }
 
-
-- (IBAction)showNormalActionSheet:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Selecione uma categoria:"
-                                                             delegate:self
-                                                    cancelButtonTitle:@"Cancelar"
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"Todos",@"Plástico", @"Metal", @"Papel", @"Vidro", @"Outros", nil];
-    
-    [actionSheet showInView:self.view];
-}
-
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
-    //implementar metodo de seleção aqui
-    NSLog(@"Index = %ld - Title = %@", (long)buttonIndex, [actionSheet buttonTitleAtIndex:buttonIndex]);
-}
-
-
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 - (void)loadRequests
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     
     [[MIDatabase sharedInstance] getOpenRequestsFromOtherUsersWithBlock:^(NSArray *objects, NSError *error)
@@ -134,7 +119,7 @@
          }
          else [ProgressHUD showError:@"Network error."];
          [self.refreshControl endRefreshing];
-     }];
+     } filtro:self.filtros];
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
@@ -164,12 +149,36 @@
 - (void)gridMenu:(RNGridMenu *)gridMenu willDismissWithSelectedItem:(RNGridMenuItem *)item atIndex:(NSInteger)itemIndex
 {
     [gridMenu dismissAnimated:NO];
-    if ([item.title isEqualToString:@"Todos"])	NSLog(@"Todos");
-    if ([item.title isEqualToString:@"Vidro"])	NSLog(@"Vidro");
-    if ([item.title isEqualToString:@"Plástico"])	NSLog(@"Plástico");
-    if ([item.title isEqualToString:@"Metal"])	NSLog(@"Metal");
-    if ([item.title isEqualToString:@"Papel"])	NSLog(@"Papel");
-    if ([item.title isEqualToString:@"Outros"])	NSLog(@"Outros");
+    if ([item.title isEqualToString:@"Todos"])
+    {
+        self.filtros.Todos = true;
+        NSLog(@"Todos");
+    }
+    if ([item.title isEqualToString:@"Vidro"])
+    {
+        self.filtros.Vidro = true;
+        NSLog(@"Vidro");
+    }
+    if ([item.title isEqualToString:@"Plástico"])
+    {
+        self.filtros.Plastico = true;
+        NSLog(@"Plástico");
+    }
+    if ([item.title isEqualToString:@"Metal"])
+        self.filtros.Metal = true;
+    {
+        NSLog(@"Metal");
+    }
+    if ([item.title isEqualToString:@"Papel"])
+    {
+        self.filtros.Papel = true;
+        NSLog(@"Papel");
+    }
+    if ([item.title isEqualToString:@"Outros"])
+    {
+        self.filtros.Outros = true;
+        NSLog(@"Outros");
+    }
 }
 
 @end

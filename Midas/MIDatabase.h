@@ -11,6 +11,7 @@
 #import "push.h"
 #import "AppConstant.h"
 #import "MIPedido.h"
+#import "MIFiltrosDeBusca.h"
 
 @interface MIDatabase : NSObject
 
@@ -30,7 +31,7 @@
 
 - (void) getRequestsWithFilters:(nonnull NSString *) filters block:(PF_NULLABLE_S PFArrayResultBlock)block;
 
-- (void) getOpenRequestsFromOtherUsersWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
+- (void) getOpenRequestsFromOtherUsersWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block filtro:(nullable MIFiltrosDeBusca*)filtro;
 
 - (void) getCurrentUserRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 

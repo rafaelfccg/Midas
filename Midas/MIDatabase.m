@@ -9,6 +9,7 @@
 #import "MIDatabase.h"
 #import "MIPedido.h"
 
+
 @implementation MIDatabase
 
 
@@ -67,7 +68,7 @@
 
 }
 
-- (void) getOpenRequestsFromOtherUsersWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
+- (void) getOpenRequestsFromOtherUsersWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block Filtro:(MIFiltrosDeBusca*)filtro {
     PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
     [query whereKey:PF_REQUEST_STATUS equalTo:@0];
     [query whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
