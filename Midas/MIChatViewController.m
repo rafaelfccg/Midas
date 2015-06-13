@@ -255,12 +255,9 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     [self.view endEditing:YES];
-    NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"chat_camera"] title:@"Camera"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"chat_audio"] title:@"Audio"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"chat_pictures"] title:@"Pictures"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"chat_videos"] title:@"Videos"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"chat_location"] title:@"Location"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"chat_stickers"] title:@"Stickers"]];
+    NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"CameraIcon"] title:@"Camera"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GalleryIcon"] title:@"Pictures"],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GPSIcon"] title:@"Location"]];
     RNGridMenu *gridMenu = [[RNGridMenu alloc] initWithItems:menuItems];
     gridMenu.delegate = self;
     [gridMenu showInViewController:self center:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/2.f)];
