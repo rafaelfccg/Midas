@@ -11,7 +11,6 @@
 #import "MIDatabase.h"
 
 
-
 @interface MINovoPedidoViewController ()
 
 @end
@@ -19,10 +18,6 @@
 
 @implementation MINovoPedidoViewController
 
-@synthesize titleTextField;
-@synthesize descriptionTextField;
-@synthesize rewardTextField;
-@synthesize quantityTextField;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +29,8 @@
                                       target:self
                                       action:@selector(criarNovoPedido:)];
     self.navigationItem.rightBarButtonItem = concluirButton;
+    
+    self.navigationItem.title = @"Passo 3";
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
@@ -63,7 +60,7 @@
 
 
 
-
+/*
 - (void) criarNovoPedido:(id)sender {
     //do here
     
@@ -103,32 +100,7 @@
             // There was a problem, check error.description
         }
     }];
-    
-//    PFObject *request = [PFObject objectWithClassName:PF_REQUEST_CLASS_NAME];
-//    
-//    request[PF_REQUEST_USER] = [PFUser currentUser];
-//    //request[PF_REQUEST_CREATEDAT] = [NSDate date];
-//    
-//    request[PF_REQUEST_TITLE] = title;
-//    request[PF_REQUEST_DESCRIPTION] = description;
-//    request[PF_REQUEST_REWARD] = reward;
-//    request[PF_REQUEST_QUANTITY] = quantity;
-//    request[PF_REQUEST_STATUS] = @0;
-//
-//    [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//            // The object has been saved.
-//            [ProgressHUD showSuccess:@"Succeed."];
-//            [self.navigationController popToRootViewControllerAnimated:YES];
-//        } else {
-//            [ProgressHUD showError:error.userInfo[@"error"]];
-//            // There was a problem, check error.description
-//        }
-//    }];
-    
-    
-    
 }
-
+*/
 
 @end

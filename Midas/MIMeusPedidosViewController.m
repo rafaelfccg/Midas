@@ -9,6 +9,7 @@
 #import "MIMeusPedidosViewController.h"
 #import "MIChatViewController.h"
 #import "MIMeuPedidoDetalhadoViewController.h"
+#import "MINovoPedidoCategoriaViewController.h"
 #import "MIDatabase.h"
 #import "MIPedido.h"
 #import "MINegociation.h"
@@ -39,7 +40,6 @@
     [self.pedidosTableView addSubview:self.refreshControl];
     
     [self.pedidosSegmentedControl addTarget:self action:@selector(valueChanged:) forControlEvents: UIControlEventValueChanged];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,7 +112,11 @@
     } else if ([[segue identifier] isEqualToString:@"FromMeusPedidosToChatSegue"]){
         MIChatViewController *vc = [segue destinationViewController];
         vc.chatId = _selectedChat.chatId;
+    } else if ([[segue identifier] isEqualToString:@"FromMeusPedidosToNovoPedidoCategoria"]){
+        MINovoPedidoCategoriaViewController *vc = [segue destinationViewController];
+        vc.novoPedido = [[MINovoPedido alloc] init];
     }
+    
 }
 
 
@@ -161,6 +165,10 @@
 - (void) valueChanged:(UISegmentedControl *)control {
     if(control.selectedSegmentIndex == 0)[self loadRequests];
     else [self loadRecents];
+}
+
+-(IBAction) criarNovoPedido:(id)sender {
+    [self performSegueWithIdentifier:@"FromMeusPedidosToNovoPedidoCategoria" sender:self];
 }
 @end
 

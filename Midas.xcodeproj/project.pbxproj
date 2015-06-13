@@ -133,6 +133,9 @@
 		1FE7DAA11B28FC1600656359 /* MIDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA01B28FC1600656359 /* MIDatabase.m */; };
 		1FE7DAA41B29016000656359 /* MIRegistrarUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA31B29016000656359 /* MIRegistrarUserViewController.m */; };
 		1FE7DAA71B290C9C00656359 /* common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA61B290C9C00656359 /* common.m */; };
+		1FE7DAAA1B2C6C0D00656359 /* MINovoPedido.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA91B2C6C0D00656359 /* MINovoPedido.m */; };
+		1FE7DAAE1B2C718000656359 /* MINovoPedidoCategoriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAAD1B2C718000656359 /* MINovoPedidoCategoriaViewController.m */; };
+		1FE7DAB11B2C71BE00656359 /* MINovoPedidoDadosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAB01B2C71BE00656359 /* MINovoPedidoDadosViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -377,6 +380,12 @@
 		1FE7DAA31B29016000656359 /* MIRegistrarUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRegistrarUserViewController.m; sourceTree = "<group>"; };
 		1FE7DAA51B290C9C00656359 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		1FE7DAA61B290C9C00656359 /* common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = common.m; sourceTree = "<group>"; };
+		1FE7DAA81B2C6C0D00656359 /* MINovoPedido.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINovoPedido.h; sourceTree = "<group>"; };
+		1FE7DAA91B2C6C0D00656359 /* MINovoPedido.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINovoPedido.m; sourceTree = "<group>"; };
+		1FE7DAAC1B2C718000656359 /* MINovoPedidoCategoriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINovoPedidoCategoriaViewController.h; sourceTree = "<group>"; };
+		1FE7DAAD1B2C718000656359 /* MINovoPedidoCategoriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINovoPedidoCategoriaViewController.m; sourceTree = "<group>"; };
+		1FE7DAAF1B2C71BE00656359 /* MINovoPedidoDadosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINovoPedidoDadosViewController.h; sourceTree = "<group>"; };
+		1FE7DAB01B2C71BE00656359 /* MINovoPedidoDadosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINovoPedidoDadosViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -816,6 +825,8 @@
 				001580EB1B27751B00E03E94 /* MIFiltrosDeBusca.m */,
 				009363E81B2B6C6A007D82AE /* MINegociation.h */,
 				009363E91B2B6C6A007D82AE /* MINegociation.m */,
+				1FE7DAA81B2C6C0D00656359 /* MINovoPedido.h */,
+				1FE7DAA91B2C6C0D00656359 /* MINovoPedido.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -823,6 +834,7 @@
 		1FE7D9741B2779A700656359 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1FE7DAAB1B2C70E100656359 /* New Request Form */,
 				001580C01B2771D400E03E94 /* MIMuralViewController.h */,
 				001580C11B2771D400E03E94 /* MIMuralViewController.m */,
 				001580C31B2771F800E03E94 /* MIMeusPedidosViewController.h */,
@@ -833,8 +845,6 @@
 				001580CA1B27726600E03E94 /* MIPedidoDetalhadoViewController.m */,
 				001580CC1B27728200E03E94 /* MIChatViewController.h */,
 				001580CD1B27728200E03E94 /* MIChatViewController.m */,
-				001580CF1B27729500E03E94 /* MINovoPedidoViewController.h */,
-				001580D01B27729500E03E94 /* MINovoPedidoViewController.m */,
 				001580D21B2772AB00E03E94 /* MIFinalizarPedidoViewController.h */,
 				001580D31B2772AB00E03E94 /* MIFinalizarPedidoViewController.m */,
 				001580D51B2772DF00E03E94 /* MIMeuPedidoDetalhadoViewController.h */,
@@ -878,6 +888,19 @@
 				1FE7DA761B28D07600656359 /* ParseUI.framework */,
 			);
 			name = Framework;
+			sourceTree = "<group>";
+		};
+		1FE7DAAB1B2C70E100656359 /* New Request Form */ = {
+			isa = PBXGroup;
+			children = (
+				001580CF1B27729500E03E94 /* MINovoPedidoViewController.h */,
+				001580D01B27729500E03E94 /* MINovoPedidoViewController.m */,
+				1FE7DAAC1B2C718000656359 /* MINovoPedidoCategoriaViewController.h */,
+				1FE7DAAD1B2C718000656359 /* MINovoPedidoCategoriaViewController.m */,
+				1FE7DAAF1B2C71BE00656359 /* MINovoPedidoDadosViewController.h */,
+				1FE7DAB01B2C71BE00656359 /* MINovoPedidoDadosViewController.m */,
+			);
+			name = "New Request Form";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1047,6 +1070,7 @@
 				003B24DD1B29E7A700743D0B /* JSQMessagesToolbarContentView.m in Sources */,
 				003B24F51B29E7EA00743D0B /* JSQMessagesKeyboardController.m in Sources */,
 				003B254F1B2A059200743D0B /* fileutil.m in Sources */,
+				1FE7DAAA1B2C6C0D00656359 /* MINovoPedido.m in Sources */,
 				003B24451B28D66400743D0B /* ProgressHUD.m in Sources */,
 				003B24871B29C9EA00743D0B /* AFNetworkActivityIndicatorManager.m in Sources */,
 				003B25471B2A052800743D0B /* camera.m in Sources */,
@@ -1056,6 +1080,7 @@
 				003B24EB1B29E7CA00743D0B /* JSQMessagesAvatarImageFactory.m in Sources */,
 				003B25241B29EF6E00743D0B /* IDMTapDetectingImageView.m in Sources */,
 				003B24DF1B29E7A700743D0B /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
+				1FE7DAAE1B2C718000656359 /* MINovoPedidoCategoriaViewController.m in Sources */,
 				003B24731B29C95600743D0B /* AFURLRequestSerialization.m in Sources */,
 				1FE7DAA41B29016000656359 /* MIRegistrarUserViewController.m in Sources */,
 				0015809A1B275E4700E03E94 /* AppDelegate.m in Sources */,
@@ -1070,6 +1095,7 @@
 				001580DA1B2772F600E03E94 /* MIEditarPedidoViewController.m in Sources */,
 				003B25501B2A059200743D0B /* image.m in Sources */,
 				001580CE1B27728200E03E94 /* MIChatViewController.m in Sources */,
+				1FE7DAB11B2C71BE00656359 /* MINovoPedidoDadosViewController.m in Sources */,
 				003B24A81B29E77800743D0B /* JSQPhotoMediaItem.m in Sources */,
 				001580971B275E4700E03E94 /* main.m in Sources */,
 				009363EA1B2B6C6A007D82AE /* MINegociation.m in Sources */,

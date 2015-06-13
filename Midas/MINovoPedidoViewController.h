@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MINovoPedido.h"
 
 @interface MINovoPedidoViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-@property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
-@property (weak, nonatomic) IBOutlet UITextField *rewardTextField;
-@property (weak, nonatomic) IBOutlet UITextField *quantityTextField;
-
+@property MINovoPedido *novoPedido;
 @end

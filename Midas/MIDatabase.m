@@ -56,7 +56,7 @@
 
 - (void) getOpenRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
     PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
-    [query whereKey:PF_REQUEST_STATUS equalTo:@0];
+    [query whereKey:PF_REQUEST_STATUS equalTo:ENUM_REQUEST_STATUS_OPEN];
     [query includeKey:PF_REQUEST_USER];
     [query orderByDescending:PF_REQUEST_UPDATEDACTION];
     [query findObjectsInBackgroundWithBlock:block];
@@ -69,7 +69,7 @@
 
 - (void) getOpenRequestsFromOtherUsersWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
     PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
-    [query whereKey:PF_REQUEST_STATUS equalTo:@0];
+    [query whereKey:PF_REQUEST_STATUS equalTo:ENUM_REQUEST_STATUS_OPEN];
     [query whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
     [query includeKey:PF_REQUEST_USER];
     [query orderByDescending:PF_REQUEST_UPDATEDACTION];
@@ -79,7 +79,7 @@
 
 - (void) getCurrentUserRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
     PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
-    [query whereKey:PF_REQUEST_STATUS equalTo:@0];
+    [query whereKey:PF_REQUEST_STATUS equalTo:ENUM_REQUEST_STATUS_OPEN];
     [query whereKey:PF_REQUEST_USER equalTo:[PFUser currentUser]];
     [query includeKey:PF_REQUEST_USER];
     [query orderByDescending:PF_REQUEST_UPDATEDACTION];
@@ -116,7 +116,7 @@
 
 - (void) finalizeRequestWithPFObject:(nonnull PFObject *)pfobject block:(nullable PFBooleanResultBlock)block
 {
-    pfobject[PF_REQUEST_STATUS] = @1;
+    pfobject[PF_REQUEST_STATUS] = ENUM_REQUEST_STATUS_FINALIZED;
     [pfobject saveInBackgroundWithBlock:block];
 }
 
@@ -126,13 +126,11 @@
     PFObject *request = [PFObject objectWithClassName:PF_REQUEST_CLASS_NAME];
     
     request[PF_REQUEST_USER] = [PFUser currentUser];
-    //request[PF_REQUEST_CREATEDAT] = [NSDate date];
-    
     request[PF_REQUEST_TITLE] = title;
     request[PF_REQUEST_DESCRIPTION] = description;
     request[PF_REQUEST_REWARD] = reward;
     request[PF_REQUEST_QUANTITY] = quantity;
-    request[PF_REQUEST_STATUS] = @0;
+    request[PF_REQUEST_STATUS] = ENUM_REQUEST_STATUS_OPEN;
 
     
     [request saveInBackgroundWithBlock:block];
