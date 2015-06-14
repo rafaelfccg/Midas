@@ -95,11 +95,11 @@
     
     if(filtro.Metal || filtro.Todos)
     {
-        // category 0
+        // category 4
         //MetalQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
         [MetalQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
         [MetalQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
-        [MetalQuery whereKey:PF_REQUEST_CATEGORY equalTo:@0];
+        [MetalQuery whereKey:PF_REQUEST_CATEGORY equalTo:@4];
     }
     
     if(filtro.Vidro || filtro.Todos)
@@ -113,29 +113,29 @@
     
     if(filtro.Papel || filtro.Todos)
     {
-        // category 2
+        // category 3
         //PapelQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
         [PapelQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
         [PapelQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
-        [PapelQuery whereKey:PF_REQUEST_CATEGORY equalTo:@2];
+        [PapelQuery whereKey:PF_REQUEST_CATEGORY equalTo:@3];
     }
     
     if(filtro.Plastico || filtro.Todos)
     {
-        // category 3
+        // category 2
         //PlasticoQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
         [PlasticoQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
         [PlasticoQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
-        [PlasticoQuery whereKey:PF_REQUEST_CATEGORY equalTo:@3];
+        [PlasticoQuery whereKey:PF_REQUEST_CATEGORY equalTo:@2];
     }
     
     if(filtro.Outros || filtro.Todos)
     {
-        // category 4
+        // category 5
         //OutrosQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
         [OutrosQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
         [OutrosQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
-        [OutrosQuery whereKey:PF_REQUEST_CATEGORY equalTo:@4];
+        [OutrosQuery whereKey:PF_REQUEST_CATEGORY equalTo:@5];
     }
     
     Allquery = [PFQuery orQueryWithSubqueries:@[MetalQuery,PlasticoQuery,PapelQuery,VidroQuery,OutrosQuery]];
