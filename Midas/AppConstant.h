@@ -49,7 +49,8 @@
 #define		PF_REQUEST_TITLE                    @"title"                //	String
 #define		PF_REQUEST_DESCRIPTION              @"description"          //	String
 #define		PF_REQUEST_REWARD                   @"reward"               //	String
-#define		PF_REQUEST_QUANTITY                 @"quantity"             //	Number 
+#define		PF_REQUEST_QUANTITY                 @"quantity"             //	Number
+#define     PF_REQUEST_CATEGORY                 @"category"             //  Number
 #define		PF_REQUEST_IMAGE                    @"image"                //	File
 #define		PF_REQUEST_STATUS                   @"status"               //	Number
 #define		PF_REQUEST_FEEDBACKID               @"feedBackId"           //	String

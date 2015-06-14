@@ -22,9 +22,10 @@
         self.Vidro = false;
         self.Metal = false;
         self.Papel = false;
-        self.Todos = false;
         self.Outros = false;
         self.Plastico = false;
+        
+        self.Todos = true;
     }
     return self;
 }

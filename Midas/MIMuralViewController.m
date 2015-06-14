@@ -107,7 +107,7 @@
 - (void)loadRequests
 {
     
-    [[MIDatabase sharedInstance] getOpenRequestsFromOtherUsersWithBlock:^(NSArray *objects, NSError *error)
+    [[MIDatabase sharedInstance] getOpenRequestsFromOtherUsersWithBlock:self.filtros Block:^(NSArray *objects, NSError *error)
      {
          if (error == nil)
          {
@@ -119,7 +119,7 @@
          }
          else [ProgressHUD showError:@"Network error."];
          [self.refreshControl endRefreshing];
-     } filtro:self.filtros];
+     }/* filtro:self.filtros*/];
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
@@ -148,6 +148,7 @@
 
 - (void)gridMenu:(RNGridMenu *)gridMenu willDismissWithSelectedItem:(RNGridMenuItem *)item atIndex:(NSInteger)itemIndex
 {
+        
     [gridMenu dismissAnimated:NO];
     if ([item.title isEqualToString:@"Todos"])
     {
@@ -157,28 +158,35 @@
     if ([item.title isEqualToString:@"Vidro"])
     {
         self.filtros.Vidro = true;
+        self.filtros.Todos = false;
         NSLog(@"Vidro");
     }
     if ([item.title isEqualToString:@"Plástico"])
     {
         self.filtros.Plastico = true;
+        self.filtros.Todos = false;
         NSLog(@"Plástico");
     }
     if ([item.title isEqualToString:@"Metal"])
-        self.filtros.Metal = true;
     {
+        self.filtros.Metal = true;
+        self.filtros.Todos = false;
         NSLog(@"Metal");
     }
     if ([item.title isEqualToString:@"Papel"])
     {
         self.filtros.Papel = true;
+        self.filtros.Todos = false;
         NSLog(@"Papel");
     }
     if ([item.title isEqualToString:@"Outros"])
     {
         self.filtros.Outros = true;
+        self.filtros.Todos = false;
         NSLog(@"Outros");
     }
+    
+    [self loadRequests];
 }
 
 @end
