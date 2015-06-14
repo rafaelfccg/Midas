@@ -107,6 +107,9 @@
 		003B25501B2A059200743D0B /* image.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B254D1B2A059200743D0B /* image.m */; };
 		003B25531B2A0E3A00743D0B /* recent.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B25521B2A0E3A00743D0B /* recent.m */; };
 		009363EA1B2B6C6A007D82AE /* MINegociation.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363E91B2B6C6A007D82AE /* MINegociation.m */; };
+		009363ED1B2C710A007D82AE /* LocationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363EC1B2C710A007D82AE /* LocationUtils.m */; };
+		009363F01B2C7527007D82AE /* TestAdressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363EF1B2C7527007D82AE /* TestAdressController.m */; };
+		009363F21B2C7948007D82AE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009363F11B2C7948007D82AE /* MapKit.framework */; };
 		157363071B28C1E800259B11 /* MILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157363061B28C1E800259B11 /* MILoginViewController.m */; };
 		1FE7DA771B28D07600656359 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA711B28D07600656359 /* Bolts.framework */; };
 		1FE7DA781B28D07600656359 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA721B28D07600656359 /* Parse.framework */; };
@@ -133,6 +136,9 @@
 		1FE7DAA11B28FC1600656359 /* MIDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA01B28FC1600656359 /* MIDatabase.m */; };
 		1FE7DAA41B29016000656359 /* MIRegistrarUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA31B29016000656359 /* MIRegistrarUserViewController.m */; };
 		1FE7DAA71B290C9C00656359 /* common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA61B290C9C00656359 /* common.m */; };
+		1FE7DAAA1B2C6C0D00656359 /* MINovoPedido.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA91B2C6C0D00656359 /* MINovoPedido.m */; };
+		1FE7DAAE1B2C718000656359 /* MINovoPedidoCategoriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAAD1B2C718000656359 /* MINovoPedidoCategoriaViewController.m */; };
+		1FE7DAB11B2C71BE00656359 /* MINovoPedidoDadosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAB01B2C71BE00656359 /* MINovoPedidoDadosViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -346,6 +352,11 @@
 		003B25521B2A0E3A00743D0B /* recent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recent.m; sourceTree = "<group>"; };
 		009363E81B2B6C6A007D82AE /* MINegociation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINegociation.h; sourceTree = "<group>"; };
 		009363E91B2B6C6A007D82AE /* MINegociation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINegociation.m; sourceTree = "<group>"; };
+		009363EB1B2C710A007D82AE /* LocationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationUtils.h; sourceTree = "<group>"; };
+		009363EC1B2C710A007D82AE /* LocationUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationUtils.m; sourceTree = "<group>"; };
+		009363EE1B2C7527007D82AE /* TestAdressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAdressController.h; sourceTree = "<group>"; };
+		009363EF1B2C7527007D82AE /* TestAdressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAdressController.m; sourceTree = "<group>"; };
+		009363F11B2C7948007D82AE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		157363051B28C1E800259B11 /* MILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILoginViewController.h; sourceTree = "<group>"; };
 		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
 		1FE7D9751B28CB8300656359 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
@@ -377,6 +388,12 @@
 		1FE7DAA31B29016000656359 /* MIRegistrarUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRegistrarUserViewController.m; sourceTree = "<group>"; };
 		1FE7DAA51B290C9C00656359 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		1FE7DAA61B290C9C00656359 /* common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = common.m; sourceTree = "<group>"; };
+		1FE7DAA81B2C6C0D00656359 /* MINovoPedido.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINovoPedido.h; sourceTree = "<group>"; };
+		1FE7DAA91B2C6C0D00656359 /* MINovoPedido.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINovoPedido.m; sourceTree = "<group>"; };
+		1FE7DAAC1B2C718000656359 /* MINovoPedidoCategoriaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINovoPedidoCategoriaViewController.h; sourceTree = "<group>"; };
+		1FE7DAAD1B2C718000656359 /* MINovoPedidoCategoriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINovoPedidoCategoriaViewController.m; sourceTree = "<group>"; };
+		1FE7DAAF1B2C71BE00656359 /* MINovoPedidoDadosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINovoPedidoDadosViewController.h; sourceTree = "<group>"; };
+		1FE7DAB01B2C71BE00656359 /* MINovoPedidoDadosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINovoPedidoDadosViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +423,7 @@
 				1FE7DA7A1B28D07600656359 /* ParseFacebookUtils.framework in Frameworks */,
 				1FE7DA771B28D07600656359 /* Bolts.framework in Frameworks */,
 				1FE7DA7B1B28D07600656359 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				009363F21B2C7948007D82AE /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +440,7 @@
 		001580881B275E4700E03E94 = {
 			isa = PBXGroup;
 			children = (
+				009363F11B2C7948007D82AE /* MapKit.framework */,
 				1FE7DA701B28D06100656359 /* Framework */,
 				001580931B275E4700E03E94 /* Midas */,
 				001580AD1B275E4700E03E94 /* MidasTests */,
@@ -455,6 +474,8 @@
 				001580A31B275E4700E03E94 /* LaunchScreen.xib */,
 				001580941B275E4700E03E94 /* Supporting Files */,
 				1FE7D9751B28CB8300656359 /* AppConstant.h */,
+				009363EE1B2C7527007D82AE /* TestAdressController.h */,
+				009363EF1B2C7527007D82AE /* TestAdressController.m */,
 			);
 			path = Midas;
 			sourceTree = "<group>";
@@ -509,6 +530,8 @@
 				003B24491B28D79100743D0B /* push.m */,
 				1FE7DAA51B290C9C00656359 /* common.h */,
 				1FE7DAA61B290C9C00656359 /* common.m */,
+				009363EB1B2C710A007D82AE /* LocationUtils.h */,
+				009363EC1B2C710A007D82AE /* LocationUtils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -816,6 +839,8 @@
 				001580EB1B27751B00E03E94 /* MIFiltrosDeBusca.m */,
 				009363E81B2B6C6A007D82AE /* MINegociation.h */,
 				009363E91B2B6C6A007D82AE /* MINegociation.m */,
+				1FE7DAA81B2C6C0D00656359 /* MINovoPedido.h */,
+				1FE7DAA91B2C6C0D00656359 /* MINovoPedido.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -823,6 +848,7 @@
 		1FE7D9741B2779A700656359 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1FE7DAAB1B2C70E100656359 /* New Request Form */,
 				001580C01B2771D400E03E94 /* MIMuralViewController.h */,
 				001580C11B2771D400E03E94 /* MIMuralViewController.m */,
 				001580C31B2771F800E03E94 /* MIMeusPedidosViewController.h */,
@@ -833,8 +859,6 @@
 				001580CA1B27726600E03E94 /* MIPedidoDetalhadoViewController.m */,
 				001580CC1B27728200E03E94 /* MIChatViewController.h */,
 				001580CD1B27728200E03E94 /* MIChatViewController.m */,
-				001580CF1B27729500E03E94 /* MINovoPedidoViewController.h */,
-				001580D01B27729500E03E94 /* MINovoPedidoViewController.m */,
 				001580D21B2772AB00E03E94 /* MIFinalizarPedidoViewController.h */,
 				001580D31B2772AB00E03E94 /* MIFinalizarPedidoViewController.m */,
 				001580D51B2772DF00E03E94 /* MIMeuPedidoDetalhadoViewController.h */,
@@ -878,6 +902,19 @@
 				1FE7DA761B28D07600656359 /* ParseUI.framework */,
 			);
 			name = Framework;
+			sourceTree = "<group>";
+		};
+		1FE7DAAB1B2C70E100656359 /* New Request Form */ = {
+			isa = PBXGroup;
+			children = (
+				001580CF1B27729500E03E94 /* MINovoPedidoViewController.h */,
+				001580D01B27729500E03E94 /* MINovoPedidoViewController.m */,
+				1FE7DAAC1B2C718000656359 /* MINovoPedidoCategoriaViewController.h */,
+				1FE7DAAD1B2C718000656359 /* MINovoPedidoCategoriaViewController.m */,
+				1FE7DAAF1B2C71BE00656359 /* MINovoPedidoDadosViewController.h */,
+				1FE7DAB01B2C71BE00656359 /* MINovoPedidoDadosViewController.m */,
+			);
+			name = "New Request Form";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -929,6 +966,11 @@
 				TargetAttributes = {
 					001580901B275E4700E03E94 = {
 						CreatedOnToolsVersion = 6.3.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					001580A91B275E4700E03E94 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -999,6 +1041,7 @@
 				003B246D1B29C95600743D0B /* AFHTTPRequestOperation.m in Sources */,
 				003B25261B29EF6E00743D0B /* IDMZoomingScrollView.m in Sources */,
 				003B24741B29C95600743D0B /* AFURLResponseSerialization.m in Sources */,
+				009363ED1B2C710A007D82AE /* LocationUtils.m in Sources */,
 				003B24A91B29E77800743D0B /* JSQVideoMediaItem.m in Sources */,
 				003B248B1B29C9EA00743D0B /* UIImageView+AFNetworking.m in Sources */,
 				003B25081B29E7FE00743D0B /* NSString+JSQMessages.m in Sources */,
@@ -1047,6 +1090,7 @@
 				003B24DD1B29E7A700743D0B /* JSQMessagesToolbarContentView.m in Sources */,
 				003B24F51B29E7EA00743D0B /* JSQMessagesKeyboardController.m in Sources */,
 				003B254F1B2A059200743D0B /* fileutil.m in Sources */,
+				1FE7DAAA1B2C6C0D00656359 /* MINovoPedido.m in Sources */,
 				003B24451B28D66400743D0B /* ProgressHUD.m in Sources */,
 				003B24871B29C9EA00743D0B /* AFNetworkActivityIndicatorManager.m in Sources */,
 				003B25471B2A052800743D0B /* camera.m in Sources */,
@@ -1056,6 +1100,7 @@
 				003B24EB1B29E7CA00743D0B /* JSQMessagesAvatarImageFactory.m in Sources */,
 				003B25241B29EF6E00743D0B /* IDMTapDetectingImageView.m in Sources */,
 				003B24DF1B29E7A700743D0B /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
+				1FE7DAAE1B2C718000656359 /* MINovoPedidoCategoriaViewController.m in Sources */,
 				003B24731B29C95600743D0B /* AFURLRequestSerialization.m in Sources */,
 				1FE7DAA41B29016000656359 /* MIRegistrarUserViewController.m in Sources */,
 				0015809A1B275E4700E03E94 /* AppDelegate.m in Sources */,
@@ -1070,12 +1115,14 @@
 				001580DA1B2772F600E03E94 /* MIEditarPedidoViewController.m in Sources */,
 				003B25501B2A059200743D0B /* image.m in Sources */,
 				001580CE1B27728200E03E94 /* MIChatViewController.m in Sources */,
+				1FE7DAB11B2C71BE00656359 /* MINovoPedidoDadosViewController.m in Sources */,
 				003B24A81B29E77800743D0B /* JSQPhotoMediaItem.m in Sources */,
 				001580971B275E4700E03E94 /* main.m in Sources */,
 				009363EA1B2B6C6A007D82AE /* MINegociation.m in Sources */,
 				003B24A41B29E77800743D0B /* JSQMediaItem.m in Sources */,
 				003B250A1B29E7FE00743D0B /* UIDevice+JSQMessages.m in Sources */,
 				003B24D71B29E7A700743D0B /* JSQMessagesComposerTextView.m in Sources */,
+				009363F01B2C7527007D82AE /* TestAdressController.m in Sources */,
 				003B24B11B29E78D00743D0B /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
 				1FE7DAA71B290C9C00656359 /* common.m in Sources */,
 				001580D71B2772DF00E03E94 /* MIMeuPedidoDetalhadoViewController.m in Sources */,

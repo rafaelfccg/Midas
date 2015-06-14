@@ -460,9 +460,13 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     [gridMenu dismissAnimated:NO];
-    //if ([item.title isEqualToString:@"Camera"])		PresentMultiCamera(self, YES);
-    if ([item.title isEqualToString:@"Pictures"])	PresentPhotoLibrary(self, YES);
+    if ([item.title isEqualToString:@"Camera"]){
+        PresentPhotoCamera(self, YES);
     }
+    if ([item.title isEqualToString:@"Pictures"]){
+        PresentPhotoLibrary(self, YES);
+    }
+}
 
 #pragma mark - UIImagePickerControllerDelegate
 

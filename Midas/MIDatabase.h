@@ -39,8 +39,8 @@
 
 - (void) finalizeRequestWithPFObject:(nonnull PFObject *)pfobject block:(nullable PFBooleanResultBlock)block;
 
-- (void) createNewPedidoInBackGrond:(nonnull NSString*)title description:(nonnull NSString*)description reward:(nonnull NSString*)reward quantity:(nonnull NSNumber*)quantity status:(nonnull NSNumber*)status block:(nullable PFBooleanResultBlock)block;
+- (void) createNewPedidoInBackGround:(nonnull MINovoPedido *)pedido block:(nullable PFBooleanResultBlock)block;
 
-- (void)getRecentNegotioationsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
+- (void) getRecentNegotioationsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
 @end

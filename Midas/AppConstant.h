@@ -52,9 +52,12 @@
 #define		PF_REQUEST_QUANTITY                 @"quantity"             //	Number
 #define     PF_REQUEST_CATEGORY                 @"category"             //  Number
 #define		PF_REQUEST_IMAGE                    @"image"                //	File
+#define		PF_REQUEST_THUMBNAIL                @"thumbnail"            //	File
 #define		PF_REQUEST_STATUS                   @"status"               //	Number
 #define		PF_REQUEST_FEEDBACKID               @"feedBackId"           //	String
 #define		PF_REQUEST_UPDATEDACTION			@"updatedAt"            //	Date
+#define		PF_REQUEST_CATEGORY                 @"category"             //	Number
+
 
 //-----------------------------------------------------------------------
 #define		PF_CHAT_CLASS_NAME                  @"Chat"                 //	Class name
@@ -78,6 +81,24 @@
 #define		NOTIFICATION_APP_STARTED			@"NCAppStarted"
 #define		NOTIFICATION_USER_LOGGED_IN			@"NCUserLoggedIn"
 #define		NOTIFICATION_USER_LOGGED_OUT		@"NCUserLoggedOut"
+//----------------------------------------
+#define     ENUM_REQUEST_STATUS_OPEN		    @0
+#define     ENUM_REQUEST_STATUS_FINALIZED		@1
+#define     ENUM_REQUEST_STATUS_HIDDEN		    @2
 
+//----------------------------------------
+//#define     ENUM_REQUEST_CATEGORY_VIDRO		    @1
+//#define     ENUM_REQUEST_CATEGORY_PLASTICO	    @2
+//#define     ENUM_REQUEST_CATEGORY_PAPEL		    @3
+//#define     ENUM_REQUEST_CATEGORY_METAL         @4
+//#define     ENUM_REQUEST_CATEGORY_OUTROS	    @5
+
+typedef enum {
+    RequestCategoryVidro,
+    RequestCategoryPlastico,
+    RequestCategoryPapel,
+    RequestCategoryMetal,
+    RequestCategoryOutros
+}RequestCategory;
 
 #endif

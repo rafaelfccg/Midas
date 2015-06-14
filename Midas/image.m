@@ -57,3 +57,17 @@ UIImage* CropImage(UIImage *image, CGFloat x, CGFloat y, CGFloat width, CGFloat 
 	CGImageRelease(imageRef);
 	return cropped;
 }
+
+UIImage *CreateThumbnail(UIImage *image, float i_width) {
+    float oldWidth = image.size.width;
+    float scaleFactor = i_width / oldWidth;
+    
+    float newHeight = image.size.height * scaleFactor;
+    float newWidth = oldWidth * scaleFactor;
+    
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+    [image drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}

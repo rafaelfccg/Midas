@@ -8,6 +8,7 @@
 
 #import "MIDatabase.h"
 #import "MIPedido.h"
+#import "MINovoPedido.h"
 
 
 @implementation MIDatabase
@@ -57,7 +58,7 @@
 
 - (void) getOpenRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
     PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
-    [query whereKey:PF_REQUEST_STATUS equalTo:@0];
+    [query whereKey:PF_REQUEST_STATUS equalTo:ENUM_REQUEST_STATUS_OPEN];
     [query includeKey:PF_REQUEST_USER];
     [query orderByDescending:PF_REQUEST_UPDATEDACTION];
     [query findObjectsInBackgroundWithBlock:block];
@@ -146,7 +147,7 @@
 
 - (void) getCurrentUserRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
     PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
-    [query whereKey:PF_REQUEST_STATUS equalTo:@0];
+    [query whereKey:PF_REQUEST_STATUS equalTo:ENUM_REQUEST_STATUS_OPEN];
     [query whereKey:PF_REQUEST_USER equalTo:[PFUser currentUser]];
     [query includeKey:PF_REQUEST_USER];
     [query orderByDescending:PF_REQUEST_UPDATEDACTION];
@@ -183,24 +184,24 @@
 
 - (void) finalizeRequestWithPFObject:(nonnull PFObject *)pfobject block:(nullable PFBooleanResultBlock)block
 {
-    pfobject[PF_REQUEST_STATUS] = @1;
+    pfobject[PF_REQUEST_STATUS] = ENUM_REQUEST_STATUS_FINALIZED;
     [pfobject saveInBackgroundWithBlock:block];
 }
 
-#pragma mark Save
-- (void) createNewPedidoInBackGrond:(NSString*)title description:(NSString*)description reward:(NSString*)reward quantity:(NSNumber*)quantity status:(NSNumber*)status block:(nullable PFBooleanResultBlock)block
+#pragma mark - Save
+- (void) createNewPedidoInBackGround:(nonnull MINovoPedido*)pedido block:(nullable PFBooleanResultBlock)block
 {
     PFObject *request = [PFObject objectWithClassName:PF_REQUEST_CLASS_NAME];
     
     request[PF_REQUEST_USER] = [PFUser currentUser];
-    //request[PF_REQUEST_CREATEDAT] = [NSDate date];
-    
-    request[PF_REQUEST_TITLE] = title;
-    request[PF_REQUEST_DESCRIPTION] = description;
-    request[PF_REQUEST_REWARD] = reward;
-    request[PF_REQUEST_QUANTITY] = quantity;
-    request[PF_REQUEST_STATUS] = @0;
-
+    request[PF_REQUEST_TITLE] = pedido.title;
+    request[PF_REQUEST_DESCRIPTION] = pedido.description;
+    request[PF_REQUEST_REWARD] = pedido.reward;
+    request[PF_REQUEST_QUANTITY] = pedido.quantity;
+    request[PF_REQUEST_CATEGORY] = pedido.category;
+    request[PF_REQUEST_STATUS] = ENUM_REQUEST_STATUS_OPEN;
+    request[PF_REQUEST_IMAGE] = [PFFile fileWithData:UIImagePNGRepresentation(pedido.image)];
+    request[PF_REQUEST_THUMBNAIL] = [PFFile fileWithData:UIImagePNGRepresentation(pedido.thumbnail)];
     
     [request saveInBackgroundWithBlock:block];
 }

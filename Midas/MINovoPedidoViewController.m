@@ -9,20 +9,16 @@
 #import "MINovoPedidoViewController.h"
 #import "ProgressHUD.h"
 #import "MIDatabase.h"
+#import "camera.h"
+#import "image.h"
 
-
-
-@interface MINovoPedidoViewController ()
+@interface MINovoPedidoViewController () <UIImagePickerControllerDelegate>
 
 @end
 
 
 @implementation MINovoPedidoViewController
 
-@synthesize titleTextField;
-@synthesize descriptionTextField;
-@synthesize rewardTextField;
-@synthesize quantityTextField;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,9 +31,15 @@
                                       action:@selector(criarNovoPedido:)];
     self.navigationItem.rightBarButtonItem = concluirButton;
     
+    self.navigationItem.title = @"Passo 3";
+    
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
+    
+    [[self.descriptionTextView layer] setBorderColor:[[UIColor grayColor] CGColor]];
+    [[self.descriptionTextView layer] setBorderWidth:0.25];
+    [[self.descriptionTextView layer] setCornerRadius:15];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,84 +53,51 @@
     [self.view endEditing:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-
 
 - (void) criarNovoPedido:(id)sender {
     //do here
     
-    NSString *title;
-    NSString *description;
-    NSString *reward;
-    NSNumber *quantity;
-
+    NSString *description = self.descriptionTextView.text;
     
-    title = titleTextField.text;
-    description = descriptionTextField.text;
-    reward = rewardTextField.text;
+    if ([description length] < 1)	{ [ProgressHUD showError:@"A descrição é um campo obrigatório."]; return; }
+    if ([description length] > 140)	{ [ProgressHUD showError:@"Descrição muito longa (>140)."]; return; }
     
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-    f.numberStyle = NSNumberFormatterDecimalStyle;
-    quantity = [f numberFromString:quantityTextField.text];
-    
-    //---------------------------------------------------------------------------------------------------------------------------------------------
-    if ([title length] < 3)	{ [ProgressHUD showError:@"title is too short."]; return; }
-    if ([title length] > 30)	{ [ProgressHUD showError:@"title is too long(>30)."]; return; }
-    if ([description length] < 10)	{ [ProgressHUD showError:@"description is too short."]; return; }
-    if ([description length] > 140)	{ [ProgressHUD showError:@"description is too long(>140)."]; return; }
-    if ([quantity intValue]<=0 || [quantity intValue]>10000) { [ProgressHUD showError:@"must be over 0 or below of 1000."]; return; }
-    //---------------------------------------------------------------------------------------------------------------------------------------------
     [ProgressHUD show:@"Please wait..." Interaction:NO];
     
-    //---------------------------------------------------------------------------------------------------------------------------------------------
+    self.novoPedido.descricao = description;
     
-    
-    [[MIDatabase sharedInstance]createNewPedidoInBackGrond:title description:description reward:reward quantity:quantity status:@0 block:^(BOOL succeeded, NSError *error) {
+    if(self.imageView.image) {
+        self.novoPedido.image = CreateThumbnail(self.imageView.image, 400.f);
+        self.novoPedido.thumbnail = CreateThumbnail(self.imageView.image, 150.f);
+    }
+    [[MIDatabase sharedInstance]createNewPedidoInBackGround:self.novoPedido
+                                                     block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
-            [ProgressHUD showSuccess:@"Succeed."];
+            [ProgressHUD showSuccess:@"Sucesso."];
             [self.navigationController popToRootViewControllerAnimated:YES];
         } else {
             [ProgressHUD showError:error.userInfo[@"error"]];
             // There was a problem, check error.description
         }
     }];
-    
-//    PFObject *request = [PFObject objectWithClassName:PF_REQUEST_CLASS_NAME];
-//    
-//    request[PF_REQUEST_USER] = [PFUser currentUser];
-//    //request[PF_REQUEST_CREATEDAT] = [NSDate date];
-//    
-//    request[PF_REQUEST_TITLE] = title;
-//    request[PF_REQUEST_DESCRIPTION] = description;
-//    request[PF_REQUEST_REWARD] = reward;
-//    request[PF_REQUEST_QUANTITY] = quantity;
-//    request[PF_REQUEST_STATUS] = @0;
-//
-//    [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//            // The object has been saved.
-//            [ProgressHUD showSuccess:@"Succeed."];
-//            [self.navigationController popToRootViewControllerAnimated:YES];
-//        } else {
-//            [ProgressHUD showError:error.userInfo[@"error"]];
-//            // There was a problem, check error.description
-//        }
-//    }];
-    
-    
-    
 }
 
+- (IBAction)pressedCamera:(id)sender {
+    PresentPhotoCamera(self, YES);
+}
 
+- (IBAction)pressedGallery:(id)sender {
+    PresentPhotoLibrary(self, YES);
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *picture = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = picture;
+ 
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
 @end

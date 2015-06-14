@@ -18,6 +18,7 @@
 @property (readonly) NSString *reward;
 @property (readonly) NSNumber *status;
 @property (readonly) NSNumber *quantity;
+@property (readonly) NSNumber *category;
 
 - (instancetype) initWithPFObject:(PFObject *)object;
 
