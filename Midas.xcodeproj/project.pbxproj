@@ -107,6 +107,9 @@
 		003B25501B2A059200743D0B /* image.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B254D1B2A059200743D0B /* image.m */; };
 		003B25531B2A0E3A00743D0B /* recent.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B25521B2A0E3A00743D0B /* recent.m */; };
 		009363EA1B2B6C6A007D82AE /* MINegociation.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363E91B2B6C6A007D82AE /* MINegociation.m */; };
+		009363ED1B2C710A007D82AE /* LocationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363EC1B2C710A007D82AE /* LocationUtils.m */; };
+		009363F01B2C7527007D82AE /* TestAdressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363EF1B2C7527007D82AE /* TestAdressController.m */; };
+		009363F21B2C7948007D82AE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009363F11B2C7948007D82AE /* MapKit.framework */; };
 		157363071B28C1E800259B11 /* MILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157363061B28C1E800259B11 /* MILoginViewController.m */; };
 		1FE7DA771B28D07600656359 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA711B28D07600656359 /* Bolts.framework */; };
 		1FE7DA781B28D07600656359 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA721B28D07600656359 /* Parse.framework */; };
@@ -349,6 +352,11 @@
 		003B25521B2A0E3A00743D0B /* recent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recent.m; sourceTree = "<group>"; };
 		009363E81B2B6C6A007D82AE /* MINegociation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINegociation.h; sourceTree = "<group>"; };
 		009363E91B2B6C6A007D82AE /* MINegociation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINegociation.m; sourceTree = "<group>"; };
+		009363EB1B2C710A007D82AE /* LocationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationUtils.h; sourceTree = "<group>"; };
+		009363EC1B2C710A007D82AE /* LocationUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationUtils.m; sourceTree = "<group>"; };
+		009363EE1B2C7527007D82AE /* TestAdressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAdressController.h; sourceTree = "<group>"; };
+		009363EF1B2C7527007D82AE /* TestAdressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAdressController.m; sourceTree = "<group>"; };
+		009363F11B2C7948007D82AE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		157363051B28C1E800259B11 /* MILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILoginViewController.h; sourceTree = "<group>"; };
 		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
 		1FE7D9751B28CB8300656359 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
@@ -415,6 +423,7 @@
 				1FE7DA7A1B28D07600656359 /* ParseFacebookUtils.framework in Frameworks */,
 				1FE7DA771B28D07600656359 /* Bolts.framework in Frameworks */,
 				1FE7DA7B1B28D07600656359 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				009363F21B2C7948007D82AE /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +440,7 @@
 		001580881B275E4700E03E94 = {
 			isa = PBXGroup;
 			children = (
+				009363F11B2C7948007D82AE /* MapKit.framework */,
 				1FE7DA701B28D06100656359 /* Framework */,
 				001580931B275E4700E03E94 /* Midas */,
 				001580AD1B275E4700E03E94 /* MidasTests */,
@@ -464,6 +474,8 @@
 				001580A31B275E4700E03E94 /* LaunchScreen.xib */,
 				001580941B275E4700E03E94 /* Supporting Files */,
 				1FE7D9751B28CB8300656359 /* AppConstant.h */,
+				009363EE1B2C7527007D82AE /* TestAdressController.h */,
+				009363EF1B2C7527007D82AE /* TestAdressController.m */,
 			);
 			path = Midas;
 			sourceTree = "<group>";
@@ -518,6 +530,8 @@
 				003B24491B28D79100743D0B /* push.m */,
 				1FE7DAA51B290C9C00656359 /* common.h */,
 				1FE7DAA61B290C9C00656359 /* common.m */,
+				009363EB1B2C710A007D82AE /* LocationUtils.h */,
+				009363EC1B2C710A007D82AE /* LocationUtils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -952,6 +966,11 @@
 				TargetAttributes = {
 					001580901B275E4700E03E94 = {
 						CreatedOnToolsVersion = 6.3.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					001580A91B275E4700E03E94 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -1022,6 +1041,7 @@
 				003B246D1B29C95600743D0B /* AFHTTPRequestOperation.m in Sources */,
 				003B25261B29EF6E00743D0B /* IDMZoomingScrollView.m in Sources */,
 				003B24741B29C95600743D0B /* AFURLResponseSerialization.m in Sources */,
+				009363ED1B2C710A007D82AE /* LocationUtils.m in Sources */,
 				003B24A91B29E77800743D0B /* JSQVideoMediaItem.m in Sources */,
 				003B248B1B29C9EA00743D0B /* UIImageView+AFNetworking.m in Sources */,
 				003B25081B29E7FE00743D0B /* NSString+JSQMessages.m in Sources */,
@@ -1102,6 +1122,7 @@
 				003B24A41B29E77800743D0B /* JSQMediaItem.m in Sources */,
 				003B250A1B29E7FE00743D0B /* UIDevice+JSQMessages.m in Sources */,
 				003B24D71B29E7A700743D0B /* JSQMessagesComposerTextView.m in Sources */,
+				009363F01B2C7527007D82AE /* TestAdressController.m in Sources */,
 				003B24B11B29E78D00743D0B /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
 				1FE7DAA71B290C9C00656359 /* common.m in Sources */,
 				001580D71B2772DF00E03E94 /* MIMeuPedidoDetalhadoViewController.m in Sources */,
