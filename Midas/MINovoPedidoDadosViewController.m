@@ -100,25 +100,24 @@
     NSString *reward1 = self.rewardFirstTextField.text;
     NSString *reward2 = self.rewardSecondTextField.text;
     
-    if ([title length] < 3)	{ [ProgressHUD showError:@"title is too short."];return;}
-    if ([title length] > 25)	{ [ProgressHUD showError:@"title is too long(>25)."]; return; }
-    if ([quantity intValue]<=0 || [quantity intValue]>10000) { [ProgressHUD showError:@"must be over 0 or below of 1000."]; return; }
+    if ([title length] < 3)	{ [ProgressHUD showError:@"Campo 'Preciso de' obrigatório."];return;}
+    if ([title length] > 25)	{ [ProgressHUD showError:@"Campo 'Preciso de' muito longo (>25)."]; return; }
+    if ([quantity intValue]<=0 || [quantity intValue]>10000) { [ProgressHUD showError:@"Quantidade deve ser um valor entre 0 e 1000"]; return; }
     
     if(willReward){
-        if ([reward1 length] < 3)	{ [ProgressHUD showError:@"reward1 is too short."];return;}
-        if ([reward1 length] > 25)	{ [ProgressHUD showError:@"reward1 is too long(>25)."]; return; }
-        if ([reward2 length] < 3)	{ [ProgressHUD showError:@"reward2 is too short."];return;}
-        if ([reward2 length] > 25)	{ [ProgressHUD showError:@"reward2 is too long(>25)."]; return; }
+        if ([reward1 length] < 3)	{ [ProgressHUD showError:@"Campo 'A cada' é obrigatório."];return;}
+        if ([reward1 length] > 25)	{ [ProgressHUD showError:@"Campo 'A cada' muito longo (>25)."]; return; }
+        if ([reward2 length] < 3)	{ [ProgressHUD showError:@"Campo 'Dou' é obrigatório."];return;}
+        if ([reward2 length] > 25)	{ [ProgressHUD showError:@"Campo 'Dou' muito longo (>25)."]; return; }
     }
     
     self.novoPedido.title = title;
     self.novoPedido.quantity = quantity;
-    self.novoPedido.reward = [NSString stringWithFormat:@"A cada %@, dou %@", reward1, reward2];
+    if(self.rewardSwitch.isOn){
+        self.novoPedido.reward = [NSString stringWithFormat:@"A cada %@, dou %@",reward1, reward2];
+    }
     
     [self performSegueWithIdentifier:@"FromNovoPedidoDadosToNovoPedido" sender:self];
-    
-    
-    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

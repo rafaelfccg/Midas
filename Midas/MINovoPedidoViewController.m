@@ -38,7 +38,7 @@
     gestureRecognizer.cancelsTouchesInView = NO;
     
     [[self.descriptionTextView layer] setBorderColor:[[UIColor grayColor] CGColor]];
-    [[self.descriptionTextView layer] setBorderWidth:2.3];
+    [[self.descriptionTextView layer] setBorderWidth:0.25];
     [[self.descriptionTextView layer] setCornerRadius:15];
 }
 
@@ -59,20 +59,22 @@
     
     NSString *description = self.descriptionTextView.text;
     
-    if ([description length] < 10)	{ [ProgressHUD showError:@"description is too short."]; return; }
-    if ([description length] > 140)	{ [ProgressHUD showError:@"description is too long(>140)."]; return; }
+    if ([description length] < 1)	{ [ProgressHUD showError:@"A descrição é um campo obrigatório."]; return; }
+    if ([description length] > 140)	{ [ProgressHUD showError:@"Descrição muito longa (>140)."]; return; }
     
     [ProgressHUD show:@"Please wait..." Interaction:NO];
     
     self.novoPedido.descricao = description;
-    self.novoPedido.image = self.imageView.image;
-    self.novoPedido.thumbnail = CreateThumbnail(self.novoPedido.image);
     
+    if(self.imageView.image) {
+        self.novoPedido.image = CreateThumbnail(self.imageView.image, 400.f);
+        self.novoPedido.thumbnail = CreateThumbnail(self.imageView.image, 150.f);
+    }
     [[MIDatabase sharedInstance]createNewPedidoInBackGround:self.novoPedido
                                                      block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
-            [ProgressHUD showSuccess:@"Succeed."];
+            [ProgressHUD showSuccess:@"Sucesso."];
             [self.navigationController popToRootViewControllerAnimated:YES];
         } else {
             [ProgressHUD showError:error.userInfo[@"error"]];
