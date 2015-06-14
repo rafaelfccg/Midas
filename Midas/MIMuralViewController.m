@@ -148,7 +148,16 @@
 
 - (void)gridMenu:(RNGridMenu *)gridMenu willDismissWithSelectedItem:(RNGridMenuItem *)item atIndex:(NSInteger)itemIndex
 {
-        
+    
+    self.filtros.Vidro = false;
+    self.filtros.Metal = false;
+    self.filtros.Papel = false;
+    self.filtros.Outros = false;
+    self.filtros.Plastico = false;
+    
+    self.filtros.Todos = true;
+    
+    
     [gridMenu dismissAnimated:NO];
     if ([item.title isEqualToString:@"Todos"])
     {
