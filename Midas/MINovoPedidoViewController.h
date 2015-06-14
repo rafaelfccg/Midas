@@ -11,5 +11,10 @@
 
 @interface MINovoPedidoViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+@property (weak, nonatomic) IBOutlet UIButton *galleryButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @property MINovoPedido *novoPedido;
 @end

@@ -9,9 +9,10 @@
 #import "MINovoPedidoViewController.h"
 #import "ProgressHUD.h"
 #import "MIDatabase.h"
+#import "camera.h"
+#import "image.h"
 
-
-@interface MINovoPedidoViewController ()
+@interface MINovoPedidoViewController () <UIImagePickerControllerDelegate>
 
 @end
 
@@ -35,6 +36,10 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
+    
+    [[self.descriptionTextView layer] setBorderColor:[[UIColor grayColor] CGColor]];
+    [[self.descriptionTextView layer] setBorderWidth:2.3];
+    [[self.descriptionTextView layer] setCornerRadius:15];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,49 +53,23 @@
     [self.view endEditing:YES];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-
-/*
 - (void) criarNovoPedido:(id)sender {
     //do here
     
-    NSString *title;
-    NSString *description;
-    NSString *reward;
-    NSNumber *quantity;
-
+    NSString *description = self.descriptionTextView.text;
     
-    title = titleTextField.text;
-    description = descriptionTextField.text;
-    reward = rewardTextField.text;
-    
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-    f.numberStyle = NSNumberFormatterDecimalStyle;
-    quantity = [f numberFromString:quantityTextField.text];
-    
-    //---------------------------------------------------------------------------------------------------------------------------------------------
-    if ([title length] < 3)	{ [ProgressHUD showError:@"title is too short."]; return; }
-    if ([title length] > 30)	{ [ProgressHUD showError:@"title is too long(>30)."]; return; }
     if ([description length] < 10)	{ [ProgressHUD showError:@"description is too short."]; return; }
     if ([description length] > 140)	{ [ProgressHUD showError:@"description is too long(>140)."]; return; }
-    if ([quantity intValue]<=0 || [quantity intValue]>10000) { [ProgressHUD showError:@"must be over 0 or below of 1000."]; return; }
-    //---------------------------------------------------------------------------------------------------------------------------------------------
+    
     [ProgressHUD show:@"Please wait..." Interaction:NO];
     
-    //---------------------------------------------------------------------------------------------------------------------------------------------
+    self.novoPedido.descricao = description;
+    self.novoPedido.image = self.imageView.image;
+    self.novoPedido.thumbnail = CreateThumbnail(self.novoPedido.image);
     
-    
-    [[MIDatabase sharedInstance]createNewPedidoInBackGrond:title description:description reward:reward quantity:quantity status:@0 block:^(BOOL succeeded, NSError *error) {
+    [[MIDatabase sharedInstance]createNewPedidoInBackGround:self.novoPedido
+                                                     block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
             [ProgressHUD showSuccess:@"Succeed."];
@@ -101,6 +80,22 @@
         }
     }];
 }
-*/
 
+- (IBAction)pressedCamera:(id)sender {
+    PresentPhotoCamera(self, YES);
+}
+
+- (IBAction)pressedGallery:(id)sender {
+    PresentPhotoLibrary(self, YES);
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *picture = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = picture;
+ 
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
 @end

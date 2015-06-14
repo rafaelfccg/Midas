@@ -15,3 +15,4 @@
 UIImage*		SquareImage				(UIImage *image, CGFloat size);
 UIImage*		ResizeImage				(UIImage *image, CGFloat width, CGFloat height);
 UIImage*		CropImage				(UIImage *image, CGFloat x, CGFloat y, CGFloat width, CGFloat height);
+UIImage*        CreateThumbnail         (UIImage *image);

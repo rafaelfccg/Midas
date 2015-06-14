@@ -55,6 +55,8 @@
 #define		PF_REQUEST_STATUS                   @"status"               //	Number
 #define		PF_REQUEST_FEEDBACKID               @"feedBackId"           //	String
 #define		PF_REQUEST_UPDATEDACTION			@"updatedAt"            //	Date
+#define		PF_REQUEST_CATEGORY                 @"category"             //	Number
+
 
 //-----------------------------------------------------------------------
 #define		PF_CHAT_CLASS_NAME                  @"Chat"                 //	Class name

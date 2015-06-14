@@ -461,6 +461,9 @@
                                 <state key="normal" image="CameraIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressedCamera:" destination="9gN-Xw-wxM" eventType="touchUpInside" id="2fS-p7-9Wd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v98-Mz-18Q">
                                 <rect key="frame" x="53" y="273" width="32" height="32"/>
@@ -471,6 +474,9 @@
                                 <state key="normal" title="Button" image="GalleryIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressedGallery:" destination="9gN-Xw-wxM" eventType="touchUpInside" id="8R7-40-kwS"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6YR-IF-MLf">
                                 <rect key="frame" x="16" y="325" width="568" height="203"/>
@@ -494,10 +500,16 @@
                             <constraint firstItem="ppj-QM-yHP" firstAttribute="top" secondItem="6YR-IF-MLf" secondAttribute="bottom" constant="23" id="ts7-IL-RIR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="CQD-dS-B2e" id="Zbb-49-nH4"/>
+                        <outlet property="descriptionTextView" destination="SnR-82-tfR" id="vgX-qd-Swp"/>
+                        <outlet property="galleryButton" destination="v98-Mz-18Q" id="4pZ-Pf-OS6"/>
+                        <outlet property="imageView" destination="6YR-IF-MLf" id="qgv-fE-yBf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1v-1p-TOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="827" y="3126"/>
+            <point key="canvasLocation" x="1849" y="3680"/>
         </scene>
         <!--Meu Pedido-->
         <scene sceneID="nut-7j-83N">

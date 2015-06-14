@@ -24,6 +24,7 @@
         _reward = pfobject[PF_REQUEST_REWARD];
         _status = pfobject[PF_REQUEST_STATUS];
         _quantity = pfobject[PF_REQUEST_QUANTITY];
+        _category = pfobject[PF_REQUEST_CATEGORY];
     }
     
     return self;
