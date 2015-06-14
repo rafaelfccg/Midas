@@ -12,6 +12,7 @@
 #import "AppConstant.h"
 #import "MIPedido.h"
 #import "MIFiltrosDeBusca.h"
+#import "MINovoPedido.h"
 
 @interface MIDatabase : NSObject
 
@@ -39,7 +40,7 @@
 
 - (void) finalizeRequestWithPFObject:(nonnull PFObject *)pfobject block:(nullable PFBooleanResultBlock)block;
 
-- (void) createNewPedidoInBackGround:(nonnull MINovoPedido *)pedido block:(nullable PFBooleanResultBlock)block;
+- (void) createNewPedidoInBackGround:(nonnull MINovoPedido*)pedido block:(nullable PFBooleanResultBlock)block;
 
 - (void) getRecentNegotioationsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
