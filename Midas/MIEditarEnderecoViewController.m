@@ -9,6 +9,7 @@
 #import "MIEditarEnderecoViewController.h"
 #import "ProgressHUD.h"
 #import "MIDatabase.h"
+#import "LocationUtils.h"
 
 @interface MIEditarEnderecoViewController ()
 
