@@ -40,8 +40,6 @@
 
 - (IBAction)registerUser:(id)sender {
     [self actionRegister];
-   
-    [[self navigationController]popToRootViewControllerAnimated:YES];
 }
 
 - (void)actionRegister
@@ -51,11 +49,8 @@
     NSString *rua = self.ruaTextField.text;
     
     if ([cidade length] < 4)	{ [ProgressHUD showError:@"City name is too short."]; return; }
-    if ([cidade length] > 50)	{ [ProgressHUD showError:@"City name is too long(>30)."]; return; }
     if ([bairro length] < 4)		{ [ProgressHUD showError:@"Bairro is too short."]; return; }
-    if ([bairro length] > 50)	{ [ProgressHUD showError:@"Bairro is too long(>20)."]; return; }
     if ([rua length] < 4)		{ [ProgressHUD showError:@"Bairro is too short."]; return; }
-    if ([rua length] > 50)	{ [ProgressHUD showError:@"Bairro is too long(>20)."]; return; }
     
     NSString *alladdress = [cidade stringByAppendingString:@" "];
     alladdress = [alladdress stringByAppendingString:rua];
@@ -68,6 +63,15 @@
         PFGeoPoint *geoPoint = [[PFGeoPoint alloc]init];
         [geoPoint setLatitude:location.coordinate.latitude];
         [geoPoint setLongitude:location.coordinate.longitude];
+        
+        
+        PFUser *user = [PFUser currentUser];
+        
+        [user setObject:geoPoint forKey:PF_USER_LOCATION];
+        
+        [user save];
+        
+        [[self navigationController]popToRootViewControllerAnimated:YES];
     }];
 }
 
