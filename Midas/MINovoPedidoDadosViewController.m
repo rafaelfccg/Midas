@@ -7,7 +7,6 @@
 //
 
 #import "MINovoPedidoDadosViewController.h"
-#import "MINovoPedidoViewController.h"
 #import "AppConstant.h"
 #import "ProgressHUD.h"
 #import "MINovoPedido.h"
