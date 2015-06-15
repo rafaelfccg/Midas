@@ -57,7 +57,7 @@
          if (user != nil)
          {
              ParsePushUserAssign();
-             [ProgressHUD showSuccess:[NSString stringWithFormat:@"Welcome back, %@!", user[PF_USER_FULLNAME]]];
+             [ProgressHUD showSuccess:[NSString stringWithFormat:@"Welcome back, %@!", user.username]];
              [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
             }
              else [ProgressHUD showError:error.userInfo[@"error"]];

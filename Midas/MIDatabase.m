@@ -34,13 +34,12 @@
     [PFUser logInWithUsernameInBackground:username password:password block:block];
 }
 
-- (void)signUpWithUsernameInBackground:(NSString *)username password:(NSString *) password email:(NSString *)email fullName:(NSString *)fullName block:(PF_NULLABLE PFBooleanResultBlock)block{
+- (void)signUpWithUsernameInBackground:(NSString *)username password:(NSString *) password email:(NSString *)email block:(PF_NULLABLE PFBooleanResultBlock)block{
     
     PFUser *user = [PFUser user];
     user.username = username;
     user.password = password;
     user.email = email;
-    user[PF_USER_FULLNAME] = fullName;
     [user signUpInBackgroundWithBlock:block];
 }
 
