@@ -87,11 +87,11 @@
 #define     ENUM_REQUEST_STATUS_HIDDEN		    @2
 
 //----------------------------------------
-#define     ENUM_REQUEST_CATEGORY_VIDRO		    @1
-#define     ENUM_REQUEST_CATEGORY_PLASTICO	    @2
-#define     ENUM_REQUEST_CATEGORY_PAPEL		    @3
-#define     ENUM_REQUEST_CATEGORY_METAL         @4
-#define     ENUM_REQUEST_CATEGORY_OUTROS	    @5
+#define     ENUM_REQUEST_CATEGORY_VIDRO		    @0
+#define     ENUM_REQUEST_CATEGORY_PLASTICO	    @1
+#define     ENUM_REQUEST_CATEGORY_PAPEL		    @2
+#define     ENUM_REQUEST_CATEGORY_METAL         @3
+#define     ENUM_REQUEST_CATEGORY_OUTROS	    @4
 
 typedef enum {
     RequestCategoryVidro,
