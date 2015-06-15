@@ -14,9 +14,11 @@
 @property MINovoPedido *novoPedido;
 @property (weak, nonatomic) IBOutlet UILabel *categoryValueLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *categoryImageView;
-@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-@property (weak, nonatomic) IBOutlet UITextField *quantityTextField;
-@property (weak, nonatomic) IBOutlet UISwitch *rewardSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *rewardFirstTextField;
+@property (weak, nonatomic) IBOutlet UITextField *forEachValueTextField;
 @property (weak, nonatomic) IBOutlet UITextField *rewardSecondTextField;
+@property (weak, nonatomic) IBOutlet UITextField *willGiveValueTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+
 @end

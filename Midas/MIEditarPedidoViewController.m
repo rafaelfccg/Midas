@@ -26,7 +26,7 @@
 
 
 - (void) viewWillAppear:(BOOL)animated {
-    NSLog(@"Editar pedido: %@", self.currentRequest.title);
+    NSLog(@"A cada %@, dou %@.", _currentRequest.forEach, _currentRequest.willGive);
 }
 /*
 #pragma mark - Navigation

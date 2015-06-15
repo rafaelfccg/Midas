@@ -11,10 +11,11 @@
 
 @interface MINovoPedido : NSObject
 
-@property NSString *title;
+@property NSNumber *foreachValue;
+@property NSString *foreach;
+@property NSNumber *willgiveValue;
+@property NSString *willgive;
 @property NSString *descricao;
-@property NSString *reward;
-@property NSNumber *quantity;
 @property UIImage *image;
 @property UIImage *thumbnail;
 @property NSNumber *category;

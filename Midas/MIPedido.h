@@ -13,11 +13,12 @@
 
 @property (readonly) PFObject *object;
 @property (readonly) PFUser *owner;
-@property (readonly) NSString *title;
 @property (readonly) NSString *descricao;
-@property (readonly) NSString *reward;
+@property (readonly) NSNumber *forEachValue;
+@property (readonly) NSString *forEach;
+@property (readonly) NSNumber *willGiveValue;
+@property (readonly) NSString *willGive;
 @property (readonly) NSNumber *status;
-@property (readonly) NSNumber *quantity;
 @property (readonly) NSNumber *category;
 
 - (instancetype) initWithPFObject:(PFObject *)object;
