@@ -94,47 +94,47 @@
     
     if(filtro.Metal || filtro.Todos)
     {
-        // category 4
+        // category 3
         //MetalQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
         [MetalQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
         [MetalQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
-        [MetalQuery whereKey:PF_REQUEST_CATEGORY equalTo:@4];
+        [MetalQuery whereKey:PF_REQUEST_CATEGORY equalTo:ENUM_REQUEST_CATEGORY_METAL];
     }
     
     if(filtro.Vidro || filtro.Todos)
     {
-        // category 1
+        // category 0
         //VidroQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
         [VidroQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
         [VidroQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
-        [VidroQuery whereKey:PF_REQUEST_CATEGORY equalTo:@1];
+        [VidroQuery whereKey:PF_REQUEST_CATEGORY equalTo:ENUM_REQUEST_CATEGORY_VIDRO];
     }
     
     if(filtro.Papel || filtro.Todos)
     {
-        // category 3
+        // category 2
         //PapelQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
         [PapelQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
         [PapelQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
-        [PapelQuery whereKey:PF_REQUEST_CATEGORY equalTo:@3];
+        [PapelQuery whereKey:PF_REQUEST_CATEGORY equalTo:ENUM_REQUEST_CATEGORY_PAPEL];
     }
     
     if(filtro.Plastico || filtro.Todos)
     {
-        // category 2
+        // category 1
         //PlasticoQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
         [PlasticoQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
         [PlasticoQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
-        [PlasticoQuery whereKey:PF_REQUEST_CATEGORY equalTo:@2];
+        [PlasticoQuery whereKey:PF_REQUEST_CATEGORY equalTo:ENUM_REQUEST_CATEGORY_PLASTICO];
     }
     
     if(filtro.Outros || filtro.Todos)
     {
-        // category 5
+        // category 4
         //OutrosQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
         [OutrosQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
         [OutrosQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
-        [OutrosQuery whereKey:PF_REQUEST_CATEGORY equalTo:@5];
+        [OutrosQuery whereKey:PF_REQUEST_CATEGORY equalTo:ENUM_REQUEST_CATEGORY_OUTROS];
     }
     
     Allquery = [PFQuery orQueryWithSubqueries:@[MetalQuery,PlasticoQuery,PapelQuery,VidroQuery,OutrosQuery]];
