@@ -76,7 +76,7 @@
     
     MIPedido *request = [_requests objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = request.title;
+    cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
     cell.detailTextLabel.text = request.owner.username;
     return cell;
 }

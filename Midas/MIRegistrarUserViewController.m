@@ -25,7 +25,7 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     [super viewDidAppear:animated];
-    [_nameTextField becomeFirstResponder];
+    [_loginTextField becomeFirstResponder];
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -44,22 +44,22 @@
 
     NSString *login     = _loginTextField.text;
     NSString *password	= _passwordTextField.text;
+    NSString *passwordConfirmation	= _passwordConfirmationTextField.text;
     NSString *email		= [_emailTextField.text lowercaseString];
-    NSString *fullname		= _nameTextField.text;
     
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    if ([fullname length] < 3)	{ [ProgressHUD showError:@"Name is too short."]; return; }
-    if ([fullname length] > 30)	{ [ProgressHUD showError:@"Name is too long(>30)."]; return; }
-    if ([login length] < 4)		{ [ProgressHUD showError:@"Login is too short."]; return; }
-    if ([login length] > 20)	{ [ProgressHUD showError:@"Login is too long(>20)."]; return; }
-    if ([password length] == 0)	{ [ProgressHUD showError:@"Password must be set."]; return; }
-    if ([password length] > 30)	{ [ProgressHUD showError:@"Password is too long(>30). "]; return; }
-    if ([email length] == 0)	{ [ProgressHUD showError:@"Email must be set."]; return; }
+    if ([login length] < 4)		{ [ProgressHUD showError:@"O login deve ter pelo menos 4 caracteres."]; return; }
+    if ([login length] > 20)	{ [ProgressHUD showError:@"O login deve ter menos de 20 caracteres."]; return; }
+    if ([email length] == 0)	{ [ProgressHUD showError:@"Email é obrigatório."]; return; }
+    if ([password length] < 6)	{ [ProgressHUD showError:@"A senha deve ter pelo menos 6 caracteres."]; return; }
+    if ([password length] > 30)	{ [ProgressHUD showError:@"A senha deve ter menos de 30 caracteres."]; return; }
+    if (![password isEqualToString:passwordConfirmation]) { [ProgressHUD showError:@"As senhas devem ser iguais."]; return; }
+    
     //---------------------------------------------------------------------------------------------------------------------------------------------
     [ProgressHUD show:@"Please wait..." Interaction:NO];
     //---------------------------------------------------------------------------------------------------------------------------------------------
     
-     [[MIDatabase sharedInstance] signUpWithUsernameInBackground:login password:password email:email fullName:fullname block:^(BOOL succeeded, NSError *error)
+     [[MIDatabase sharedInstance] signUpWithUsernameInBackground:login password:password email:email block:^(BOOL succeeded, NSError *error)
      {
          if (error == nil)
          {

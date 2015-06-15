@@ -46,17 +46,17 @@
 #define		PF_REQUEST_CLASS_NAME				@"Request"				//	Class name
 #define		PF_REQUEST_USER						@"user"                 //	Pointer to User Class
 #define		PF_REQUEST_CREATEDAT                @"createdAt"            //	Date
-#define		PF_REQUEST_TITLE                    @"title"                //	String
 #define		PF_REQUEST_DESCRIPTION              @"description"          //	String
-#define		PF_REQUEST_REWARD                   @"reward"               //	String
-#define		PF_REQUEST_QUANTITY                 @"quantity"             //	Number
 #define     PF_REQUEST_CATEGORY                 @"category"             //  Number
 #define		PF_REQUEST_IMAGE                    @"image"                //	File
 #define		PF_REQUEST_THUMBNAIL                @"thumbnail"            //	File
 #define		PF_REQUEST_STATUS                   @"status"               //	Number
 #define		PF_REQUEST_FEEDBACKID               @"feedBackId"           //	String
 #define		PF_REQUEST_UPDATEDACTION			@"updatedAt"            //	Date
-#define		PF_REQUEST_CATEGORY                 @"category"             //	Number
+#define		PF_REQUEST_FOREACH                  @"foreach"              //	String
+#define		PF_REQUEST_WILLGIVE                 @"willgive"             //	String
+#define		PF_REQUEST_FOREACHVALUE             @"foreachValue"              //	Number
+#define		PF_REQUEST_WILLGIVEVALUE            @"willgiveValue"             //	Number
 
 
 //-----------------------------------------------------------------------
