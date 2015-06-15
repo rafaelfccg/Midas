@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationUtils.h"
 
 @interface MIEditarEnderecoViewController : UIViewController
 
@@ -14,6 +15,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *bairroTextField;
 @property (weak, nonatomic) IBOutlet UITextField *ruaTextField;
 @property (weak, nonatomic) IBOutlet UITextField *numeroTextField;
-
 
 @end

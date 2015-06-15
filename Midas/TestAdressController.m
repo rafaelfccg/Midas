@@ -24,12 +24,12 @@
     [LocationUtils getLocationFromAdress:_address.text withHandler:^(CLLocation* location){
         NSLog(@"%lf , %lf",location.coordinate.latitude,location.coordinate.longitude);
         
-        dispatch_async(dispatch_get_main_queue(),^(void){;
-            MKCoordinateRegion adjustedRegion = [_mapview regionThatFits:MKCoordinateRegionMakeWithDistance(location.coordinate, 200, 200)];
-            [_mapview setRegion:adjustedRegion animated:YES];
-            
-            
-        });
+//        dispatch_async(dispatch_get_main_queue(),^(void){;
+//            MKCoordinateRegion adjustedRegion = [_mapview regionThatFits:MKCoordinateRegionMakeWithDistance(location.coordinate, 200, 200)];
+//            [_mapview setRegion:adjustedRegion animated:YES];
+//            
+//            
+//        });
     }];
     
 }

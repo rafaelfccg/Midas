@@ -9,7 +9,7 @@
 #import "MIEditarEnderecoViewController.h"
 #import "ProgressHUD.h"
 #import "MIDatabase.h"
-#import "LocationUtils.h"
+#import <Parse/Parse.h>
 
 @interface MIEditarEnderecoViewController ()
 
@@ -49,7 +49,6 @@
     NSString *cidade = self.cidadeTextField.text;
     NSString *bairro = self.bairroTextField.text;
     NSString *rua = self.ruaTextField.text;
-    NSNumber *numero = [NSNumber numberWithInt:[self.numeroTextField.text intValue]];
     
     if ([cidade length] < 4)	{ [ProgressHUD showError:@"City name is too short."]; return; }
     if ([cidade length] > 50)	{ [ProgressHUD showError:@"City name is too long(>30)."]; return; }
@@ -58,6 +57,18 @@
     if ([rua length] < 4)		{ [ProgressHUD showError:@"Bairro is too short."]; return; }
     if ([rua length] > 50)	{ [ProgressHUD showError:@"Bairro is too long(>20)."]; return; }
     
+    NSString *alladdress = [cidade stringByAppendingString:@" "];
+    alladdress = [alladdress stringByAppendingString:rua];
+    
+    
+    [LocationUtils getLocationFromAdress:alladdress withHandler:^(CLLocation* location){
+        NSLog(@"%lf , %lf",location.coordinate.latitude,location.coordinate.longitude);
+        
+        
+        PFGeoPoint *geoPoint = [[PFGeoPoint alloc]init];
+        [geoPoint setLatitude:location.coordinate.latitude];
+        [geoPoint setLongitude:location.coordinate.longitude];
+    }];
 }
 
 
