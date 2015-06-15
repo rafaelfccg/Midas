@@ -49,7 +49,8 @@
 #define		PF_REQUEST_TITLE                    @"title"                //	String
 #define		PF_REQUEST_DESCRIPTION              @"description"          //	String
 #define		PF_REQUEST_REWARD                   @"reward"               //	String
-#define		PF_REQUEST_QUANTITY                 @"quantity"             //	Number 
+#define		PF_REQUEST_QUANTITY                 @"quantity"             //	Number
+#define     PF_REQUEST_CATEGORY                 @"category"             //  Number
 #define		PF_REQUEST_IMAGE                    @"image"                //	File
 #define		PF_REQUEST_THUMBNAIL                @"thumbnail"            //	File
 #define		PF_REQUEST_STATUS                   @"status"               //	Number
@@ -86,11 +87,11 @@
 #define     ENUM_REQUEST_STATUS_HIDDEN		    @2
 
 //----------------------------------------
-//#define     ENUM_REQUEST_CATEGORY_VIDRO		    @1
-//#define     ENUM_REQUEST_CATEGORY_PLASTICO	    @2
-//#define     ENUM_REQUEST_CATEGORY_PAPEL		    @3
-//#define     ENUM_REQUEST_CATEGORY_METAL         @4
-//#define     ENUM_REQUEST_CATEGORY_OUTROS	    @5
+#define     ENUM_REQUEST_CATEGORY_VIDRO		    @1
+#define     ENUM_REQUEST_CATEGORY_PLASTICO	    @2
+#define     ENUM_REQUEST_CATEGORY_PAPEL		    @3
+#define     ENUM_REQUEST_CATEGORY_METAL         @4
+#define     ENUM_REQUEST_CATEGORY_OUTROS	    @5
 
 typedef enum {
     RequestCategoryVidro,

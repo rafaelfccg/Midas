@@ -12,11 +12,13 @@
 #import "ProgressHUD.h"
 #import "MIPedido.h"
 #import "RNGridMenu.h"
+#import "MIFiltrosDeBusca.h"
 
 @interface MIMuralViewController () <RNGridMenuDelegate>
 
 @property NSMutableArray *requests;
 @property MIPedido* selectedRequest;
+@property MIFiltrosDeBusca* filtros;
 
 @end
 
@@ -35,6 +37,8 @@
     
     
     [self.muralTableView addSubview:self.refreshControl];
+    
+    self.filtros = [[MIFiltrosDeBusca alloc]init];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -99,30 +103,11 @@
     }
 }
 
-
-- (IBAction)showNormalActionSheet:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Selecione uma categoria:"
-                                                             delegate:self
-                                                    cancelButtonTitle:@"Cancelar"
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"Todos",@"Plástico", @"Metal", @"Papel", @"Vidro", @"Outros", nil];
-    
-    [actionSheet showInView:self.view];
-}
-
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
-    //implementar metodo de seleção aqui
-    NSLog(@"Index = %ld - Title = %@", (long)buttonIndex, [actionSheet buttonTitleAtIndex:buttonIndex]);
-}
-
-
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 - (void)loadRequests
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     
-    [[MIDatabase sharedInstance] getOpenRequestsFromOtherUsersWithBlock:^(NSArray *objects, NSError *error)
+    [[MIDatabase sharedInstance] getOpenRequestsFromOtherUsersWithBlock:self.filtros Block:^(NSArray *objects, NSError *error)
      {
          if (error == nil)
          {
@@ -134,7 +119,7 @@
          }
          else [ProgressHUD showError:@"Network error."];
          [self.refreshControl endRefreshing];
-     }];
+     }/* filtro:self.filtros*/];
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
@@ -163,13 +148,54 @@
 
 - (void)gridMenu:(RNGridMenu *)gridMenu willDismissWithSelectedItem:(RNGridMenuItem *)item atIndex:(NSInteger)itemIndex
 {
+    
+    self.filtros.Vidro = false;
+    self.filtros.Metal = false;
+    self.filtros.Papel = false;
+    self.filtros.Outros = false;
+    self.filtros.Plastico = false;
+    
+    self.filtros.Todos = true;
+    
+    
     [gridMenu dismissAnimated:NO];
-    if ([item.title isEqualToString:@"Todos"])	NSLog(@"Todos");
-    if ([item.title isEqualToString:@"Vidro"])	NSLog(@"Vidro");
-    if ([item.title isEqualToString:@"Plástico"])	NSLog(@"Plástico");
-    if ([item.title isEqualToString:@"Metal"])	NSLog(@"Metal");
-    if ([item.title isEqualToString:@"Papel"])	NSLog(@"Papel");
-    if ([item.title isEqualToString:@"Outros"])	NSLog(@"Outros");
+    if ([item.title isEqualToString:@"Todos"])
+    {
+        self.filtros.Todos = true;
+        NSLog(@"Todos");
+    }
+    if ([item.title isEqualToString:@"Vidro"])
+    {
+        self.filtros.Vidro = true;
+        self.filtros.Todos = false;
+        NSLog(@"Vidro");
+    }
+    if ([item.title isEqualToString:@"Plástico"])
+    {
+        self.filtros.Plastico = true;
+        self.filtros.Todos = false;
+        NSLog(@"Plástico");
+    }
+    if ([item.title isEqualToString:@"Metal"])
+    {
+        self.filtros.Metal = true;
+        self.filtros.Todos = false;
+        NSLog(@"Metal");
+    }
+    if ([item.title isEqualToString:@"Papel"])
+    {
+        self.filtros.Papel = true;
+        self.filtros.Todos = false;
+        NSLog(@"Papel");
+    }
+    if ([item.title isEqualToString:@"Outros"])
+    {
+        self.filtros.Outros = true;
+        self.filtros.Todos = false;
+        NSLog(@"Outros");
+    }
+    
+    [self loadRequests];
 }
 
 @end
