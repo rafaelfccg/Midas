@@ -10,6 +10,7 @@
 #import "MIPedido.h"
 #import "MINovoPedido.h"
 
+
 @implementation MIDatabase
 
 
@@ -68,14 +69,80 @@
 
 }
 
-- (void) getOpenRequestsFromOtherUsersWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
-    PFQuery *query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
-    [query whereKey:PF_REQUEST_STATUS equalTo:ENUM_REQUEST_STATUS_OPEN];
-    [query whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
-    [query includeKey:PF_REQUEST_USER];
-    [query orderByDescending:PF_REQUEST_UPDATEDACTION];
-    [query findObjectsInBackgroundWithBlock:block];
+- (void) getOpenRequestsFromOtherUsersWithBlock:(nullable MIFiltrosDeBusca*)filtro Block:(PF_NULLABLE_S PFArrayResultBlock)block{
     
+    PFQuery *MetalQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+    PFQuery *PlasticoQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+    PFQuery *PapelQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+    PFQuery *VidroQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+    PFQuery *OutrosQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+
+    
+    [MetalQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
+    [VidroQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
+    [PapelQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
+    [PlasticoQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
+    [OutrosQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
+    
+    //PFQuery *MetalQuery = nil;
+    //PFQuery *PlasticoQuery = nil;
+    //PFQuery *PapelQuery = nil;
+    //PFQuery *VidroQuery = nil;
+    //PFQuery *OutrosQuery = nil;
+    
+    
+    PFQuery *Allquery=nil;
+    
+    if(filtro.Metal || filtro.Todos)
+    {
+        // category 3
+        //MetalQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+        [MetalQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
+        [MetalQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
+        [MetalQuery whereKey:PF_REQUEST_CATEGORY equalTo:ENUM_REQUEST_CATEGORY_METAL];
+    }
+    
+    if(filtro.Vidro || filtro.Todos)
+    {
+        // category 0
+        //VidroQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+        [VidroQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
+        [VidroQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
+        [VidroQuery whereKey:PF_REQUEST_CATEGORY equalTo:ENUM_REQUEST_CATEGORY_VIDRO];
+    }
+    
+    if(filtro.Papel || filtro.Todos)
+    {
+        // category 2
+        //PapelQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+        [PapelQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
+        [PapelQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
+        [PapelQuery whereKey:PF_REQUEST_CATEGORY equalTo:ENUM_REQUEST_CATEGORY_PAPEL];
+    }
+    
+    if(filtro.Plastico || filtro.Todos)
+    {
+        // category 1
+        //PlasticoQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+        [PlasticoQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
+        [PlasticoQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
+        [PlasticoQuery whereKey:PF_REQUEST_CATEGORY equalTo:ENUM_REQUEST_CATEGORY_PLASTICO];
+    }
+    
+    if(filtro.Outros || filtro.Todos)
+    {
+        // category 4
+        //OutrosQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+        [OutrosQuery whereKey:PF_REQUEST_STATUS equalTo:@0];
+        [OutrosQuery whereKey:PF_REQUEST_USER notEqualTo:[PFUser currentUser]];
+        [OutrosQuery whereKey:PF_REQUEST_CATEGORY equalTo:ENUM_REQUEST_CATEGORY_OUTROS];
+    }
+    
+    Allquery = [PFQuery orQueryWithSubqueries:@[MetalQuery,PlasticoQuery,PapelQuery,VidroQuery,OutrosQuery]];
+    
+    [Allquery includeKey:PF_REQUEST_USER];
+    [Allquery orderByDescending:PF_REQUEST_UPDATEDACTION];
+    [Allquery findObjectsInBackgroundWithBlock:block];
 }
 
 - (void) getCurrentUserRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {

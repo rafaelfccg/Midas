@@ -11,6 +11,7 @@
 #import "push.h"
 #import "AppConstant.h"
 #import "MIPedido.h"
+#import "MIFiltrosDeBusca.h"
 #import "MINovoPedido.h"
 
 @interface MIDatabase : NSObject
@@ -31,7 +32,7 @@
 
 - (void) getRequestsWithFilters:(nonnull NSString *) filters block:(PF_NULLABLE_S PFArrayResultBlock)block;
 
-- (void) getOpenRequestsFromOtherUsersWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
+- (void) getOpenRequestsFromOtherUsersWithBlock:(nullable MIFiltrosDeBusca*)filtro Block:(PF_NULLABLE_S PFArrayResultBlock)block;
 
 - (void) getCurrentUserRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
@@ -39,7 +40,7 @@
 
 - (void) finalizeRequestWithPFObject:(nonnull PFObject *)pfobject block:(nullable PFBooleanResultBlock)block;
 
-- (void) createNewPedidoInBackGround:(nonnull MINovoPedido *)pedido block:(nullable PFBooleanResultBlock)block;
+- (void) createNewPedidoInBackGround:(nonnull MINovoPedido*)pedido block:(nullable PFBooleanResultBlock)block;
 
 - (void) getRecentNegotioationsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
