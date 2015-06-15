@@ -131,7 +131,7 @@
         <!--Meus Pedidos-->
         <scene sceneID="l1r-rx-u1y">
             <objects>
-                <viewController title="Meus Pedidos" id="46H-XD-PRL" customClass="MIMeusPedidosViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MeusPedidos" title="Meus Pedidos" id="46H-XD-PRL" customClass="MIMeusPedidosViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Udd-6y-fq1"/>
                         <viewControllerLayoutGuide type="bottom" id="aWI-1u-Xzr"/>

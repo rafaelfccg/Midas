@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "MIMeusPedidosViewController.h"
 @interface AppDelegate ()
+
+@property MIMeusPedidosViewController *recents;
 
 @end
 
@@ -25,7 +28,9 @@
         [application registerUserNotificationSettings:settings];
         [application registerForRemoteNotifications];
     }
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                         bundle: nil];
+    _recents = [storyboard instantiateViewControllerWithIdentifier:@"MeusPedidos"];
     [[UITabBar appearance] setTintColor:[UIColor orangeColor]];
     return YES;
 }
@@ -51,5 +56,31 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)refreshRecentView
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    [self.recents loadRecents];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    //[PFPush handlePush:userInfo];
+    //---------------------------------------------------------------------------------------------------------------------------------------------
+    if ([PFUser currentUser] != nil)
+    {
+        [self performSelector:@selector(refreshRecentView) withObject:nil afterDelay:4.0];
+    }
+}
+
 
 @end
