@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MIRegistrarUserViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+
 @property (weak, nonatomic) IBOutlet UITextField *loginTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordConfirmationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 

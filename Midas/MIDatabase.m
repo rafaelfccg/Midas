@@ -35,13 +35,12 @@
     [PFUser logInWithUsernameInBackground:username password:password block:block];
 }
 
-- (void)signUpWithUsernameInBackground:(NSString *)username password:(NSString *) password email:(NSString *)email fullName:(NSString *)fullName block:(PF_NULLABLE PFBooleanResultBlock)block{
+- (void)signUpWithUsernameInBackground:(NSString *)username password:(NSString *) password email:(NSString *)email block:(PF_NULLABLE PFBooleanResultBlock)block{
     
     PFUser *user = [PFUser user];
     user.username = username;
     user.password = password;
     user.email = email;
-    user[PF_USER_FULLNAME] = fullName;
     [user signUpInBackgroundWithBlock:block];
 }
 
@@ -194,14 +193,18 @@
     PFObject *request = [PFObject objectWithClassName:PF_REQUEST_CLASS_NAME];
     
     request[PF_REQUEST_USER] = [PFUser currentUser];
-    request[PF_REQUEST_TITLE] = pedido.title;
-    request[PF_REQUEST_DESCRIPTION] = pedido.description;
-    request[PF_REQUEST_REWARD] = pedido.reward;
-    request[PF_REQUEST_QUANTITY] = pedido.quantity;
+    request[PF_REQUEST_DESCRIPTION] = pedido.descricao;
+    request[PF_REQUEST_FOREACHVALUE] = pedido.foreachValue;
+    request[PF_REQUEST_FOREACH] = pedido.foreach;
+    request[PF_REQUEST_WILLGIVEVALUE] = pedido.willgiveValue;
+    request[PF_REQUEST_WILLGIVE] = pedido.willgive;
     request[PF_REQUEST_CATEGORY] = pedido.category;
     request[PF_REQUEST_STATUS] = ENUM_REQUEST_STATUS_OPEN;
-    request[PF_REQUEST_IMAGE] = [PFFile fileWithData:UIImagePNGRepresentation(pedido.image)];
-    request[PF_REQUEST_THUMBNAIL] = [PFFile fileWithData:UIImagePNGRepresentation(pedido.thumbnail)];
+    
+    if(pedido.image) {
+        request[PF_REQUEST_IMAGE] = [PFFile fileWithData:UIImagePNGRepresentation(pedido.image)];
+        request[PF_REQUEST_THUMBNAIL] = [PFFile fileWithData:UIImagePNGRepresentation(pedido.thumbnail)];
+    }
     
     [request saveInBackgroundWithBlock:block];
 }

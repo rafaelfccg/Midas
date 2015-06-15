@@ -67,7 +67,7 @@
     
     if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
         MIPedido *request = _requests[indexPath.row];
-        cell.textLabel.text = request.title;
+        cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
         cell.detailTextLabel.text = request.owner.username;
         
     }else if (self.pedidosSegmentedControl.selectedSegmentIndex == 1){

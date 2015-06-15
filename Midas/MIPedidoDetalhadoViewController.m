@@ -38,7 +38,7 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    NSLog(@"Pedido detalhado: %@", self.currentRequest.title);
+    NSLog(@"A cada %@, dou %@.", _currentRequest.forEach, _currentRequest.willGive);
 }
 
 - (void) iniciarNegociacao:(id)sender {

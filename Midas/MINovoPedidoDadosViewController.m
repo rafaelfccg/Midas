@@ -7,9 +7,16 @@
 //
 
 #import "MINovoPedidoDadosViewController.h"
-#import "MINovoPedidoViewController.h"
 #import "AppConstant.h"
 #import "ProgressHUD.h"
+#import "MINovoPedido.h"
+#import "MIDatabase.h"
+#import "camera.h"
+#import "image.h"
+
+@interface MINovoPedidoDadosViewController () <UIImagePickerControllerDelegate>
+
+@end
 
 @implementation MINovoPedidoDadosViewController
 
@@ -18,10 +25,10 @@
     [super viewDidLoad];
     
     UIBarButtonItem *concluirButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:@"Próximo"
+                                       initWithTitle:@"Concluir"
                                        style:UIBarButtonItemStylePlain
                                        target:self
-                                       action:@selector(passo3:)];
+                                       action:@selector(concluir:)];
     self.navigationItem.rightBarButtonItem = concluirButton;
     
     self.navigationItem.title = @"Passo 2";
@@ -29,7 +36,13 @@
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
     
-    [self.rewardSwitch addTarget:self action:@selector(setState:) forControlEvents:UIControlEventValueChanged];
+    [[self.descriptionTextView layer] setBorderColor:[[UIColor grayColor] CGColor]];
+    [[self.descriptionTextView layer] setBorderWidth:0.25];
+    [[self.descriptionTextView layer] setCornerRadius:15];
+    
+    UITapGestureRecognizer *imageTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressedGallery:)];
+    [self.imageView setUserInteractionEnabled:YES];
+    [self.imageView addGestureRecognizer:imageTapRecognizer];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -38,44 +51,51 @@
         case RequestCategoryVidro:
             self.categoryValueLabel.text = @"Vidro";
             self.categoryImageView.image = [UIImage imageNamed:@"VidroIcon"];
-            self.titleTextField.placeholder = @"Ex.:Garrafas de cerveja vazias";
-            self.rewardFirstTextField.placeholder = @"Ex.: 5 garrafas vazias";
-            self.rewardSecondTextField.placeholder = @"Ex.: 1 cerveja cheia";
-            
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.forEachValueTextField.placeholder = @"10";
+            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.willGiveValueTextField.placeholder = @"1";
             break;
         case RequestCategoryPlastico:
             self.categoryValueLabel.text = @"Plástico";
             self.categoryImageView.image = [UIImage imageNamed:@"PlasticoIcon"];
-            self.titleTextField.placeholder = @"Ex.: Garrafas PET";
-            self.rewardFirstTextField.placeholder = @"Ex.: 5 garrafas";
-            self.rewardSecondTextField.placeholder = @"Ex.: ";
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.forEachValueTextField.placeholder = @"10";
+            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.willGiveValueTextField.placeholder = @"1";
+
             break;
         case RequestCategoryMetal:
             self.categoryValueLabel.text = @"Metal";
             self.categoryImageView.image = [UIImage imageNamed:@"MetalIcon"];
-            self.titleTextField.placeholder = @"Ex.: Latinhas de cerveja";
-            self.rewardFirstTextField.placeholder = @"Ex.: 5 garrafas";
-            self.rewardSecondTextField.placeholder = @"Ex.: 1 cerveja cheia";
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.forEachValueTextField.placeholder = @"10";
+            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.willGiveValueTextField.placeholder = @"1";
+
             break;
         case RequestCategoryPapel:
             self.categoryValueLabel.text = @"Papel";
             self.categoryImageView.image = [UIImage imageNamed:@"PapelIcon"];
-            self.titleTextField.placeholder = @"Ex.: Jornais velhos";
-            self.rewardFirstTextField.placeholder = @"Ex.: 5 garrafas";
-            self.rewardSecondTextField.placeholder = @"Ex.: 1 cerveja cheia";
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.forEachValueTextField.placeholder = @"10";
+            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.willGiveValueTextField.placeholder = @"1";
+
             break;
         case RequestCategoryOutros:
             self.categoryValueLabel.text = @"Outros";
             self.categoryImageView.image = [UIImage imageNamed:@"OutrosIcon"];
-            self.titleTextField.placeholder = @"Ex.: Azulejos quebrados";
-            self.rewardFirstTextField.placeholder = @"Ex.: 5 garrafas";
-            self.rewardSecondTextField.placeholder = @"Ex.: 1 cerveja cheia";
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.forEachValueTextField.placeholder = @"10";
+            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.willGiveValueTextField.placeholder = @"1";
+
             break;
         default:
             break;
     }
     
-    self.quantityTextField.placeholder = @"Ex.: 10";
     
 
 }
@@ -87,61 +107,69 @@
 }
 
 
-- (void) passo3:(id)sender {
+- (void) concluir:(id)sender {
     
-    NSString *title = self.titleTextField.text;
+    NSInteger forEachValue = [self.forEachValueTextField.text intValue];
+    NSString *foreach = self.rewardFirstTextField.text;
+    NSInteger willGiveValue = [self.willGiveValueTextField.text intValue];
+    NSString *willgive = self.rewardSecondTextField.text;
+    NSString *description = self.descriptionTextView.text;
+ 
+    if ([foreach length] < 1)	{ [ProgressHUD showError:@"Campo 'A cada' é obrigatório."];return;}
+    if ([foreach length] > 25)	{ [ProgressHUD showError:@"Campo 'A cada' muito longo (>25)."]; return; }
+    if ([willgive length] < 1)	{ [ProgressHUD showError:@"Campo 'Dou' é obrigatório."];return;}
+    if ([willgive length] > 25)	{ [ProgressHUD showError:@"Campo 'Dou' muito longo (>25)."]; return; }
+    if ([description length] < 1)	{ [ProgressHUD showError:@"A descrição é um campo obrigatório."]; return; }
+    if ([description length] > 140)	{ [ProgressHUD showError:@"Descrição muito longa (>140)."]; return; }
+    if (forEachValue < 1)	{ [ProgressHUD showError:@"Campo 'A cada' deve ter um valor."]; return; }
+    if (willGiveValue < 1)	{ [ProgressHUD showError:@"Campo 'Dou' deve ter um valor."]; return; }
+
     
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-    f.numberStyle = NSNumberFormatterDecimalStyle;
-    NSNumber *quantity = [f numberFromString:self.quantityTextField.text];
+    [ProgressHUD show:@"Please wait..." Interaction:NO];
     
-    BOOL willReward = self.rewardSwitch.on;
-    
-    NSString *reward1 = self.rewardFirstTextField.text;
-    NSString *reward2 = self.rewardSecondTextField.text;
-    
-    if ([title length] < 3)	{ [ProgressHUD showError:@"Campo 'Preciso de' obrigatório."];return;}
-    if ([title length] > 25)	{ [ProgressHUD showError:@"Campo 'Preciso de' muito longo (>25)."]; return; }
-    if ([quantity intValue]<=0 || [quantity intValue]>10000) { [ProgressHUD showError:@"Quantidade deve ser um valor entre 0 e 1000"]; return; }
-    
-    if(willReward){
-        if ([reward1 length] < 3)	{ [ProgressHUD showError:@"Campo 'A cada' é obrigatório."];return;}
-        if ([reward1 length] > 25)	{ [ProgressHUD showError:@"Campo 'A cada' muito longo (>25)."]; return; }
-        if ([reward2 length] < 3)	{ [ProgressHUD showError:@"Campo 'Dou' é obrigatório."];return;}
-        if ([reward2 length] > 25)	{ [ProgressHUD showError:@"Campo 'Dou' muito longo (>25)."]; return; }
+    self.novoPedido.foreachValue = [NSNumber numberWithInteger:forEachValue];
+    self.novoPedido.foreach = foreach;
+    self.novoPedido.willgiveValue = [NSNumber numberWithInteger:willGiveValue];
+    self.novoPedido.willgive = willgive;
+    self.novoPedido.descricao = description;
+
+    if(self.imageView.image) {
+        self.novoPedido.image = CreateThumbnail(self.imageView.image, 600.f);
+        self.novoPedido.thumbnail = CreateThumbnail(self.imageView.image, 150.f);
     }
     
-    self.novoPedido.title = title;
-    self.novoPedido.quantity = quantity;
-    if(self.rewardSwitch.isOn){
-        self.novoPedido.reward = [NSString stringWithFormat:@"A cada %@, dou %@",reward1, reward2];
-    }
+    [[MIDatabase sharedInstance]createNewPedidoInBackGround:self.novoPedido
+                                                      block:^(BOOL succeeded, NSError *error) {
+                                                          if (succeeded) {
+                                                              // The object has been saved.
+                                                              [ProgressHUD showSuccess:@"Sucesso."];
+                                                              [self.navigationController popToRootViewControllerAnimated:YES];
+                                                          } else {
+                                                              [ProgressHUD showError:error.userInfo[@"error"]];
+                                                              // There was a problem, check error.description
+                                                          }
+                                                      }];
     
-    [self performSegueWithIdentifier:@"FromNovoPedidoDadosToNovoPedido" sender:self];
+    
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    // Make sure your segue name in storyboard is the same as this line
-    if ([[segue identifier] isEqualToString:@"FromNovoPedidoDadosToNovoPedido"])
-    {
-        // Get reference to the destination view controller
-        MINovoPedidoViewController *vc = [segue destinationViewController];
-        vc.novoPedido = self.novoPedido;
-    }
+- (IBAction)pressedCamera:(id)sender {
+    PresentPhotoCamera(self, YES);
 }
 
-- (void)setState:(id)sender
+- (void)pressedGallery:(id)sender {
+    PresentPhotoLibrary(self, YES);
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    BOOL willReward = [sender isOn];
+    UIImage *picture = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = picture;
     
-    if(willReward){
-        self.rewardFirstTextField.enabled = YES;
-        self.rewardSecondTextField.enabled = YES;
-    } else {
-        self.rewardFirstTextField.enabled = NO;
-        self.rewardSecondTextField.enabled = NO;
-    }
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 @end

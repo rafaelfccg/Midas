@@ -19,11 +19,12 @@
     if (self) {
         _object = pfobject;
         _owner = pfobject[PF_REQUEST_USER];
-        _title = pfobject[PF_REQUEST_TITLE];
+        _forEach = pfobject[PF_REQUEST_FOREACH];
+        _forEachValue = pfobject[PF_REQUEST_FOREACHVALUE];
+        _willGive = pfobject[PF_REQUEST_WILLGIVE];
+        _willGiveValue = pfobject[PF_REQUEST_WILLGIVEVALUE];
         _descricao = pfobject[PF_REQUEST_DESCRIPTION];
-        _reward = pfobject[PF_REQUEST_REWARD];
         _status = pfobject[PF_REQUEST_STATUS];
-        _quantity = pfobject[PF_REQUEST_QUANTITY];
         _category = pfobject[PF_REQUEST_CATEGORY];
     }
     

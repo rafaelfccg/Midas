@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *pedidosTableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *pedidosSegmentedControl;
 @property (nonatomic,retain) UIRefreshControl *refreshControl NS_AVAILABLE_IOS(6_0);
+- (void)loadRecents;
 
 @end
