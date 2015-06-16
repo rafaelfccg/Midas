@@ -11,11 +11,15 @@
 #import "MIDatabase.h"
 #import "ProgressHUD.h"
 #import "recent.h"
+#import "MINegociation.h"
 
 
-@interface MIPedidoDetalhadoViewController ()
+@interface MIPedidoDetalhadoViewController (){
+   
+}
 
 @property NSString *temporaryObjectID;
+@property  MINegociation * chat ;
 
 @end
 
@@ -52,23 +56,31 @@
                  object[PF_CHAT_REQUESTOWNER] = _currentRequest.owner;
                  object[PF_CHAT_REQUESTGIVER] = [PFUser currentUser];
                  object[PF_CHAT_REQUESTID] = _currentRequest.object.objectId;
-                 if ([object save]) {
-                     _temporaryObjectID = object.objectId;
-                 }else{
-                     [ProgressHUD showError:@"Network error."];
-                     return ;
-                 }
-                 CreateRecentItem([PFUser currentUser], _temporaryObjectID, _currentRequest, @"Negocia");
+                 [object saveInBackgroundWithBlock:^(BOOL success, NSError * error){
+                     if(success){
+                         _temporaryObjectID = object.objectId;
+                         _chat = [[MINegociation alloc]initWithPFObject:object];
+                         CreateRecentItem([PFUser currentUser], _temporaryObjectID, _currentRequest, @"Negocia");
+                         [self performSegueWithIdentifier:@"FromInfoToChatSegue" sender:self];
+
+                     
+                     }else{
+                         [ProgressHUD showError:@"Network error."];
+                     }
+                 }];
     
              }else if([objects count] ==1){
                  PFObject* chat=  [objects objectAtIndex:0];
                  _temporaryObjectID = chat.objectId;
+                 _chat = [[MINegociation alloc]initWithPFObject:chat];
+
+                 
+                 [self performSegueWithIdentifier:@"FromInfoToChatSegue" sender:self];
              }else{
                  NSLog (@"%ld",[objects count]);
              }
              
-             [self performSegueWithIdentifier:@"FromInfoToChatSegue" sender:self];
-            
+             
              
          }
          else [ProgressHUD showError:@"Network error."];
@@ -87,6 +99,7 @@
         // Get reference to the destination view controller
         MIChatViewController *vc = [segue destinationViewController];
         vc.chatId = _temporaryObjectID;
+        vc.neg  = _chat;
         
     }
 }

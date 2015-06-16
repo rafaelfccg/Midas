@@ -112,6 +112,7 @@
     } else if ([[segue identifier] isEqualToString:@"FromMeusPedidosToChatSegue"]){
         MIChatViewController *vc = [segue destinationViewController];
         vc.chatId = _selectedChat.chatId;
+        vc.neg = _selectedChat;
     } else if ([[segue identifier] isEqualToString:@"FromMeusPedidosToNovoPedidoCategoria"]){
         MINovoPedidoCategoriaViewController *vc = [segue destinationViewController];
         vc.novoPedido = [[MINovoPedido alloc] init];

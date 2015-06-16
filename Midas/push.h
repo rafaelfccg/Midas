@@ -10,10 +10,11 @@
 // THE SOFTWARE.
 
 #import <Parse/Parse.h>
+#import "MINegociation.h"
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 void			ParsePushUserAssign		(void);
 void			ParsePushUserResign		(void);
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-void			SendPushNotification	(NSString *groupId, NSString *text);
+void			SendPushNotification	(NSString *groupId, MINegociation * chat,NSString *text);
