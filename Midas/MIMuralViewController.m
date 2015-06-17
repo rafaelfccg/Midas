@@ -13,6 +13,7 @@
 #import "MIPedido.h"
 #import "RNGridMenu.h"
 #import "MIFiltrosDeBusca.h"
+#import "MIMuralCellControllerTableViewCell.h"
 
 @interface MIMuralViewController () <RNGridMenuDelegate>
 
@@ -38,6 +39,9 @@
     
     [self.muralTableView addSubview:self.refreshControl];
     
+    UINib *nib = [UINib nibWithNibName:@"MIMuralCellControllerTableViewCell" bundle:nil];
+    [self.muralTableView registerNib:nib forCellReuseIdentifier:@"MuralCell"];
+     
     self.filtros = [[MIFiltrosDeBusca alloc]init];
 }
 
@@ -64,20 +68,32 @@
 #pragma mark - Table View
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *identifier = @"muralCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    NSString *identifier = @"MuralCell";
+    MIMuralCellControllerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell == nil) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        cell = [[MIMuralCellControllerTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     MIPedido *request = [_requests objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
-    cell.detailTextLabel.text = request.owner.username;
+ //cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
+    //cell.detailTextLabel.text = request.owner.username;
+    
+    cell.pedidoLabel.text = [NSString stringWithFormat:@"%@ %@", request.forEachValue,request.forEach];
+    cell.destinoLabel.text = [NSString stringWithFormat:@"%@ %@", request.willGiveValue, request.willGive];
+    cell.distLabel.text = @"5km";
+    
+    cell.tipoImage.image = [self getCategoryIcon:request.category];
+    
+    cell.usuarioImage.clipsToBounds = YES;
+    cell.usuarioImage.layer.cornerRadius = 22.5f;
+    cell.doadorImage.clipsToBounds = YES;
+    cell.doadorImage.layer.cornerRadius = 22.5f;
+    
     return cell;
 }
 
@@ -197,5 +213,33 @@
     
     [self loadRequests];
 }
+
+- (UIImage *) getCategoryIcon:(NSNumber *)categoryNumber
+{
+    UIImage *image;
+    
+    switch ([categoryNumber intValue]) {
+        case RequestCategoryVidro:
+            image = [UIImage imageNamed:@"VidroIcon"];
+            break;
+        case RequestCategoryMetal:
+            image = [UIImage imageNamed:@"MetalIcon"];
+            break;
+        case RequestCategoryPapel:
+            image = [UIImage imageNamed:@"PapelIcon"];
+            break;
+        case RequestCategoryPlastico:
+            image = [UIImage imageNamed:@"PlasticoIcon"];
+            break;
+        case RequestCategoryOutros:
+            image = [UIImage imageNamed:@"OutrosIcon"];
+            break;
+        default:
+            image = [UIImage imageNamed:@"OutrosIcon"];
+            break;
+    }
+    return image;
+}
+
 
 @end

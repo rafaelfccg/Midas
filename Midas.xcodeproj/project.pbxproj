@@ -139,6 +139,8 @@
 		1FE7DAAA1B2C6C0D00656359 /* MINovoPedido.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAA91B2C6C0D00656359 /* MINovoPedido.m */; };
 		1FE7DAAE1B2C718000656359 /* MINovoPedidoCategoriaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAAD1B2C718000656359 /* MINovoPedidoCategoriaViewController.m */; };
 		1FE7DAB11B2C71BE00656359 /* MINovoPedidoDadosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7DAB01B2C71BE00656359 /* MINovoPedidoDadosViewController.m */; };
+		9155A7E31B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9155A7E11B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.m */; };
+		9155A7E41B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9155A7E21B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -394,6 +396,9 @@
 		1FE7DAAD1B2C718000656359 /* MINovoPedidoCategoriaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINovoPedidoCategoriaViewController.m; sourceTree = "<group>"; };
 		1FE7DAAF1B2C71BE00656359 /* MINovoPedidoDadosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINovoPedidoDadosViewController.h; sourceTree = "<group>"; };
 		1FE7DAB01B2C71BE00656359 /* MINovoPedidoDadosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINovoPedidoDadosViewController.m; sourceTree = "<group>"; };
+		9155A7E01B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMuralCellControllerTableViewCell.h; sourceTree = "<group>"; };
+		9155A7E11B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMuralCellControllerTableViewCell.m; sourceTree = "<group>"; };
+		9155A7E21B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMuralCellControllerTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -873,6 +878,9 @@
 				1FE7DAA31B29016000656359 /* MIRegistrarUserViewController.m */,
 				15FB16711B2F45C100867173 /* MIEditarEnderecoViewController.h */,
 				15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */,
+				9155A7E01B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.h */,
+				9155A7E11B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.m */,
+				9155A7E21B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1012,6 +1020,7 @@
 				003B25441B2A044C00743D0B /* ProfileView.xib in Resources */,
 				003B24D61B29E7A700743D0B /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				001580A51B275E4700E03E94 /* LaunchScreen.xib in Resources */,
+				9155A7E41B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib in Resources */,
 				001580A21B275E4700E03E94 /* Images.xcassets in Resources */,
 				003B252A1B29F54300743D0B /* chat_blank@2x.png in Resources */,
 				003B250E1B29E83B00743D0B /* JSQMessagesAssets.bundle in Resources */,
@@ -1046,6 +1055,7 @@
 				003B24A91B29E77800743D0B /* JSQVideoMediaItem.m in Sources */,
 				003B248B1B29C9EA00743D0B /* UIImageView+AFNetworking.m in Sources */,
 				003B25081B29E7FE00743D0B /* NSString+JSQMessages.m in Sources */,
+				9155A7E31B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.m in Sources */,
 				003B248E1B29C9EA00743D0B /* UIWebView+AFNetworking.m in Sources */,
 				003B24D31B29E7A700743D0B /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				001580C21B2771D400E03E94 /* MIMuralViewController.m in Sources */,
