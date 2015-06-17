@@ -10,10 +10,13 @@
 
 @implementation LocationUtils
 
-+(void)getLocationFromAdress:(NSString*)address withHandler:(void(^)(CLLocation *))completion{
++(void)getLocationFromAdress:(NSString*)address Error:(bool*)shit withHandler:(void(^)(CLLocation *))completion{
     CLGeocoder *_geocoder = [[CLGeocoder alloc] init];
     [_geocoder geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error) {
+        NSLog(@"entrou");
+        *shit = true;
         if (placemarks.count > 0) {
+            *shit = false;
             CLPlacemark *_placemark = [placemarks firstObject];
             completion(_placemark.location);
             //result = _location;// ... do whaterver you want to do with the location

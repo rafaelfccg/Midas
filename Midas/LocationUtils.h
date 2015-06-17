@@ -11,6 +11,6 @@
 
 @interface LocationUtils : NSObject
 
-+(void)getLocationFromAdress:(NSString*)address withHandler:(void(^)(CLLocation *))completion;
++(void)getLocationFromAdress:(NSString*)address Error:(bool*)shit withHandler:(void(^)(CLLocation *))completion;
 
 @end
