@@ -32,7 +32,7 @@
                                                          bundle: nil];
     _recents = [storyboard instantiateViewControllerWithIdentifier:@"MeusPedidos"];
   
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:224.0/256.0 green:134.0/256.0 blue:60.0/256.0 alpha:1]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:224.0/255.0 green:134.0/255.0 blue:60.0/255.0 alpha:1]];
     
     [[UITabBar appearance] setTintColor: [UIColor whiteColor]];
     

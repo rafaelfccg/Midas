@@ -74,18 +74,34 @@
     if (cell == nil) {
         
         cell = [[MIMuralCellControllerTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     MIPedido *request = [_requests objectAtIndex:indexPath.row];
+    
+    //cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
+    //cell.detailTextLabel.text = request.owner.username;
+    
+    cell.pedidoLabel.text = [NSString stringWithFormat:@"%@ %@", request.forEachValue,request.forEach];
+    cell.destinoLabel.text = [NSString stringWithFormat:@"%@ %@", request.willGiveValue, request.willGive];
     PFUser * user = [PFUser currentUser];
-    double distantce  = [request.location distanceInKilometersTo:user[PF_USER_LOCATION]];
-    cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@. Dist %lf", request.forEachValue, request.forEach,request.willGiveValue, request.willGive, distantce ];
-    cell.detailTextLabel.text = request.owner.username;
+    PFGeoPoint * point =  user[PF_USER_LOCATION];
+    
+    if(point && request.location){
+        double val = [point distanceInKilometersTo:request.location];
+        cell.distLabel.text = [NSString stringWithFormat:@"%.0lfkm",val];
+    }else{
+        cell.distLabel.text = [NSString stringWithFormat:@"--"];
+    }
+    cell.tipoImage.image = [self getCategoryIcon:request.category];
+    
+    cell.usuarioImage.clipsToBounds = YES;
+    cell.usuarioImage.layer.cornerRadius = 22.5f;
+    cell.doadorImage.clipsToBounds = YES;
+    cell.doadorImage.layer.cornerRadius = 22.5f;
+    
     return cell;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_requests count];

@@ -139,7 +139,9 @@
     
     PFQuery *orderDistance = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
     [orderDistance whereKey:@"objectId" matchesKey:@"objectId" inQuery:Allquery];
-    [orderDistance whereKey:PF_REQUEST_USERLOCATION nearGeoPoint:current[PF_USER_LOCATION]];
+    if(point){
+        [orderDistance whereKey:PF_REQUEST_USERLOCATION nearGeoPoint:point];
+    }
     [orderDistance includeKey:PF_REQUEST_USER];
     //[Allquery orderByDescending:PF_REQUEST_UPDATEDACTION];
     
