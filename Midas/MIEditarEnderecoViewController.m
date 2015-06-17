@@ -55,10 +55,12 @@
     NSString *alladdress = [cidade stringByAppendingString:@" "];
     alladdress = [alladdress stringByAppendingString:rua];
     
-    
     [LocationUtils getLocationFromAdress:alladdress withHandler:^(CLLocation* location){
+        
         NSLog(@"%lf , %lf",location.coordinate.latitude,location.coordinate.longitude);
         
+        if(location!=nil)
+        {
         
         PFGeoPoint *geoPoint = [[PFGeoPoint alloc]init];
         [geoPoint setLatitude:location.coordinate.latitude];
@@ -72,6 +74,11 @@
         [user save];
         
         [[self navigationController]popToRootViewControllerAnimated:YES];
+        }
+        else
+        {
+            [ProgressHUD showError:@"endereço invalido"];
+        }
     }];
 }
 
@@ -82,13 +89,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
