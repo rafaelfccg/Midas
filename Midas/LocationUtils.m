@@ -13,11 +13,11 @@
 +(void)getLocationFromAdress:(NSString*)address withHandler:(void(^)(CLLocation *))completion{
     CLGeocoder *_geocoder = [[CLGeocoder alloc] init];
     [_geocoder geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error) {
-        if (placemarks.count > 0) {
+        //if (placemarks.count > 0) {
             CLPlacemark *_placemark = [placemarks firstObject];
             completion(_placemark.location);
             //result = _location;// ... do whaterver you want to do with the location
-        }
+        //}
     }];
 }
 
