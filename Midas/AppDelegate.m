@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "MIMeusPedidosViewController.h"
+#import "AppConstant.h"
 @interface AppDelegate ()
 
 @property MIMeusPedidosViewController *recents;
@@ -38,7 +39,7 @@
     
     
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:224.0/256.0 green:134.0/256.0 blue:60.0/256.0 alpha:1]];
+    [[UINavigationBar appearance] setBarTintColor:COLOR_TABBAR];
     
     [[UINavigationBar appearance] setTintColor: [UIColor whiteColor]];
     
