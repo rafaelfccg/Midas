@@ -5,11 +5,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Mural-->
+        <!--Navigation Controller-->
         <scene sceneID="5S1-tF-YyX">
             <objects>
                 <navigationController id="u96-fw-Yp0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mural" image="MuralTabBarIcon" id="Zpb-Vg-5KV"/>
+                    <tabBarItem key="tabBarItem" title="" image="MuralTabBarIcon" id="Zpb-Vg-5KV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FEi-RQ-gmm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -332,11 +332,11 @@
             </objects>
             <point key="canvasLocation" x="-232" y="2836"/>
         </scene>
-        <!--Configurações-->
+        <!--Navigation Controller-->
         <scene sceneID="gma-By-cRe">
             <objects>
                 <navigationController id="4e8-Jq-RGm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Configurações" image="ConfigTabBarIcon" id="osk-Fw-3YX"/>
+                    <tabBarItem key="tabBarItem" title="" image="ConfigTabBarIcon" id="osk-Fw-3YX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gPr-TA-Db3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -349,11 +349,11 @@
             </objects>
             <point key="canvasLocation" x="-232" y="2043"/>
         </scene>
-        <!--Meus Pedidos-->
+        <!--Navigation Controller-->
         <scene sceneID="p6a-ua-bZ4">
             <objects>
                 <navigationController id="8uO-6A-hiw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Meus Pedidos" image="PerfilTabBarIcon" id="dmQ-Ei-OXs"/>
+                    <tabBarItem key="tabBarItem" title="" image="PerfilTabBarIcon" id="dmQ-Ei-OXs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JhH-Cb-93V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -464,7 +464,7 @@
         <image name="PerfilTabBarIcon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xhW-XF-LFV"/>
+        <segue reference="gtB-mQ-NLu"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.8784313725490196" green="0.52549019607843139" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
 </document>

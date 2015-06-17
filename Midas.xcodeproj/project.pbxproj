@@ -37,6 +37,8 @@
 		91878DBA1B2A0FC700808866 /* pet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91878DB81B2A0FC700808866 /* pet.jpg */; };
 		9191D6B21B28B18C0016553D /* MIMuralCellControllerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9191D6B01B28B18C0016553D /* MIMuralCellControllerTableViewCell.m */; };
 		9191D6B31B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9191D6B11B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib */; };
+		91ACE2EA1B31CB7D001804AF /* MIMeusPedidosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91ACE2E81B31CB7D001804AF /* MIMeusPedidosTableViewCell.m */; };
+		91ACE2EB1B31CB7D001804AF /* MIMeusPedidosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91ACE2E91B31CB7D001804AF /* MIMeusPedidosTableViewCell.xib */; };
 		91F06D221B2E34600058225B /* metal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F06D211B2E34600058225B /* metal.jpg */; };
 		91F06D271B2E3F360058225B /* gaga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F06D241B2E3F360058225B /* gaga.jpg */; };
 		91F06D281B2E3F360058225B /* xuxa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F06D251B2E3F360058225B /* xuxa.jpg */; };
@@ -105,6 +107,9 @@
 		9191D6AF1B28B18C0016553D /* MIMuralCellControllerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMuralCellControllerTableViewCell.h; sourceTree = "<group>"; };
 		9191D6B01B28B18C0016553D /* MIMuralCellControllerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMuralCellControllerTableViewCell.m; sourceTree = "<group>"; };
 		9191D6B11B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMuralCellControllerTableViewCell.xib; sourceTree = "<group>"; };
+		91ACE2E71B31CB7D001804AF /* MIMeusPedidosTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMeusPedidosTableViewCell.h; sourceTree = "<group>"; };
+		91ACE2E81B31CB7D001804AF /* MIMeusPedidosTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMeusPedidosTableViewCell.m; sourceTree = "<group>"; };
+		91ACE2E91B31CB7D001804AF /* MIMeusPedidosTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMeusPedidosTableViewCell.xib; sourceTree = "<group>"; };
 		91F06D211B2E34600058225B /* metal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal.jpg; sourceTree = "<group>"; };
 		91F06D241B2E3F360058225B /* gaga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gaga.jpg; sourceTree = "<group>"; };
 		91F06D251B2E3F360058225B /* xuxa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xuxa.jpg; sourceTree = "<group>"; };
@@ -172,6 +177,9 @@
 				9191D6AF1B28B18C0016553D /* MIMuralCellControllerTableViewCell.h */,
 				9191D6B01B28B18C0016553D /* MIMuralCellControllerTableViewCell.m */,
 				9191D6B11B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib */,
+				91ACE2E71B31CB7D001804AF /* MIMeusPedidosTableViewCell.h */,
+				91ACE2E81B31CB7D001804AF /* MIMeusPedidosTableViewCell.m */,
+				91ACE2E91B31CB7D001804AF /* MIMeusPedidosTableViewCell.xib */,
 			);
 			path = Midas;
 			sourceTree = "<group>";
@@ -338,6 +346,7 @@
 				001580A01B275E4700E03E94 /* Main.storyboard in Resources */,
 				91878DB91B2A0FC700808866 /* garrafas.jpg in Resources */,
 				91F06D271B2E3F360058225B /* gaga.jpg in Resources */,
+				91ACE2EB1B31CB7D001804AF /* MIMeusPedidosTableViewCell.xib in Resources */,
 				001580A51B275E4700E03E94 /* LaunchScreen.xib in Resources */,
 				91878DBA1B2A0FC700808866 /* pet.jpg in Resources */,
 				9191D6B31B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib in Resources */,
@@ -369,6 +378,7 @@
 				001580D11B27729500E03E94 /* MINovoPedidoViewController.m in Sources */,
 				001580DD1B2773B500E03E94 /* MIPedido.m in Sources */,
 				001580E61B27742200E03E94 /* MIUser.m in Sources */,
+				91ACE2EA1B31CB7D001804AF /* MIMeusPedidosTableViewCell.m in Sources */,
 				0015809A1B275E4700E03E94 /* AppDelegate.m in Sources */,
 				001580CB1B27726600E03E94 /* MIPedidoDetalhadoViewController.m in Sources */,
 				001580DA1B2772F600E03E94 /* MIEditarPedidoViewController.m in Sources */,

@@ -15,12 +15,11 @@
 @property (nonatomic, strong) NSArray *imageArray;
 @property (nonatomic, strong) NSArray *tipoArray;
 @property (nonatomic, strong) NSArray *usuarioArray;
-@property (nonatomic, strong) NSArray *distImageArray;
 @property (nonatomic, strong) NSArray *doadorArray;
 
 @property (nonatomic, strong) NSArray *pedidoArray;
 @property (nonatomic, strong) NSArray *destArray;
-
+@property (nonatomic, strong) NSArray *quantArray;
 @property (nonatomic, strong) NSArray *distArray;
 
 
@@ -36,10 +35,12 @@
     
     self.imageArray = @[@"garrafas.jpg", @"metal.jpg", @"pet.jpg"];
     self.tipoArray = @[@"VidroIcon", @"MetalIcon", @"PlasticoIcon"];
-    self.usuarioArray = @[@"zecaa.jpg", @"xuxa.jpg", @"gaga.jpg"];
+    self.usuarioArray = @[@"david_TabBar", @"xuxa.jpg", @"gaga.jpg"];
+    self.doadorArray = @[@"zecaa.jpg", @"kiev", @"kiev"];
     
-    self.pedidoArray = @[@"Preciso de 20 garrafas de vidro", @"Preciso de 40 latinhas de metal", @"Preciso de 3kg de pet"];
-    self.destArray = @[@"Em troca: Tomo umas contigo", @"Em troca: Canto Ilariê", @"Em troca: Danço Poker Face"];
+    self.quantArray = @[@"26", @"10", @"30"];
+    self.pedidoArray = @[@"Garrafas de vidro", @"Latinhas de metal", @"Garrafas pet"];
+    self.destArray = @[@"Cervejas homemade", @"Porta lápis", @"Carrinhos de plástico"];
     self.distArray = @[@"5km", @"25km", @"45m"];
     // Do any additional setup after loading the view.
     
@@ -98,17 +99,16 @@
     
     NSString *tipoString = [self.tipoArray objectAtIndex:indexPath.row];
     cell.tipoImage.image = [UIImage imageNamed:tipoString];
-    cell.tipoImage.layer.borderWidth = 2.0f;
-    cell.tipoImage.layer.borderColor = [UIColor whiteColor].CGColor;
-    cell.tipoImage.layer.cornerRadius = 20.0f;
     
     NSString *usuarioString = [self.usuarioArray objectAtIndex:indexPath.row];
     cell.usuarioImage.image = [UIImage imageNamed:usuarioString];
-    cell.usuarioImage.layer.cornerRadius = cell.usuarioImage.frame.size.width / 2;
     cell.usuarioImage.clipsToBounds = YES;
-    cell.usuarioImage.layer.borderWidth = 2.0f;
-    cell.usuarioImage.layer.borderColor = [UIColor whiteColor].CGColor;
-    cell.usuarioImage.layer.cornerRadius = 20.0f;
+    cell.usuarioImage.layer.cornerRadius = 22.5f;
+    
+    NSString *doadorString = [self.doadorArray objectAtIndex:indexPath.row];
+    cell.doadorImage.image = [UIImage imageNamed:doadorString];
+    cell.doadorImage.clipsToBounds = YES;
+    cell.doadorImage.layer.cornerRadius = 22.5f;
 
     
     
@@ -118,8 +118,11 @@
     NSString *distString = [self.distArray objectAtIndex:indexPath.row];
     cell.distLabel.text = distString;
     
-    NSString *trocaString = [self.trocaArray objectAtIndex:indexPath.row];
-    cell.trocaLabel.text = trocaString;
+    NSString *destString = [self.destArray objectAtIndex:indexPath.row];
+    cell.destinoLabel.text = destString;
+    
+    NSString *quantString = [self.quantArray objectAtIndex:indexPath.row];
+    cell.quantidadeLabel.text = quantString;
     
     return cell;
 }

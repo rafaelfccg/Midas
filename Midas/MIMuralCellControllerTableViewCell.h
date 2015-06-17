@@ -14,7 +14,6 @@
 @property (nonatomic, weak) IBOutlet UIImageView *pedidoImage;
 @property (nonatomic, weak) IBOutlet UIImageView *tipoImage;
 @property (nonatomic, weak) IBOutlet UIImageView *usuarioImage;
-@property (nonatomic, weak) IBOutlet UIImageView *distImage;
 @property (weak, nonatomic) IBOutlet UIImageView *doadorImage;
 
 
