@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MIMeusPedidosTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="222"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <userGuides>
+                    <userLayoutGuide location="10" affinity="minX"/>
+                    <userLayoutGuide location="365" affinity="minX"/>
+                </userGuides>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zKX-WA-4QM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="Op9-2h-fEc">
+                        <rect key="frame" x="0.0" y="153" width="375" height="60"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="meio" translatesAutoresizingMaskIntoConstraints="NO" id="qdr-nn-XQV">
+                        <rect key="frame" x="62" y="113" width="250" height="100"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4u-Pj-TOn">
+                        <rect key="frame" x="10" y="160" width="45" height="45"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="david_TabBar" translatesAutoresizingMaskIntoConstraints="NO" id="B1C-XR-x5g">
+                        <rect key="frame" x="320" y="160" width="45" height="45"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSQ-p4-Uab">
+                        <rect key="frame" x="91" y="124" width="192" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3W-J5-PJ3">
+                        <rect key="frame" x="91" y="184" width="192" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setas" translatesAutoresizingMaskIntoConstraints="NO" id="p7h-By-aaH">
+                        <rect key="frame" x="177" y="144" width="20" height="40"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="categoriaIcon" destination="C4u-Pj-TOn" id="gOw-Zj-P6k"/>
+                <outlet property="destinoImage" destination="t3W-J5-PJ3" id="ztd-fj-Eys"/>
+                <outlet property="meuPedidoImage" destination="zKX-WA-4QM" id="fT1-no-pSL"/>
+                <outlet property="meuPedidoLabel" destination="nSQ-p4-Uab" id="eg2-7P-Bcr"/>
+                <outlet property="minhaImage" destination="B1C-XR-x5g" id="7Rd-Ob-km5"/>
+                <outlet property="pedidoImage" destination="zKX-WA-4QM" id="NMa-QB-92Z"/>
+                <outlet property="trocaLabel" destination="t3W-J5-PJ3" id="s2b-Cf-X89"/>
+                <outlet property="usuarioImage" destination="B1C-XR-x5g" id="Xkd-jV-dZV"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Bar" width="1563" height="269"/>
+        <image name="david_TabBar" width="228" height="227"/>
+        <image name="meio" width="1023" height="456"/>
+        <image name="setas" width="101" height="202"/>
+    </resources>
+</document>
