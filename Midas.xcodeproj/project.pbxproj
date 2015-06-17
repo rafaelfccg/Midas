@@ -35,9 +35,12 @@
 		001580F61B28AA5500E03E94 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001580F11B28AA5500E03E94 /* ParseUI.framework */; };
 		91878DB91B2A0FC700808866 /* garrafas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91878DB71B2A0FC700808866 /* garrafas.jpg */; };
 		91878DBA1B2A0FC700808866 /* pet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91878DB81B2A0FC700808866 /* pet.jpg */; };
-		91878DBC1B2A101F00808866 /* latas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91878DBB1B2A101F00808866 /* latas.jpg */; };
 		9191D6B21B28B18C0016553D /* MIMuralCellControllerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9191D6B01B28B18C0016553D /* MIMuralCellControllerTableViewCell.m */; };
 		9191D6B31B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9191D6B11B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib */; };
+		91F06D221B2E34600058225B /* metal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F06D211B2E34600058225B /* metal.jpg */; };
+		91F06D271B2E3F360058225B /* gaga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F06D241B2E3F360058225B /* gaga.jpg */; };
+		91F06D281B2E3F360058225B /* xuxa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F06D251B2E3F360058225B /* xuxa.jpg */; };
+		91F06D2C1B2E53970058225B /* zecaa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F06D2B1B2E53970058225B /* zecaa.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,10 +102,13 @@
 		001580F11B28AA5500E03E94 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		91878DB71B2A0FC700808866 /* garrafas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = garrafas.jpg; sourceTree = "<group>"; };
 		91878DB81B2A0FC700808866 /* pet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pet.jpg; sourceTree = "<group>"; };
-		91878DBB1B2A101F00808866 /* latas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = latas.jpg; sourceTree = "<group>"; };
 		9191D6AF1B28B18C0016553D /* MIMuralCellControllerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMuralCellControllerTableViewCell.h; sourceTree = "<group>"; };
 		9191D6B01B28B18C0016553D /* MIMuralCellControllerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMuralCellControllerTableViewCell.m; sourceTree = "<group>"; };
 		9191D6B11B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMuralCellControllerTableViewCell.xib; sourceTree = "<group>"; };
+		91F06D211B2E34600058225B /* metal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal.jpg; sourceTree = "<group>"; };
+		91F06D241B2E3F360058225B /* gaga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gaga.jpg; sourceTree = "<group>"; };
+		91F06D251B2E3F360058225B /* xuxa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xuxa.jpg; sourceTree = "<group>"; };
+		91F06D2B1B2E53970058225B /* zecaa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zecaa.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 				001580921B275E4700E03E94 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		001580921B275E4700E03E94 /* Products */ = {
 			isa = PBXGroup;
@@ -172,8 +179,11 @@
 		001580941B275E4700E03E94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				91F06D2B1B2E53970058225B /* zecaa.jpg */,
+				91F06D241B2E3F360058225B /* gaga.jpg */,
+				91F06D251B2E3F360058225B /* xuxa.jpg */,
 				91878DB71B2A0FC700808866 /* garrafas.jpg */,
-				91878DBB1B2A101F00808866 /* latas.jpg */,
+				91F06D211B2E34600058225B /* metal.jpg */,
 				91878DB81B2A0FC700808866 /* pet.jpg */,
 				001580951B275E4700E03E94 /* Info.plist */,
 				001580961B275E4700E03E94 /* main.m */,
@@ -291,6 +301,7 @@
 				TargetAttributes = {
 					001580901B275E4700E03E94 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3KJH3C82SP;
 					};
 					001580A91B275E4700E03E94 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -322,12 +333,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91F06D221B2E34600058225B /* metal.jpg in Resources */,
+				91F06D281B2E3F360058225B /* xuxa.jpg in Resources */,
 				001580A01B275E4700E03E94 /* Main.storyboard in Resources */,
-				91878DBC1B2A101F00808866 /* latas.jpg in Resources */,
 				91878DB91B2A0FC700808866 /* garrafas.jpg in Resources */,
+				91F06D271B2E3F360058225B /* gaga.jpg in Resources */,
 				001580A51B275E4700E03E94 /* LaunchScreen.xib in Resources */,
 				91878DBA1B2A0FC700808866 /* pet.jpg in Resources */,
 				9191D6B31B28B18C0016553D /* MIMuralCellControllerTableViewCell.xib in Resources */,
+				91F06D2C1B2E53970058225B /* zecaa.jpg in Resources */,
 				001580A21B275E4700E03E94 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -496,6 +511,7 @@
 				INFOPLIST_FILE = Midas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -503,6 +519,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -510,6 +527,7 @@
 				INFOPLIST_FILE = Midas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

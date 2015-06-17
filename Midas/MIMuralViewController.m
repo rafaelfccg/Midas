@@ -16,9 +16,11 @@
 @property (nonatomic, strong) NSArray *tipoArray;
 @property (nonatomic, strong) NSArray *usuarioArray;
 @property (nonatomic, strong) NSArray *distImageArray;
+@property (nonatomic, strong) NSArray *doadorArray;
 
 @property (nonatomic, strong) NSArray *pedidoArray;
-@property (nonatomic, strong) NSArray *trocaArray;
+@property (nonatomic, strong) NSArray *destArray;
+
 @property (nonatomic, strong) NSArray *distArray;
 
 
@@ -32,15 +34,15 @@
     self.muralTableView.delegate = self;
     self.muralTableView.dataSource = self;
     
-    self.imageArray = @[@"garrafas.jpg", @"latas.jpg", @"pet.jpg"];
-    self.tipoArray = @[@"garrafas.jpg", @"latas.jpg", @"pet.jpg"];
-    self.usuarioArray = @[@"garrafas.jpg", @"latas.jpg", @"pet.jpg"];
-    self.distImageArray = @[@"garrafas.jpg", @"latas.jpg", @"pet.jpg"];
+    self.imageArray = @[@"garrafas.jpg", @"metal.jpg", @"pet.jpg"];
+    self.tipoArray = @[@"VidroIcon", @"MetalIcon", @"PlasticoIcon"];
+    self.usuarioArray = @[@"zecaa.jpg", @"xuxa.jpg", @"gaga.jpg"];
     
-    self.pedidoArray = @[@"Preciso de 20 garrafas de vinho", @"Preciso de 40 latinhas de metal", @"Peciso de 3kg de pet"];
-    self.trocaArray = @[@"Dou 2 garrafas de bebida", @"Dou uma arte", @"Pagamento à combinar"];
-    self.distArray = @[@"5km", @"25km", @"50m"];
+    self.pedidoArray = @[@"Preciso de 20 garrafas de vidro", @"Preciso de 40 latinhas de metal", @"Preciso de 3kg de pet"];
+    self.destArray = @[@"Em troca: Tomo umas contigo", @"Em troca: Canto Ilariê", @"Em troca: Danço Poker Face"];
+    self.distArray = @[@"5km", @"25km", @"45m"];
     // Do any additional setup after loading the view.
+    
     
     UINib *nib = [UINib nibWithNibName:@"MIMuralCellControllerTableViewCell" bundle:nil];
     [self.muralTableView registerNib:nib forCellReuseIdentifier:@"MuralCell"];
@@ -70,7 +72,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return [self.imageArray count];
+    return [self.tipoArray count];
 }
 
 
@@ -96,13 +98,18 @@
     
     NSString *tipoString = [self.tipoArray objectAtIndex:indexPath.row];
     cell.tipoImage.image = [UIImage imageNamed:tipoString];
+    cell.tipoImage.layer.borderWidth = 2.0f;
+    cell.tipoImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    cell.tipoImage.layer.cornerRadius = 20.0f;
     
     NSString *usuarioString = [self.usuarioArray objectAtIndex:indexPath.row];
     cell.usuarioImage.image = [UIImage imageNamed:usuarioString];
-    
-    NSString *distImageString = [self.distImageArray objectAtIndex:indexPath.row];
-    cell.distImage.image = [UIImage imageNamed:distImageString];
-    
+    cell.usuarioImage.layer.cornerRadius = cell.usuarioImage.frame.size.width / 2;
+    cell.usuarioImage.clipsToBounds = YES;
+    cell.usuarioImage.layer.borderWidth = 2.0f;
+    cell.usuarioImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    cell.usuarioImage.layer.cornerRadius = 20.0f;
+
     
     
     NSString *pedidoString = [self.pedidoArray objectAtIndex:indexPath.row];

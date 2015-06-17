@@ -9,7 +9,7 @@
         <scene sceneID="5S1-tF-YyX">
             <objects>
                 <navigationController id="u96-fw-Yp0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mural" id="Zpb-Vg-5KV"/>
+                    <tabBarItem key="tabBarItem" title="Mural" image="MuralTabBarIcon" id="Zpb-Vg-5KV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FEi-RQ-gmm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -58,7 +58,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Mural" id="43F-fr-cwf">
-                        <barButtonItem key="leftBarButtonItem" title="Busca" id="YDI-qQ-k5T"/>
+                        <barButtonItem key="leftBarButtonItem" image="BuscaIcon" id="YDI-qQ-k5T"/>
                     </navigationItem>
                     <connections>
                         <outlet property="muralTableView" destination="1AG-mV-2FH" id="dH0-zG-YId"/>
@@ -189,8 +189,8 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Meus Pedidos" id="c2T-jl-4eA">
-                        <barButtonItem key="leftBarButtonItem" title="Busca" id="Vf4-8l-3ce"/>
-                        <barButtonItem key="rightBarButtonItem" title="Novo" id="3Sy-oz-J55">
+                        <barButtonItem key="leftBarButtonItem" image="BuscaIcon" id="Vf4-8l-3ce"/>
+                        <barButtonItem key="rightBarButtonItem" image="NovoIcon" id="3Sy-oz-J55">
                             <connections>
                                 <segue destination="9gN-Xw-wxM" kind="show" identifier="FromMeusPedidosToNovoPedido" id="LeH-eG-FzW"/>
                             </connections>
@@ -336,7 +336,7 @@
         <scene sceneID="gma-By-cRe">
             <objects>
                 <navigationController id="4e8-Jq-RGm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Configurações" id="osk-Fw-3YX"/>
+                    <tabBarItem key="tabBarItem" title="Configurações" image="ConfigTabBarIcon" id="osk-Fw-3YX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gPr-TA-Db3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -353,7 +353,7 @@
         <scene sceneID="p6a-ua-bZ4">
             <objects>
                 <navigationController id="8uO-6A-hiw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Meus Pedidos" id="dmQ-Ei-OXs"/>
+                    <tabBarItem key="tabBarItem" title="Meus Pedidos" image="PerfilTabBarIcon" id="dmQ-Ei-OXs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JhH-Cb-93V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -456,7 +456,15 @@
             <point key="canvasLocation" x="-2242" y="716"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BuscaIcon" width="40" height="40"/>
+        <image name="ConfigTabBarIcon" width="50" height="50"/>
+        <image name="MuralTabBarIcon" width="50" height="50"/>
+        <image name="NovoIcon" width="40" height="40"/>
+        <image name="PerfilTabBarIcon" width="50" height="50"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xhW-XF-LFV"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.8784313725490196" green="0.52549019607843139" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
 </document>

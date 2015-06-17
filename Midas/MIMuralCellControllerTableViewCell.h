@@ -10,13 +10,17 @@
 
 @interface MIMuralCellControllerTableViewCell : UITableViewCell
 
+
 @property (nonatomic, weak) IBOutlet UIImageView *pedidoImage;
 @property (nonatomic, weak) IBOutlet UIImageView *tipoImage;
 @property (nonatomic, weak) IBOutlet UIImageView *usuarioImage;
 @property (nonatomic, weak) IBOutlet UIImageView *distImage;
+@property (weak, nonatomic) IBOutlet UIImageView *doadorImage;
+
 
 @property (nonatomic, weak) IBOutlet UILabel *pedidoLabel;
-@property (nonatomic, weak) IBOutlet UILabel *trocaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *quantidadeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *destinoLabel;
 @property (nonatomic, weak) IBOutlet UILabel *distLabel;
 
 @end
