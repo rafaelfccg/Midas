@@ -21,8 +21,7 @@
 
 
 - (IBAction)searchAddress:(id)sender {
-    bool shit;
-    [LocationUtils getLocationFromAdress:_address.text Error:(&shit) withHandler:^(CLLocation* location){
+    [LocationUtils getLocationFromAdress:_address.text withHandler:^(CLLocation* location){
         NSLog(@"%lf , %lf",location.coordinate.latitude,location.coordinate.longitude);
         
 //        dispatch_async(dispatch_get_main_queue(),^(void){;

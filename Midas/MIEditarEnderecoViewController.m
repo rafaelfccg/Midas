@@ -55,12 +55,12 @@
     NSString *alladdress = [cidade stringByAppendingString:@" "];
     alladdress = [alladdress stringByAppendingString:rua];
     
-    bool error=false;
-    
-    [LocationUtils getLocationFromAdress:alladdress Error:(&error) withHandler:^(CLLocation* location){
+    [LocationUtils getLocationFromAdress:alladdress withHandler:^(CLLocation* location){
         
         NSLog(@"%lf , %lf",location.coordinate.latitude,location.coordinate.longitude);
         
+        if(location!=nil)
+        {
         
         PFGeoPoint *geoPoint = [[PFGeoPoint alloc]init];
         [geoPoint setLatitude:location.coordinate.latitude];
@@ -74,6 +74,11 @@
         [user save];
         
         [[self navigationController]popToRootViewControllerAnimated:YES];
+        }
+        else
+        {
+            [ProgressHUD showError:@"endereço invalido"];
+        }
     }];
 }
 
