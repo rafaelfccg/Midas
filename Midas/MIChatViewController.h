@@ -10,10 +10,13 @@
 
 #import "JSQMessages.h"
 #import "RNGridMenu.h"
+#import "MINegociation.h"
 
 @interface MIChatViewController : JSQMessagesViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, RNGridMenuDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *chatTableView;
 @property NSString *chatId;
+@property MINegociation * neg;
+
 - (id)initWith:(NSString *)groupId_;
 
 @end

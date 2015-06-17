@@ -46,20 +46,23 @@ void ParsePushUserResign(void)
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-void SendPushNotification(NSString *chatId, NSString *text)
+void SendPushNotification(NSString *chatId, MINegociation * chat, NSString *text)
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
 	PFUser *user = [PFUser currentUser];
-	NSString *message = [NSString stringWithFormat:@"%@: %@", user[PF_USER_FULLNAME], text];
+	NSString *message = [NSString stringWithFormat:@"%@: %@", user.username, text];
 
-	PFQuery *query = [PFQuery queryWithClassName:PF_RECENT_CLASS_NAME];
-	[query whereKey:PF_RECENT_CHATID equalTo:chatId];
-	[query includeKey:PF_RECENT_REQUESTGIVER];
-	[query setLimit:1000];
-
-	PFQuery *queryInstallation = [PFInstallation query];
-	[queryInstallation whereKey:PF_INSTALLATION_USER matchesKey:PF_RECENT_REQUESTGIVER inQuery:query];
-
+	PFQuery *query1 = [PFQuery queryWithClassName:PF_RECENT_CLASS_NAME];
+	[query1 whereKey:PF_RECENT_CHATID equalTo:chatId];
+    PFQuery *queryInstallation = [PFInstallation query];
+    
+    if([user.objectId isEqualToString:chat.owner.objectId]){
+        //[query1 whereKey:PF_RECENT_REQUESTOWNER equalTo:user];
+        [queryInstallation whereKey:PF_INSTALLATION_USER matchesKey:PF_RECENT_REQUESTGIVER inQuery:query1];
+    }else{
+        //[query1 whereKey:PF_RECENT_REQUESTGIVER equalTo:user];
+        [queryInstallation whereKey:PF_INSTALLATION_USER matchesKey:PF_RECENT_REQUESTOWNER inQuery:query1];
+    }
 	PFPush *push = [[PFPush alloc] init];
 	[push setQuery:queryInstallation];
 	[push setMessage:message];

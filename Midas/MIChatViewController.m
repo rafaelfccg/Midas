@@ -36,6 +36,7 @@
     JSQMessagesBubbleImage *bubbleImageIncoming;
     JSQMessagesAvatarImage *avatarImageBlank;
 }
+//@property MINegociation * chat;
 @end
 
 @implementation MIChatViewController
@@ -235,7 +236,7 @@
          else [ProgressHUD showError:@"Network error."];;
      }];
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    SendPushNotification(_chatId, text);
+    SendPushNotification(_chatId, _neg, text);
     UpdateRecentCounter(_chatId, 1, text);
     //---------------------------------------------------------------------------------------------------------------------------------------------
     [self finishSendingMessage];
