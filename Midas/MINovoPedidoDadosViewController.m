@@ -126,12 +126,13 @@
 
     
     [ProgressHUD show:@"Please wait..." Interaction:NO];
-    
+    PFUser * user = [PFUser currentUser];
     self.novoPedido.foreachValue = [NSNumber numberWithInteger:forEachValue];
     self.novoPedido.foreach = foreach;
     self.novoPedido.willgiveValue = [NSNumber numberWithInteger:willGiveValue];
     self.novoPedido.willgive = willgive;
     self.novoPedido.descricao = description;
+    self.novoPedido.location = user[PF_USER_LOCATION];
 
     if(self.imageView.image) {
         self.novoPedido.image = CreateThumbnail(self.imageView.image, 600.f);

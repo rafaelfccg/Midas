@@ -20,6 +20,7 @@
 @property (readonly) NSString *willGive;
 @property (readonly) NSNumber *status;
 @property (readonly) NSNumber *category;
+@property (readonly) PFGeoPoint* location;
 
 - (instancetype) initWithPFObject:(PFObject *)object;
 

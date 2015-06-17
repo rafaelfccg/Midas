@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface MINovoPedido : NSObject
 
@@ -19,4 +20,6 @@
 @property UIImage *image;
 @property UIImage *thumbnail;
 @property NSNumber *category;
+@property PFGeoPoint *location;
+
 @end

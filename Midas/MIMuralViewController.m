@@ -75,8 +75,9 @@
     }
     
     MIPedido *request = [_requests objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
+    PFUser * user = [PFUser currentUser];
+    double distantce  = [request.location distanceInKilometersTo:user[PF_USER_LOCATION]];
+    cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@. Dist %lf", request.forEachValue, request.forEach,request.willGiveValue, request.willGive, distantce ];
     cell.detailTextLabel.text = request.owner.username;
     return cell;
 }
