@@ -33,16 +33,12 @@
                                                          bundle: nil];
     _recents = [storyboard instantiateViewControllerWithIdentifier:@"MeusPedidos"];
   
-    [[UITabBar appearance] setBarTintColor:COLOR_TABBAR];
+    [[UITabBar appearance] setBarTintColor: [UIColor whiteColor]];
+    [[UITabBar appearance] setTranslucent:NO];
+    [[UITabBar appearance] setTintColor:COLOR_TABBAR];
     
-    [[UITabBar appearance] setTintColor: [UIColor whiteColor]];
-    
-    
-    
-    [[UINavigationBar appearance] setBarTintColor:COLOR_TABBAR];
-    
-    [[UINavigationBar appearance] setTintColor: [UIColor whiteColor]];
-    
+    [[UINavigationBar appearance] setBarTintColor: [UIColor whiteColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
 
     
     return YES;

@@ -14,6 +14,7 @@
 #import "MIPedido.h"
 #import "MINegociation.h"
 #import "ProgressHUD.h"
+#import "MIMeusPedidosTableViewCell.h"
 
 @interface MIMeusPedidosViewController ()
 
@@ -21,6 +22,7 @@
 @property NSMutableArray *recents;
 @property MIPedido* selectedRequest;
 @property MINegociation * selectedChat;
+
 
 
 @end
@@ -40,6 +42,8 @@
     [self.pedidosTableView addSubview:self.refreshControl];
     
     [self.pedidosSegmentedControl addTarget:self action:@selector(valueChanged:) forControlEvents: UIControlEventValueChanged];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,12 +59,12 @@
 #pragma mark - Table View
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *identifier = @"muralCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    NSString *identifier = @"pedidoCell";
+    MIMeusPedidosTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell == nil) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        cell = [[MIMeusPedidosTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
@@ -75,6 +79,7 @@
         cell.textLabel.text = recent.owner.username;
         cell.detailTextLabel.text = recent.lastMessage;
     }
+    
     return cell;
 }
 

@@ -98,6 +98,12 @@
                             <rect key="frame" x="95" y="182" width="185" height="21"/>
                         </variation>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linha" translatesAutoresizingMaskIntoConstraints="NO" id="FhD-xU-2XP">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                            <rect key="frame" x="0.0" y="216" width="375" height="1"/>
+                        </variation>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                 <variation key="default">
@@ -114,6 +120,7 @@
                         <exclude reference="78I-Di-WI1"/>
                         <exclude reference="jno-1J-f9D"/>
                         <exclude reference="cu8-cE-0NN"/>
+                        <exclude reference="FhD-xU-2XP"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
@@ -130,6 +137,7 @@
                         <include reference="78I-Di-WI1"/>
                         <include reference="jno-1J-f9D"/>
                         <include reference="cu8-cE-0NN"/>
+                        <include reference="FhD-xU-2XP"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -150,6 +158,7 @@
         <image name="KmIcon" width="227" height="227"/>
         <image name="david_TabBar" width="228" height="227"/>
         <image name="kiev" width="226" height="232"/>
+        <image name="linha" width="1485" height="4"/>
         <image name="meio" width="1023" height="456"/>
         <image name="seta" width="255" height="60"/>
         <image name="seta2" width="256" height="60"/>
