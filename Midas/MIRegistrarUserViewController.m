@@ -9,6 +9,7 @@
 #import "MIRegistrarUserViewController.h"
 #import "ProgressHUD.h"
 #import "MIDatabase.h"
+#import "camera.h"
 @implementation MIRegistrarUserViewController
 
 - (void) viewDidLoad {
@@ -17,6 +18,12 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
+    _CancelarButton.layer.cornerRadius = 5;
+    _CancelarButton.layer.borderWidth = 1;
+    _CancelarButton.layer.borderColor = COLOR_OUTGOING.CGColor;
+    _okButton.layer.cornerRadius = 5;
+    _okButton.layer.borderWidth = 1;
+    _okButton.layer.borderColor = COLOR_OUTGOING.CGColor;
 
 }
 
@@ -78,12 +85,15 @@
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 - (IBAction)cameraphoto:(id)sender {
     
 }
 - (IBAction)FotoGaleria:(id)sender {
     
+     PresentPhotoLibrary(self, YES);
 }
+
 
 
 @end
