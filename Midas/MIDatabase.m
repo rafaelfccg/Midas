@@ -41,6 +41,7 @@
     user.username = username;
     user.password = password;
     user.email = email;
+    if(file!=nil)
     user[PF_USER_IMAGE] = file;
     [user signUpInBackgroundWithBlock:block];
 }
