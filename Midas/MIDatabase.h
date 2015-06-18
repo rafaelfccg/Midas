@@ -42,6 +42,8 @@
 
 - (void) createNewPedidoInBackGround:(nonnull MINovoPedido*)pedido block:(nullable PFBooleanResultBlock)block;
 
+- (void) editPedidoInBackGround:(nonnull MINovoPedido*)pedido block:(nullable PFBooleanResultBlock)block;
+
 - (void) getRecentNegotioationsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
 @end

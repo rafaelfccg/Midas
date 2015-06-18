@@ -276,7 +276,6 @@
                         <outlet property="userName" destination="YXI-We-8YD" id="wGx-Gb-Gh8"/>
                         <outlet property="willGiveLabel" destination="eyb-Gd-TY0" id="cIE-9Y-6CT"/>
                         <segue destination="bhQ-qo-3i1" kind="show" identifier="FromInfoToChatSegue" id="gtB-mQ-NLu"/>
-                        <segue destination="7IQ-pp-S83" kind="show" identifier="FromMeuPedidoToEditSegue" id="soJ-Ml-orx"/>
                         <segue destination="NFr-i4-YY6" kind="show" identifier="FromMeuPedidoToFinalizarSegue" id="Gl2-ue-c3Q"/>
                     </connections>
                 </viewController>
@@ -433,7 +432,7 @@
         <!--Novo Pedido Dados View Controller-->
         <scene sceneID="EPu-YV-xNb">
             <objects>
-                <viewController id="xY4-cO-Ade" customClass="MINovoPedidoDadosViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="novoPedidoScreen" id="xY4-cO-Ade" customClass="MINovoPedidoDadosViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bCf-ef-U1i"/>
                         <viewControllerLayoutGuide type="bottom" id="f4J-ZV-pPS"/>
@@ -574,24 +573,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kf6-6s-0Lk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="827" y="2416"/>
-        </scene>
-        <!--Editar Pedido-->
-        <scene sceneID="tWf-ke-yfz">
-            <objects>
-                <viewController title="Editar Pedido" id="7IQ-pp-S83" customClass="MIEditarPedidoViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zEQ-jp-NUg"/>
-                        <viewControllerLayoutGuide type="bottom" id="6Wp-AC-vbM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0AY-i5-oAx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Uc-ai-hMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2820" y="-292"/>
         </scene>
         <!--Finalizar Pedido-->
         <scene sceneID="FXa-x7-3OJ">

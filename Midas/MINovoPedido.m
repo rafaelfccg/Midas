@@ -10,4 +10,28 @@
 
 @implementation MINovoPedido
 
+-(instancetype) initWithMIPedido:(MIPedido *)editRequest{
+    
+    self = [super init];
+    
+    if(self){
+        _editRequest = editRequest;
+        _foreachValue = editRequest.forEachValue;
+        _foreach = editRequest.forEach;
+        _willgiveValue = editRequest.willGiveValue;
+        _willgive = editRequest.willGive;
+        _descricao = editRequest.descricao;
+        //_image = editRequest.;
+        //_thumbnail;
+        _category = editRequest.category;
+        _location = editRequest.location;
+    }
+    
+    return self;
+}
+
+-(BOOL) isEditing {
+    return (_editRequest != nil);
+}
+
 @end
