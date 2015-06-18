@@ -43,8 +43,8 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTintColor: COLOR_TABBAR];
-    
-
+    [self.window setBackgroundColor:COLOR_BACKGROUND];
+    //[[UIWindow appearance] setBackgroundColor:COLOR_BACKGROUND];
     
     return YES;
 }

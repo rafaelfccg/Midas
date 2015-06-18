@@ -44,6 +44,8 @@
     [self.muralTableView registerNib:nib forCellReuseIdentifier:@"MuralCell"];
      
     self.filtros = [[MIFiltrosDeBusca alloc]init];
+    [self.muralTableView setBackgroundColor:COLOR_BACKGROUND];
+    self.muralTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 -(void) viewWillAppear:(BOOL)animated {

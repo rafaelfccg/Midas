@@ -18,6 +18,7 @@
 #define		COLOR_OUTGOING						HEXCOLOR(0xF7A46BFF)
 #define		COLOR_INCOMING						HEXCOLOR(0xC6C6C6FF)
 #define		COLOR_TABBAR						HEXCOLOR(0xE58B48FF)
+#define		COLOR_BACKGROUND					HEXCOLOR(0xE8E8E8FF)
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 #define		PF_INSTALLATION_CLASS_NAME			@"_Installation"		//	Class name
 #define		PF_INSTALLATION_OBJECTID			@"objectId"				//	String

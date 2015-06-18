@@ -48,10 +48,11 @@
     [self.pedidosTableView registerNib:nibRecent forCellReuseIdentifier:@"recentCell"];
     [_pedidosTableView setSeparatorColor:COLOR_TABBAR];
     [_pedidosTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    //_pedidosTableView setSe
     //[_pedidosTableView setSeparatorInset:UIEdgeInsetsMake(10, 0, 10, 0)];
-    
+    [self.pedidosTableView setBackgroundColor:COLOR_BACKGROUND];
     [self.pedidosSegmentedControl addTarget:self action:@selector(valueChanged:) forControlEvents: UIControlEventValueChanged];
-
+    self.pedidosTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
 }
 
@@ -239,10 +240,12 @@
     if(control.selectedSegmentIndex == 0){
         [self loadRequests];
         [_pedidosTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        [self.pedidosTableView setBackgroundColor:COLOR_BACKGROUND];
     }
     else {
         [self loadRecents];
         [_pedidosTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+        [self.pedidosTableView setBackgroundColor:[UIColor whiteColor]];
         
     }
 }
