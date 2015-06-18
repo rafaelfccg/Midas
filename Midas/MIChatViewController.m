@@ -87,6 +87,14 @@
     timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(loadMessages) userInfo:nil repeats:YES];
     
 }
+-(void)viewWillAppear:(BOOL)animated{
+    PFUser * user = [PFUser currentUser];
+    if([user.objectId isEqualToString:_neg.owner.objectId] ){
+        self.title = _neg.giver.username;
+    }else{
+        self.title = _neg.owner.username;
+    }
+}
 
 /*
 #pragma mark - Navigation
