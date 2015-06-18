@@ -5,11 +5,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Mural-->
+        <!--Navigation Controller-->
         <scene sceneID="5S1-tF-YyX">
             <objects>
                 <navigationController id="u96-fw-Yp0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mural" image="MuralTabBarIcon" id="Zpb-Vg-5KV"/>
+                    <tabBarItem key="tabBarItem" title="" image="ConfigTabBarIcon-1" id="Zpb-Vg-5KV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FEi-RQ-gmm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -784,11 +784,11 @@
             </objects>
             <point key="canvasLocation" x="-232" y="3530"/>
         </scene>
-        <!--Configurações-->
+        <!--Navigation Controller-->
         <scene sceneID="gma-By-cRe">
             <objects>
                 <navigationController id="4e8-Jq-RGm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Configurações" image="ConfigTabBarIcon" id="osk-Fw-3YX"/>
+                    <tabBarItem key="tabBarItem" title="" image="PerfilTabBarIcon" id="osk-Fw-3YX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gPr-TA-Db3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -801,11 +801,11 @@
             </objects>
             <point key="canvasLocation" x="-232" y="2043"/>
         </scene>
-        <!--Perfil-->
+        <!--Navigation Controller-->
         <scene sceneID="p6a-ua-bZ4">
             <objects>
                 <navigationController id="8uO-6A-hiw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Perfil" image="PerfilTabBarIcon" id="dmQ-Ei-OXs"/>
+                    <tabBarItem key="tabBarItem" title="" image="MuralTabBarIcon" id="dmQ-Ei-OXs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JhH-Cb-93V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

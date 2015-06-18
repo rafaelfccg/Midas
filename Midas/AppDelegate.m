@@ -34,14 +34,14 @@
     _recents = [storyboard instantiateViewControllerWithIdentifier:@"MeusPedidos"];
   
     [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
-    
+    [[UITabBar appearance] setTranslucent:NO];
     [[UITabBar appearance] setTintColor:COLOR_TABBAR ];
     
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                     NSForegroundColorAttributeName : COLOR_TABBAR}];
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
-    
+    [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTintColor: COLOR_TABBAR];
     
 

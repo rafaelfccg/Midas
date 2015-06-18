@@ -25,6 +25,7 @@
 @property MINegociation * selectedChat;
 
 
+
 @end
 
 @implementation MIMeusPedidosViewController
@@ -50,6 +51,8 @@
     //[_pedidosTableView setSeparatorInset:UIEdgeInsetsMake(10, 0, 10, 0)];
     
     [self.pedidosSegmentedControl addTarget:self action:@selector(valueChanged:) forControlEvents: UIControlEventValueChanged];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
