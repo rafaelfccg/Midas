@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="222" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1AG-mV-2FH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="210" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1AG-mV-2FH">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -160,13 +160,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hAR-wN-0Zb">
-                                <rect key="frame" x="16" y="399" width="568" height="149"/>
+                                <rect key="frame" x="16" y="399" width="568" height="96"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Cerveja homemade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyb-Gd-TY0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Cerveja homemade" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyb-Gd-TY0">
                                 <rect key="frame" x="312" y="306" width="277" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -199,11 +199,28 @@
                                     <constraint firstAttribute="height" constant="40" id="pKV-ez-KQy"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="260" verticalCompressionResistancePriority="730" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqt-jH-1TH">
+                                <rect key="frame" x="226" y="503" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.5450980392" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Vjn-ZG-7gu"/>
+                                    <constraint firstAttribute="width" constant="150" id="pBl-fI-euY"/>
+                                </constraints>
+                                <state key="normal" title="Finalizar Pedido">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="finalizarPedido:" destination="haO-U2-d01" eventType="touchUpInside" id="Vc4-Y2-8Eu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dX7-Lb-F8E" firstAttribute="top" secondItem="8fX-un-oBh" secondAttribute="bottom" constant="6" id="250-mo-l1D"/>
                             <constraint firstItem="YXI-We-8YD" firstAttribute="top" secondItem="DmI-Ca-psQ" secondAttribute="bottom" id="2cf-QE-uJ8"/>
+                            <constraint firstItem="Xav-zb-hBw" firstAttribute="top" secondItem="fKl-Rl-fdW" secondAttribute="bottom" constant="102" id="43i-kl-Kbp"/>
+                            <constraint firstAttribute="centerX" secondItem="wqt-jH-1TH" secondAttribute="centerX" constant="-1" id="5l8-aF-JUK"/>
                             <constraint firstItem="ip0-e4-LET" firstAttribute="leading" secondItem="gWV-ud-3hL" secondAttribute="leadingMargin" constant="-5" id="6nt-2R-pUX"/>
                             <constraint firstItem="2Vk-j2-cHg" firstAttribute="leading" secondItem="gWV-ud-3hL" secondAttribute="leadingMargin" constant="-5" id="78w-EX-ykJ"/>
                             <constraint firstItem="whl-zV-Oe6" firstAttribute="top" secondItem="HOY-pN-SUf" secondAttribute="bottom" constant="22" id="ACv-dy-UfG"/>
@@ -211,8 +228,7 @@
                             <constraint firstItem="ip0-e4-LET" firstAttribute="top" secondItem="YXI-We-8YD" secondAttribute="bottom" constant="8" id="BmA-5R-lPZ"/>
                             <constraint firstItem="fmt-3p-RV5" firstAttribute="width" secondItem="eyb-Gd-TY0" secondAttribute="width" id="DSY-yr-48b"/>
                             <constraint firstItem="YXI-We-8YD" firstAttribute="leading" secondItem="gWV-ud-3hL" secondAttribute="leadingMargin" id="E9Z-07-fSf"/>
-                            <constraint firstItem="FD2-Qs-54J" firstAttribute="top" secondItem="fKl-Rl-fdW" secondAttribute="bottom" id="EKR-mx-4BK"/>
-                            <constraint firstItem="iKW-je-g4T" firstAttribute="top" secondItem="hAR-wN-0Zb" secondAttribute="bottom" constant="8" id="GMI-3v-Jfg"/>
+                            <constraint firstItem="FD2-Qs-54J" firstAttribute="top" secondItem="fKl-Rl-fdW" secondAttribute="bottom" id="EQa-zh-YZt"/>
                             <constraint firstItem="8fX-un-oBh" firstAttribute="centerX" secondItem="eyb-Gd-TY0" secondAttribute="centerX" constant="-0.5" id="GQP-8n-CY6"/>
                             <constraint firstItem="whl-zV-Oe6" firstAttribute="leading" secondItem="gWV-ud-3hL" secondAttribute="leadingMargin" id="I3M-sf-vrI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fmt-3p-RV5" secondAttribute="trailing" constant="-5" id="Jz9-c5-Ao5"/>
@@ -224,21 +240,22 @@
                             <constraint firstItem="6a7-P2-SaV" firstAttribute="width" secondItem="ip0-e4-LET" secondAttribute="width" id="Ozv-z7-DSA"/>
                             <constraint firstItem="6a7-P2-SaV" firstAttribute="centerX" secondItem="yBt-Q8-e43" secondAttribute="centerX" constant="0.5" id="Pip-hJ-y8C"/>
                             <constraint firstItem="fmt-3p-RV5" firstAttribute="width" secondItem="ip0-e4-LET" secondAttribute="width" id="RXt-UQ-X9s"/>
-                            <constraint firstItem="DmI-Ca-psQ" firstAttribute="top" secondItem="fKl-Rl-fdW" secondAttribute="bottom" constant="100" id="Sma-Zy-bYd"/>
                             <constraint firstItem="yBt-Q8-e43" firstAttribute="centerX" secondItem="ip0-e4-LET" secondAttribute="centerX" constant="-0.5" id="TQJ-OZ-E0A"/>
                             <constraint firstItem="6a7-P2-SaV" firstAttribute="centerY" secondItem="eyb-Gd-TY0" secondAttribute="centerY" id="VBM-XT-2DE"/>
+                            <constraint firstItem="iKW-je-g4T" firstAttribute="top" secondItem="wqt-jH-1TH" secondAttribute="bottom" constant="23" id="Vjt-jp-So8"/>
                             <constraint firstItem="fmt-3p-RV5" firstAttribute="leading" secondItem="ip0-e4-LET" secondAttribute="trailing" constant="24" id="YQZ-IE-9RK"/>
                             <constraint firstItem="FD2-Qs-54J" firstAttribute="leading" secondItem="gWV-ud-3hL" secondAttribute="leadingMargin" constant="-16" id="arH-Am-X05"/>
                             <constraint firstItem="HOY-pN-SUf" firstAttribute="leading" secondItem="gWV-ud-3hL" secondAttribute="leadingMargin" constant="-5" id="dHY-bl-JUG"/>
                             <constraint firstItem="fmt-3p-RV5" firstAttribute="top" secondItem="YXI-We-8YD" secondAttribute="bottom" constant="8" id="eHk-0g-Ndz"/>
                             <constraint firstItem="hAR-wN-0Zb" firstAttribute="top" secondItem="whl-zV-Oe6" secondAttribute="bottom" constant="-1" id="gfS-6F-SS4"/>
                             <constraint firstItem="YXI-We-8YD" firstAttribute="trailing" secondItem="gWV-ud-3hL" secondAttribute="trailingMargin" id="h8t-rr-mLE"/>
+                            <constraint firstItem="2Vk-j2-cHg" firstAttribute="top" secondItem="fKl-Rl-fdW" secondAttribute="bottom" constant="8" id="hM4-AG-ayz"/>
                             <constraint firstItem="6a7-P2-SaV" firstAttribute="top" secondItem="yBt-Q8-e43" secondAttribute="bottom" constant="3" id="hZg-Jn-Yww"/>
                             <constraint firstItem="8fX-un-oBh" firstAttribute="top" secondItem="eyb-Gd-TY0" secondAttribute="bottom" constant="5" id="heu-Ln-SML"/>
                             <constraint firstItem="yBt-Q8-e43" firstAttribute="top" secondItem="ip0-e4-LET" secondAttribute="bottom" constant="8" id="kUd-KM-2Ut"/>
-                            <constraint firstItem="Xav-zb-hBw" firstAttribute="top" secondItem="fKl-Rl-fdW" secondAttribute="bottom" constant="102" id="rUL-lc-NVg"/>
-                            <constraint firstItem="2Vk-j2-cHg" firstAttribute="top" secondItem="fKl-Rl-fdW" secondAttribute="bottom" constant="8" id="s5v-Ko-CN6"/>
+                            <constraint firstItem="wqt-jH-1TH" firstAttribute="top" secondItem="hAR-wN-0Zb" secondAttribute="bottom" constant="8" id="q0c-l2-vIa"/>
                             <constraint firstItem="hAR-wN-0Zb" firstAttribute="trailing" secondItem="gWV-ud-3hL" secondAttribute="trailingMargin" id="sLX-fi-syT"/>
+                            <constraint firstItem="DmI-Ca-psQ" firstAttribute="top" secondItem="fKl-Rl-fdW" secondAttribute="bottom" constant="100" id="t4b-tz-hhF"/>
                             <constraint firstItem="HOY-pN-SUf" firstAttribute="width" secondItem="ip0-e4-LET" secondAttribute="width" id="v2a-pg-NzE"/>
                             <constraint firstItem="HOY-pN-SUf" firstAttribute="top" secondItem="6a7-P2-SaV" secondAttribute="bottom" constant="28" id="vIj-Wr-dLb"/>
                             <constraint firstAttribute="centerX" secondItem="DmI-Ca-psQ" secondAttribute="centerX" constant="0.5" id="wLw-8I-Xev"/>
@@ -252,12 +269,15 @@
                     <connections>
                         <outlet property="backgroundImage" destination="FD2-Qs-54J" id="MYT-Xd-rl7"/>
                         <outlet property="categoryImage" destination="2Vk-j2-cHg" id="HZW-2C-S9r"/>
+                        <outlet property="closeRequestButton" destination="wqt-jH-1TH" id="rPu-t9-YD5"/>
                         <outlet property="descricaoLabel" destination="hAR-wN-0Zb" id="DJt-Q6-UhP"/>
                         <outlet property="forEachLabel" destination="6a7-P2-SaV" id="i16-wj-rFV"/>
                         <outlet property="userImage" destination="Xav-zb-hBw" id="JgJ-jP-dzl"/>
                         <outlet property="userName" destination="YXI-We-8YD" id="wGx-Gb-Gh8"/>
                         <outlet property="willGiveLabel" destination="eyb-Gd-TY0" id="cIE-9Y-6CT"/>
                         <segue destination="bhQ-qo-3i1" kind="show" identifier="FromInfoToChatSegue" id="gtB-mQ-NLu"/>
+                        <segue destination="7IQ-pp-S83" kind="show" identifier="FromMeuPedidoToEditSegue" id="soJ-Ml-orx"/>
+                        <segue destination="NFr-i4-YY6" kind="show" identifier="FromMeuPedidoToFinalizarSegue" id="Gl2-ue-c3Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXf-2R-dAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -311,6 +331,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZeR-zg-5Oa" id="5KP-RG-WWq">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="haO-U2-d01" kind="show" identifier="FromPedidosToPedidoSegue" id="zTB-K9-ePl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -346,7 +369,6 @@
                     <connections>
                         <outlet property="pedidosSegmentedControl" destination="mgi-8I-KQl" id="iqy-yW-ajY"/>
                         <outlet property="pedidosTableView" destination="CGD-Lb-zYk" id="e2H-eN-uGc"/>
-                        <segue destination="97h-Tt-OSG" kind="show" identifier="FromPedidosToPedidoSegue" id="qof-H5-qHX"/>
                         <segue destination="bhQ-qo-3i1" kind="show" identifier="FromMeusPedidosToChatSegue" id="xhW-XF-LFV"/>
                         <segue destination="tmd-gm-VSF" kind="show" identifier="FromMeusPedidosToNovoPedidoCategoria" id="X05-OW-54J"/>
                     </connections>
@@ -553,43 +575,6 @@
             </objects>
             <point key="canvasLocation" x="827" y="2416"/>
         </scene>
-        <!--Meu Pedido-->
-        <scene sceneID="nut-7j-83N">
-            <objects>
-                <viewController title="Meu Pedido" id="97h-Tt-OSG" customClass="MIMeuPedidoDetalhadoViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="X1w-pt-e8k"/>
-                        <viewControllerLayoutGuide type="bottom" id="26b-nH-UnF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8B1-yM-Oav">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmJ-Z3-VB0">
-                                <rect key="frame" x="245" y="407" width="110" height="30"/>
-                                <state key="normal" title="Finalizar Pedido">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="finalizarPedido:" destination="97h-Tt-OSG" eventType="touchUpInside" id="Pz8-xe-MRp"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="26b-nH-UnF" firstAttribute="top" secondItem="qmJ-Z3-VB0" secondAttribute="bottom" constant="114" id="NMc-vr-YbC"/>
-                            <constraint firstAttribute="centerX" secondItem="qmJ-Z3-VB0" secondAttribute="centerX" id="VNL-E4-v7P"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <segue destination="NFr-i4-YY6" kind="show" identifier="FromMeuPedidoToFinalizarSegue" id="Xbo-Hd-AtO"/>
-                        <segue destination="7IQ-pp-S83" kind="show" identifier="FromMeuPedidoToEditSegue" id="5fp-40-6uz"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PKg-Jk-f1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1653" y="1764"/>
-        </scene>
         <!--Editar Pedido-->
         <scene sceneID="tWf-ke-yfz">
             <objects>
@@ -606,7 +591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Uc-ai-hMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2671" y="1474"/>
+            <point key="canvasLocation" x="2820" y="-292"/>
         </scene>
         <!--Finalizar Pedido-->
         <scene sceneID="FXa-x7-3OJ">
@@ -639,7 +624,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d3-IK-wf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2671" y="2226"/>
+            <point key="canvasLocation" x="2820" y="704"/>
         </scene>
         <!--Configuracoes-->
         <scene sceneID="YW6-S2-mNi">
@@ -1095,6 +1080,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gtB-mQ-NLu"/>
+        <segue reference="zTB-K9-ePl"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.89803921568627454" green="0.54509803921568623" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
