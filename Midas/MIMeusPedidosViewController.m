@@ -14,6 +14,7 @@
 #import "MIPedido.h"
 #import "MINegociation.h"
 #import "ProgressHUD.h"
+#import "MIRecentCell.h"
 #import "MIMeusPedidosTableViewCell.h"
 
 @interface MIMeusPedidosViewController ()
@@ -67,8 +68,8 @@
 #pragma mark - Table View
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *identifier = @"pedidoCell";
-    MIMeusPedidosTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    NSString *identifierRequest = @"pedidosCell";
+    NSString *identifierRecent = @"recentCell";
     
     if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
         
@@ -89,7 +90,8 @@
         cell.trocaLabel.text = [NSString stringWithFormat:@"%@ %@", request.willGiveValue, request.willGive];
         cell.categoriaIcon.image = [self getCategoryIcon:request.category];
         
-        cell = [[MIMeusPedidosTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        cell.minhaImage.clipsToBounds = YES;
+        cell.minhaImage.layer.cornerRadius = 22.5f;
         
         //[cell setLayoutMargins:UIEdgeInsetsMake(10, 0, 10, 0)];
         
@@ -134,8 +136,7 @@
             image = [UIImage imageNamed:@"OutrosIcon"];
             break;
     }
-    
-    return cell;
+    return image;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

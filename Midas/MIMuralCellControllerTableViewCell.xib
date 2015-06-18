@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,7 +13,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <userGuides>
-                    <userLayoutGuide location="10.5" affinity="maxY"/>
                     <userLayoutGuide location="175" affinity="minY"/>
                 </userGuides>
                 <subviews>
@@ -150,7 +149,7 @@
                 <outlet property="tipoImage" destination="sRb-0f-uxa" id="cSd-3X-fqc"/>
                 <outlet property="usuarioImage" destination="78I-Di-WI1" id="9Wh-GS-6h2"/>
             </connections>
-            <point key="canvasLocation" x="419.5" y="448"/>
+            <point key="canvasLocation" x="392.5" y="395"/>
         </tableViewCell>
     </objects>
     <resources>
@@ -158,7 +157,7 @@
         <image name="KmIcon" width="227" height="227"/>
         <image name="david_TabBar" width="228" height="227"/>
         <image name="kiev" width="226" height="232"/>
-        <image name="linha" width="1485" height="4"/>
+        <image name="linha" width="2971" height="8"/>
         <image name="meio" width="1023" height="456"/>
         <image name="seta" width="255" height="60"/>
         <image name="seta2" width="256" height="60"/>
