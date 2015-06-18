@@ -85,8 +85,16 @@
     
     cell.pedidoLabel.text = [NSString stringWithFormat:@"%@ %@", request.forEachValue,request.forEach];
     cell.destinoLabel.text = [NSString stringWithFormat:@"%@ %@", request.willGiveValue, request.willGive];
-    cell.distLabel.text = @"5km";
+    PFUser * user = [PFUser currentUser];
+    PFGeoPoint * point =  user[PF_USER_LOCATION];
     
+    if(point && request.location){
+        double val = [point distanceInKilometersTo:request.location];
+        cell.distLabel.text = [NSString stringWithFormat:@"%.0lfkm",val];
+    }else{
+        cell.distLabel.text = [NSString stringWithFormat:@"--"];
+    }
+  
     cell.tipoImage.image = getCategoryIcon(request.category);
     
     cell.usuarioImage.clipsToBounds = YES;
