@@ -89,6 +89,11 @@
         
         cell.minhaImage.clipsToBounds = YES;
         cell.minhaImage.layer.cornerRadius = 22.5f;
+        PFUser* user = [PFUser currentUser];
+        if(user[PF_USER_IMAGE]){
+           cell.minhaImage.image = user[PF_USER_IMAGE];
+        }else  cell.minhaImage.image = [UIImage imageNamed:@"recent_blank"];
+        
         
         //[cell setLayoutMargins:UIEdgeInsetsMake(10, 0, 10, 0)];
         

@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [self.layer setCornerRadius:7.0f];
+    [self.layer setMasksToBounds:YES];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
