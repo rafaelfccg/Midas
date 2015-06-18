@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "MIPedido.h"
 
 @interface MINovoPedido : NSObject
 
+@property MIPedido *editRequest;
 @property NSNumber *foreachValue;
 @property NSString *foreach;
 @property NSNumber *willgiveValue;
@@ -22,4 +24,7 @@
 @property NSNumber *category;
 @property PFGeoPoint *location;
 
+-(instancetype) initWithMIPedido:(MIPedido *)editRequest;
+
+-(BOOL) isEditing;
 @end

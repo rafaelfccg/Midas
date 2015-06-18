@@ -7,14 +7,15 @@
 //
 
 #import "MIPedidoDetalhadoViewController.h"
+#import "MINovoPedidoDadosViewController.h"
+#import "MIFinalizarPedidoViewController.h"
 #import "MIChatViewController.h"
 #import "MIDatabase.h"
 #import "ProgressHUD.h"
 #import "recent.h"
-#import "MINegociation.h"
 #import "general.h"
-#import "MIEditarPedidoViewController.h"
-#import "MIFinalizarPedidoViewController.h"
+#import "MINegociation.h"
+#import "MINovoPedido.h"
 
 
 @interface MIPedidoDetalhadoViewController (){
@@ -124,7 +125,9 @@
     }
 
 - (void) editarPedido:(id)sender {
-    [self performSegueWithIdentifier:@"FromMeuPedidoToEditSegue" sender:self];
+    MINovoPedidoDadosViewController *epvc = (MINovoPedidoDadosViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"novoPedidoScreen"];
+    epvc.novoPedido = [[MINovoPedido alloc ] initWithMIPedido:self.currentRequest];
+    [self.navigationController showViewController:epvc sender:self];
 }
 
 -(IBAction)finalizarPedido:(id)sender {
@@ -136,23 +139,11 @@
     // Make sure your segue name in storyboard is the same as this line
     if ([[segue identifier] isEqualToString:@"FromInfoToChatSegue"])
     {
-        
-        
-        // Get reference to the destination view controller
         MIChatViewController *vc = [segue destinationViewController];
         vc.chatId = _temporaryObjectID;
         vc.neg  = _chat;
-        
-    }// Make sure your segue name in storyboard is the same as this line
-    else if ([[segue identifier] isEqualToString:@"FromMeuPedidoToEditSegue"])
-    {
-        // Get reference to the destination view controller
-        MIEditarPedidoViewController *vc = [segue destinationViewController];
-        vc.currentRequest = self.currentRequest;
-        
     } else if ([[segue identifier] isEqualToString:@"FromMeuPedidoToFinalizarSegue"])
     {
-        // Get reference to the destination view controller
         MIFinalizarPedidoViewController *vc = [segue destinationViewController];
         vc.currentRequest = self.currentRequest;
         

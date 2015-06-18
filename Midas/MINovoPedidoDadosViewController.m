@@ -13,6 +13,7 @@
 #import "MIDatabase.h"
 #import "camera.h"
 #import "image.h"
+#import "general.h"
 
 @interface MINovoPedidoDadosViewController () <UIImagePickerControllerDelegate>
 
@@ -31,7 +32,12 @@
                                        action:@selector(concluir:)];
     self.navigationItem.rightBarButtonItem = concluirButton;
     
-    self.navigationItem.title = @"Passo 2";
+    if ([self.novoPedido isEditing]){
+        self.navigationItem.title = @"Editando";
+    } else {
+        self.navigationItem.title = @"Passo 2";
+    }
+   
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
@@ -47,56 +53,32 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     
+    self.categoryImageView.image = getCategoryIcon(self.novoPedido.category);
+    
     switch ([self.novoPedido.category intValue]) {
         case RequestCategoryVidro:
             self.categoryValueLabel.text = @"Vidro";
-            self.categoryImageView.image = [UIImage imageNamed:@"VidroIcon"];
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
-            self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
-            self.willGiveValueTextField.placeholder = @"1";
             break;
         case RequestCategoryPlastico:
             self.categoryValueLabel.text = @"Plástico";
-            self.categoryImageView.image = [UIImage imageNamed:@"PlasticoIcon"];
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
-            self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
-            self.willGiveValueTextField.placeholder = @"1";
-
             break;
         case RequestCategoryMetal:
             self.categoryValueLabel.text = @"Metal";
-            self.categoryImageView.image = [UIImage imageNamed:@"MetalIcon"];
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
-            self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
-            self.willGiveValueTextField.placeholder = @"1";
-
             break;
         case RequestCategoryPapel:
             self.categoryValueLabel.text = @"Papel";
-            self.categoryImageView.image = [UIImage imageNamed:@"PapelIcon"];
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
-            self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
-            self.willGiveValueTextField.placeholder = @"1";
-
             break;
         case RequestCategoryOutros:
             self.categoryValueLabel.text = @"Outros";
-            self.categoryImageView.image = [UIImage imageNamed:@"OutrosIcon"];
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
-            self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
-            self.willGiveValueTextField.placeholder = @"1";
-
             break;
         default:
             break;
     }
+    [self updatePlaceholders];
     
-    
+    if (self.novoPedido.isEditing){
+        [self fillFieldsWithInformation];
+    }
 
 }
 
@@ -139,7 +121,23 @@
         self.novoPedido.thumbnail = CreateThumbnail(self.imageView.image, 150.f);
     }
     
-    [[MIDatabase sharedInstance]createNewPedidoInBackGround:self.novoPedido
+    //se editando
+    if(self.novoPedido.isEditing) {
+        [[MIDatabase sharedInstance]editPedidoInBackGround:self.novoPedido
+                                                          block:^(BOOL succeeded, NSError *error) {
+                                                              if (succeeded) {
+                                                                  // The object has been saved.
+                                                                  [ProgressHUD showSuccess:@"Sucesso."];
+                                                                  [self.navigationController popToRootViewControllerAnimated:YES];
+                                                              } else {
+                                                                  [ProgressHUD showError:error.userInfo[@"error"]];
+                                                                  // There was a problem, check error.description
+                                                              }
+                                                          }];
+
+    }else {
+        //se é um novo pedido
+        [[MIDatabase sharedInstance]createNewPedidoInBackGround:self.novoPedido
                                                       block:^(BOOL succeeded, NSError *error) {
                                                           if (succeeded) {
                                                               // The object has been saved.
@@ -150,6 +148,7 @@
                                                               // There was a problem, check error.description
                                                           }
                                                       }];
+    }
     
     
 }
@@ -172,5 +171,53 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void) updatePlaceholders {
+    switch ([self.novoPedido.category intValue]) {
+        case RequestCategoryVidro:
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.forEachValueTextField.placeholder = @"10";
+            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.willGiveValueTextField.placeholder = @"1";
+            break;
+        case RequestCategoryPlastico:
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.forEachValueTextField.placeholder = @"10";
+            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.willGiveValueTextField.placeholder = @"1";
+            
+            break;
+        case RequestCategoryMetal:
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.forEachValueTextField.placeholder = @"10";
+            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.willGiveValueTextField.placeholder = @"1";
+            
+            break;
+        case RequestCategoryPapel:
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.forEachValueTextField.placeholder = @"10";
+            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.willGiveValueTextField.placeholder = @"1";
+            
+            break;
+        case RequestCategoryOutros:
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.forEachValueTextField.placeholder = @"10";
+            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.willGiveValueTextField.placeholder = @"1";
+            
+            break;
+        default:
+            break;
+    }
+}
 
+-(void) fillFieldsWithInformation {
+    self.forEachValueTextField.text = [NSString stringWithFormat:@"%@",self.novoPedido.foreachValue];
+    self.rewardFirstTextField.text = self.novoPedido.foreach;
+    self.willGiveValueTextField.text = [NSString stringWithFormat:@"%@",self.novoPedido.willgiveValue];
+    self.rewardSecondTextField.text = self.novoPedido.willgive;
+    self.descriptionTextView.text = self.novoPedido.descricao;
+    self.imageView.image = self.novoPedido.image;
+}
 @end
