@@ -35,12 +35,14 @@
     [PFUser logInWithUsernameInBackground:username password:password block:block];
 }
 
-- (void)signUpWithUsernameInBackground:(NSString *)username password:(NSString *) password email:(NSString *)email block:(PF_NULLABLE PFBooleanResultBlock)block{
-    
+- (void)signUpWithUsernameInBackground:(nonnull NSString *)username password:(nonnull NSString *) password email:(nonnull NSString *)email ProfileImage:(PF_NULLABLE PFFile*)file block:(PF_NULLABLE PFBooleanResultBlock)block{
+    //implementar
     PFUser *user = [PFUser user];
     user.username = username;
     user.password = password;
     user.email = email;
+    if(file!=nil)
+    user[PF_USER_IMAGE] = file;
     [user signUpInBackgroundWithBlock:block];
 }
 
@@ -70,24 +72,20 @@
 
 - (void) getOpenRequestsFromOtherUsersWithBlock:(nullable MIFiltrosDeBusca*)filtro Block:(PF_NULLABLE_S PFArrayResultBlock)block{
     
+    
     PFQuery *MetalQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
     PFQuery *PlasticoQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
     PFQuery *PapelQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
     PFQuery *VidroQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
     PFQuery *OutrosQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
-
+    PFUser* current = [PFUser currentUser];
+    
     
     [MetalQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
     [VidroQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
     [PapelQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
     [PlasticoQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
     [OutrosQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
-    
-    //PFQuery *MetalQuery = nil;
-    //PFQuery *PlasticoQuery = nil;
-    //PFQuery *PapelQuery = nil;
-    //PFQuery *VidroQuery = nil;
-    //PFQuery *OutrosQuery = nil;
     
     
     PFQuery *Allquery=nil;
@@ -138,10 +136,18 @@
     }
     
     Allquery = [PFQuery orQueryWithSubqueries:@[MetalQuery,PlasticoQuery,PapelQuery,VidroQuery,OutrosQuery]];
+    PFGeoPoint * point = current[PF_USER_LOCATION];
+    NSLog(@"%lf %lf",point.latitude,point.longitude);
     
-    [Allquery includeKey:PF_REQUEST_USER];
-    [Allquery orderByDescending:PF_REQUEST_UPDATEDACTION];
-    [Allquery findObjectsInBackgroundWithBlock:block];
+    PFQuery *orderDistance = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+    [orderDistance whereKey:@"objectId" matchesKey:@"objectId" inQuery:Allquery];
+    if(point){
+        [orderDistance whereKey:PF_REQUEST_USERLOCATION nearGeoPoint:point];
+    }
+    [orderDistance includeKey:PF_REQUEST_USER];
+    //[Allquery orderByDescending:PF_REQUEST_UPDATEDACTION];
+    
+    [orderDistance findObjectsInBackgroundWithBlock:block];
 }
 
 - (void) getCurrentUserRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
@@ -200,6 +206,7 @@
     request[PF_REQUEST_WILLGIVE] = pedido.willgive;
     request[PF_REQUEST_CATEGORY] = pedido.category;
     request[PF_REQUEST_STATUS] = ENUM_REQUEST_STATUS_OPEN;
+    request[PF_REQUEST_USERLOCATION] = pedido.location;
     
     if(pedido.image) {
         request[PF_REQUEST_IMAGE] = [PFFile fileWithData:UIImagePNGRepresentation(pedido.image)];

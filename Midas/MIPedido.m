@@ -26,6 +26,7 @@
         _descricao = pfobject[PF_REQUEST_DESCRIPTION];
         _status = pfobject[PF_REQUEST_STATUS];
         _category = pfobject[PF_REQUEST_CATEGORY];
+        _location = pfobject[PF_REQUEST_USERLOCATION];
     }
     
     return self;

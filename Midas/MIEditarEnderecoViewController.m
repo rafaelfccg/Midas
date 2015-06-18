@@ -63,9 +63,9 @@
         {
         
         PFGeoPoint *geoPoint = [[PFGeoPoint alloc]init];
-        [geoPoint setLatitude:location.coordinate.latitude];
-        [geoPoint setLongitude:location.coordinate.longitude];
-        
+        //[geoPoint setLatitude:location.coordinate.latitude];
+        //[geoPoint setLongitude:location.coordinate.longitude];
+        geoPoint = [PFGeoPoint geoPointWithLocation:location];
         
         PFUser *user = [PFUser currentUser];
         
