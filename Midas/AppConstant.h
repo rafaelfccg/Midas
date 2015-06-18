@@ -15,8 +15,8 @@
 
 #define		DEFAULT_TAB							0
 
-#define		COLOR_OUTGOING						HEXCOLOR(0x007AFFFF)
-#define		COLOR_INCOMING						HEXCOLOR(0xE6E5EAFF)
+#define		COLOR_OUTGOING						HEXCOLOR(0xF7A46BFF)
+#define		COLOR_INCOMING						HEXCOLOR(0xC6C6C6FF)
 #define		COLOR_TABBAR						HEXCOLOR(0xE58B48FF)
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 #define		PF_INSTALLATION_CLASS_NAME			@"_Installation"		//	Class name

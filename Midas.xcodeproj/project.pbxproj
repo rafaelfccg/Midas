@@ -109,6 +109,10 @@
 		009363ED1B2C710A007D82AE /* LocationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363EC1B2C710A007D82AE /* LocationUtils.m */; };
 		009363F01B2C7527007D82AE /* TestAdressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363EF1B2C7527007D82AE /* TestAdressController.m */; };
 		009363F21B2C7948007D82AE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009363F11B2C7948007D82AE /* MapKit.framework */; };
+		009363F61B33380D007D82AE /* MIRecentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363F41B33380D007D82AE /* MIRecentCell.m */; };
+		009363F71B33380D007D82AE /* MIRecentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009363F51B33380D007D82AE /* MIRecentCell.xib */; };
+		009363F91B334B86007D82AE /* recent_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 009363F81B334B86007D82AE /* recent_blank@2x.png */; };
+		009363FB1B335139007D82AE /* linha.png in Resources */ = {isa = PBXBuildFile; fileRef = 009363FA1B335139007D82AE /* linha.png */; };
 		157363071B28C1E800259B11 /* MILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157363061B28C1E800259B11 /* MILoginViewController.m */; };
 		15FB16731B2F45C100867173 /* MIEditarEnderecoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */; };
 		1FE7DA771B28D07600656359 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA711B28D07600656359 /* Bolts.framework */; };
@@ -359,6 +363,11 @@
 		009363EE1B2C7527007D82AE /* TestAdressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAdressController.h; sourceTree = "<group>"; };
 		009363EF1B2C7527007D82AE /* TestAdressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAdressController.m; sourceTree = "<group>"; };
 		009363F11B2C7948007D82AE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		009363F31B33380D007D82AE /* MIRecentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRecentCell.h; sourceTree = "<group>"; };
+		009363F41B33380D007D82AE /* MIRecentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRecentCell.m; sourceTree = "<group>"; };
+		009363F51B33380D007D82AE /* MIRecentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIRecentCell.xib; sourceTree = "<group>"; };
+		009363F81B334B86007D82AE /* recent_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recent_blank@2x.png"; sourceTree = "<group>"; };
+		009363FA1B335139007D82AE /* linha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linha.png; sourceTree = "<group>"; };
 		157363051B28C1E800259B11 /* MILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILoginViewController.h; sourceTree = "<group>"; };
 		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
 		15FB16711B2F45C100867173 /* MIEditarEnderecoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIEditarEnderecoViewController.h; sourceTree = "<group>"; };
@@ -479,8 +488,10 @@
 				1FE7D9731B27796200656359 /* Model */,
 				001580981B275E4700E03E94 /* AppDelegate.h */,
 				001580991B275E4700E03E94 /* AppDelegate.m */,
+				009363FA1B335139007D82AE /* linha.png */,
 				0015809E1B275E4700E03E94 /* Main.storyboard */,
 				001580A11B275E4700E03E94 /* Images.xcassets */,
+				009363F81B334B86007D82AE /* recent_blank@2x.png */,
 				001580A31B275E4700E03E94 /* LaunchScreen.xib */,
 				001580941B275E4700E03E94 /* Supporting Files */,
 				1FE7D9751B28CB8300656359 /* AppConstant.h */,
@@ -889,6 +900,9 @@
 				9155A7E51B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.h */,
 				9155A7E61B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.m */,
 				9155A7E71B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.xib */,
+				009363F31B33380D007D82AE /* MIRecentCell.h */,
+				009363F41B33380D007D82AE /* MIRecentCell.m */,
+				009363F51B33380D007D82AE /* MIRecentCell.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1019,10 +1033,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				009363F71B33380D007D82AE /* MIRecentCell.xib in Resources */,
 				003B24471B28D66C00743D0B /* ProgressHUD.bundle in Resources */,
+				009363FB1B335139007D82AE /* linha.png in Resources */,
 				001580A01B275E4700E03E94 /* Main.storyboard in Resources */,
 				003B24DB1B29E7A700743D0B /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
 				003B24E01B29E7A700743D0B /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
+				009363F91B334B86007D82AE /* recent_blank@2x.png in Resources */,
 				003B24DE1B29E7A700743D0B /* JSQMessagesToolbarContentView.xib in Resources */,
 				003B24D41B29E7A700743D0B /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				003B25441B2A044C00743D0B /* ProfileView.xib in Resources */,
@@ -1121,6 +1138,7 @@
 				003B25241B29EF6E00743D0B /* IDMTapDetectingImageView.m in Sources */,
 				003B24DF1B29E7A700743D0B /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
 				1FE7DAAE1B2C718000656359 /* MINovoPedidoCategoriaViewController.m in Sources */,
+				009363F61B33380D007D82AE /* MIRecentCell.m in Sources */,
 				003B24731B29C95600743D0B /* AFURLRequestSerialization.m in Sources */,
 				1FE7DAA41B29016000656359 /* MIRegistrarUserViewController.m in Sources */,
 				9155A7E81B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.m in Sources */,
