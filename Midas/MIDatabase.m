@@ -35,12 +35,14 @@
     [PFUser logInWithUsernameInBackground:username password:password block:block];
 }
 
-- (void)signUpWithUsernameInBackground:(NSString *)username password:(NSString *) password email:(NSString *)email block:(PF_NULLABLE PFBooleanResultBlock)block{
-    
+- (void)signUpWithUsernameInBackground:(nonnull NSString *)username password:(nonnull NSString *) password email:(nonnull NSString *)email ProfileImage:(PF_NULLABLE PFFile*)file block:(PF_NULLABLE PFBooleanResultBlock)block{
+    //implementar
     PFUser *user = [PFUser user];
     user.username = username;
     user.password = password;
     user.email = email;
+    if(file!=nil)
+    user[PF_USER_IMAGE] = file;
     [user signUpInBackgroundWithBlock:block];
 }
 

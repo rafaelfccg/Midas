@@ -8,7 +8,7 @@
 
 #import "MIMeusPedidosViewController.h"
 #import "MIChatViewController.h"
-#import "MIMeuPedidoDetalhadoViewController.h"
+#import "MIPedidoDetalhadoViewController.h"
 #import "MINovoPedidoCategoriaViewController.h"
 #import "MIDatabase.h"
 #import "MIPedido.h"
@@ -165,7 +165,7 @@
     if ([[segue identifier] isEqualToString:@"FromPedidosToPedidoSegue"])
     {
         // Get reference to the destination view controller
-        MIMeuPedidoDetalhadoViewController *vc = [segue destinationViewController];
+        MIPedidoDetalhadoViewController *vc = [segue destinationViewController];
         vc.currentRequest = _selectedRequest;
     } else if ([[segue identifier] isEqualToString:@"FromMeusPedidosToChatSegue"]){
         MIChatViewController *vc = [segue destinationViewController];

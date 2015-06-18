@@ -40,7 +40,9 @@
 - (void) editarPedido:(id)sender {
     [self performSegueWithIdentifier:@"FromMeuPedidoToEditSegue" sender:self];
 }
-
+-(IBAction)finalizarPedido:(id)sender {
+    [self performSegueWithIdentifier:@"FromMeuPedidoToFinalizarSegue" sender:self];
+}
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -61,8 +63,6 @@
     }
 }
 
--(IBAction)finalizarPedido:(id)sender {
-    [self performSegueWithIdentifier:@"FromMeuPedidoToFinalizarSegue" sender:self];
-}
+
 
 @end

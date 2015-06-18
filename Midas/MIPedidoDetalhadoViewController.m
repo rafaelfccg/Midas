@@ -12,6 +12,9 @@
 #import "ProgressHUD.h"
 #import "recent.h"
 #import "MINegociation.h"
+#import "general.h"
+#import "MIEditarPedidoViewController.h"
+#import "MIFinalizarPedidoViewController.h"
 
 
 @interface MIPedidoDetalhadoViewController (){
@@ -27,12 +30,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *euTenhoButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Eu tenho!"
-                                   style:UIBarButtonItemStylePlain
-                                   target:self
-                                   action:@selector(iniciarNegociacao:)];
-    self.navigationItem.rightBarButtonItem = euTenhoButton;
+    
+    [self.closeRequestButton.layer setCornerRadius:7.0f];
+    [self.closeRequestButton.layer setMasksToBounds:YES];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -42,7 +43,41 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    
+    if ([self.currentRequest.owner.objectId isEqualToString:[PFUser currentUser].objectId]) {
+        UIBarButtonItem *editarButton = [[UIBarButtonItem alloc]
+                                         initWithTitle:@"Editar"
+                                         style:UIBarButtonItemStylePlain
+                                         target:self
+                                         action:@selector(editarPedido:)];
+        self.navigationItem.rightBarButtonItem = editarButton;
+        
+    
+    } else {
+        UIBarButtonItem *euTenhoButton = [[UIBarButtonItem alloc]
+                                          initWithTitle:@"Eu tenho!"
+                                          style:UIBarButtonItemStylePlain
+                                          target:self
+                                          action:@selector(iniciarNegociacao:)];
+        self.navigationItem.rightBarButtonItem = euTenhoButton;
+        
+        self.closeRequestButton.hidden = YES;
+    }
+    
     NSLog(@"A cada %@, dou %@.", _currentRequest.forEach, _currentRequest.willGive);
+    self.userName.text = self.currentRequest.owner.username;
+    self.forEachLabel.text = [NSString stringWithFormat:@"%@ %@", self.currentRequest.forEachValue, self.currentRequest.forEach];
+    self.willGiveLabel.text = [NSString stringWithFormat:@"%@ %@", self.currentRequest.willGiveValue, self.currentRequest.willGive];
+    self.descricaoLabel.text = self.currentRequest.descricao;
+    
+    [self.descricaoLabel addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
+    
+    self.categoryImage.image = getCategoryIcon(self.currentRequest.category);
+
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+    [self.descricaoLabel removeObserver:self forKeyPath:@"contentSize"];
 }
 
 - (void) iniciarNegociacao:(id)sender {
@@ -88,6 +123,13 @@
      }];
     }
 
+- (void) editarPedido:(id)sender {
+    [self performSegueWithIdentifier:@"FromMeuPedidoToEditSegue" sender:self];
+}
+
+-(IBAction)finalizarPedido:(id)sender {
+    [self performSegueWithIdentifier:@"FromMeuPedidoToFinalizarSegue" sender:self];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -101,9 +143,29 @@
         vc.chatId = _temporaryObjectID;
         vc.neg  = _chat;
         
+    }// Make sure your segue name in storyboard is the same as this line
+    else if ([[segue identifier] isEqualToString:@"FromMeuPedidoToEditSegue"])
+    {
+        // Get reference to the destination view controller
+        MIEditarPedidoViewController *vc = [segue destinationViewController];
+        vc.currentRequest = self.currentRequest;
+        
+    } else if ([[segue identifier] isEqualToString:@"FromMeuPedidoToFinalizarSegue"])
+    {
+        // Get reference to the destination view controller
+        MIFinalizarPedidoViewController *vc = [segue destinationViewController];
+        vc.currentRequest = self.currentRequest;
+        
     }
+
 }
 
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    UITextView *txtview = object;
+    CGFloat topoffset = ([txtview bounds].size.height - [txtview contentSize].height * [txtview zoomScale])/2.0;
+    topoffset = ( topoffset < 0.0 ? 0.0 : topoffset );
+    txtview.contentOffset = (CGPoint){.x = 0, .y = -topoffset};
+}
 
 
 @end
