@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MuralCell" rowHeight="438.5" id="KGk-i7-Jjw" customClass="MIMuralCellControllerTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="138.5"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MuralCell" rowHeight="525.5" id="KGk-i7-Jjw" customClass="MIMuralCellControllerTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <userGuides>
+                    <userLayoutGuide location="10.5" affinity="maxY"/>
+                    <userLayoutGuide location="175" affinity="minY"/>
+                </userGuides>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempImage" translatesAutoresizingMaskIntoConstraints="NO" id="3e3-ho-psy">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -22,76 +26,76 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meio" translatesAutoresizingMaskIntoConstraints="NO" id="x2I-q0-6eb">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="62" y="111" width="250" height="102"/>
+                            <rect key="frame" x="62" y="111" width="250" height="100"/>
                         </variation>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="0T2-2U-yCv">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="0.0" y="153" width="375" height="60"/>
+                            <rect key="frame" x="0.0" y="151" width="375" height="60"/>
                         </variation>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sRb-0f-uxa">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="8" y="160" width="45" height="45"/>
+                            <rect key="frame" x="10" y="158" width="45" height="45"/>
                         </variation>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KmIcon" translatesAutoresizingMaskIntoConstraints="NO" id="quk-nD-SEn">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="322" y="160" width="45" height="45"/>
+                            <rect key="frame" x="320" y="158" width="45" height="45"/>
                         </variation>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="david_TabBar" translatesAutoresizingMaskIntoConstraints="NO" id="zep-Ly-EvY">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="94" y="140" width="45" height="45"/>
+                            <rect key="frame" x="95" y="138" width="45" height="45"/>
                         </variation>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seta" translatesAutoresizingMaskIntoConstraints="NO" id="RAu-7L-qB8">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="155" y="141" width="70" height="15"/>
+                            <rect key="frame" x="170" y="147" width="50" height="10"/>
                         </variation>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seta2" translatesAutoresizingMaskIntoConstraints="NO" id="EIU-p1-GW2">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="144" y="164" width="70" height="15"/>
+                            <rect key="frame" x="150" y="163" width="50" height="10"/>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cu8-cE-0NN">
-                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="89" y="184" width="197" height="21"/>
-                        </variation>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLa-E1-6nz">
                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="323" y="172" width="42" height="21"/>
+                            <rect key="frame" x="321" y="170" width="42" height="21"/>
                         </variation>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kiev" translatesAutoresizingMaskIntoConstraints="NO" id="78I-Di-WI1">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="234" y="139" width="45" height="45"/>
+                            <rect key="frame" x="235" y="138" width="45" height="45"/>
                         </variation>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jno-1J-f9D">
                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.97647058823529409" green="0.41176470588235292" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="125" y="117" width="124" height="21"/>
+                            <rect key="frame" x="95" y="117" width="185" height="21"/>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cu8-cE-0NN">
+                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                            <rect key="frame" x="95" y="182" width="185" height="21"/>
                         </variation>
                     </label>
                 </subviews>
@@ -106,10 +110,10 @@
                         <exclude reference="zep-Ly-EvY"/>
                         <exclude reference="RAu-7L-qB8"/>
                         <exclude reference="EIU-p1-GW2"/>
-                        <exclude reference="cu8-cE-0NN"/>
                         <exclude reference="cLa-E1-6nz"/>
                         <exclude reference="78I-Di-WI1"/>
                         <exclude reference="jno-1J-f9D"/>
+                        <exclude reference="cu8-cE-0NN"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
@@ -122,10 +126,10 @@
                         <include reference="zep-Ly-EvY"/>
                         <include reference="RAu-7L-qB8"/>
                         <include reference="EIU-p1-GW2"/>
-                        <include reference="cu8-cE-0NN"/>
                         <include reference="cLa-E1-6nz"/>
                         <include reference="78I-Di-WI1"/>
                         <include reference="jno-1J-f9D"/>
+                        <include reference="cu8-cE-0NN"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -138,7 +142,7 @@
                 <outlet property="tipoImage" destination="sRb-0f-uxa" id="cSd-3X-fqc"/>
                 <outlet property="usuarioImage" destination="78I-Di-WI1" id="9Wh-GS-6h2"/>
             </connections>
-            <point key="canvasLocation" x="418.5" y="409.75"/>
+            <point key="canvasLocation" x="419.5" y="448"/>
         </tableViewCell>
     </objects>
     <resources>

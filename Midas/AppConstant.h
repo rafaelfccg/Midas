@@ -17,7 +17,7 @@
 
 #define		COLOR_OUTGOING						HEXCOLOR(0x007AFFFF)
 #define		COLOR_INCOMING						HEXCOLOR(0xE6E5EAFF)
-
+#define		COLOR_TABBAR						HEXCOLOR(0xE58B48FF)
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 #define		PF_INSTALLATION_CLASS_NAME			@"_Installation"		//	Class name
 #define		PF_INSTALLATION_OBJECTID			@"objectId"				//	String
@@ -34,7 +34,7 @@
 #define		PF_USER_LOCATION					@"location"             //	GeoPoint
 #define		PF_USER_FACEBOOKID					@"facebookId"			//	String
 #define		PF_USER_IMAGE						@"image"				//	File
-#define     PF_USER_THUMBNAIL                   @"thumbnail"           //  File
+#define     PF_USER_THUMBNAIL                   @"thumbnail"            //  File
 //-----------------------------------------------------------------------
 #define		PF_MESSAGE_CLASS_NAME				@"Message"				//	Class name
 #define		PF_MESSAGE_USER						@"user"					//	Pointer to User Class
@@ -55,9 +55,9 @@
 #define		PF_REQUEST_UPDATEDACTION			@"updatedAt"            //	Date
 #define		PF_REQUEST_FOREACH                  @"foreach"              //	String
 #define		PF_REQUEST_WILLGIVE                 @"willgive"             //	String
-#define		PF_REQUEST_FOREACHVALUE             @"foreachValue"              //	Number
-#define		PF_REQUEST_WILLGIVEVALUE            @"willgiveValue"             //	Number
-
+#define		PF_REQUEST_FOREACHVALUE             @"foreachValue"         //	Number
+#define		PF_REQUEST_WILLGIVEVALUE            @"willgiveValue"        //	Number
+#define		PF_REQUEST_USERLOCATION             @"userLocation"         //	GeoPoint
 
 //-----------------------------------------------------------------------
 #define		PF_CHAT_CLASS_NAME                  @"Chat"                 //	Class name

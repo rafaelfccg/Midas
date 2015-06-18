@@ -14,6 +14,7 @@
 #import "RNGridMenu.h"
 #import "MIFiltrosDeBusca.h"
 #import "MIMuralCellControllerTableViewCell.h"
+#import "general.h"
 
 @interface MIMuralViewController () <RNGridMenuDelegate>
 
@@ -74,20 +75,27 @@
     if (cell == nil) {
         
         cell = [[MIMuralCellControllerTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     MIPedido *request = [_requests objectAtIndex:indexPath.row];
     
- //cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
+    //cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
     //cell.detailTextLabel.text = request.owner.username;
     
     cell.pedidoLabel.text = [NSString stringWithFormat:@"%@ %@", request.forEachValue,request.forEach];
     cell.destinoLabel.text = [NSString stringWithFormat:@"%@ %@", request.willGiveValue, request.willGive];
-    cell.distLabel.text = @"5km";
+    PFUser * user = [PFUser currentUser];
+    PFGeoPoint * point =  user[PF_USER_LOCATION];
     
-    cell.tipoImage.image = [self getCategoryIcon:request.category];
+    if(point && request.location){
+        double val = [point distanceInKilometersTo:request.location];
+        cell.distLabel.text = [NSString stringWithFormat:@"%.0lfkm",val];
+    }else{
+        cell.distLabel.text = [NSString stringWithFormat:@"--"];
+    }
+  
+    cell.tipoImage.image = getCategoryIcon(request.category);
     
     cell.usuarioImage.clipsToBounds = YES;
     cell.usuarioImage.layer.cornerRadius = 22.5f;
@@ -96,7 +104,6 @@
     
     return cell;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_requests count];
@@ -212,33 +219,6 @@
     }
     
     [self loadRequests];
-}
-
-- (UIImage *) getCategoryIcon:(NSNumber *)categoryNumber
-{
-    UIImage *image;
-    
-    switch ([categoryNumber intValue]) {
-        case RequestCategoryVidro:
-            image = [UIImage imageNamed:@"VidroIcon"];
-            break;
-        case RequestCategoryMetal:
-            image = [UIImage imageNamed:@"MetalIcon"];
-            break;
-        case RequestCategoryPapel:
-            image = [UIImage imageNamed:@"PapelIcon"];
-            break;
-        case RequestCategoryPlastico:
-            image = [UIImage imageNamed:@"PlasticoIcon"];
-            break;
-        case RequestCategoryOutros:
-            image = [UIImage imageNamed:@"OutrosIcon"];
-            break;
-        default:
-            image = [UIImage imageNamed:@"OutrosIcon"];
-            break;
-    }
-    return image;
 }
 
 
