@@ -12,6 +12,7 @@
 #import "ProgressHUD.h"
 #import "recent.h"
 #import "MINegociation.h"
+#import "general.h"
 
 
 @interface MIPedidoDetalhadoViewController (){
@@ -43,6 +44,19 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     NSLog(@"A cada %@, dou %@.", _currentRequest.forEach, _currentRequest.willGive);
+    self.userName.text = self.currentRequest.owner.username;
+    self.forEachLabel.text = [NSString stringWithFormat:@"%@ %@", self.currentRequest.forEachValue, self.currentRequest.forEach];
+    self.willGiveLabel.text = [NSString stringWithFormat:@"%@ %@", self.currentRequest.willGiveValue, self.currentRequest.willGive];
+    self.descricaoLabel.text = self.currentRequest.descricao;
+    
+    [self.descricaoLabel addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
+    
+    self.categoryImage.image = getCategoryIcon(self.currentRequest.category);
+
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+    [self.descricaoLabel removeObserver:self forKeyPath:@"contentSize"];
 }
 
 - (void) iniciarNegociacao:(id)sender {
@@ -104,6 +118,12 @@
     }
 }
 
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    UITextView *txtview = object;
+    CGFloat topoffset = ([txtview bounds].size.height - [txtview contentSize].height * [txtview zoomScale])/2.0;
+    topoffset = ( topoffset < 0.0 ? 0.0 : topoffset );
+    txtview.contentOffset = (CGPoint){.x = 0, .y = -topoffset};
+}
 
 
 @end

@@ -14,6 +14,7 @@
 #import "RNGridMenu.h"
 #import "MIFiltrosDeBusca.h"
 #import "MIMuralCellControllerTableViewCell.h"
+#import "general.h"
 
 @interface MIMuralViewController () <RNGridMenuDelegate>
 
@@ -87,7 +88,7 @@
     cell.destinoLabel.text = [NSString stringWithFormat:@"%@ %@", request.willGiveValue, request.willGive];
     cell.distLabel.text = @"5km";
     
-    cell.tipoImage.image = [self getCategoryIcon:request.category];
+    cell.tipoImage.image = getCategoryIcon(request.category);
     
     cell.usuarioImage.clipsToBounds = YES;
     cell.usuarioImage.layer.cornerRadius = 22.5f;
@@ -212,33 +213,6 @@
     }
     
     [self loadRequests];
-}
-
-- (UIImage *) getCategoryIcon:(NSNumber *)categoryNumber
-{
-    UIImage *image;
-    
-    switch ([categoryNumber intValue]) {
-        case RequestCategoryVidro:
-            image = [UIImage imageNamed:@"VidroIcon"];
-            break;
-        case RequestCategoryMetal:
-            image = [UIImage imageNamed:@"MetalIcon"];
-            break;
-        case RequestCategoryPapel:
-            image = [UIImage imageNamed:@"PapelIcon"];
-            break;
-        case RequestCategoryPlastico:
-            image = [UIImage imageNamed:@"PlasticoIcon"];
-            break;
-        case RequestCategoryOutros:
-            image = [UIImage imageNamed:@"OutrosIcon"];
-            break;
-        default:
-            image = [UIImage imageNamed:@"OutrosIcon"];
-            break;
-    }
-    return image;
 }
 
 
