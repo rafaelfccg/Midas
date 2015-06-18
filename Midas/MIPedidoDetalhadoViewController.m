@@ -96,7 +96,7 @@
                      if(success){
                          _temporaryObjectID = object.objectId;
                          _chat = [[MINegociation alloc]initWithPFObject:object];
-                         CreateRecentItem([PFUser currentUser], _temporaryObjectID, _currentRequest, @"Negocia");
+                         CreateRecentItem([PFUser currentUser], _temporaryObjectID, _currentRequest, _currentRequest.forEach);
                          [self performSegueWithIdentifier:@"FromInfoToChatSegue" sender:self];
 
                      

@@ -14,6 +14,8 @@
 #import "MIPedido.h"
 #import "MINegociation.h"
 #import "ProgressHUD.h"
+#import "MIRecentCell.h"
+#import "MIMeusPedidosTableViewCell.h"
 
 @interface MIMeusPedidosViewController ()
 
@@ -39,6 +41,14 @@
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.pedidosTableView addSubview:self.refreshControl];
     
+    UINib *nib = [UINib nibWithNibName:@"MIMeusPedidosTableViewCell" bundle:nil];
+    [self.pedidosTableView registerNib:nib forCellReuseIdentifier:@"pedidosCell"];
+    UINib *nibRecent = [UINib nibWithNibName:@"MIRecentCell" bundle:nil];
+    [self.pedidosTableView registerNib:nibRecent forCellReuseIdentifier:@"recentCell"];
+    [_pedidosTableView setSeparatorColor:COLOR_TABBAR];
+    [_pedidosTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    //[_pedidosTableView setSeparatorInset:UIEdgeInsetsMake(10, 0, 10, 0)];
+    
     [self.pedidosSegmentedControl addTarget:self action:@selector(valueChanged:) forControlEvents: UIControlEventValueChanged];
 }
 
@@ -55,27 +65,75 @@
 #pragma mark - Table View
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *identifier = @"muralCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if (cell == nil) {
-        
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
+    NSString *identifierRequest = @"pedidosCell";
+    NSString *identifierRecent = @"recentCell";
     
     if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
-        MIPedido *request = _requests[indexPath.row];
-        cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
-        cell.detailTextLabel.text = request.owner.username;
         
-    }else if (self.pedidosSegmentedControl.selectedSegmentIndex == 1){
-        MINegociation *recent = _recents[indexPath.row];
-        cell.textLabel.text = recent.owner.username;
-        cell.detailTextLabel.text = recent.lastMessage;
+        MIMeusPedidosTableViewCell* cell;
+        cell = [tableView dequeueReusableCellWithIdentifier:identifierRequest];
+        if (cell == nil) {
+            
+            cell = [[MIMeusPedidosTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifierRequest];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        MIPedido *request = [_requests objectAtIndex:indexPath.row];
+        
+        //cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
+        //cell.detailTextLabel.text = request.owner.username;
+        
+        cell.meuPedidoLabel.text = [NSString stringWithFormat:@"%@ %@", request.forEachValue,request.forEach];
+        cell.trocaLabel.text = [NSString stringWithFormat:@"%@ %@", request.willGiveValue, request.willGive];
+        cell.categoriaIcon.image = [self getCategoryIcon:request.category];
+        
+        cell.minhaImage.clipsToBounds = YES;
+        cell.minhaImage.layer.cornerRadius = 22.5f;
+        
+        //[cell setLayoutMargins:UIEdgeInsetsMake(10, 0, 10, 0)];
+        
+        return cell;
+    }else{
+        MIRecentCell* cell;
+        cell = [tableView dequeueReusableCellWithIdentifier:identifierRecent];
+        if (cell == nil) {
+            
+            cell = [[MIRecentCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifierRecent];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        MINegociation* recent = [_recents objectAtIndex:indexPath.row];
+        [cell bindData:recent.object];
+        return  cell;
     }
-    return cell;
+    
+
+}
+
+- (UIImage *) getCategoryIcon:(NSNumber *)categoryNumber
+{
+    UIImage *image;
+    
+    switch ([categoryNumber intValue]) {
+        case RequestCategoryVidro:
+            image = [UIImage imageNamed:@"VidroIcon"];
+            break;
+        case RequestCategoryMetal:
+            image = [UIImage imageNamed:@"MetalIcon"];
+            break;
+        case RequestCategoryPapel:
+            image = [UIImage imageNamed:@"PapelIcon"];
+            break;
+        case RequestCategoryPlastico:
+            image = [UIImage imageNamed:@"PlasticoIcon"];
+            break;
+        case RequestCategoryOutros:
+            image = [UIImage imageNamed:@"OutrosIcon"];
+            break;
+        default:
+            image = [UIImage imageNamed:@"OutrosIcon"];
+            break;
+    }
+    return image;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -119,7 +177,13 @@
     }
     
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(self.pedidosSegmentedControl.selectedSegmentIndex ==0){
+        return 222;
+    }
+    return 70;
 
+}
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 - (void)loadRequests
@@ -164,8 +228,15 @@
 
 
 - (void) valueChanged:(UISegmentedControl *)control {
-    if(control.selectedSegmentIndex == 0)[self loadRequests];
-    else [self loadRecents];
+    if(control.selectedSegmentIndex == 0){
+        [self loadRequests];
+        [_pedidosTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    }
+    else {
+        [self loadRecents];
+        [_pedidosTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+        
+    }
 }
 
 -(IBAction) criarNovoPedido:(id)sender {

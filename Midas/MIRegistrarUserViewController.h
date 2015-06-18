@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIRegistrarUserViewController : UIViewController
+@interface MIRegistrarUserViewController : UIViewController <UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *loginTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordConfirmationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UIButton *CancelarButton;
+@property (weak, nonatomic) IBOutlet UIButton *okButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+@property UIImage *picture;
 @end
