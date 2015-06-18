@@ -911,6 +911,7 @@
                     <connections>
                         <outlet property="CancelarButton" destination="S13-HW-UMo" id="vpv-Yy-3Pf"/>
                         <outlet property="emailTextField" destination="5Ti-Te-5By" id="bG8-cJ-sSY"/>
+                        <outlet property="imageView" destination="Wgy-nW-QXw" id="ifr-6p-SCg"/>
                         <outlet property="loginTextField" destination="Qm4-yW-5kH" id="aEP-Mg-Sei"/>
                         <outlet property="okButton" destination="s3d-2x-JmP" id="brP-4K-3ng"/>
                         <outlet property="passwordConfirmationTextField" destination="IaG-Ql-T89" id="3fK-Qy-K2O"/>
