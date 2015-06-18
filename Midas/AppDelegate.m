@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "MIMeusPedidosViewController.h"
+#import "AppConstant.h"
 @interface AppDelegate ()
 
 @property MIMeusPedidosViewController *recents;
@@ -32,15 +33,16 @@
                                                          bundle: nil];
     _recents = [storyboard instantiateViewControllerWithIdentifier:@"MeusPedidos"];
   
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:224.0/256.0 green:134.0/256.0 blue:60.0/256.0 alpha:1]];
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     
-    [[UITabBar appearance] setTintColor: [UIColor whiteColor]];
+    [[UITabBar appearance] setTintColor:COLOR_TABBAR ];
     
     
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                    NSForegroundColorAttributeName : COLOR_TABBAR}];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:224.0/256.0 green:134.0/256.0 blue:60.0/256.0 alpha:1]];
-    
-    [[UINavigationBar appearance] setTintColor: [UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor: COLOR_TABBAR];
     
 
     

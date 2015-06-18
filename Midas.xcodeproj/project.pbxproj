@@ -142,6 +142,8 @@
 		1FF00DE11B33272500A3C863 /* general.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF00DE01B33272500A3C863 /* general.m */; };
 		9155A7E31B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9155A7E11B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.m */; };
 		9155A7E41B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9155A7E21B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib */; };
+		9155A7E81B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9155A7E61B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.m */; };
+		9155A7E91B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9155A7E71B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -402,6 +404,9 @@
 		9155A7E01B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMuralCellControllerTableViewCell.h; sourceTree = "<group>"; };
 		9155A7E11B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMuralCellControllerTableViewCell.m; sourceTree = "<group>"; };
 		9155A7E21B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMuralCellControllerTableViewCell.xib; sourceTree = "<group>"; };
+		9155A7E51B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMeusPedidosTableViewCell.h; sourceTree = "<group>"; };
+		9155A7E61B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMeusPedidosTableViewCell.m; sourceTree = "<group>"; };
+		9155A7E71B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMeusPedidosTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -886,6 +891,9 @@
 				9155A7E01B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.h */,
 				9155A7E11B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.m */,
 				9155A7E21B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib */,
+				9155A7E51B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.h */,
+				9155A7E61B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.m */,
+				9155A7E71B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1026,6 +1034,7 @@
 				003B24D61B29E7A700743D0B /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				001580A51B275E4700E03E94 /* LaunchScreen.xib in Resources */,
 				9155A7E41B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib in Resources */,
+				9155A7E91B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.xib in Resources */,
 				001580A21B275E4700E03E94 /* Images.xcassets in Resources */,
 				003B252A1B29F54300743D0B /* chat_blank@2x.png in Resources */,
 				003B250E1B29E83B00743D0B /* JSQMessagesAssets.bundle in Resources */,
@@ -1120,6 +1129,7 @@
 				1FE7DAAE1B2C718000656359 /* MINovoPedidoCategoriaViewController.m in Sources */,
 				003B24731B29C95600743D0B /* AFURLRequestSerialization.m in Sources */,
 				1FE7DAA41B29016000656359 /* MIRegistrarUserViewController.m in Sources */,
+				9155A7E81B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.m in Sources */,
 				0015809A1B275E4700E03E94 /* AppDelegate.m in Sources */,
 				003B24891B29C9EA00743D0B /* UIAlertView+AFNetworking.m in Sources */,
 				003B25531B2A0E3A00743D0B /* recent.m in Sources */,

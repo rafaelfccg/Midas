@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MINovoPedido.h"
+#import <Parse/Parse.h>
 
 @interface MINovoPedidoDadosViewController : UIViewController
 
@@ -20,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *willGiveValueTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property PFGeoPoint * location;
 
 @end

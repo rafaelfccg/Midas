@@ -75,13 +75,12 @@
     if (cell == nil) {
         
         cell = [[MIMuralCellControllerTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     MIPedido *request = [_requests objectAtIndex:indexPath.row];
     
- //cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
+    //cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
     //cell.detailTextLabel.text = request.owner.username;
     
     cell.pedidoLabel.text = [NSString stringWithFormat:@"%@ %@", request.forEachValue,request.forEach];
@@ -97,7 +96,6 @@
     
     return cell;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_requests count];
