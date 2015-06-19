@@ -57,7 +57,7 @@
     //---------------------------------------------------------------------------------------------------------------------------------------------
     PFUser *user = [PFUser currentUser];
     self.senderId = user.objectId;
-    self.senderDisplayName = user[PF_USER_FULLNAME];
+    self.senderDisplayName = user[PF_USER_USERNAME];
     //_chatId = @"hhBo727u17";
     //---------------------------------------------------------------------------------------------------------------------------------------------
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
@@ -166,7 +166,7 @@
     JSQMessage *message;
     //---------------------------------------------------------------------------------------------------------------------------------------------
     PFUser *user = object[PF_MESSAGE_USER];
-    NSString *name = user[PF_USER_FULLNAME];
+    NSString *name = user[PF_USER_USERNAME];
     //---------------------------------------------------------------------------------------------------------------------------------------------
     PFFile *filePicture = object[PF_MESSAGE_IMAGE];
     //---------------------------------------------------------------------------------------------------------------------------------------------
@@ -202,7 +202,7 @@
 - (void)loadAvatar:(PFUser *)user
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-    PFFile *file = user[PF_USER_THUMBNAIL];
+    PFFile *file = user[PF_USER_IMAGE];
     [file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error)
      {
          if (error == nil)
