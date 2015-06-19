@@ -83,7 +83,7 @@
 {
     [super viewDidAppear:animated];
     self.collectionView.collectionViewLayout.springinessEnabled = YES;
-    self.tabBarController.tabBar.hidden = YES;
+    
     timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(loadMessages) userInfo:nil repeats:YES];
     
 }
@@ -94,6 +94,7 @@
     }else{
         self.title = _neg.owner.username;
     }
+    self.tabBarController.tabBar.hidden = YES;
 }
 
 /*
