@@ -27,6 +27,7 @@
         _status = pfobject[PF_REQUEST_STATUS];
         _category = pfobject[PF_REQUEST_CATEGORY];
         _location = pfobject[PF_REQUEST_USERLOCATION];
+        _imageFile = pfobject[PF_REQUEST_IMAGE];
     }
     
     return self;

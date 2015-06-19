@@ -93,11 +93,25 @@
         
         cell.minhaImage.clipsToBounds = YES;
         cell.minhaImage.layer.cornerRadius = 22.5f;
-        PFUser* user = [PFUser currentUser];
-        if(user[PF_USER_IMAGE]){
-           cell.minhaImage.image = user[PF_USER_IMAGE];
-        }else  cell.minhaImage.image = [UIImage imageNamed:@"recent_blank"];
+  
+        //CARREGA A IMAGEM DO PEDIDO
+        if (request.imageFile) {
+            [[MIDatabase sharedInstance] loadPFFile:request.imageFile WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
+                
+                request.image = image;
+                cell.meuPedidoImage.image = image;
+                
+            }];
+        }
         
+        //CARREGA A IMAGEM DO USUARIO ATUAL
+        if ([PFUser currentUser][PF_USER_IMAGE]) {
+            [[MIDatabase sharedInstance] loadPFFile:([PFUser currentUser][PF_USER_IMAGE]) WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
+                
+                cell.minhaImage.image = image;
+                
+            }];
+        }
         
         //[cell setLayoutMargins:UIEdgeInsetsMake(10, 0, 10, 0)];
         

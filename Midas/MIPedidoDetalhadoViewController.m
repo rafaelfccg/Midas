@@ -74,6 +74,7 @@
     [self.descricaoLabel addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
     
     self.categoryImage.image = getCategoryIcon(self.currentRequest.category);
+    self.backgroundImage.image = self.currentRequest.image;
 
 }
 

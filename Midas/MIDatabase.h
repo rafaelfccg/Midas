@@ -16,6 +16,8 @@
 
 @interface MIDatabase : NSObject
 
+@property NSCache *imageCache;
+
 +(nonnull MIDatabase *)sharedInstance;
 
 //authentication
@@ -46,4 +48,6 @@
 
 - (void) getRecentNegotioationsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
+- (void) loadPFFile:(nonnull PFFile *)file WithBlock:(nullable PFImageViewImageResultBlock)completion;
+                             
 @end

@@ -16,6 +16,7 @@
 #import "converter.h"
 
 #import "MIRecentCell.h"
+#import "MIDatabase.h"
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 @interface MIRecentCell()
@@ -53,14 +54,22 @@
         PFUser* giver = recent[PF_RECENT_REQUESTGIVER];
         if(giver[PF_USER_IMAGE]){
            
-            [imageUser setFile:giver[PF_USER_IMAGE]];
-            [imageUser loadInBackground];
+            [[MIDatabase sharedInstance] loadPFFile:giver[PF_USER_IMAGE] WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
+                if (image){
+                    imageUser.image = image;
+                }
+                
+            }];
         }
         
     }else{
         if(owns[PF_USER_IMAGE]){
-            [imageUser setFile:owns[PF_USER_IMAGE]];
-            [imageUser loadInBackground];
+            [[MIDatabase sharedInstance] loadPFFile:owns[PF_USER_IMAGE] WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
+                if (image){
+                    imageUser.image = image;
+                }
+                
+            }];
         }
     
     }

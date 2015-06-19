@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
+
 
 @interface MIPedido : NSObject
 
@@ -21,6 +23,9 @@
 @property (readonly) NSNumber *status;
 @property (readonly) NSNumber *category;
 @property (readonly) PFGeoPoint* location;
+@property (readonly) PFFile* imageFile;
+@property (readonly) PFFile* thumbnailFile;
+@property UIImage* image;
 
 - (instancetype) initWithPFObject:(PFObject *)object;
 

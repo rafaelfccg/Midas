@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ParseUI/ParseUI.h>
 
 @interface MIMuralCellControllerTableViewCell : UITableViewCell
 
@@ -20,5 +21,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *pedidoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *destinoLabel;
 @property (nonatomic, weak) IBOutlet UILabel *distLabel;
+
 
 @end

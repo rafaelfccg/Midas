@@ -23,6 +23,7 @@
     
     dispatch_once(&pred, ^{
         sharedInstance = [[MIDatabase alloc] init];
+        sharedInstance.imageCache = [[NSCache alloc] init];
     });
     
     return sharedInstance;
@@ -237,4 +238,27 @@
     [request saveInBackgroundWithBlock:block];
 }
 
+- (void) loadPFFile:(nonnull PFFile *)file WithBlock:(nullable PFImageViewImageResultBlock)completion
+{
+    
+    if ([_imageCache objectForKey:file]){
+    
+        UIImage *cachedImage = [_imageCache objectForKey:file];
+        completion(cachedImage, nil);
+        NSLog(@"Pegou image do cache.");
+    } else{
+        
+        PFImageView * pfImageView = [[PFImageView alloc] init];
+        pfImageView.file = file;
+        [pfImageView loadInBackground:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
+            
+            if(image){
+                [_imageCache setObject:image forKey:file];
+            }
+            completion(image, error);
+            
+        }];
+        
+    }
+}
 @end
