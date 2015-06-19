@@ -21,7 +21,7 @@
         _willgiveValue = editRequest.willGiveValue;
         _willgive = editRequest.willGive;
         _descricao = editRequest.descricao;
-        //_image = editRequest.;
+        _image = editRequest.image;
         //_thumbnail;
         _category = editRequest.category;
         _location = editRequest.location;
