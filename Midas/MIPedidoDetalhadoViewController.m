@@ -19,7 +19,7 @@
 
 
 @interface MIPedidoDetalhadoViewController (){
-   
+    BOOL _goToChat;
 }
 
 @property NSString *temporaryObjectID;
@@ -31,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _goToChat = NO;
     [self.closeRequestButton.layer setCornerRadius:7.0f];
     [self.closeRequestButton.layer setMasksToBounds:YES];
     
@@ -81,6 +81,9 @@
 -(void) viewWillDisappear:(BOOL)animated{
     [self.descricaoLabel removeObserver:self forKeyPath:@"contentSize"];
 }
+-(void) viewDidAppear:(BOOL)animated {
+    _goToChat = NO;
+}
 
 - (void) iniciarNegociacao:(id)sender {
      [[MIDatabase sharedInstance] getChatOwnerToGiverFromRequest:_currentRequest withBlock:^(NSArray *objects, NSError *error)
@@ -88,8 +91,8 @@
          if (error == nil)
          {
              PFObject *object = [PFObject objectWithClassName:PF_CHAT_CLASS_NAME];
-             if (objects == nil | [objects count] ==0) {
-                 
+             if (!_goToChat && (objects == nil || [objects count] ==0) ) {
+                 _goToChat = YES;
                  object[PF_CHAT_REQUESTOWNER] = _currentRequest.owner;
                  object[PF_CHAT_REQUESTGIVER] = [PFUser currentUser];
                  object[PF_CHAT_REQUESTID] = _currentRequest.object.objectId;
@@ -106,11 +109,11 @@
                      }
                  }];
     
-             }else if([objects count] ==1){
+             }else if(!_goToChat && [objects count] ==1){
                  PFObject* chat=  [objects objectAtIndex:0];
                  _temporaryObjectID = chat.objectId;
                  _chat = [[MINegociation alloc]initWithPFObject:chat];
-
+                 _goToChat = YES;
                  
                  [self performSegueWithIdentifier:@"FromInfoToChatSegue" sender:self];
              }else{
