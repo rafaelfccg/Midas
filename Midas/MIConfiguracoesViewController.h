@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIConfiguracoesViewController : UIViewController <UIActionSheetDelegate>
+@interface MIConfiguracoesViewController : UIViewController <UIActionSheetDelegate,UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property UIImage *picture;
 
 @end

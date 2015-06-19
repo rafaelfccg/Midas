@@ -629,8 +629,8 @@
                                     <action selector="logout:" destination="uxC-b3-0WE" eventType="touchUpInside" id="DX1-xA-bWa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aS-VV-yuO">
-                                <rect key="frame" x="247" y="400" width="108" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aS-VV-yuO">
+                                <rect key="frame" x="246" y="456" width="108" height="30"/>
                                 <state key="normal" title="editar endereço">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -638,20 +638,35 @@
                                     <segue destination="b1V-Ld-gTt" kind="show" id="bhr-lt-fZj"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nqt-XA-TnS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PerfilTabBarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Nqt-XA-TnS">
                                 <rect key="frame" x="260" y="189" width="80" height="80"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qB4-fA-ops">
-                                <rect key="frame" x="402" y="234" width="39" height="35"/>
+                                <rect key="frame" x="99" y="234" width="39" height="35"/>
                                 <state key="normal" image="CameraIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cameraButton:" destination="uxC-b3-0WE" eventType="touchUpInside" id="MTA-5j-CqI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg8-uG-53w">
-                                <rect key="frame" x="475" y="234" width="39" height="35"/>
+                                <rect key="frame" x="172" y="234" width="39" height="35"/>
                                 <state key="normal" image="GalleryIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="galeryButton:" destination="uxC-b3-0WE" eventType="touchUpInside" id="QQJ-cu-eDH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjT-mB-uYq">
+                                <rect key="frame" x="99" y="319" width="68" height="30"/>
+                                <state key="normal" title="Confirmar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmar:" destination="uxC-b3-0WE" eventType="touchUpInside" id="LTn-bq-nXN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -663,8 +678,19 @@
                             <constraint firstAttribute="centerX" secondItem="c3c-6j-73U" secondAttribute="centerX" constant="-1.5" id="pX4-zU-R0J"/>
                             <constraint firstItem="3aS-VV-yuO" firstAttribute="top" secondItem="c3c-6j-73U" secondAttribute="bottom" constant="51" id="q6h-ty-jJf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8Jy-y5-XOp"/>
+                                <exclude reference="C8F-Bd-dLE"/>
+                                <exclude reference="q6h-ty-jJf"/>
+                                <exclude reference="Y2S-HJ-LGn"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Configurações" id="Ogw-W2-Kqn"/>
+                    <connections>
+                        <outlet property="imageView" destination="Nqt-XA-TnS" id="Py4-ug-bDY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Tx-hi-U1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1024,13 +1050,6 @@
                                     <action selector="FotoGaleria:" destination="g5R-Vm-X9Z" eventType="touchUpInside" id="o0a-Jp-rNG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PerfilTabBarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Wgy-nW-QXw">
-                                <rect key="frame" x="260" y="37" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="HEi-u6-9SP"/>
-                                    <constraint firstAttribute="width" constant="80" id="v2O-54-529"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S13-HW-UMo">
                                 <rect key="frame" x="65" y="512" width="101" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.6707620634" blue="0.25552822269999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1058,6 +1077,13 @@
                                     <action selector="cameraphoto:" destination="g5R-Vm-X9Z" eventType="touchUpInside" id="yk7-lR-JUr"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PerfilTabBarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Wgy-nW-QXw">
+                                <rect key="frame" x="260" y="37" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="HEi-u6-9SP"/>
+                                    <constraint firstAttribute="width" constant="80" id="v2O-54-529"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
