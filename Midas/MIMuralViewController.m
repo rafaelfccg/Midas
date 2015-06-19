@@ -81,57 +81,8 @@
     }
     
     MIPedido *request = [_requests objectAtIndex:indexPath.row];
-    
-    //cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
-    //cell.detailTextLabel.text = request.owner.username;
-    
-    cell.pedidoLabel.text = [NSString stringWithFormat:@"%@ %@", request.forEachValue,request.forEach];
-    cell.destinoLabel.text = [NSString stringWithFormat:@"%@ %@", request.willGiveValue, request.willGive];
-    PFUser * user = [PFUser currentUser];
-    PFGeoPoint * point =  user[PF_USER_LOCATION];
-    
-    if(point && request.location){
-        double val = [point distanceInKilometersTo:request.location];
-        cell.distLabel.text = [NSString stringWithFormat:@"%.0lfkm",val];
-    }else{
-        cell.distLabel.text = [NSString stringWithFormat:@"--"];
-    }
-  
-    cell.tipoImage.image = getCategoryIcon(request.category);
-    
-    cell.usuarioImage.clipsToBounds = YES;
-    cell.usuarioImage.layer.cornerRadius = 22.5f;
-    cell.doadorImage.clipsToBounds = YES;
-    cell.doadorImage.layer.cornerRadius = 22.5f;
-    
-    //CARREGA A IMAGEM DO PEDIDO
-    if (request.imageFile) {
-        [[MIDatabase sharedInstance] loadPFFile:request.imageFile WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
-            
-            request.image = image;
-            cell.pedidoImage.image = image;
-            
-        }];
-    }
-    
-    //CARREGA A IMAGEM DO DONO DO PEDIDO
-    if (request.owner[PF_USER_IMAGE]) {
-        [[MIDatabase sharedInstance] loadPFFile:request.owner[PF_USER_IMAGE] WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
-        
-            cell.usuarioImage.image = image;
-            
-        }];
-    }
-    
-    //CARREGA A IMAGEM DO USUARIO ATUAL
-    if ([PFUser currentUser][PF_USER_IMAGE]) {
-        [[MIDatabase sharedInstance] loadPFFile:([PFUser currentUser][PF_USER_IMAGE]) WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
-            
-            cell.doadorImage.image = image;
-            
-        }];
-    }
-    
+    [cell bindData:request];
+
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

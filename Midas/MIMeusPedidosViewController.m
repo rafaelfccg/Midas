@@ -83,37 +83,7 @@
         }
         
         MIPedido *request = [_requests objectAtIndex:indexPath.row];
-        
-        //cell.textLabel.text = [NSString stringWithFormat:@"A cada %@ %@, dou %@ %@.", request.forEachValue, request.forEach,request.willGiveValue, request.willGive];
-        //cell.detailTextLabel.text = request.owner.username;
-        
-        cell.meuPedidoLabel.text = [NSString stringWithFormat:@"%@ %@", request.forEachValue,request.forEach];
-        cell.trocaLabel.text = [NSString stringWithFormat:@"%@ %@", request.willGiveValue, request.willGive];
-        cell.categoriaIcon.image = [self getCategoryIcon:request.category];
-        
-        cell.minhaImage.clipsToBounds = YES;
-        cell.minhaImage.layer.cornerRadius = 22.5f;
-  
-        //CARREGA A IMAGEM DO PEDIDO
-        if (request.imageFile) {
-            [[MIDatabase sharedInstance] loadPFFile:request.imageFile WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
-                
-                request.image = image;
-                cell.meuPedidoImage.image = image;
-                
-            }];
-        }
-        
-        //CARREGA A IMAGEM DO USUARIO ATUAL
-        if ([PFUser currentUser][PF_USER_IMAGE]) {
-            [[MIDatabase sharedInstance] loadPFFile:([PFUser currentUser][PF_USER_IMAGE]) WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
-                
-                cell.minhaImage.image = image;
-                
-            }];
-        }
-        
-        //[cell setLayoutMargins:UIEdgeInsetsMake(10, 0, 10, 0)];
+        [cell bindData:request];
         
         return cell;
     }else{
@@ -130,33 +100,6 @@
     }
     
 
-}
-
-- (UIImage *) getCategoryIcon:(NSNumber *)categoryNumber
-{
-    UIImage *image;
-    
-    switch ([categoryNumber intValue]) {
-        case RequestCategoryVidro:
-            image = [UIImage imageNamed:@"VidroIcon"];
-            break;
-        case RequestCategoryMetal:
-            image = [UIImage imageNamed:@"MetalIcon"];
-            break;
-        case RequestCategoryPapel:
-            image = [UIImage imageNamed:@"PapelIcon"];
-            break;
-        case RequestCategoryPlastico:
-            image = [UIImage imageNamed:@"PlasticoIcon"];
-            break;
-        case RequestCategoryOutros:
-            image = [UIImage imageNamed:@"OutrosIcon"];
-            break;
-        default:
-            image = [UIImage imageNamed:@"OutrosIcon"];
-            break;
-    }
-    return image;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

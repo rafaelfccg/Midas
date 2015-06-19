@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <ParseUI/ParseUI.h>
+#import "MIPedido.h"
+#import "MIDatabase.h"
+#import "general.h"
 
 @interface MIMuralCellControllerTableViewCell : UITableViewCell
 
@@ -22,5 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *destinoLabel;
 @property (nonatomic, weak) IBOutlet UILabel *distLabel;
 
+
+- (void)bindData:(MIPedido *)request;
 
 @end

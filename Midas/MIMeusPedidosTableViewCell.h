@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIPedido.h"
 
 @interface MIMeusPedidosTableViewCell : UITableViewCell
 
@@ -17,5 +18,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *trocaLabel;
 @property (weak, nonatomic) IBOutlet UILabel *meuPedidoLabel;
 
-
+- (void)bindData:(MIPedido *)request;
 @end
