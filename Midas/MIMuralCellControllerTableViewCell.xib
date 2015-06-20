@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="376" height="121"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bolakm" translatesAutoresizingMaskIntoConstraints="NO" id="TMt-ky-zqz">
-                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                        <rect key="frame" x="4" y="8" width="56" height="56"/>
                     </imageView>
                     <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fs4-Uv-hSZ">
                         <rect key="frame" x="0.0" y="120" width="375" height="50"/>
@@ -52,17 +52,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlasticoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0d7-N8-2kB">
-                        <rect key="frame" x="4" y="60" width="52" height="52"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5 Km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDY-lH-7QC">
-                        <rect key="frame" x="9" y="19" width="42" height="21"/>
+                        <rect key="frame" x="11" y="23" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="linha" translatesAutoresizingMaskIntoConstraints="NO" id="hC8-VV-O3E">
                         <rect key="frame" x="0.0" y="173" width="375" height="1"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlasticoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0d7-N8-2kB">
+                        <rect key="frame" x="8" y="67" width="47" height="45"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
