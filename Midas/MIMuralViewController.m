@@ -88,16 +88,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger value = [_requests count];
-    
-    if(value==0)
-        self.muralTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PerfilTabBarIcon"]];
-    else
-        self.muralTableView.backgroundView = nil;
-    
-    
-    return value;
-    
+    return [_requests count];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -130,6 +121,11 @@
              [_requests addObjectsFromArray:pedidos];
              [self.muralTableView reloadData];
              
+             if([pedidos count]==0)
+                 self.muralTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PerfilTabBarIcon"]];
+             
+             else
+                 self.muralTableView.backgroundView = nil;
          }
          else [ProgressHUD showError:@"Network error."];
          [self.refreshControl endRefreshing];
