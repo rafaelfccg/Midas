@@ -22,18 +22,19 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
-    _CancelarButton.layer.cornerRadius = 5;
-    _CancelarButton.layer.borderWidth = 1;
-    _CancelarButton.layer.borderColor = COLOR_OUTGOING.CGColor;
-    _okButton.layer.cornerRadius = 5;
-    _okButton.layer.borderWidth = 1;
-    _okButton.layer.borderColor = COLOR_OUTGOING.CGColor;
     self.picture = nil;
     
     UITapGestureRecognizer *imageTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressedGallery:)];
     [self.imageView setUserInteractionEnabled:YES];
     [self.imageView addGestureRecognizer:imageTapRecognizer];
     
+    UIBarButtonItem *concluir = [[UIBarButtonItem alloc]
+                                      initWithTitle:@"Registrar!"
+                                      style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(actionRegister:)];
+    self.navigationItem.rightBarButtonItem = concluir;
+
 
 }
 

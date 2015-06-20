@@ -14,8 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordConfirmationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UIButton *CancelarButton;
-@property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property UIImage *picture;

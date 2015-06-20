@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = @"Midas";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,5 +74,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)registrarAction:(id)sender {
+     [self performSegueWithIdentifier:@"FromLoginToRegistrar" sender:self];
+}
 
 @end
