@@ -13,6 +13,9 @@
 
 @interface MIConfiguracoesViewController ()
 
+@property UIActionSheet *logoutSheet;
+@property UIActionSheet *selectImageSheet;
+
 @end
 
 @implementation MIConfiguracoesViewController
@@ -21,6 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    UITapGestureRecognizer *imageTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressedGallery:)];
+    [self.imageView setUserInteractionEnabled:YES];
+    [self.imageView addGestureRecognizer:imageTapRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,9 +53,9 @@
 - (void)actionLogout
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"
-                                          destructiveButtonTitle:@"Log out" otherButtonTitles:nil];
-    [action showFromTabBar:[[self tabBarController] tabBar]];
+    self.logoutSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"
+                                     destructiveButtonTitle:@"Log out" otherButtonTitles:nil];
+    [self.logoutSheet showFromTabBar:[[self tabBarController] tabBar]];
 }
 
 #pragma mark - UIActionSheetDelegate
@@ -56,23 +64,32 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-    if (buttonIndex != actionSheet.cancelButtonIndex)
+    if(actionSheet==self.logoutSheet)
     {
-        [PFUser logOut];
-        ParsePushUserResign();
-        PostNotification(NOTIFICATION_USER_LOGGED_OUT);
-        LoginUser(self);
+        if (buttonIndex != actionSheet.cancelButtonIndex)
+        {
+            [PFUser logOut];
+            ParsePushUserResign();
+            PostNotification(NOTIFICATION_USER_LOGGED_OUT);
+            LoginUser(self);
+        }
+    }
+    
+    if(actionSheet == self.selectImageSheet)
+    {
+        if (buttonIndex == 0){
+            PresentPhotoLibrary(self, YES);
+        }else if(buttonIndex ==1){
+            PresentPhotoCamera(self, YES);
+        }
     }
 }
 
-- (IBAction)galeryButton:(id)sender {
-    self.picture = nil;
-    PresentPhotoLibrary(self, YES);
-}
-
-- (IBAction)cameraButton:(id)sender {
-    self.picture = nil;
-    PresentPhotoCamera(self, YES);
+- (void)pressedGallery:(id)sender {
+    self.selectImageSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"
+                                          destructiveButtonTitle:nil otherButtonTitles:@"Foto da Galeria",@"Foto da Camera", nil];
+    [self.selectImageSheet showFromTabBar:[[self tabBarController] tabBar]];
+    
 }
 
 -(void)viewDidDisappear:(BOOL)animated
