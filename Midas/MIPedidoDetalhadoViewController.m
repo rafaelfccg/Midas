@@ -134,9 +134,6 @@
     [self.navigationController showViewController:epvc sender:self];
 }
 
--(IBAction)finalizarPedido:(id)sender {
-    [self performSegueWithIdentifier:@"FromMeuPedidoToFinalizarSegue" sender:self];
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -146,14 +143,48 @@
         MIChatViewController *vc = [segue destinationViewController];
         vc.chatId = _temporaryObjectID;
         vc.neg  = _chat;
-    } else if ([[segue identifier] isEqualToString:@"FromMeuPedidoToFinalizarSegue"])
-    {
-        MIFinalizarPedidoViewController *vc = [segue destinationViewController];
-        vc.currentRequest = self.currentRequest;
-        
     }
 
 }
+
+-(IBAction)finalizarPedido:(id)sender {
+    
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Finalizar Pedido"
+                                          message:@"Deseja realmente finalizar o pedido?"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"Cancelar", @"Cancel action")
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       NSLog(@"Cancel action");
+                                   }];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:NSLocalizedString(@"Sim", @"OK action")
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action)
+                               {
+                                   [[MIDatabase sharedInstance] finalizeRequestWithPFObject:self.currentRequest.object
+                                                                                      block:^(BOOL succeeded, NSError *error) {
+                                                                                          
+                                                                                          if(succeeded) {
+                                                                                              [ProgressHUD showSuccess:[NSString stringWithFormat:@"Pedido finalizado com sucesso!"]];
+                                                                                              [self.navigationController popToRootViewControllerAnimated:YES];
+                                                                                          } else{
+                                                                                              [ProgressHUD showError:error.userInfo[@"error"]];
+                                                                                          }
+                                                                                      }];
+
+                               }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+   }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     UITextView *txtview = object;

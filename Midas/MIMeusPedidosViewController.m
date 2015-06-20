@@ -115,24 +115,7 @@
         value = _requests.count;
     }else{
         value = _recents.count;
-    }
-    
-    if(value==0)
-    {
-        if(self.pedidosSegmentedControl.selectedSegmentIndex == 0)
-        {
-            self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"david_TabBar"]];
-            NSLog(@"andre");
-        }
-        else
-        {
-            self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kiev"]];
-            NSLog(@"kiev");
-        }
-    }
-    else
-        self.pedidosTableView.backgroundView = nil;
-    
+    }    
     return value;
 }
 
@@ -186,6 +169,7 @@
              NSArray *pedidos = [MIPedido pedidosArrayFromPFObjectArray:objects];
              [_requests addObjectsFromArray:pedidos];
              [self.pedidosTableView reloadData];
+             [self setBackgroundViewForTableView:[self.requests count]];
              
          }
          else [ProgressHUD showError:@"Network error."];
@@ -203,6 +187,7 @@
              NSArray* recents =[MINegociation recentesArrayFromPFObjectArray:objects];
              [_recents addObjectsFromArray:recents];
              [self.pedidosTableView reloadData];
+             [self setBackgroundViewForTableView:[self.recents count]];
              
          }
          else [ProgressHUD showError:@"Network error."];
@@ -228,16 +213,15 @@
         [self.pedidosTableView setBackgroundColor:[UIColor whiteColor]];
         
     }
+}
+
+-(IBAction) criarNovoPedido:(id)sender {
+    [self performSegueWithIdentifier:@"FromMeusPedidosToNovoPedidoCategoria" sender:self];
+}
+
+- (void) setBackgroundViewForTableView:(NSUInteger) numberOfRows {
     
-    NSInteger value = 0;
-    
-    if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
-        value = _requests.count;
-    }else{
-        value = _recents.count;
-    }
-    
-    if(value==0)
+    if(numberOfRows==0)
     {
         if(self.pedidosSegmentedControl.selectedSegmentIndex == 0)
         {
@@ -252,10 +236,7 @@
     }
     else
         self.pedidosTableView.backgroundView = nil;
-}
 
--(IBAction) criarNovoPedido:(id)sender {
-    [self performSegueWithIdentifier:@"FromMeusPedidosToNovoPedidoCategoria" sender:self];
 }
 @end
 

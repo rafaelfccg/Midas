@@ -121,7 +121,7 @@
              [_requests addObjectsFromArray:pedidos];
              [self.muralTableView reloadData];
              
-             if([pedidos count]==0)
+             if([_requests count]==0)
                  self.muralTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PerfilTabBarIcon"]];
              
              else
