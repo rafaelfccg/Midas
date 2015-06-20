@@ -75,7 +75,8 @@
     PresentPhotoCamera(self, YES);
 }
 
-- (IBAction)confirmar:(id)sender {
+-(void)viewDidDisappear:(BOOL)animated
+{
     if(self.picture != nil)
     {
         //upload image of user
@@ -89,6 +90,7 @@
         //[user setObject:file forKey:PF_USER_IMAGE];
         
         [user saveInBackground];
+        NSLog(@"salvando");
         //[user save];
         //[[self navigationController]popToRootViewControllerAnimated:YES];
     }

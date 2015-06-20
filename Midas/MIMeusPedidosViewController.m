@@ -98,9 +98,8 @@
         [cell bindData:recent.object];
         return  cell;
     }
-    
-
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -111,6 +110,29 @@
     }else{
         value = _recents.count;
     }
+    
+    if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
+        value = _requests.count;
+    }else{
+        value = _recents.count;
+    }
+    
+    if(value==0)
+    {
+        if(self.pedidosSegmentedControl.selectedSegmentIndex == 0)
+        {
+            self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"david_TabBar"]];
+            NSLog(@"andre");
+        }
+        else
+        {
+            self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kiev"]];
+            NSLog(@"kiev");
+        }
+    }
+    else
+        self.pedidosTableView.backgroundView = nil;
+    
     return value;
 }
 
@@ -148,7 +170,7 @@
         return 178;
     }
     return 70;
-
+    
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -181,7 +203,7 @@
              NSArray* recents =[MINegociation recentesArrayFromPFObjectArray:objects];
              [_recents addObjectsFromArray:recents];
              [self.pedidosTableView reloadData];
-
+             
          }
          else [ProgressHUD showError:@"Network error."];
          [self.refreshControl endRefreshing];
@@ -190,7 +212,8 @@
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
     if(self.pedidosSegmentedControl.selectedSegmentIndex == 0)[self loadRequests];
-    else [self loadRecents];}
+    else [self loadRecents];
+}
 
 
 - (void) valueChanged:(UISegmentedControl *)control {
@@ -205,6 +228,30 @@
         [self.pedidosTableView setBackgroundColor:[UIColor whiteColor]];
         
     }
+    
+    NSInteger value = 0;
+    
+    if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
+        value = _requests.count;
+    }else{
+        value = _recents.count;
+    }
+    
+    if(value==0)
+    {
+        if(self.pedidosSegmentedControl.selectedSegmentIndex == 0)
+        {
+            self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"david_TabBar"]];
+            NSLog(@"andre");
+        }
+        else
+        {
+            self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kiev"]];
+            NSLog(@"kiev");
+        }
+    }
+    else
+        self.pedidosTableView.backgroundView = nil;
 }
 
 -(IBAction) criarNovoPedido:(id)sender {
