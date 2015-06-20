@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIRegistrarUserViewController : UIViewController <UIImagePickerControllerDelegate>
+@interface MIRegistrarUserViewController : UIViewController <UIImagePickerControllerDelegate,UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *loginTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordConfirmationTextField;

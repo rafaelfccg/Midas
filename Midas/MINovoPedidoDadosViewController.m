@@ -51,6 +51,7 @@
     [self.imageView addGestureRecognizer:imageTapRecognizer];
 }
 
+
 -(void) viewWillAppear:(BOOL)animated {
     
     self.categoryImageView.image = getCategoryIcon(self.novoPedido.category);
