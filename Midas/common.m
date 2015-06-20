@@ -19,8 +19,8 @@ void LoginUser(id target)
     //return to login screen
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
                                 @"Main" bundle:[NSBundle mainBundle]];
-    MILoginViewController *loginController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    [target presentViewController:loginController animated:YES completion:nil];
+    UIViewController *entryPoint = [storyboard instantiateViewControllerWithIdentifier:@"EntryPoint"];
+    [target presentViewController:entryPoint animated:YES completion:nil];
     
 }
 
