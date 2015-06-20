@@ -30,9 +30,38 @@
     _okButton.layer.borderColor = COLOR_OUTGOING.CGColor;
     self.picture = nil;
     
+    UITapGestureRecognizer *imageTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressedGallery:)];
+    [self.imageView setUserInteractionEnabled:YES];
+    [self.imageView addGestureRecognizer:imageTapRecognizer];
+    
 
 }
 
+- (void)actionLogout
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    
+}
+
+#pragma mark - UIActionSheetDelegate
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    if (buttonIndex == 0)
+    {
+        PresentPhotoLibrary(self, YES);
+    }else if(buttonIndex ==1){
+        PresentPhotoCamera(self, YES);
+    }
+}
+- (void)pressedGallery:(id)sender {
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"
+                                          destructiveButtonTitle:nil otherButtonTitles:@"Foto da Galeria",@"Foto da Camera", nil];
+    [action showFromTabBar:[[self tabBarController] tabBar]];
+    
+}
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 - (void)viewDidAppear:(BOOL)animated
 //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -115,16 +144,10 @@
 }
 
 - (IBAction)cancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)cameraphoto:(id)sender {
-    PresentPhotoCamera(self, YES);
-}
-- (IBAction)FotoGaleria:(id)sender {
-    
-     PresentPhotoLibrary(self, YES);
-}
+
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
