@@ -208,6 +208,8 @@
     request[PF_REQUEST_WILLGIVE] = pedido.willgive;
     request[PF_REQUEST_CATEGORY] = pedido.category;
     request[PF_REQUEST_STATUS] = ENUM_REQUEST_STATUS_OPEN;
+    
+    if(pedido.location != nil)
     request[PF_REQUEST_USERLOCATION] = pedido.location;
     
     if(pedido.image) {
@@ -229,6 +231,8 @@
     request[PF_REQUEST_WILLGIVEVALUE] = pedido.willgiveValue;
     request[PF_REQUEST_WILLGIVE] = pedido.willgive;
     request[PF_REQUEST_CATEGORY] = pedido.category;
+    
+    if(pedido.location != nil)
     request[PF_REQUEST_USERLOCATION] = pedido.location;
     
     if(pedido.image) {

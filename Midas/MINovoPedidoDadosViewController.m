@@ -175,12 +175,21 @@
     
 }
 
-- (IBAction)pressedCamera:(id)sender {
-    PresentPhotoCamera(self, YES);
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+
+{
+    if (buttonIndex == 0){
+        PresentPhotoLibrary(self, YES);
+    }else if(buttonIndex ==1){
+        PresentPhotoCamera(self, YES);
+    }
 }
 
 - (void)pressedGallery:(id)sender {
-    PresentPhotoLibrary(self, YES);
+    
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"
+                                          destructiveButtonTitle:nil otherButtonTitles:@"Foto da Galeria",@"Foto da Camera", nil];
+    [action showFromTabBar:[[self tabBarController] tabBar]];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
