@@ -986,7 +986,7 @@
                     <connections>
                         <outlet property="fieldPassword" destination="R5V-0x-nCN" id="siN-TS-tYG"/>
                         <outlet property="fieldUsername" destination="ELQ-ci-tUO" id="jrj-l6-hy0"/>
-                        <segue destination="DWX-nk-Trs" kind="show" identifier="loginToMuralSegue" id="ZU1-Fq-C2i"/>
+                        <segue destination="DWX-nk-Trs" kind="modal" identifier="loginToMuralSegue" id="ZU1-Fq-C2i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jO4-oZ-eF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
