@@ -98,9 +98,8 @@
         [cell bindData:recent.object];
         return  cell;
     }
-    
-
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -111,6 +110,18 @@
     }else{
         value = _recents.count;
     }
+    
+    if(value==0)
+    {
+        self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"david_TabBar"]];
+        
+    }
+    else
+    {
+        self.pedidosTableView.backgroundView = nil;
+    }
+    
+    
     return value;
 }
 
@@ -148,7 +159,7 @@
         return 222;
     }
     return 70;
-
+    
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -181,7 +192,7 @@
              NSArray* recents =[MINegociation recentesArrayFromPFObjectArray:objects];
              [_recents addObjectsFromArray:recents];
              [self.pedidosTableView reloadData];
-
+             
          }
          else [ProgressHUD showError:@"Network error."];
          [self.refreshControl endRefreshing];
