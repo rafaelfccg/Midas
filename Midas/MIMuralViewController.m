@@ -85,9 +85,19 @@
 
     return cell;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_requests count];
+    NSInteger value = [_requests count];
+    
+    if(value==0)
+        self.muralTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PerfilTabBarIcon"]];
+    else
+        self.muralTableView.backgroundView = nil;
+    
+    
+    return value;
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

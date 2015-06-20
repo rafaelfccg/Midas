@@ -113,13 +113,13 @@
     
     if(value==0)
     {
+        if(self.pedidosSegmentedControl.selectedSegmentIndex == 0)
         self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"david_TabBar"]];
-        
+        else
+            self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kiev"]];
     }
     else
-    {
         self.pedidosTableView.backgroundView = nil;
-    }
     
     
     return value;
