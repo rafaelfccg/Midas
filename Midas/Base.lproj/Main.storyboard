@@ -359,6 +359,7 @@
                         <outlet property="pedidosTableView" destination="CGD-Lb-zYk" id="e2H-eN-uGc"/>
                         <segue destination="bhQ-qo-3i1" kind="show" identifier="FromMeusPedidosToChatSegue" id="xhW-XF-LFV"/>
                         <segue destination="tmd-gm-VSF" kind="show" identifier="FromMeusPedidosToNovoPedidoCategoria" id="X05-OW-54J"/>
+                        <segue destination="haO-U2-d01" kind="show" identifier="FromPedidosToPedidoSegue" id="0Xa-Ba-QHR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mc4-jE-njd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1164,6 +1165,7 @@
         <image name="tempImage" width="1920" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="0Xa-Ba-QHR"/>
         <segue reference="xhW-XF-LFV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.89803921568627454" green="0.54509803921568623" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
