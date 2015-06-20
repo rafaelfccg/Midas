@@ -122,7 +122,7 @@
              [self.muralTableView reloadData];
              
              if([_requests count]==0)
-                 self.muralTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PerfilTabBarIcon"]];
+                 self.muralTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Nosso mural"]];
              
              else
                  self.muralTableView.backgroundView = nil;
