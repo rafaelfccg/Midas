@@ -10,7 +10,7 @@
 #import "MINovoPedido.h"
 #import <Parse/Parse.h>
 
-@interface MINovoPedidoDadosViewController : UIViewController
+@interface MINovoPedidoDadosViewController : UIViewController<UIActionSheetDelegate>
 
 @property MINovoPedido *novoPedido;
 @property (weak, nonatomic) IBOutlet UILabel *categoryValueLabel;
