@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <userGuides>
-                    <userLayoutGuide location="179" affinity="minY"/>
+                    <userLayoutGuide location="185" affinity="minY"/>
                 </userGuides>
                 <subviews>
                     <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tempImage" translatesAutoresizingMaskIntoConstraints="NO" id="vmM-Y5-LDd">
@@ -23,31 +23,31 @@
                         <rect key="frame" x="4" y="8" width="56" height="56"/>
                     </imageView>
                     <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fs4-Uv-hSZ">
-                        <rect key="frame" x="0.0" y="120" width="375" height="50"/>
+                        <rect key="frame" x="0.0" y="120" width="375" height="54"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="david_TabBar" translatesAutoresizingMaskIntoConstraints="NO" id="1G9-Ar-aHb">
                                 <rect key="frame" x="8" y="6" width="44" height="44"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cerveja homemade doghouse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecE-wM-bhA">
-                                <rect key="frame" x="88" y="3" width="279" height="21"/>
+                                <rect key="frame" x="88" y="5" width="279" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.8980392157" green="0.5450980392" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="26 garrafas de cervejas vazias" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXc-tn-tYK">
-                                <rect key="frame" x="88" y="26" width="279" height="21"/>
+                                <rect key="frame" x="88" y="29" width="279" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="troc" translatesAutoresizingMaskIntoConstraints="NO" id="UQ3-vL-QOG">
-                                <rect key="frame" x="60" y="26" width="15" height="22"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="recomp" translatesAutoresizingMaskIntoConstraints="NO" id="fXA-qV-XsC">
-                                <rect key="frame" x="60" y="3" width="15" height="22"/>
+                                <rect key="frame" x="60" y="6" width="15" height="19"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bolinhafoto" translatesAutoresizingMaskIntoConstraints="NO" id="5Jk-hN-pZo">
                                 <rect key="frame" x="4" y="2" width="51" height="49"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="troc" translatesAutoresizingMaskIntoConstraints="NO" id="UQ3-vL-QOG">
+                                <rect key="frame" x="60" y="30" width="15" height="19"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,7 +59,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="linha" translatesAutoresizingMaskIntoConstraints="NO" id="hC8-VV-O3E">
-                        <rect key="frame" x="0.0" y="173" width="375" height="1"/>
+                        <rect key="frame" x="0.0" y="179" width="375" height="1"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlasticoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0d7-N8-2kB">
                         <rect key="frame" x="8" y="67" width="47" height="45"/>

@@ -150,7 +150,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(self.pedidosSegmentedControl.selectedSegmentIndex ==0){
-        return 178;
+        return 185;
     }
     return 70;
     

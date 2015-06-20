@@ -35,6 +35,8 @@
     [self.closeRequestButton.layer setCornerRadius:7.0f];
     [self.closeRequestButton.layer setMasksToBounds:YES];
     
+    _userImage.clipsToBounds = YES;
+    _userImage.layer.cornerRadius = 40.0f;
     // Do any additional setup after loading the view.
 }
 
@@ -75,6 +77,15 @@
     
     self.categoryImage.image = getCategoryIcon(self.currentRequest.category);
     self.backgroundImage.image = self.currentRequest.image;
+    
+    //CARREGA A IMAGEM DO USUARIO
+    if (self.currentRequest.owner[PF_USER_IMAGE]) {
+        [[MIDatabase sharedInstance] loadPFFile:self.currentRequest.owner[PF_USER_IMAGE] WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
+            
+            _userImage.image = image;
+            
+        }];
+    }
 
 }
 
