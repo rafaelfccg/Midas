@@ -79,7 +79,7 @@
     PFQuery *PapelQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
     PFQuery *VidroQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
     PFQuery *OutrosQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
-    PFUser* current = [PFUser currentUser];
+    //PFUser* current = [PFUser currentUser];
     
     
     [MetalQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
@@ -137,18 +137,19 @@
     }
     
     Allquery = [PFQuery orQueryWithSubqueries:@[MetalQuery,PlasticoQuery,PapelQuery,VidroQuery,OutrosQuery]];
-    PFGeoPoint * point = current[PF_USER_LOCATION];
-    NSLog(@"%lf %lf",point.latitude,point.longitude);
+    //PFGeoPoint * point = current[PF_USER_LOCATION];
+    //NSLog(@"%lf %lf",point.latitude,point.longitude);
     
-    PFQuery *orderDistance = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
-    [orderDistance whereKey:@"objectId" matchesKey:@"objectId" inQuery:Allquery];
-    if(point){
-        [orderDistance whereKey:PF_REQUEST_USERLOCATION nearGeoPoint:point];
-    }
-    [orderDistance includeKey:PF_REQUEST_USER];
-    //[Allquery orderByDescending:PF_REQUEST_UPDATEDACTION];
-    
-    [orderDistance findObjectsInBackgroundWithBlock:block];
+//    PFQuery *orderDistance = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+//    [orderDistance whereKey:@"objectId" matchesKey:@"objectId" inQuery:Allquery];
+//    if(point){
+//        [orderDistance whereKey:PF_REQUEST_USERLOCATION nearGeoPoint:point];
+//    }
+//    [orderDistance includeKey:PF_REQUEST_USER];
+//    //
+    [Allquery includeKey:PF_REQUEST_USER];
+    [Allquery orderByDescending:PF_REQUEST_UPDATEDACTION];
+    [Allquery findObjectsInBackgroundWithBlock:block];
 }
 
 - (void) getCurrentUserRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
