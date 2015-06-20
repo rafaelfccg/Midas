@@ -131,7 +131,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hAR-wN-0Zb">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hAR-wN-0Zb">
                                 <rect key="frame" x="16" y="416" width="568" height="79"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
@@ -147,14 +147,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" verticalHuggingPriority="251" misplaced="YES" image="seta2" translatesAutoresizingMaskIntoConstraints="NO" id="8fX-un-oBh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="seta2" translatesAutoresizingMaskIntoConstraints="NO" id="8fX-un-oBh">
                                 <rect key="frame" x="413" y="332" width="74" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74" id="G4x-Rp-jQu"/>
                                     <constraint firstAttribute="height" constant="17" id="RuF-if-qLz"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seta" translatesAutoresizingMaskIntoConstraints="NO" id="yBt-Q8-e43">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="seta" translatesAutoresizingMaskIntoConstraints="NO" id="yBt-Q8-e43">
                                 <rect key="frame" x="112" y="286" width="74" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74" id="UY3-pi-CGr"/>
@@ -1076,6 +1076,8 @@
         <image name="david_TabBar" width="228" height="227"/>
         <image name="linha" width="2971" height="8"/>
         <image name="recomp" width="125" height="174"/>
+        <image name="seta" width="255" height="60"/>
+        <image name="seta2" width="256" height="60"/>
         <image name="tempImage" width="1920" height="1080"/>
         <image name="troc" width="125" height="174"/>
     </resources>
