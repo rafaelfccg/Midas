@@ -42,8 +42,6 @@
     
     _usuarioImage.clipsToBounds = YES;
     _usuarioImage.layer.cornerRadius = 22.5f;
-    _doadorImage.clipsToBounds = YES;
-    _doadorImage.layer.cornerRadius = 22.5f;
     
     //CARREGA A IMAGEM DO PEDIDO
     if (request.imageFile) {
@@ -64,14 +62,6 @@
         }];
     }
     
-    //CARREGA A IMAGEM DO USUARIO ATUAL
-    if ([PFUser currentUser][PF_USER_IMAGE]) {
-        [[MIDatabase sharedInstance] loadPFFile:([PFUser currentUser][PF_USER_IMAGE]) WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
-            
-            _doadorImage.image = image;
-            
-        }];
-    }
 }
 
 
