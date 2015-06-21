@@ -37,6 +37,9 @@
     
     _userImage.clipsToBounds = YES;
     _userImage.layer.cornerRadius = 40.0f;
+    _userImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    _userImage.layer.borderWidth = 3;
+
     // Do any additional setup after loading the view.
 }
 

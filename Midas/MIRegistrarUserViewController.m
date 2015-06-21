@@ -12,6 +12,7 @@
 #import "camera.h"
 
 
+
 @implementation MIRegistrarUserViewController
 @synthesize picture;
 @synthesize imageView;

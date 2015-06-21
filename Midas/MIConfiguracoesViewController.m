@@ -11,10 +11,15 @@
 #import "common.h"
 #import "camera.h"
 
-@interface MIConfiguracoesViewController ()
+
+@interface MIConfiguracoesViewController (){
+
+    MKPointAnnotation * addressPoint;
+}
 
 @property UIActionSheet *logoutSheet;
 @property UIActionSheet *selectImageSheet;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -26,10 +31,51 @@
     // Do any additional setup after loading the view.
     
     
+    self.mapView.zoomEnabled = NO;
+    self.mapView.scrollEnabled = NO;
+    self.mapView.userInteractionEnabled = NO;
+        //[MIDatabase sharedInstance]
+    //imageView.image
+    
+    
     UITapGestureRecognizer *imageTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressedGallery:)];
     [self.imageView setUserInteractionEnabled:YES];
     [self.imageView addGestureRecognizer:imageTapRecognizer];
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self.mapView removeAnnotation:addressPoint];
+    PFUser* user = [PFUser currentUser];
+    PFGeoPoint * point = user[PF_USER_LOCATION];
+    
+    CLLocationCoordinate2D localeAt = {point.latitude,point.longitude};
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(localeAt, 400, 400);
+    
+    [self.mapView setRegion:viewRegion animated:NO];
+    addressPoint = [[MKPointAnnotation alloc]init];
+    addressPoint.coordinate = localeAt;
+    [self.mapView addAnnotation:addressPoint];
+    
+    PFFile * image = user[PF_USER_IMAGE];
+    
+    if (image) {
+        [[MIDatabase sharedInstance] loadPFFile:image WithBlock:^(UIImage *PFUI_NULLABLE_S uiimage,  NSError *PFUI_NULLABLE_S error){
+            
+            self.imageView.image = uiimage;
+            
+        }];
+    }
+    self.imageView.layer.cornerRadius = self.imageView.bounds.size.width/2;
+    self.imageView.clipsToBounds = YES;
+    self.imageView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.imageView.layer.borderWidth = 3;
+    
+    self.nome.text = user[PF_USER_USERNAME];
+    self.Address.text = user[PF_USER_ADDRESS];
+
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -133,6 +179,35 @@
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // If the annotation is the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // Handle any custom annotations.
+    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+    {
+        // Try to dequeue an existing pin view first.
+        MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
+                                                           dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        
+        if (!pinView)
+        {
+            // If an existing pin view was not available, create one.
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+            pinView.canShowCallout = YES;
+            
+        }else
+            pinView.annotation = annotation;
+        
+        //pinView.image = [UIImage imageNamed:@"GPSIcon"];
+        return pinView;
+    }
+    return nil;
 }
 
 
