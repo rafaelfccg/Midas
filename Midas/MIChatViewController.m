@@ -19,7 +19,8 @@
 #import "recent.h"
 #import "ProfileView.h"
 #import "camera.h"
-
+#import "MIDatabase.h"
+#import "MIPedido.h"
 #import "PhotoMediaItem.h"
 
 
@@ -69,6 +70,12 @@
     //[self hidesBottomBarWhenPushed];
     isLoading = NO;
     initialized = NO;
+    
+    //informacao do user -- esta no xib JSQMessagesViewController
+    self.userImageView.layer.cornerRadius =  self.userImageView.bounds.size.width/2;
+    self.userImageView.clipsToBounds = YES;
+    [self loadRequestInfo];
+    
     [self loadMessages];
 
     // Do any additional setup after loading the view.
@@ -506,6 +513,46 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     return ([message.senderId isEqualToString:self.senderId] == YES);
+}
+
+- (void) loadRequestInfo {
+
+    //REDO:: TÁ HORRÍVEL ISSO AQUI
+    
+    //PEGA O CHAT
+    [[MIDatabase sharedInstance] getChatWithObjectId:_chatId withBlock:^(NSArray *objects, NSError *error)
+     {
+         if (error == nil)
+         {
+             if ([objects count]>0) {
+                 PFObject *chat = [objects firstObject];
+                 
+                 //PEGA O REQUEST
+                 [[MIDatabase sharedInstance] getRequestWithObjectId:chat[PF_CHAT_REQUESTID] withBlock:^(NSArray *objects, NSError *error)
+                  {
+                      if ([objects count]>0) {
+                          MIPedido *pedido = [[MIPedido alloc] initWithPFObject:[objects firstObject]];
+                          
+                          self.willGiveLabel.text = [NSString stringWithFormat:@"%@ %@", pedido.willGiveValue, pedido.willGive];
+                          self.forEachLabel.text = [NSString stringWithFormat:@"%@ %@", pedido.forEachValue, pedido.forEach];
+                      }
+                  }];
+                 
+                 
+                 
+                 //PEGA A IMAGEM DO USER
+                 PFFile *userImage = chat[PF_CHAT_REQUESTOWNER][PF_USER_IMAGE];
+                 if (userImage) {
+                     [[MIDatabase sharedInstance] loadPFFile:userImage WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
+                         self.userImageView.image = image;
+                     }];
+                 }
+                 
+             }
+         }
+         else [ProgressHUD showError:@"Network error."];
+     }];
+
 }
 
 @end

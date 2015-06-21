@@ -271,11 +271,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Qpo-rn-T3h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YKf-d4-7ya">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLb-41-PlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

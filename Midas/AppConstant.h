@@ -46,6 +46,7 @@
 #define		PF_MESSAGE_CREATEDAT				@"createdAt"			//	Date
 //-----------------------------------------------------------------------
 #define		PF_REQUEST_CLASS_NAME				@"Request"				//	Class name
+#define		PF_REQUEST_OBJECTID					@"objectId"				//	String
 #define		PF_REQUEST_USER						@"user"                 //	Pointer to User Class
 #define		PF_REQUEST_CREATEDAT                @"createdAt"            //	Date
 #define		PF_REQUEST_DESCRIPTION              @"description"          //	String
