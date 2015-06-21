@@ -226,12 +226,10 @@
         if(self.pedidosSegmentedControl.selectedSegmentIndex == 0)
         {
             self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"meus pedi"]];
-            NSLog(@"andre");
         }
         else
         {
             self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"minhas nega"]];
-            NSLog(@"kiev");
         }
     }
     else

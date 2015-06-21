@@ -17,6 +17,8 @@
 
 @interface MINovoPedidoDadosViewController () <UIImagePickerControllerDelegate>
 
+@property (nonatomic) BOOL alreadyUpdatedViewWithEditingInformation;
+
 @end
 
 @implementation MINovoPedidoDadosViewController
@@ -49,8 +51,9 @@
     UITapGestureRecognizer *imageTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressedGallery:)];
     [self.imageView setUserInteractionEnabled:YES];
     [self.imageView addGestureRecognizer:imageTapRecognizer];
+    
+    self.alreadyUpdatedViewWithEditingInformation = false;
 }
-
 
 -(void) viewWillAppear:(BOOL)animated {
     
@@ -85,10 +88,13 @@
         default:
             break;
     }
-    [self updatePlaceholders];
     
-    if (self.novoPedido.isEditing){
-        [self fillFieldsWithInformation];
+    if (!self.alreadyUpdatedViewWithEditingInformation) {
+        [self updatePlaceholders];
+        
+        if(self.novoPedido.isEditing){
+         [self fillFieldsWithInformation];
+        }
     }
 
 }
@@ -105,6 +111,10 @@
                                                   object:nil];
 }
 
+- (void) setNovoPedido:(MINovoPedido *)novoPedido {
+    _novoPedido = novoPedido;
+    _alreadyUpdatedViewWithEditingInformation = false;
+}
 - (void)dismissKeyboard
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
@@ -257,6 +267,7 @@
     self.rewardSecondTextField.text = self.novoPedido.willgive;
     self.descriptionTextView.text = self.novoPedido.descricao;
     self.imageView.image = self.novoPedido.image;
+    self.alreadyUpdatedViewWithEditingInformation = true;
 }
 
 -(void)keyboardWillShow {
