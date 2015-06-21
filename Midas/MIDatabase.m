@@ -186,6 +186,7 @@
     
     PFQuery * orQuery = [PFQuery orQueryWithSubqueries:@[queryOwns,queryGiver]];
     [orQuery whereKey:PF_RECENT_REQUESTID matchesKey:PF_REQUEST_OBJECTID inQuery:openRequests];
+    [orQuery whereKey:PF_RECENT_LASTMESSAGE notEqualTo:@""];
     
     [orQuery includeKey:PF_RECENT_REQUESTOWNER];
     [orQuery includeKey:PF_RECENT_REQUESTGIVER];

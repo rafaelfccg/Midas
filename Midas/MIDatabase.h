@@ -16,7 +16,7 @@
 
 @interface MIDatabase : NSObject
 
-@property NSCache *imageCache;
+@property (nonnull) NSCache *imageCache;
 
 +(nonnull MIDatabase *)sharedInstance;
 
@@ -50,8 +50,8 @@
 
 - (void) loadPFFile:(nonnull PFFile *)file WithBlock:(nullable PFImageViewImageResultBlock)completion;
 
--(void) getChatWithObjectId:(NSString *)chatId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
+-(void) getChatWithObjectId:(nonnull NSString *)chatId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
--(void) getRequestWithObjectId:(NSString *)requestId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
+-(void) getRequestWithObjectId:(nonnull NSString *)requestId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
                              
 @end
