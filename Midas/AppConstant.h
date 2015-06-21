@@ -61,6 +61,7 @@
 #define		PF_REQUEST_FOREACHVALUE             @"foreachValue"         //	Number
 #define		PF_REQUEST_WILLGIVEVALUE            @"willgiveValue"        //	Number
 #define		PF_REQUEST_USERLOCATION             @"userLocation"         //	GeoPoint
+#define     PF_REQUEST_OBJECTID                 @"objectId"             //  string
 
 //-----------------------------------------------------------------------
 #define		PF_CHAT_CLASS_NAME                  @"Chat"                 //	Class name
@@ -79,7 +80,9 @@
 #define		PF_RECENT_LASTMESSAGE				@"lastMessage"			//	String
 #define		PF_RECENT_COUNTER					@"counter"				//	Number
 #define		PF_RECENT_UPDATEDACTION				@"updatedAction"		//	Date
-#define     PF_RECENT_RECENTUSER                @"recentUser"
+#define     PF_RECENT_RECENTUSER                @"recentUser"           // Pointer
+#define     PF_RECENT_REQUESTID                 @"requestId"            // Pointer
+
 //----------------------------------------
 #define		NOTIFICATION_APP_STARTED			@"NCAppStarted"
 #define		NOTIFICATION_USER_LOGGED_IN			@"NCUserLoggedIn"

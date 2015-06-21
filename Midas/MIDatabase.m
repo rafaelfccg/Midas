@@ -178,10 +178,15 @@
     PFQuery *queryOwns = [PFQuery queryWithClassName:PF_RECENT_CLASS_NAME];
     PFQuery *queryGiver = [PFQuery queryWithClassName:PF_RECENT_CLASS_NAME];
     [queryOwns whereKey:PF_RECENT_REQUESTOWNER equalTo:[PFUser currentUser]];
-    //query whereKey
     [queryGiver whereKey:PF_RECENT_REQUESTGIVER equalTo:[PFUser currentUser]];
     
+    PFQuery* openRequests = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+    [openRequests whereKey:PF_REQUEST_STATUS equalTo:ENUM_REQUEST_STATUS_OPEN];
+    
+    
     PFQuery * orQuery = [PFQuery orQueryWithSubqueries:@[queryOwns,queryGiver]];
+    [orQuery whereKey:PF_RECENT_REQUESTID matchesKey:PF_REQUEST_OBJECTID inQuery:openRequests];
+    
     [orQuery includeKey:PF_RECENT_REQUESTOWNER];
     [orQuery includeKey:PF_RECENT_REQUESTGIVER];
     [orQuery orderByDescending:PF_RECENT_UPDATEDACTION];

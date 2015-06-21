@@ -40,6 +40,8 @@ void CreateRecentItem(PFUser *user, NSString *groupId, MIPedido * pedido, NSStri
 				recent[PF_RECENT_LASTMESSAGE] = @"";
 				recent[PF_RECENT_COUNTER] = @0;
 				recent[PF_RECENT_UPDATEDACTION] = [NSDate date];
+                recent[PF_RECENT_REQUESTID] = pedido.object.objectId;
+                
 				[recent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
 				{
 					if (error != nil) NSLog(@"CreateRecentItem save error.");
