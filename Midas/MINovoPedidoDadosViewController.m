@@ -210,33 +210,42 @@
             self.forEachValueTextField.placeholder = @"10";
             self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
             self.willGiveValueTextField.placeholder = @"1";
+            self.imageView.image = [UIImage imageNamed:@"VidroIcon" ];
+
             break;
         case RequestCategoryPlastico:
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
-            self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas PET 2L";
+            self.forEachValueTextField.placeholder = @"20";
+            self.rewardSecondTextField.placeholder = @"Ex.: carrinho de plástico";
             self.willGiveValueTextField.placeholder = @"1";
-            
+            self.imageView.image = [UIImage imageNamed:@"PlasticoIcon" ];
+
             break;
         case RequestCategoryMetal:
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.rewardFirstTextField.placeholder = @"Ex.: latinhas de coca-cola vazias";
             self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.rewardSecondTextField.placeholder = @"Ex.: coca-cola";
             self.willGiveValueTextField.placeholder = @"1";
+            self.imageView.image = [UIImage imageNamed:@"MetalIcon" ];
+
             
             break;
         case RequestCategoryPapel:
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.rewardFirstTextField.placeholder = @"Ex.: jornais velhos";
             self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.rewardSecondTextField.placeholder = @"Ex.: 1 origami";
             self.willGiveValueTextField.placeholder = @"1";
+            self.imageView.image = [UIImage imageNamed:@"PapelIcon" ];
+
             
             break;
         case RequestCategoryOutros:
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
-            self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.rewardFirstTextField.placeholder = @"Ex.: azujelos coloridos";
+            self.forEachValueTextField.placeholder = @"5";
+            self.rewardSecondTextField.placeholder = @"Ex.: mini-mosaico";
             self.willGiveValueTextField.placeholder = @"1";
+            self.imageView.image = [UIImage imageNamed:@"OutrosIcon" ];
+
             
             break;
         default:
