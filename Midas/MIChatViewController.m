@@ -519,39 +519,30 @@
 
     //REDO:: TÁ HORRÍVEL ISSO AQUI
     
-    //PEGA O CHAT
-    [[MIDatabase sharedInstance] getChatWithObjectId:_chatId withBlock:^(NSArray *objects, NSError *error)
+    
+    //PEGA O REQUEST
+    [[MIDatabase sharedInstance] getRequestWithObjectId:self.neg.object[PF_RECENT_REQUESTID] withBlock:^(NSArray *objects, NSError *error)
      {
-         if (error == nil)
-         {
-             if ([objects count]>0) {
-                 PFObject *chat = [objects firstObject];
-                 
-                 //PEGA O REQUEST
-                 [[MIDatabase sharedInstance] getRequestWithObjectId:chat[PF_CHAT_REQUESTID] withBlock:^(NSArray *objects, NSError *error)
-                  {
-                      if ([objects count]>0) {
-                          MIPedido *pedido = [[MIPedido alloc] initWithPFObject:[objects firstObject]];
-                          
-                          self.willGiveLabel.text = [NSString stringWithFormat:@"%@ %@", pedido.willGiveValue, pedido.willGive];
-                          self.forEachLabel.text = [NSString stringWithFormat:@"%@ %@", pedido.forEachValue, pedido.forEach];
-                      }
-                  }];
-                 
-                 
-                 
-                 //PEGA A IMAGEM DO USER
-                 PFFile *userImage = chat[PF_CHAT_REQUESTOWNER][PF_USER_IMAGE];
-                 if (userImage) {
-                     [[MIDatabase sharedInstance] loadPFFile:userImage WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
-                         self.userImageView.image = image;
-                     }];
-                 }
-                 
-             }
+         if ([objects count]>0) {
+             MIPedido *pedido = [[MIPedido alloc] initWithPFObject:[objects firstObject]];
+             
+             self.willGiveLabel.text = [NSString stringWithFormat:@"%@ %@", pedido.willGiveValue, pedido.willGive];
+             self.forEachLabel.text = [NSString stringWithFormat:@"%@ %@", pedido.forEachValue, pedido.forEach];
          }
-         else [ProgressHUD showError:@"Network error."];
      }];
+    
+    
+    
+    //PEGA A IMAGEM DO USER
+    PFFile *userImage = self.neg.owner[PF_USER_IMAGE];
+    if (userImage) {
+        [[MIDatabase sharedInstance] loadPFFile:userImage WithBlock:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
+            self.userImageView.image = image;
+        }];
+    }
+    
+    
+    
 
 }
 
