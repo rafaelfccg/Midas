@@ -49,5 +49,9 @@
 - (void) getRecentNegotioationsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
 - (void) loadPFFile:(nonnull PFFile *)file WithBlock:(nullable PFImageViewImageResultBlock)completion;
+
+-(void) getChatWithObjectId:(NSString *)chatId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
+
+-(void) getRequestWithObjectId:(NSString *)requestId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
                              
 @end

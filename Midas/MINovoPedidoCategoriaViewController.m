@@ -35,6 +35,8 @@
     self.categories = @[@"Vidro", @"Plástico", @"Papel", @"Metal", @"Outros"];
     self.categoryIcons = @[@"VidroIcon", @"PlasticoIcon", @"PapelIcon", @"MetalIcon", @"OutrosIcon"];
     self.categoryEnum = @[[NSNumber numberWithInteger:RequestCategoryVidro], [NSNumber numberWithInteger:RequestCategoryPlastico], [NSNumber numberWithInteger:RequestCategoryPapel], [NSNumber numberWithInteger:RequestCategoryMetal], [NSNumber numberWithInteger:RequestCategoryOutros]];
+    
+    [self.categoryTableView setSeparatorInset:UIEdgeInsetsZero];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -58,10 +60,17 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-   
     
     cell.textLabel.text = _categories[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:_categoryIcons[indexPath.row]];
+    
+    CGSize itemSize = CGSizeMake(50, 50);
+    UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+    [cell.imageView.image drawInRect:imageRect];
+    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
     
     return cell;
 }

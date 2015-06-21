@@ -52,7 +52,7 @@
     if ([bairro length] < 4)		{ [ProgressHUD showError:@"Bairro is too short."]; return; }
     if ([rua length] < 4)		{ [ProgressHUD showError:@"Bairro is too short."]; return; }
     
-    NSString *alladdress = [cidade stringByAppendingString:@" "];
+    NSString *alladdress = [cidade stringByAppendingString:@", "];
     alladdress = [alladdress stringByAppendingString:rua];
     
     [LocationUtils getLocationFromAdress:alladdress withHandler:^(CLLocation* location){
@@ -70,6 +70,7 @@
         PFUser *user = [PFUser currentUser];
         
         [user setObject:geoPoint forKey:PF_USER_LOCATION];
+        [user setObject:alladdress forKey:PF_USER_ADDRESS];
         
         [user save];
         

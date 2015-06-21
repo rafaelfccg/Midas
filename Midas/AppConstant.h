@@ -37,6 +37,7 @@
 #define		PF_USER_FACEBOOKID					@"facebookId"			//	String
 #define		PF_USER_IMAGE						@"image"				//	File
 #define     PF_USER_THUMBNAIL                   @"thumbnail"            //  File
+#define     PF_USER_ADDRESS                     @"Address"              //  string
 //-----------------------------------------------------------------------
 #define		PF_MESSAGE_CLASS_NAME				@"Message"				//	Class name
 #define		PF_MESSAGE_USER						@"user"					//	Pointer to User Class
@@ -46,6 +47,7 @@
 #define		PF_MESSAGE_CREATEDAT				@"createdAt"			//	Date
 //-----------------------------------------------------------------------
 #define		PF_REQUEST_CLASS_NAME				@"Request"				//	Class name
+#define		PF_REQUEST_OBJECTID					@"objectId"				//	String
 #define		PF_REQUEST_USER						@"user"                 //	Pointer to User Class
 #define		PF_REQUEST_CREATEDAT                @"createdAt"            //	Date
 #define		PF_REQUEST_DESCRIPTION              @"description"          //	String
@@ -60,6 +62,7 @@
 #define		PF_REQUEST_FOREACHVALUE             @"foreachValue"         //	Number
 #define		PF_REQUEST_WILLGIVEVALUE            @"willgiveValue"        //	Number
 #define		PF_REQUEST_USERLOCATION             @"userLocation"         //	GeoPoint
+#define     PF_REQUEST_OBJECTID                 @"objectId"             //  string
 
 //-----------------------------------------------------------------------
 #define		PF_CHAT_CLASS_NAME                  @"Chat"                 //	Class name
@@ -78,7 +81,9 @@
 #define		PF_RECENT_LASTMESSAGE				@"lastMessage"			//	String
 #define		PF_RECENT_COUNTER					@"counter"				//	Number
 #define		PF_RECENT_UPDATEDACTION				@"updatedAction"		//	Date
-#define     PF_RECENT_RECENTUSER                @"recentUser"
+#define     PF_RECENT_RECENTUSER                @"recentUser"           // Pointer
+#define     PF_RECENT_REQUESTID                 @"requestId"            // Pointer
+
 //----------------------------------------
 #define		NOTIFICATION_APP_STARTED			@"NCAppStarted"
 #define		NOTIFICATION_USER_LOGGED_IN			@"NCUserLoggedIn"

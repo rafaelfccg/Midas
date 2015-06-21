@@ -79,7 +79,7 @@
     PFQuery *PapelQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
     PFQuery *VidroQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
     PFQuery *OutrosQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
-    PFUser* current = [PFUser currentUser];
+    //PFUser* current = [PFUser currentUser];
     
     
     [MetalQuery whereKey:PF_REQUEST_CATEGORY equalTo:@-1];
@@ -137,18 +137,19 @@
     }
     
     Allquery = [PFQuery orQueryWithSubqueries:@[MetalQuery,PlasticoQuery,PapelQuery,VidroQuery,OutrosQuery]];
-    PFGeoPoint * point = current[PF_USER_LOCATION];
-    NSLog(@"%lf %lf",point.latitude,point.longitude);
+    //PFGeoPoint * point = current[PF_USER_LOCATION];
+    //NSLog(@"%lf %lf",point.latitude,point.longitude);
     
-    PFQuery *orderDistance = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
-    [orderDistance whereKey:@"objectId" matchesKey:@"objectId" inQuery:Allquery];
-    if(point){
-        [orderDistance whereKey:PF_REQUEST_USERLOCATION nearGeoPoint:point];
-    }
-    [orderDistance includeKey:PF_REQUEST_USER];
-    //[Allquery orderByDescending:PF_REQUEST_UPDATEDACTION];
-    
-    [orderDistance findObjectsInBackgroundWithBlock:block];
+//    PFQuery *orderDistance = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+//    [orderDistance whereKey:@"objectId" matchesKey:@"objectId" inQuery:Allquery];
+//    if(point){
+//        [orderDistance whereKey:PF_REQUEST_USERLOCATION nearGeoPoint:point];
+//    }
+//    [orderDistance includeKey:PF_REQUEST_USER];
+//    //
+    [Allquery includeKey:PF_REQUEST_USER];
+    [Allquery orderByDescending:PF_REQUEST_UPDATEDACTION];
+    [Allquery findObjectsInBackgroundWithBlock:block];
 }
 
 - (void) getCurrentUserRequestsWithBlock:(PF_NULLABLE_S PFArrayResultBlock)block {
@@ -177,10 +178,15 @@
     PFQuery *queryOwns = [PFQuery queryWithClassName:PF_RECENT_CLASS_NAME];
     PFQuery *queryGiver = [PFQuery queryWithClassName:PF_RECENT_CLASS_NAME];
     [queryOwns whereKey:PF_RECENT_REQUESTOWNER equalTo:[PFUser currentUser]];
-    //query whereKey
     [queryGiver whereKey:PF_RECENT_REQUESTGIVER equalTo:[PFUser currentUser]];
     
+    PFQuery* openRequests = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
+    [openRequests whereKey:PF_REQUEST_STATUS equalTo:ENUM_REQUEST_STATUS_OPEN];
+    
+    
     PFQuery * orQuery = [PFQuery orQueryWithSubqueries:@[queryOwns,queryGiver]];
+    [orQuery whereKey:PF_RECENT_REQUESTID matchesKey:PF_REQUEST_OBJECTID inQuery:openRequests];
+    
     [orQuery includeKey:PF_RECENT_REQUESTOWNER];
     [orQuery includeKey:PF_RECENT_REQUESTGIVER];
     [orQuery orderByDescending:PF_RECENT_UPDATEDACTION];
@@ -264,5 +270,22 @@
         }];
         
     }
+}
+
+-(void) getChatWithObjectId:(NSString *)chatId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block{
+  
+    PFQuery* query = [PFQuery queryWithClassName:PF_CHAT_CLASS_NAME ];
+    [query whereKey:PF_CHAT_OBJECTID equalTo:chatId];
+    [query includeKey:PF_CHAT_REQUESTOWNER];
+    [query includeKey:PF_CHAT_REQUESTGIVER];
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
+-(void) getRequestWithObjectId:(NSString *)requestId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block{
+    
+    PFQuery* query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME ];
+    [query whereKey:PF_REQUEST_OBJECTID equalTo:requestId];
+    [query includeKey:PF_REQUEST_USER];
+    [query findObjectsInBackgroundWithBlock:block];
 }
 @end

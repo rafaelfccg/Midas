@@ -12,6 +12,7 @@
 #import "camera.h"
 
 
+
 @implementation MIRegistrarUserViewController
 @synthesize picture;
 @synthesize imageView;
@@ -94,7 +95,7 @@
 }
 
 
-- (void)actionRegister
+- (void)actionRegister:(id)sender
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
 
@@ -129,10 +130,6 @@
          }
          else [ProgressHUD showError:error.userInfo[@"error"]];
      }];
-}
-
-- (IBAction)registerUser:(id)sender {
-    [self actionRegister];
 }
 
 - (IBAction)cancel:(id)sender {

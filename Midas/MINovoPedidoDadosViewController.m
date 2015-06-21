@@ -17,6 +17,8 @@
 
 @interface MINovoPedidoDadosViewController () <UIImagePickerControllerDelegate>
 
+@property (nonatomic) BOOL alreadyUpdatedViewWithEditingInformation;
+
 @end
 
 @implementation MINovoPedidoDadosViewController
@@ -49,8 +51,9 @@
     UITapGestureRecognizer *imageTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressedGallery:)];
     [self.imageView setUserInteractionEnabled:YES];
     [self.imageView addGestureRecognizer:imageTapRecognizer];
+    
+    self.alreadyUpdatedViewWithEditingInformation = false;
 }
-
 
 -(void) viewWillAppear:(BOOL)animated {
     
@@ -85,13 +88,17 @@
         default:
             break;
     }
-    [self updatePlaceholders];
     
-    if (self.novoPedido.isEditing){
-        [self fillFieldsWithInformation];
+    if (!self.alreadyUpdatedViewWithEditingInformation) {
+        [self updatePlaceholders];
+        
+        if(self.novoPedido.isEditing){
+         [self fillFieldsWithInformation];
+        }
     }
 
 }
+
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     // unregister for keyboard notifications while not visible.
@@ -104,6 +111,10 @@
                                                   object:nil];
 }
 
+- (void) setNovoPedido:(MINovoPedido *)novoPedido {
+    _novoPedido = novoPedido;
+    _alreadyUpdatedViewWithEditingInformation = false;
+}
 - (void)dismissKeyboard
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
@@ -209,34 +220,40 @@
             self.forEachValueTextField.placeholder = @"10";
             self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
             self.willGiveValueTextField.placeholder = @"1";
+            self.imageView.image = [UIImage imageNamed:@"VidroIcon" ];
+
             break;
         case RequestCategoryPlastico:
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
-            self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.rewardFirstTextField.placeholder = @"Ex.: garrafas PET 2L";
+            self.forEachValueTextField.placeholder = @"20";
+            self.rewardSecondTextField.placeholder = @"Ex.: carrinho de plástico";
             self.willGiveValueTextField.placeholder = @"1";
-            
+            self.imageView.image = [UIImage imageNamed:@"PlasticoIcon" ];
+
             break;
         case RequestCategoryMetal:
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.rewardFirstTextField.placeholder = @"Ex.: latinhas de coca-cola vazias";
             self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.rewardSecondTextField.placeholder = @"Ex.: coca-cola";
             self.willGiveValueTextField.placeholder = @"1";
+            self.imageView.image = [UIImage imageNamed:@"MetalIcon" ];
             
             break;
         case RequestCategoryPapel:
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.rewardFirstTextField.placeholder = @"Ex.: jornais velhos";
             self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.rewardSecondTextField.placeholder = @"Ex.: 1 origami";
             self.willGiveValueTextField.placeholder = @"1";
-            
+            self.imageView.image = [UIImage imageNamed:@"PapelIcon" ];
+
             break;
         case RequestCategoryOutros:
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
-            self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.rewardFirstTextField.placeholder = @"Ex.: azujelos coloridos";
+            self.forEachValueTextField.placeholder = @"5";
+            self.rewardSecondTextField.placeholder = @"Ex.: mini-mosaico";
             self.willGiveValueTextField.placeholder = @"1";
-            
+            self.imageView.image = [UIImage imageNamed:@"OutrosIcon" ];
+
             break;
         default:
             break;
@@ -250,6 +267,7 @@
     self.rewardSecondTextField.text = self.novoPedido.willgive;
     self.descriptionTextView.text = self.novoPedido.descricao;
     self.imageView.image = self.novoPedido.image;
+    self.alreadyUpdatedViewWithEditingInformation = true;
 }
 
 -(void)keyboardWillShow {

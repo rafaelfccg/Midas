@@ -12,7 +12,7 @@
 
 @interface MINovoPedidoDadosViewController : UIViewController<UIActionSheetDelegate>
 
-@property MINovoPedido *novoPedido;
+@property (nonatomic) MINovoPedido *novoPedido;
 @property (weak, nonatomic) IBOutlet UILabel *categoryValueLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *categoryImageView;
 @property (weak, nonatomic) IBOutlet UITextField *rewardFirstTextField;
