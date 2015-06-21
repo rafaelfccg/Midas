@@ -37,6 +37,7 @@
 #define		PF_USER_FACEBOOKID					@"facebookId"			//	String
 #define		PF_USER_IMAGE						@"image"				//	File
 #define     PF_USER_THUMBNAIL                   @"thumbnail"            //  File
+#define     PF_USER_ADDRESS                     @"Address"              //  string
 //-----------------------------------------------------------------------
 #define		PF_MESSAGE_CLASS_NAME				@"Message"				//	Class name
 #define		PF_MESSAGE_USER						@"user"					//	Pointer to User Class
