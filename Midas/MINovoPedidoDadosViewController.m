@@ -227,7 +227,6 @@
             self.rewardSecondTextField.placeholder = @"Ex.: coca-cola";
             self.willGiveValueTextField.placeholder = @"1";
             self.imageView.image = [UIImage imageNamed:@"MetalIcon" ];
-
             
             break;
         case RequestCategoryPapel:
@@ -237,7 +236,6 @@
             self.willGiveValueTextField.placeholder = @"1";
             self.imageView.image = [UIImage imageNamed:@"PapelIcon" ];
 
-            
             break;
         case RequestCategoryOutros:
             self.rewardFirstTextField.placeholder = @"Ex.: azujelos coloridos";
@@ -246,7 +244,6 @@
             self.willGiveValueTextField.placeholder = @"1";
             self.imageView.image = [UIImage imageNamed:@"OutrosIcon" ];
 
-            
             break;
         default:
             break;

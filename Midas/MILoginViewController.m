@@ -12,6 +12,8 @@
 @interface MILoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *fieldUsername;
 @property (weak, nonatomic) IBOutlet UITextField *fieldPassword;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
 
 @end
 
@@ -21,6 +23,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Midas";
+    
+    [self.loginButton.layer setCornerRadius:7.0f];
+    [self.loginButton.layer setMasksToBounds:YES];
+    
+    [self.registerButton.layer setCornerRadius:7.0f];
+    [self.registerButton.layer setMasksToBounds:YES];
 }
 
 - (void)didReceiveMemoryWarning {
