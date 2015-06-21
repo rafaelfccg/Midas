@@ -188,19 +188,19 @@
     if ([annotation isKindOfClass:[MKPointAnnotation class]])
     {
         // Try to dequeue an existing pin view first.
-        MKAnnotationView*    pinView = (MKAnnotationView*)[mapView
+        MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
                                                            dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
         
         if (!pinView)
         {
             // If an existing pin view was not available, create one.
-            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
             pinView.canShowCallout = YES;
             
         }else
             pinView.annotation = annotation;
         
-        pinView.image = [UIImage imageNamed:@"GPSIcon"];
+        //pinView.image = [UIImage imageNamed:@"GPSIcon"];
         return pinView;
     }
     return nil;
