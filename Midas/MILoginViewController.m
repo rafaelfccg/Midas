@@ -29,6 +29,11 @@
     
     [self.registerButton.layer setCornerRadius:7.0f];
     [self.registerButton.layer setMasksToBounds:YES];
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+    gestureRecognizer.cancelsTouchesInView = NO;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,14 +56,20 @@
     [self actionLogin];
 }
 
+- (void)dismissKeyboard
+{
+    [self.view endEditing:YES];
+}
+
+
 - (void)actionLogin
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     NSString *username = [_fieldUsername.text lowercaseString];
     NSString *password = _fieldPassword.text;
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    if ([username length] == 0)	{ [ProgressHUD showError:@"Email must be set."]; return; }
-    if ([password length] == 0)	{ [ProgressHUD showError:@"Password must be set."]; return; }
+    if ([username length] == 0)	{ [ProgressHUD showError:@"Login é um campo obrigatório."]; return; }
+    if ([password length] == 0)	{ [ProgressHUD showError:@"Senha é um campo obrigatório."]; return; }
     //---------------------------------------------------------------------------------------------------------------------------------------------
     [ProgressHUD show:@"Signing in..." Interaction:NO];
     [[MIDatabase sharedInstance] logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error)
@@ -66,7 +77,7 @@
          if (user != nil)
          {
              ParsePushUserAssign();
-             [ProgressHUD showSuccess:[NSString stringWithFormat:@"Welcome back, %@!", user.username]];
+             [ProgressHUD showSuccess:[NSString stringWithFormat:@"Bem-vindo, %@!", user.username]];
              [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
             }
              else [ProgressHUD showError:error.userInfo[@"error"]];
