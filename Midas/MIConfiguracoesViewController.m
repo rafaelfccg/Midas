@@ -37,6 +37,7 @@
         //[MIDatabase sharedInstance]
     //imageView.image
     
+    
     UITapGestureRecognizer *imageTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressedGallery:)];
     [self.imageView setUserInteractionEnabled:YES];
     [self.imageView addGestureRecognizer:imageTapRecognizer];
@@ -66,6 +67,9 @@
     }
     self.imageView.layer.cornerRadius = self.imageView.bounds.size.width/2;
     self.imageView.clipsToBounds = YES;
+    self.imageView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.imageView.layer.borderWidth = 3;
+    
     self.nome.text = user[PF_USER_USERNAME];
     self.Address.text = user[PF_USER_ADDRESS];
 

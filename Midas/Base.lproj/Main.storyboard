@@ -106,13 +106,6 @@
                                     <constraint firstAttribute="height" constant="145" id="ET2-2i-cJX"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="DmI-Ca-psQ">
-                                <rect key="frame" x="258" y="164" width="83" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="83" id="8S4-nG-K2f"/>
-                                    <constraint firstAttribute="height" constant="83" id="HrE-C2-5XR"/>
-                                </constraints>
-                            </imageView>
                             <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recent_blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xav-zb-hBw">
                                 <rect key="frame" x="261" y="166" width="78" height="78"/>
                                 <constraints>
@@ -206,7 +199,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MOs-TU-vRV" firstAttribute="top" secondItem="YXI-We-8YD" secondAttribute="bottom" constant="8" id="1kg-WC-IUj"/>
-                            <constraint firstItem="YXI-We-8YD" firstAttribute="top" secondItem="DmI-Ca-psQ" secondAttribute="bottom" id="2cf-QE-uJ8"/>
                             <constraint firstItem="Xav-zb-hBw" firstAttribute="top" secondItem="fKl-Rl-fdW" secondAttribute="bottom" constant="102" id="43i-kl-Kbp"/>
                             <constraint firstItem="mEa-Sv-3hR" firstAttribute="leading" secondItem="gWV-ud-3hL" secondAttribute="leadingMargin" constant="47" id="4yC-Ng-iKk"/>
                             <constraint firstItem="whl-zV-Oe6" firstAttribute="top" secondItem="5oK-Fc-VUp" secondAttribute="bottom" constant="16" id="5HK-Q2-Bzh"/>
@@ -236,11 +228,10 @@
                             <constraint firstItem="whl-zV-Oe6" firstAttribute="leading" secondItem="5oK-Fc-VUp" secondAttribute="trailing" constant="-568" id="jUo-D8-c8y"/>
                             <constraint firstItem="MOs-TU-vRV" firstAttribute="leading" secondItem="gWV-ud-3hL" secondAttribute="leadingMargin" constant="-5" id="mMv-Cr-kJY"/>
                             <constraint firstItem="6a7-P2-SaV" firstAttribute="trailing" secondItem="gWV-ud-3hL" secondAttribute="trailingMargin" id="me4-jU-xmv"/>
+                            <constraint firstItem="YXI-We-8YD" firstAttribute="top" secondItem="Xav-zb-hBw" secondAttribute="bottom" constant="3" id="psx-xt-B51"/>
                             <constraint firstItem="wqt-jH-1TH" firstAttribute="top" secondItem="hAR-wN-0Zb" secondAttribute="bottom" constant="8" id="q0c-l2-vIa"/>
                             <constraint firstItem="hAR-wN-0Zb" firstAttribute="trailing" secondItem="gWV-ud-3hL" secondAttribute="trailingMargin" id="sLX-fi-syT"/>
-                            <constraint firstItem="DmI-Ca-psQ" firstAttribute="top" secondItem="fKl-Rl-fdW" secondAttribute="bottom" constant="100" id="t4b-tz-hhF"/>
                             <constraint firstItem="5oK-Fc-VUp" firstAttribute="top" secondItem="mEa-Sv-3hR" secondAttribute="bottom" constant="10" id="tMa-NN-psD"/>
-                            <constraint firstAttribute="centerX" secondItem="DmI-Ca-psQ" secondAttribute="centerX" constant="0.5" id="wLw-8I-Xev"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FD2-Qs-54J" secondAttribute="trailing" constant="-16" id="y4H-sb-MgS"/>
                             <constraint firstItem="hAR-wN-0Zb" firstAttribute="leading" secondItem="gWV-ud-3hL" secondAttribute="leadingMargin" id="yLC-9l-Jpz"/>
                         </constraints>
@@ -1113,12 +1104,13 @@
         <image name="CameraIcon" width="50" height="50"/>
         <image name="CapaPerfil" width="3125" height="1459"/>
         <image name="ConfigTabBarIcon-1" width="50" height="50"/>
+        <image name="GPSIcon" width="40" height="40"/>
         <image name="LOGO" width="2437" height="2437"/>
         <image name="MuralTabBarIcon" width="50" height="50"/>
         <image name="NovoIcon" width="40" height="40"/>
         <image name="PerfilTabBarIcon" width="50" height="50"/>
         <image name="PlasticoIcon" width="302" height="302"/>
-        <image name="circle" width="322" height="322"/>
+        <image name="david_TabBar" width="228" height="227"/>
         <image name="linha" width="2971" height="13"/>
         <image name="recent_blank.png" width="50" height="50"/>
         <image name="recomp" width="125" height="174"/>
