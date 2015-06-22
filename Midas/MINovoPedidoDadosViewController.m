@@ -90,6 +90,7 @@
     }
     
     if (!self.alreadyUpdatedViewWithEditingInformation) {
+        _alreadyUpdatedViewWithEditingInformation = YES;
         [self updatePlaceholders];
         
         if(self.novoPedido.isEditing){
@@ -267,7 +268,6 @@
     self.rewardSecondTextField.text = self.novoPedido.willgive;
     self.descriptionTextView.text = self.novoPedido.descricao;
     self.imageView.image = self.novoPedido.image;
-    self.alreadyUpdatedViewWithEditingInformation = true;
 }
 
 -(void)keyboardWillShow {

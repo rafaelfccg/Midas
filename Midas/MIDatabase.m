@@ -186,6 +186,7 @@
     
     PFQuery * orQuery = [PFQuery orQueryWithSubqueries:@[queryOwns,queryGiver]];
     [orQuery whereKey:PF_RECENT_REQUESTID matchesKey:PF_REQUEST_OBJECTID inQuery:openRequests];
+    [orQuery whereKey:PF_RECENT_LASTMESSAGE notEqualTo:@""];
     
     [orQuery includeKey:PF_RECENT_REQUESTOWNER];
     [orQuery includeKey:PF_RECENT_REQUESTGIVER];
@@ -270,5 +271,22 @@
         }];
         
     }
+}
+
+-(void) getChatWithObjectId:(NSString *)chatId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block{
+  
+    PFQuery* query = [PFQuery queryWithClassName:PF_CHAT_CLASS_NAME ];
+    [query whereKey:PF_CHAT_OBJECTID equalTo:chatId];
+    [query includeKey:PF_CHAT_REQUESTOWNER];
+    [query includeKey:PF_CHAT_REQUESTGIVER];
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
+-(void) getRequestWithObjectId:(NSString *)requestId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block{
+    
+    PFQuery* query = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME ];
+    [query whereKey:PF_REQUEST_OBJECTID equalTo:requestId];
+    [query includeKey:PF_REQUEST_USER];
+    [query findObjectsInBackgroundWithBlock:block];
 }
 @end

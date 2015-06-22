@@ -63,7 +63,12 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     [self.refreshControl beginRefreshing];
-    [self loadRequests];
+    if (self.pedidosSegmentedControl.selectedSegmentIndex == 0){
+        [self loadRequests];
+    }else{
+        [self loadRecents];
+    }
+
 }
 
 #pragma mark - Table View
