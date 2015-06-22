@@ -12,6 +12,7 @@
 #import <Parse/Parse.h>
 
 @interface MIEditarEnderecoViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *alteraEndereco;
 
 @end
 
@@ -30,6 +31,9 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
+    [self.alteraEndereco.layer setCornerRadius:7.0f];
+    [self.alteraEndereco.layer setMasksToBounds:YES];
+
     
 }
 
@@ -52,8 +56,10 @@
     if ([bairro length] < 4)		{ [ProgressHUD showError:@"Bairro is too short."]; return; }
     if ([rua length] < 4)		{ [ProgressHUD showError:@"Bairro is too short."]; return; }
     
-    NSString *alladdress = [cidade stringByAppendingString:@", "];
-    alladdress = [alladdress stringByAppendingString:rua];
+    NSString *alladdress = [rua stringByAppendingString:@", "];
+    alladdress = [alladdress stringByAppendingString:bairro];
+    alladdress = [alladdress stringByAppendingString:@" - "];
+    alladdress = [alladdress stringByAppendingString:cidade];
     
     [LocationUtils getLocationFromAdress:alladdress withHandler:^(CLLocation* location){
         

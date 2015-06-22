@@ -145,11 +145,11 @@
         //upload image of user
         
         PFUser *user = [PFUser currentUser];
-        PFFile * file = nil;
+        //PFFile * file = nil;
         
-        file = [PFFile fileWithData:UIImagePNGRepresentation(self.picture)];
+        //file = [PFFile fileWithData:UIImagePNGRepresentation(self.picture)];
         
-        user[PF_USER_IMAGE] = file;
+       // user[PF_USER_IMAGE] = file;
         //[user setObject:file forKey:PF_USER_IMAGE];
         
         [user saveInBackground];
@@ -167,6 +167,12 @@
         picture = [self imageWithImage:picture scaledToSize:CGSizeMake([picture size].width*(600/[picture size].width), [picture size].height*(600/[picture size].height))];
     
     self.imageView.image = self.picture;
+    PFFile * file = [PFFile fileWithData:UIImagePNGRepresentation(self.picture)];
+    
+    PFUser* user = [PFUser currentUser];
+    user[PF_USER_IMAGE] = file;
+    [[MIDatabase sharedInstance].imageCache setObject:self.picture forKey:file];
+
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
