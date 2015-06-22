@@ -83,7 +83,8 @@
     self.imageView.layer.borderWidth = 3;
     
     self.nome.text = user[PF_USER_USERNAME];
-    if(user[PF_USER_ADDRESS] == nil){
+    NSString* endereco = user[PF_USER_ADDRESS];
+    if([endereco isEqualToString:@""]){
         self.Address.text = @"Mudar endereço";
     }else{
         self.Address.text = user[PF_USER_ADDRESS];
