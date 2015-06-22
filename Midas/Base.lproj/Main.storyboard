@@ -546,7 +546,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CapaPerfil" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-cX-n6W">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image=":fundo-04" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-cX-n6W">
                                 <rect key="frame" x="0.0" y="65" width="600" height="145"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="145" id="skh-Xm-gxV"/>
@@ -599,6 +599,13 @@
                                 <color key="textColor" red="0.49670533459595956" green="0.49670533459595956" blue="0.49670533459595956" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coroa-04" translatesAutoresizingMaskIntoConstraints="NO" id="isF-9z-q0J">
+                                <rect key="frame" x="225" y="72" width="145" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="CFq-jc-IBN"/>
+                                    <constraint firstAttribute="width" constant="145" id="iK7-ZU-py0"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -607,6 +614,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="gMi-bR-dNU" secondAttribute="trailing" id="8DL-Ab-kt4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3aS-VV-yuO" secondAttribute="trailing" constant="229" id="8Jy-y5-XOp"/>
                             <constraint firstItem="3aS-VV-yuO" firstAttribute="centerX" secondItem="zma-px-14N" secondAttribute="centerX" constant="-230" id="8kl-A0-G4g"/>
+                            <constraint firstItem="Fc7-cX-n6W" firstAttribute="top" secondItem="isF-9z-q0J" secondAttribute="bottom" constant="-103" id="A9f-Bn-njf"/>
                             <constraint firstItem="3aS-VV-yuO" firstAttribute="leading" secondItem="zma-px-14N" secondAttribute="leadingMargin" constant="231" id="C8F-Bd-dLE"/>
                             <constraint firstItem="Nqt-XA-TnS" firstAttribute="width" secondItem="2mO-x1-QUi" secondAttribute="width" constant="1" id="DxL-Pc-uhw"/>
                             <constraint firstItem="TCL-oL-g42" firstAttribute="top" secondItem="3aS-VV-yuO" secondAttribute="bottom" constant="6" id="ESQ-ai-1XJ"/>
@@ -620,6 +628,7 @@
                             <constraint firstItem="TCL-oL-g42" firstAttribute="leading" secondItem="zma-px-14N" secondAttribute="leadingMargin" id="RwP-ly-I5o"/>
                             <constraint firstItem="Fc7-cX-n6W" firstAttribute="leading" secondItem="zma-px-14N" secondAttribute="leading" id="Tz8-oz-XTn"/>
                             <constraint firstItem="FP6-s5-PDm" firstAttribute="trailing" secondItem="gMi-bR-dNU" secondAttribute="trailing" id="WEm-Zp-RjG"/>
+                            <constraint firstAttribute="centerX" secondItem="isF-9z-q0J" secondAttribute="centerX" constant="2.5" id="Wae-Vd-Tgs"/>
                             <constraint firstItem="TCL-oL-g42" firstAttribute="top" secondItem="3aS-VV-yuO" secondAttribute="bottom" constant="5" id="X6X-tA-oPY"/>
                             <constraint firstItem="fhh-a9-iur" firstAttribute="top" secondItem="3aS-VV-yuO" secondAttribute="bottom" constant="121" id="Y2S-HJ-LGn"/>
                             <constraint firstItem="fhh-a9-iur" firstAttribute="top" secondItem="3aS-VV-yuO" secondAttribute="bottom" constant="150" id="aKl-b5-bGE"/>
@@ -1106,9 +1115,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name=":fundo-04" width="3125" height="1459"/>
         <image name="BuscaIcon" width="40" height="40"/>
         <image name="CameraIcon" width="50" height="50"/>
-        <image name="CapaPerfil" width="3125" height="1459"/>
         <image name="ConfigTabBarIcon-1" width="50" height="50"/>
         <image name="GPSIcon" width="122" height="169"/>
         <image name="LOGO" width="2437" height="2437"/>
@@ -1116,6 +1125,7 @@
         <image name="NovoIcon" width="40" height="40"/>
         <image name="PerfilTabBarIcon" width="50" height="50"/>
         <image name="PlasticoIcon" width="302" height="302"/>
+        <image name="coroa-04" width="1621" height="1011"/>
         <image name="linha" width="2971" height="13"/>
         <image name="recent_blank.png" width="50" height="50"/>
         <image name="recomp" width="125" height="174"/>
