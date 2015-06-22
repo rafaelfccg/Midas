@@ -587,7 +587,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="b1V-Ld-gTt" kind="show" id="bhr-lt-fZj"/>
+                                    <segue destination="b1V-Ld-gTt" kind="show" identifier="mudarEndereco" id="bhr-lt-fZj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMi-bR-dNU">
@@ -693,7 +693,7 @@
         <!--Editar Endereco View Controller-->
         <scene sceneID="Q9V-Cq-ptG">
             <objects>
-                <viewController id="b1V-Ld-gTt" customClass="MIEditarEnderecoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MudarEndereco" id="b1V-Ld-gTt" customClass="MIEditarEnderecoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XRM-Uk-wQa"/>
                         <viewControllerLayoutGuide type="bottom" id="rUe-1g-r9P"/>
