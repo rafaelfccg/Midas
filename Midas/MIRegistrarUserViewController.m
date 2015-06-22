@@ -31,6 +31,8 @@
 
     [self.registrarButton.layer setCornerRadius:7.0f];
     [self.registrarButton.layer setMasksToBounds:YES];
+    
+    self.imageView.layer.cornerRadius = 10.0f;
 }
 
 #pragma mark - UIActionSheetDelegate
@@ -140,6 +142,8 @@
     picture = [self imageWithImage:picture scaledToSize:CGSizeMake([picture size].width*(600/[picture size].width), [picture size].height*(600/[picture size].height))];
     
     self.imageView.image = self.picture;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.imageView.clipsToBounds = YES;
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 

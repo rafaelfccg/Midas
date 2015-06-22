@@ -46,6 +46,9 @@
     UITapGestureRecognizer *enderecoTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mudarEndereco:)];
     [self.Address setUserInteractionEnabled:YES];
     [self.Address addGestureRecognizer:enderecoTapRecognizer];
+    
+    self.mapView.layer.cornerRadius = 10.0f;
+
 }
 
 -(void)mudarEndereco:(id)sender{
