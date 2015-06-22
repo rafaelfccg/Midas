@@ -10,6 +10,7 @@
 #import "MIDatabase.h"
 #import "common.h"
 #import "camera.h"
+#import "MIEditarEnderecoViewController.h"
 
 
 @interface MIConfiguracoesViewController (){
@@ -41,6 +42,17 @@
     UITapGestureRecognizer *imageTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressedGallery:)];
     [self.imageView setUserInteractionEnabled:YES];
     [self.imageView addGestureRecognizer:imageTapRecognizer];
+    
+    UITapGestureRecognizer *enderecoTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mudarEndereco:)];
+    [self.Address setUserInteractionEnabled:YES];
+    [self.Address addGestureRecognizer:enderecoTapRecognizer];
+}
+
+-(void)mudarEndereco:(id)sender{
+    MIEditarEnderecoViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MudarEndereco"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    //[self.navigationController performSegueWithIdentifier:@"mudarEndereco" sender:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -71,8 +83,11 @@
     self.imageView.layer.borderWidth = 3;
     
     self.nome.text = user[PF_USER_USERNAME];
-    self.Address.text = user[PF_USER_ADDRESS];
-
+    if(user[PF_USER_ADDRESS] == nil){
+        self.Address.text = @"Mudar endereço";
+    }else{
+        self.Address.text = user[PF_USER_ADDRESS];
+    }
 
 }
 
