@@ -53,6 +53,8 @@
     [self.imageView addGestureRecognizer:imageTapRecognizer];
     
     self.alreadyUpdatedViewWithEditingInformation = false;
+    
+    self.imageView.layer.cornerRadius = 10.0f;
 }
 
 -(void) viewWillAppear:(BOOL)animated {
