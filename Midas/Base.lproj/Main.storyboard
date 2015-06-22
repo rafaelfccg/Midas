@@ -263,7 +263,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Qpo-rn-T3h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YKf-d4-7ya">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1133,8 +1133,8 @@
         <image name="troc" width="125" height="174"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gtB-mQ-NLu"/>
-        <segue reference="EJI-eE-95Q"/>
+        <segue reference="0Xa-Ba-QHR"/>
+        <segue reference="xhW-XF-LFV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.89803921568627454" green="0.54509803921568623" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
