@@ -28,15 +28,9 @@
     UITapGestureRecognizer *imageTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressedGallery:)];
     [self.imageView setUserInteractionEnabled:YES];
     [self.imageView addGestureRecognizer:imageTapRecognizer];
-    
-    UIBarButtonItem *concluir = [[UIBarButtonItem alloc]
-                                      initWithTitle:@"Registrar!"
-                                      style:UIBarButtonItemStylePlain
-                                      target:self
-                                      action:@selector(actionRegister:)];
-    self.navigationItem.rightBarButtonItem = concluir;
 
-
+    [self.registrarButton.layer setCornerRadius:7.0f];
+    [self.registrarButton.layer setMasksToBounds:YES];
 }
 
 #pragma mark - UIActionSheetDelegate
@@ -95,7 +89,7 @@
 }
 
 
-- (void)actionRegister:(id)sender
+- (IBAction)actionRegister:(id)sender
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
 
@@ -126,14 +120,14 @@
          {
              ParsePushUserAssign();
              [ProgressHUD showSuccess:@"Succeed."];
-             [self dismissViewControllerAnimated:YES completion:nil];
+             [self.navigationController popToRootViewControllerAnimated:YES];
          }
          else [ProgressHUD showError:error.userInfo[@"error"]];
      }];
 }
 
 - (IBAction)cancel:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+   [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 

@@ -546,13 +546,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CapaPerfil" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-cX-n6W">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image=":fundo-04" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-cX-n6W">
                                 <rect key="frame" x="0.0" y="65" width="600" height="145"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="145" id="skh-Xm-gxV"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="david_TabBar" translatesAutoresizingMaskIntoConstraints="NO" id="Nqt-XA-TnS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recent_blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nqt-XA-TnS">
                                 <rect key="frame" x="257" y="176" width="81" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="Nxl-nx-0Z2"/>
@@ -578,10 +578,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aS-VV-yuO">
-                                <rect key="frame" x="18" y="292" width="40" height="33"/>
+                                <rect key="frame" x="18" y="292" width="26" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="3aS-VV-yuO" secondAttribute="height" multiplier="40:33" id="QlL-eN-c1H"/>
-                                    <constraint firstAttribute="width" constant="40" id="jPq-eM-ho0"/>
+                                    <constraint firstAttribute="width" secondItem="3aS-VV-yuO" secondAttribute="height" multiplier="40:33" constant="-14" id="QlL-eN-c1H"/>
+                                    <constraint firstAttribute="width" constant="26" id="jPq-eM-ho0"/>
                                 </constraints>
                                 <state key="normal" image="GPSIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -599,6 +599,13 @@
                                 <color key="textColor" red="0.49670533459595956" green="0.49670533459595956" blue="0.49670533459595956" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coroa-04" translatesAutoresizingMaskIntoConstraints="NO" id="isF-9z-q0J">
+                                <rect key="frame" x="225" y="72" width="145" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="CFq-jc-IBN"/>
+                                    <constraint firstAttribute="width" constant="145" id="iK7-ZU-py0"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -607,10 +614,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="gMi-bR-dNU" secondAttribute="trailing" id="8DL-Ab-kt4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3aS-VV-yuO" secondAttribute="trailing" constant="229" id="8Jy-y5-XOp"/>
                             <constraint firstItem="3aS-VV-yuO" firstAttribute="centerX" secondItem="zma-px-14N" secondAttribute="centerX" constant="-230" id="8kl-A0-G4g"/>
+                            <constraint firstItem="Fc7-cX-n6W" firstAttribute="top" secondItem="isF-9z-q0J" secondAttribute="bottom" constant="-103" id="A9f-Bn-njf"/>
                             <constraint firstItem="3aS-VV-yuO" firstAttribute="leading" secondItem="zma-px-14N" secondAttribute="leadingMargin" constant="231" id="C8F-Bd-dLE"/>
                             <constraint firstItem="Nqt-XA-TnS" firstAttribute="width" secondItem="2mO-x1-QUi" secondAttribute="width" constant="1" id="DxL-Pc-uhw"/>
                             <constraint firstItem="TCL-oL-g42" firstAttribute="top" secondItem="3aS-VV-yuO" secondAttribute="bottom" constant="6" id="ESQ-ai-1XJ"/>
-                            <constraint firstItem="gMi-bR-dNU" firstAttribute="leading" secondItem="3aS-VV-yuO" secondAttribute="trailing" constant="8" id="EyR-6N-7eT"/>
+                            <constraint firstItem="gMi-bR-dNU" firstAttribute="leading" secondItem="3aS-VV-yuO" secondAttribute="trailing" constant="22" id="EyR-6N-7eT"/>
                             <constraint firstAttribute="centerX" secondItem="TCL-oL-g42" secondAttribute="centerX" constant="-1" id="Hkv-l5-Qav"/>
                             <constraint firstItem="Nqt-XA-TnS" firstAttribute="centerX" secondItem="2mO-x1-QUi" secondAttribute="centerX" constant="-0.5" id="Jot-L0-BVb"/>
                             <constraint firstItem="FP6-s5-PDm" firstAttribute="width" secondItem="zma-px-14N" secondAttribute="width" constant="-27" id="NYr-Cn-2YL"/>
@@ -620,6 +628,7 @@
                             <constraint firstItem="TCL-oL-g42" firstAttribute="leading" secondItem="zma-px-14N" secondAttribute="leadingMargin" id="RwP-ly-I5o"/>
                             <constraint firstItem="Fc7-cX-n6W" firstAttribute="leading" secondItem="zma-px-14N" secondAttribute="leading" id="Tz8-oz-XTn"/>
                             <constraint firstItem="FP6-s5-PDm" firstAttribute="trailing" secondItem="gMi-bR-dNU" secondAttribute="trailing" id="WEm-Zp-RjG"/>
+                            <constraint firstAttribute="centerX" secondItem="isF-9z-q0J" secondAttribute="centerX" constant="2.5" id="Wae-Vd-Tgs"/>
                             <constraint firstItem="TCL-oL-g42" firstAttribute="top" secondItem="3aS-VV-yuO" secondAttribute="bottom" constant="5" id="X6X-tA-oPY"/>
                             <constraint firstItem="fhh-a9-iur" firstAttribute="top" secondItem="3aS-VV-yuO" secondAttribute="bottom" constant="121" id="Y2S-HJ-LGn"/>
                             <constraint firstItem="fhh-a9-iur" firstAttribute="top" secondItem="3aS-VV-yuO" secondAttribute="bottom" constant="150" id="aKl-b5-bGE"/>
@@ -659,9 +668,9 @@
                     <navigationItem key="navigationItem" title="Configurações" id="Ogw-W2-Kqn">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="oEV-Yv-izU">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c3c-6j-73U">
-                                <rect key="frame" x="16" y="7" width="53" height="30"/>
+                                <rect key="frame" x="531" y="7" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log out">
+                                <state key="normal" title="Logout">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1044,6 +1053,20 @@
                                     <constraint firstAttribute="width" constant="156" id="QaW-hN-vFA"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9e-MJ-5ro">
+                                <rect key="frame" x="253" y="550" width="94" height="30"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.98039215686274506" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="WXn-Ly-8rf"/>
+                                    <constraint firstAttribute="height" constant="30" id="aDq-ua-6yT"/>
+                                </constraints>
+                                <state key="normal" title="Registrar!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionRegister:" destination="g5R-Vm-X9Z" eventType="touchUpInside" id="x06-ph-AhJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87450980392156863" green="0.37647058823529411" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1053,6 +1076,7 @@
                             <constraint firstItem="c1v-VV-YYb" firstAttribute="leading" secondItem="ypM-u0-bps" secondAttribute="leadingMargin" constant="49" id="8dr-p3-T3U"/>
                             <constraint firstItem="Qm4-yW-5kH" firstAttribute="top" secondItem="8gk-Gq-BMd" secondAttribute="bottom" constant="8" id="HoL-JZ-nI6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5mP-aR-sqp" secondAttribute="trailing" constant="49" id="Ncz-Wn-VJn"/>
+                            <constraint firstItem="p9e-MJ-5ro" firstAttribute="top" secondItem="IaG-Ql-T89" secondAttribute="bottom" constant="25" id="PiM-Tl-Xxy"/>
                             <constraint firstItem="5Ti-Te-5By" firstAttribute="top" secondItem="5mP-aR-sqp" secondAttribute="bottom" constant="8" id="QvZ-Zd-AZa"/>
                             <constraint firstItem="5Ti-Te-5By" firstAttribute="leading" secondItem="ypM-u0-bps" secondAttribute="leadingMargin" constant="49" id="VX3-E0-yTu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Ti-Te-5By" secondAttribute="trailing" constant="49" id="ViQ-QW-Hgm"/>
@@ -1064,6 +1088,7 @@
                             <constraint firstItem="knW-Lo-CVu" firstAttribute="leading" secondItem="ypM-u0-bps" secondAttribute="leadingMargin" constant="49" id="hKL-L8-bRI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8gk-Gq-BMd" secondAttribute="trailing" constant="49" id="hRt-3S-jej"/>
                             <constraint firstItem="gXw-IY-xrc" firstAttribute="leading" secondItem="ypM-u0-bps" secondAttribute="leadingMargin" constant="49" id="oq5-pO-6VT"/>
+                            <constraint firstAttribute="centerX" secondItem="p9e-MJ-5ro" secondAttribute="centerX" id="oze-FT-b60"/>
                             <constraint firstItem="Wgy-nW-QXw" firstAttribute="top" secondItem="RgD-91-oxs" secondAttribute="bottom" constant="29" id="sIM-mr-wca"/>
                             <constraint firstItem="gXw-IY-xrc" firstAttribute="top" secondItem="c1v-VV-YYb" secondAttribute="bottom" constant="8" id="saW-My-zuQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c1v-VV-YYb" secondAttribute="trailing" constant="49" id="syO-w0-nlv"/>
@@ -1081,6 +1106,7 @@
                         <outlet property="loginTextField" destination="Qm4-yW-5kH" id="aEP-Mg-Sei"/>
                         <outlet property="passwordConfirmationTextField" destination="IaG-Ql-T89" id="3fK-Qy-K2O"/>
                         <outlet property="passwordTextField" destination="c1v-VV-YYb" id="Ow4-9i-uhE"/>
+                        <outlet property="registrarButton" destination="p9e-MJ-5ro" id="fDX-PH-jbb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usp-FB-xLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1089,17 +1115,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name=":fundo-04" width="3125" height="1459"/>
         <image name="BuscaIcon" width="40" height="40"/>
         <image name="CameraIcon" width="50" height="50"/>
-        <image name="CapaPerfil" width="3125" height="1459"/>
         <image name="ConfigTabBarIcon-1" width="50" height="50"/>
-        <image name="GPSIcon" width="40" height="40"/>
+        <image name="GPSIcon" width="122" height="169"/>
         <image name="LOGO" width="2437" height="2437"/>
         <image name="MuralTabBarIcon" width="50" height="50"/>
         <image name="NovoIcon" width="40" height="40"/>
         <image name="PerfilTabBarIcon" width="50" height="50"/>
         <image name="PlasticoIcon" width="302" height="302"/>
-        <image name="david_TabBar" width="228" height="227"/>
+        <image name="coroa-04" width="1621" height="1011"/>
         <image name="linha" width="2971" height="13"/>
         <image name="recent_blank.png" width="50" height="50"/>
         <image name="recomp" width="125" height="174"/>
