@@ -100,7 +100,7 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     self.logoutSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"
-                                     destructiveButtonTitle:@"Log out" otherButtonTitles:nil];
+                                     destructiveButtonTitle:@"Logout" otherButtonTitles:nil];
     [self.logoutSheet showFromTabBar:[[self tabBarController] tabBar]];
 }
 
@@ -132,7 +132,7 @@
 }
 
 - (void)pressedGallery:(id)sender {
-    self.selectImageSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"
+    self.selectImageSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancelar"
                                           destructiveButtonTitle:nil otherButtonTitles:@"Foto da Galeria",@"Foto da Camera", nil];
     [self.selectImageSheet showFromTabBar:[[self tabBarController] tabBar]];
     
