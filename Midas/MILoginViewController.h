@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ProgressHUD.h"
 
-@interface MILoginViewController : UIViewController
+@interface MILoginViewController : UIViewController<UITextFieldDelegate>
 
 @end
