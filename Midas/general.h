@@ -10,3 +10,4 @@
 #import "AppConstant.h"
 
 UIImage * getCategoryIcon(NSNumber *categoryNumber);
+NSString * getCategoryName(NSNumber *categoryNumber);

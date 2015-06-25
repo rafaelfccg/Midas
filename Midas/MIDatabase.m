@@ -44,6 +44,7 @@
     user.email = email;
     if(file!=nil)
     user[PF_USER_IMAGE] = file;
+    user[PF_USER_ADDRESS] = @"";
     [user signUpInBackgroundWithBlock:block];
 }
 

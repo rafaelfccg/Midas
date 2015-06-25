@@ -49,6 +49,20 @@
             
         }];
     }
+    
+    _request = request;
 
+}
+
+# pragma mark - Acessibility
+- (NSString *)accessibilityLabel
+{
+    NSNumber *willGiveValue = _request.willGiveValue;
+    NSString *willGive = _request.willGive;
+    NSNumber *forEachValue = _request.forEachValue;
+    NSString *forEach = _request.forEach;
+    NSString *category = getCategoryName(_request.category);
+       
+    return [NSString stringWithFormat:@"Você está dando %@ %@, a cada %@ %@. Categoria: %@.", willGiveValue, willGive, forEachValue, forEach, category];
 }
 @end

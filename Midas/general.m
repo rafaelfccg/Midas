@@ -35,3 +35,30 @@ UIImage * getCategoryIcon(NSNumber *categoryNumber)
     }
     return image;
 }
+
+NSString * getCategoryName(NSNumber *categoryNumber)
+{
+    NSString *name;
+    
+    switch ([categoryNumber intValue]) {
+        case RequestCategoryVidro:
+            name = @"Vidro";
+            break;
+        case RequestCategoryMetal:
+            name = @"Metal";
+            break;
+        case RequestCategoryPapel:
+            name = @"Papel";
+            break;
+        case RequestCategoryPlastico:
+            name = @"Plástico";
+            break;
+        case RequestCategoryOutros:
+            name = @"Outros";
+            break;
+        default:
+            name = @"";
+            break;
+    }
+    return name;
+}

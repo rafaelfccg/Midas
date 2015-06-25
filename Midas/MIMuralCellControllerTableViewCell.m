@@ -7,6 +7,7 @@
 //
 
 #import "MIMuralCellControllerTableViewCell.h"
+#import "general.h"
 
 @implementation MIMuralCellControllerTableViewCell
 
@@ -62,6 +63,30 @@
         }];
     }
     
+    _request = request;
+}
+
+# pragma mark - Acessibility
+- (NSString *)accessibilityLabel
+{
+
+    NSString *ownerName = _request.owner.username;
+    NSNumber *willGiveValue = _request.willGiveValue;
+    NSString *willGive = _request.willGive;
+    NSNumber *forEachValue = _request.forEachValue;
+    NSString *forEach = _request.forEach;
+    NSString *category = getCategoryName(_request.category);
+   
+    NSString *distancia = @"";
+    PFGeoPoint * point =  [PFUser currentUser][PF_USER_LOCATION];
+    if(point && _request.location){
+        double val = [point distanceInKilometersTo:_request.location];
+        distancia = [NSString stringWithFormat:@"%.0lfkm",val];
+    }else{
+        distancia = [NSString stringWithFormat:@"--"];
+    }
+    
+    return [NSString stringWithFormat:@"O usuário %@ está dando %@ %@, a cada %@ %@. Categoria: %@. Distância: %@", ownerName, willGiveValue, willGive, forEachValue, forEach, category, distancia];
 }
 
 
