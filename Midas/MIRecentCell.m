@@ -84,6 +84,39 @@
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	int counter = [recent[PF_RECENT_COUNTER] intValue];
 	labelCounter.text = (counter == 0) ? @"" : [NSString stringWithFormat:@"%d new", counter];
+    
+    self.recent = recent_;
+}
+
+# pragma mark - Acessibility
+- (NSString *)accessibilityLabel
+{
+    
+    NSString *username = @"";
+    NSString *messageCount = @"";
+    
+    PFUser * user = [PFUser currentUser];
+    PFUser * owns = recent[PF_RECENT_REQUESTOWNER];
+    if ([[PFUser currentUser].objectId isEqualToString:owns.objectId]) {
+        username = recent[PF_RECENT_REQUESTGIVER][PF_USER_USERNAME];
+    }else{
+        username = owns.username;
+    }
+
+    int counter = [recent[PF_RECENT_COUNTER] intValue];
+    
+    
+    if (counter == 0){
+        messageCount = @"Nenhuma mensagem nova.";
+    } else if (counter == 1){
+        messageCount = @"Uma nova mensagem.";
+    } else {
+        messageCount = [NSString stringWithFormat:@"%d novas mensagens.",counter];
+    }
+    
+    NSString *content = _recent[PF_RECENT_DESCRIPTION];
+    
+    return [NSString stringWithFormat:@"Negociação com %@. Sobre %@. %@", username, content, messageCount];
 }
 
 @end
