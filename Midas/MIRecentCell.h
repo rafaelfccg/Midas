@@ -15,6 +15,8 @@
 @interface MIRecentCell : UITableViewCell
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 
+@property PFObject *recent;
+
 - (void)bindData:(PFObject *)recent_;
 
 @end

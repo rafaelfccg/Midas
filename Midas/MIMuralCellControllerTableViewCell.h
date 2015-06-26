@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *destinoLabel;
 @property (nonatomic, weak) IBOutlet UILabel *distLabel;
 
+@property (nonatomic) MIPedido *request;
 
 - (void)bindData:(MIPedido *)request;
 

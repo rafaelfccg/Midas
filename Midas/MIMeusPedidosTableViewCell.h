@@ -18,5 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *trocaLabel;
 @property (weak, nonatomic) IBOutlet UILabel *meuPedidoLabel;
 
+@property (weak, nonatomic) MIPedido *request;
+
 - (void)bindData:(MIPedido *)request;
 @end

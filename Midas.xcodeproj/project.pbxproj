@@ -114,6 +114,7 @@
 		009363FB1B335139007D82AE /* linha.png in Resources */ = {isa = PBXBuildFile; fileRef = 009363FA1B335139007D82AE /* linha.png */; };
 		157363071B28C1E800259B11 /* MILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157363061B28C1E800259B11 /* MILoginViewController.m */; };
 		15FB16731B2F45C100867173 /* MIEditarEnderecoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */; };
+		1F31693C1B3C95D4003DD6EA /* CustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */; };
 		1FC974971B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC974961B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib */; };
 		1FE7DA771B28D07600656359 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA711B28D07600656359 /* Bolts.framework */; };
 		1FE7DA781B28D07600656359 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA721B28D07600656359 /* Parse.framework */; };
@@ -370,6 +371,8 @@
 		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
 		15FB16711B2F45C100867173 /* MIEditarEnderecoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIEditarEnderecoViewController.h; sourceTree = "<group>"; };
 		15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIEditarEnderecoViewController.m; sourceTree = "<group>"; };
+		1F31693A1B3C95D4003DD6EA /* CustomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarViewController.h; sourceTree = "<group>"; };
+		1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarViewController.m; sourceTree = "<group>"; };
 		1FC974961B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMeusPedidosTableViewCell.xib; sourceTree = "<group>"; };
 		1FE7D9751B28CB8300656359 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		1FE7DA711B28D07600656359 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -903,6 +906,8 @@
 				009363F31B33380D007D82AE /* MIRecentCell.h */,
 				009363F41B33380D007D82AE /* MIRecentCell.m */,
 				009363F51B33380D007D82AE /* MIRecentCell.xib */,
+				1F31693A1B3C95D4003DD6EA /* CustomTabBarViewController.h */,
+				1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1120,6 +1125,7 @@
 				003B250B1B29E7FE00743D0B /* UIImage+JSQMessages.m in Sources */,
 				003B25301B2A028000743D0B /* PhotoMediaItem.m in Sources */,
 				003B25231B29EF6E00743D0B /* IDMPhotoBrowser.m in Sources */,
+				1F31693C1B3C95D4003DD6EA /* CustomTabBarViewController.m in Sources */,
 				003B24701B29C95600743D0B /* AFNetworkReachabilityManager.m in Sources */,
 				003B25111B29EAED00743D0B /* JSQSystemSoundPlayer.m in Sources */,
 				003B24A31B29E77800743D0B /* JSQLocationMediaItem.m in Sources */,
