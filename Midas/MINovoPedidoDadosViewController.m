@@ -16,6 +16,7 @@
 #import "general.h"
 
 @interface MINovoPedidoDadosViewController () <UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic) BOOL alreadyUpdatedViewWithEditingInformation;
 
@@ -39,7 +40,8 @@
     } else {
         self.navigationItem.title = @"Passo 2";
     }
-   
+    _scrollView.contentSize = CGSizeMake(self.view.frame.size.width, _scrollView.contentSize.height);
+    
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
