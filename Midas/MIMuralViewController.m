@@ -129,7 +129,11 @@
              else
                  self.muralTableView.backgroundView = nil;
          }
-         else [ProgressHUD showError:@"Network error."];
+         else {
+             NSLog(@"%@", error.userInfo[@"error"]);
+             NSString *errorMessage = localizeErrorMessage(error);
+             [ProgressHUD showError:errorMessage];
+         }
          [self.refreshControl endRefreshing];
      }/* filtro:self.filtros*/];
 }

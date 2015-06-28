@@ -16,6 +16,7 @@
 #import "ProgressHUD.h"
 #import "MIRecentCell.h"
 #import "MIMeusPedidosTableViewCell.h"
+#import "general.h"
 
 @interface MIMeusPedidosViewController ()
 
@@ -177,7 +178,11 @@
              [self setBackgroundViewForTableView:[self.requests count]];
              
          }
-         else [ProgressHUD showError:@"Network error."];
+         else {
+             NSLog(@"%@", error.userInfo[@"error"]);
+             NSString *errorMessage = localizeErrorMessage(error);
+             [ProgressHUD showError:errorMessage];
+         }
          [self.refreshControl endRefreshing];
      }];
 }
@@ -195,7 +200,11 @@
              [self setBackgroundViewForTableView:[self.recents count]];
              
          }
-         else [ProgressHUD showError:@"Network error."];
+         else {
+             NSLog(@"%@", error.userInfo[@"error"]);
+             NSString *errorMessage = localizeErrorMessage(error);
+             [ProgressHUD showError:errorMessage];
+         }
          [self.refreshControl endRefreshing];
      }];
 }

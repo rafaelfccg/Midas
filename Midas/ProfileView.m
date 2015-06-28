@@ -17,6 +17,7 @@
 #import "common.h"
 
 #import "ProfileView.h"
+#import "general.h"
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 @interface ProfileView()
@@ -92,7 +93,11 @@
 				labelName.text = user[PF_USER_FULLNAME];
 			}
 		}
-		else [ProgressHUD showError:@"Network error."];
+        else {
+            NSLog(@"%@", error.userInfo[@"error"]);
+            NSString *errorMessage = localizeErrorMessage(error);
+            [ProgressHUD showError:errorMessage];
+        }
 	}];
 }
 

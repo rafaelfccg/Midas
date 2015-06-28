@@ -8,6 +8,7 @@
 
 #import "MILoginViewController.h"
 #import "MIDatabase.h"
+#import "general.h"
 
 @interface MILoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *fieldUsername;
@@ -73,7 +74,7 @@
     if ([username length] == 0)	{ [ProgressHUD showError:@"Login é um campo obrigatório."]; return; }
     if ([password length] == 0)	{ [ProgressHUD showError:@"Senha é um campo obrigatório."]; return; }
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    [ProgressHUD show:@"Signing in..." Interaction:NO];
+    [ProgressHUD show:@"Logando..." Interaction:NO];
     [[MIDatabase sharedInstance] logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error)
      {
          if (user != nil)
@@ -82,9 +83,15 @@
              [ProgressHUD showSuccess:[NSString stringWithFormat:@"Bem-vindo, %@!", user.username]];
              [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
             }
-             else [ProgressHUD showError:error.userInfo[@"error"]];
+         else{
+             NSLog(@"%@", error.userInfo[@"error"]);
+             NSString *errorMessage = localizeErrorMessage(error);
+            [ProgressHUD showError:errorMessage];
+         }
      }];
 }
+
+
 
 -(void) viewWillAppear:(BOOL)animated {
     

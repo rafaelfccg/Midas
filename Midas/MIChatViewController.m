@@ -22,6 +22,7 @@
 #import "MIDatabase.h"
 #import "MIPedido.h"
 #import "PhotoMediaItem.h"
+#import "general.h"
 
 
 @interface MIChatViewController (){
@@ -160,7 +161,11 @@
                  self.automaticallyScrollsToMostRecentMessage = YES;
                  initialized = YES;
              }
-             else [ProgressHUD showError:@"Network error."];
+             else {
+                 NSLog(@"%@", error.userInfo[@"error"]);
+                 NSString *errorMessage = localizeErrorMessage(error);
+                 [ProgressHUD showError:errorMessage];
+             }
              isLoading = NO;
          }];
     }
@@ -249,7 +254,11 @@
              [JSQSystemSoundPlayer jsq_playMessageSentSound];
              [self loadMessages];
          }
-         else [ProgressHUD showError:@"Network error."];;
+         else {
+             NSLog(@"%@", error.userInfo[@"error"]);
+             NSString *errorMessage = localizeErrorMessage(error);
+             [ProgressHUD showError:errorMessage];
+         }
      }];
     //---------------------------------------------------------------------------------------------------------------------------------------------
     SendPushNotification(_chatId, _neg, text);

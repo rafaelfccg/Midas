@@ -11,3 +11,4 @@
 
 UIImage * getCategoryIcon(NSNumber *categoryNumber);
 NSString * getCategoryName(NSNumber *categoryNumber);
+NSString *localizeErrorMessage(NSError *error);

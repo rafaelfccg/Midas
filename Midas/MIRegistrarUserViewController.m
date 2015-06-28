@@ -10,7 +10,7 @@
 #import "ProgressHUD.h"
 #import "MIDatabase.h"
 #import "camera.h"
-
+#import "general.h"
 
 
 @implementation MIRegistrarUserViewController
@@ -113,7 +113,7 @@
     if (![password isEqualToString:passwordConfirmation]) { [ProgressHUD showError:@"As senhas devem ser iguais."]; return; }
     
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    [ProgressHUD show:@"Please wait..." Interaction:NO];
+    [ProgressHUD show:@"Registrando..." Interaction:NO];
     //---------------------------------------------------------------------------------------------------------------------------------------------
     
      [[MIDatabase sharedInstance] signUpWithUsernameInBackground:login password:password email:email ProfileImage:file block:^(BOOL succeeded, NSError *error)
@@ -121,10 +121,15 @@
          if (error == nil)
          {
              ParsePushUserAssign();
-             [ProgressHUD showSuccess:@"Succeed."];
+             [ProgressHUD showSuccess:@"Sucesso"];
              [self.navigationController popToRootViewControllerAnimated:YES];
          }
-         else [ProgressHUD showError:error.userInfo[@"error"]];
+         else {
+             NSLog(@"%@", error.userInfo[@"error"]);
+             NSString *errorMessage = localizeErrorMessage(error);
+             [ProgressHUD showError:errorMessage];
+         }
+        
      }];
 }
 

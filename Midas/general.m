@@ -62,3 +62,31 @@ NSString * getCategoryName(NSNumber *categoryNumber)
     }
     return name;
 }
+
+
+NSString *localizeErrorMessage(NSError *error) {
+    
+    NSString *errorMessage;
+    switch (error.code) {
+        case 101:
+            errorMessage = @"Login ou senha inválidos.";
+            break;
+        case 125:
+            errorMessage = @"Email inválido.";
+            break;
+        case 202:
+            errorMessage = @"Nome de usuário já está em uso.";
+            break;
+        case 203:
+            errorMessage = @"O email já está em uso.";
+            break;
+        case 100:
+            errorMessage = @"Erro na conexão.";
+            break;
+        default:
+            errorMessage = error.userInfo[@"error"];
+            break;
+    }
+    
+    return errorMessage;
+}

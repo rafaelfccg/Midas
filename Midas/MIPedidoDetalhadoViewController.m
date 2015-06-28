@@ -118,8 +118,10 @@
                          [self performSegueWithIdentifier:@"FromInfoToChatSegue" sender:self];
 
                      
-                     }else{
-                         [ProgressHUD showError:@"Network error."];
+                     } else {
+                         NSLog(@"%@", error.userInfo[@"error"]);
+                         NSString *errorMessage = localizeErrorMessage(error);
+                         [ProgressHUD showError:errorMessage];
                      }
                  }];
     
@@ -133,11 +135,12 @@
              }else{
                  NSLog (@"%ld",[objects count]);
              }
-             
-             
-             
          }
-         else [ProgressHUD showError:@"Network error."];
+         else {
+             NSLog(@"%@", error.userInfo[@"error"]);
+             NSString *errorMessage = localizeErrorMessage(error);
+             [ProgressHUD showError:errorMessage];
+         }
          
      }];
     }
