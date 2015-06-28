@@ -16,8 +16,11 @@
 #import "general.h"
 
 @interface MINovoPedidoDadosViewController () <UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic) BOOL alreadyUpdatedViewWithEditingInformation;
+@property BOOL didChangeImage;
+
 
 @end
 
@@ -39,7 +42,8 @@
     } else {
         self.navigationItem.title = @"Passo 2";
     }
-   
+    _scrollView.contentSize = CGSizeMake(self.view.frame.size.width, _scrollView.contentSize.height);
+    
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
@@ -60,6 +64,7 @@
 -(void) viewWillAppear:(BOOL)animated {
     
     self.categoryImageView.image = getCategoryIcon(self.novoPedido.category);
+    self.didChangeImage = false;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow)
@@ -71,7 +76,7 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     
-    switch ([self.novoPedido.category intValue]) {
+   switch ([self.novoPedido.category intValue]) {
         case RequestCategoryVidro:
             self.categoryValueLabel.text = @"Vidro";
             break;
@@ -151,7 +156,11 @@
     self.novoPedido.willgive = willgive;
     self.novoPedido.descricao = description;
     self.novoPedido.location = user[PF_USER_LOCATION];
-
+    
+    if(!_didChangeImage){
+        self.imageView.image = self.categoryImageView.image;
+    }
+    
     if(self.imageView.image) {
         self.novoPedido.image = CreateThumbnail(self.imageView.image, 600.f);
         self.novoPedido.thumbnail = CreateThumbnail(self.imageView.image, 150.f);
@@ -194,8 +203,12 @@
 {
     if (buttonIndex == 0){
         PresentPhotoLibrary(self, YES);
+        
+
+       
     }else if(buttonIndex ==1){
         PresentPhotoCamera(self, YES);
+        
     }
 }
 
@@ -212,6 +225,8 @@
 {
     UIImage *picture = info[UIImagePickerControllerEditedImage];
     self.imageView.image = picture;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _didChangeImage = true;
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
@@ -223,7 +238,7 @@
             self.forEachValueTextField.placeholder = @"10";
             self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
             self.willGiveValueTextField.placeholder = @"1";
-            self.imageView.image = [UIImage imageNamed:@"VidroIcon" ];
+            //self.imageView.image = [UIImage imageNamed:@"VidroIcon" ];
 
             break;
         case RequestCategoryPlastico:
@@ -231,7 +246,7 @@
             self.forEachValueTextField.placeholder = @"20";
             self.rewardSecondTextField.placeholder = @"Ex.: carrinho de plástico";
             self.willGiveValueTextField.placeholder = @"1";
-            self.imageView.image = [UIImage imageNamed:@"PlasticoIcon" ];
+            //self.imageView.image = [UIImage imageNamed:@"PlasticoIcon" ];
 
             break;
         case RequestCategoryMetal:
@@ -239,7 +254,7 @@
             self.forEachValueTextField.placeholder = @"10";
             self.rewardSecondTextField.placeholder = @"Ex.: coca-cola";
             self.willGiveValueTextField.placeholder = @"1";
-            self.imageView.image = [UIImage imageNamed:@"MetalIcon" ];
+            //self.imageView.image = [UIImage imageNamed:@"MetalIcon" ];
             
             break;
         case RequestCategoryPapel:
@@ -247,7 +262,7 @@
             self.forEachValueTextField.placeholder = @"10";
             self.rewardSecondTextField.placeholder = @"Ex.: 1 origami";
             self.willGiveValueTextField.placeholder = @"1";
-            self.imageView.image = [UIImage imageNamed:@"PapelIcon" ];
+            //self.imageView.image = [UIImage imageNamed:@"PapelIcon" ];
 
             break;
         case RequestCategoryOutros:
@@ -255,7 +270,7 @@
             self.forEachValueTextField.placeholder = @"5";
             self.rewardSecondTextField.placeholder = @"Ex.: mini-mosaico";
             self.willGiveValueTextField.placeholder = @"1";
-            self.imageView.image = [UIImage imageNamed:@"OutrosIcon" ];
+            //self.imageView.image = [UIImage imageNamed:@"OutrosIcon" ];
 
             break;
         default:

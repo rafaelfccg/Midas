@@ -22,6 +22,8 @@
 @property MIPedido* selectedRequest;
 @property MIFiltrosDeBusca* filtros;
 
+@property UIActionSheet *selectImageSheet;
+
 @end
 
 @implementation MIMuralViewController
@@ -42,7 +44,7 @@
     
     UINib *nib = [UINib nibWithNibName:@"MIMuralCellControllerTableViewCell" bundle:nil];
     [self.muralTableView registerNib:nib forCellReuseIdentifier:@"MuralCell"];
-     
+    
     self.filtros = [[MIFiltrosDeBusca alloc]init];
     [self.muralTableView setBackgroundColor:COLOR_BACKGROUND];
     self.muralTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -82,7 +84,7 @@
     
     MIPedido *request = [_requests objectAtIndex:indexPath.row];
     [cell bindData:request];
-
+    
     return cell;
 }
 
@@ -140,21 +142,98 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 
 - (IBAction)didPressSearchButton:(id)sender {
-    [self.view endEditing:YES];
-    NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GPSIcon"] title:@"Todos"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"VidroIcon"] title:@"Vidro"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PlasticoIcon"] title:@"Plástico"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"MetalIcon"] title:@"Metal"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PapelIcon"] title:@"Papel"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"OutrosIcon"] title:@"Outros"]];
-    RNGridMenu *gridMenu = [[RNGridMenu alloc] initWithItems:menuItems];
-    gridMenu.delegate = self;
-    gridMenu.highlightColor = [UIColor darkGrayColor];
-    gridMenu.menuStyle = RNGridMenuStyleGrid;
-    [gridMenu showInViewController:self center:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/(2.f))];
+    if(UIAccessibilityIsVoiceOverRunning())
+    {
+        NSLog(@"this is a gambiarra");
+        
+        [self pressedGallery];
+    }
+    else
+    {
+        [self.view endEditing:YES];
+        NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GPSIcon"] title:@"Todos"],
+                               [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"VidroIcon"] title:@"Vidro"],
+                               [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PlasticoIcon"] title:@"Plástico"],
+                               [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"MetalIcon"] title:@"Metal"],
+                               [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PapelIcon"] title:@"Papel"],
+                               [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"OutrosIcon"] title:@"Outros"]];
+        RNGridMenu *gridMenu = [[RNGridMenu alloc] initWithItems:menuItems];
+        gridMenu.delegate = self;
+        gridMenu.highlightColor = [UIColor darkGrayColor];
+        gridMenu.menuStyle = RNGridMenuStyleGrid;
+        [gridMenu showInViewController:self center:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/(2.f))];
+    }
 }
 
+- (void)pressedGallery {
+    self.selectImageSheet = [[UIActionSheet alloc] initWithTitle:@"Qual tipo de material?"
+                                                        delegate:self
+                                               cancelButtonTitle:nil
+                                          destructiveButtonTitle:nil
+                                               otherButtonTitles:@"Vidro", @"Plástico", @"Metal",@"Papel",@"Outros",@"Todos",nil];
+    
+    //[self.selectImageSheet showInView:self.view];
+    [self.selectImageSheet showFromTabBar:[[self tabBarController] tabBar]];
+}
 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    if(actionSheet == self.selectImageSheet)
+    {
+        self.filtros.Vidro = false;
+        self.filtros.Metal = false;
+        self.filtros.Papel = false;
+        self.filtros.Outros = false;
+        self.filtros.Plastico = false;
+        
+        self.filtros.Todos = true;
+        
+        
+        if (buttonIndex == 0)
+        {
+            self.filtros.Vidro = true;
+            self.filtros.Todos = false;
+            NSLog(@"Vidro");
+        }
+        
+        if (buttonIndex == 1)
+        {
+            self.filtros.Plastico = true;
+            self.filtros.Todos = false;
+            NSLog(@"Plástico");
+        }
+        
+        if (buttonIndex == 2)
+        {
+            self.filtros.Metal = true;
+            self.filtros.Todos = false;
+            NSLog(@"Metal");
+        }
+        
+        if (buttonIndex == 3)
+        {
+            self.filtros.Papel = true;
+            self.filtros.Todos = false;
+            NSLog(@"Papel");
+        }
+        
+        if (buttonIndex == 4)
+        {
+            self.filtros.Outros = true;
+            self.filtros.Todos = false;
+            NSLog(@"Outros");
+        }
+        
+        if (buttonIndex == 5)
+        {
+            self.filtros.Todos = true;
+            NSLog(@"Todos");
+        }
+        
+        [self loadRequests];
+    }
+}
 
 - (void)gridMenu:(RNGridMenu *)gridMenu willDismissWithSelectedItem:(RNGridMenuItem *)item atIndex:(NSInteger)itemIndex
 {
