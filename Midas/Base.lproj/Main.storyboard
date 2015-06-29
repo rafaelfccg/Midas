@@ -392,8 +392,8 @@
         <!--Novo Pedido Dados View Controller-->
         <scene sceneID="yB1-X9-g9R">
             <objects>
-                <tableViewController id="0px-1U-ruI" customClass="MINovoPedidoDadosViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SBR-eM-RT0">
+                <tableViewController storyboardIdentifier="novoPedidoScreen" id="0px-1U-ruI" customClass="MINovoPedidoDadosViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SBR-eM-RT0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

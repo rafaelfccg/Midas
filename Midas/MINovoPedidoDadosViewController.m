@@ -57,14 +57,14 @@
     [self.imageView addGestureRecognizer:imageTapRecognizer];
     
     self.alreadyUpdatedViewWithEditingInformation = false;
-    
+    self.tableView.allowsSelection= NO;
     self.imageView.layer.cornerRadius = 10.0f;
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     
     self.categoryImageView.image = getCategoryIcon(self.novoPedido.category);
-    self.didChangeImage = false;
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow)
@@ -226,12 +226,13 @@
     UIImage *picture = info[UIImagePickerControllerEditedImage];
     self.imageView.image = picture;
     _imageView.contentMode = UIViewContentModeScaleAspectFill;
-    _didChangeImage = true;
+    _didChangeImage = YES;
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void) updatePlaceholders {
+    self.didChangeImage = false;
     switch ([self.novoPedido.category intValue]) {
         case RequestCategoryVidro:
             self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
@@ -285,6 +286,7 @@
     self.rewardSecondTextField.text = self.novoPedido.willgive;
     self.descriptionTextView.text = self.novoPedido.descricao;
     self.imageView.image = self.novoPedido.image;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 -(void)keyboardWillShow {
