@@ -1,0 +1,141 @@
+
+/* Class = "UILabel"; text = "Nome"; ObjectID = "2mO-x1-QUi"; */
+"2mO-x1-QUi.text" = "Nome";
+
+/* Class = "UILabel"; text = "Categoria:"; ObjectID = "3WL-rp-spV"; */
+"3WL-rp-spV.text" = "Categoria:";
+
+/* Class = "UINavigationItem"; title = "Mural"; ObjectID = "43F-fr-cwf"; */
+"43F-fr-cwf.title" = "Mural";
+
+/* Class = "UIViewController"; title = "Meus Pedidos"; ObjectID = "46H-XD-PRL"; */
+"46H-XD-PRL.title" = "Meus Pedidos";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "4l9-sk-DFK"; */
+"4l9-sk-DFK.text" = "Title";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "5mP-aR-sqp"; */
+"5mP-aR-sqp.text" = "Email:";
+
+/* Class = "UILabel"; text = "20 garrafas de cerveja"; ObjectID = "6a7-P2-SaV"; */
+"6a7-P2-SaV.text" = "20 garrafas de cerveja";
+
+/* Class = "UILabel"; text = "Login:"; ObjectID = "8gk-Gq-BMd"; */
+"8gk-Gq-BMd.text" = "Login:";
+
+/* Class = "UILabel"; text = "Metal"; ObjectID = "9xu-Ik-bvL"; */
+"9xu-Ik-bvL.text" = "Metal";
+
+/* Class = "UILabel"; text = "Por que preciso desse material?"; ObjectID = "9y3-xK-PUA"; */
+"9y3-xK-PUA.text" = "Por que preciso desse material?";
+
+/* Class = "UITextField"; placeholder = "Login"; ObjectID = "ELQ-ci-tUO"; */
+"ELQ-ci-tUO.placeholder" = "Login";
+
+/* Class = "UILabel"; text = "Dou:"; ObjectID = "Jrl-ZJ-oiV"; */
+"Jrl-ZJ-oiV.text" = "Dou:";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "MR5-po-nNJ"; */
+"MR5-po-nNJ.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Qual material você precisa?"; ObjectID = "NDL-5f-fNs"; */
+"NDL-5f-fNs.text" = "Qual material você precisa?";
+
+/* Class = "UINavigationItem"; title = "Perfil"; ObjectID = "Ogw-W2-Kqn"; */
+"Ogw-W2-Kqn.title" = "Perfil";
+
+/* Class = "UITextField"; placeholder = "Senha"; ObjectID = "R5V-0x-nCN"; */
+"R5V-0x-nCN.placeholder" = "Senha";
+
+/* Class = "UILabel"; text = "Metal"; ObjectID = "TAl-iZ-3vd"; */
+"TAl-iZ-3vd.text" = "Metal";
+
+/* Class = "UIButton"; normalTitle = "Entrar!"; ObjectID = "Upa-Ob-6Dy"; */
+"Upa-Ob-6Dy.normalTitle" = "Entrar!";
+
+/* Class = "UILabel"; text = "Luis"; ObjectID = "YXI-We-8YD"; */
+"YXI-We-8YD.text" = "Luis";
+
+/* Class = "UIButton"; normalTitle = "Alterar Endereço"; ObjectID = "YxI-yM-117"; */
+"YxI-yM-117.normalTitle" = "Alterar Endereço";
+
+/* Class = "UIViewController"; title = "Chat"; ObjectID = "bhQ-qo-3i1"; */
+"bhQ-qo-3i1.title" = "Chat";
+
+/* Class = "UINavigationItem"; title = "Meus Pedidos"; ObjectID = "c2T-jl-4eA"; */
+"c2T-jl-4eA.title" = "Meus Pedidos";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "c3c-6j-73U"; */
+"c3c-6j-73U.normalTitle" = "Logout";
+
+/* Class = "UILabel"; text = "Login:"; ObjectID = "ctU-0I-Oet"; */
+"ctU-0I-Oet.text" = "Login:";
+
+/* Class = "UILabel"; text = "Categoria:"; ObjectID = "ehn-Xt-aYF"; */
+"ehn-Xt-aYF.text" = "Categoria:";
+
+/* Class = "UILabel"; text = "1 Cerveja homemade"; ObjectID = "eyb-Gd-TY0"; */
+"eyb-Gd-TY0.text" = "1 Cerveja homemade";
+
+/* Class = "UILabel"; text = "Senha:"; ObjectID = "fWg-KH-ck2"; */
+"fWg-KH-ck2.text" = "Senha:";
+
+/* Class = "UILabel"; text = "Cidade"; ObjectID = "fZZ-LO-ksF"; */
+"fZZ-LO-ksF.text" = "Cidade";
+
+/* Class = "UIViewController"; title = "Registrar"; ObjectID = "g5R-Vm-X9Z"; */
+"g5R-Vm-X9Z.title" = "Registrar";
+
+/* Class = "UILabel"; text = "Metal"; ObjectID = "gMW-Fs-qVF"; */
+"gMW-Fs-qVF.text" = "Metal";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gMi-bR-dNU"; */
+"gMi-bR-dNU.text" = "Label";
+
+/* Class = "UILabel"; text = "Confirmar Senha:"; ObjectID = "gXw-IY-xrc"; */
+"gXw-IY-xrc.text" = "Confirmar Senha:";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "; ObjectID = "hAR-wN-0Zb"; */
+"hAR-wN-0Zb.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
+
+/* Class = "UIViewController"; title = "Informação do Pedido"; ObjectID = "haO-U2-d01"; */
+"haO-U2-d01.title" = "Informação do Pedido";
+
+/* Class = "UILabel"; text = "Senha:"; ObjectID = "knW-Lo-CVu"; */
+"knW-Lo-CVu.text" = "Senha:";
+
+/* Class = "UIButton"; normalTitle = "Registrar"; ObjectID = "lSo-eO-1th"; */
+"lSo-eO-1th.normalTitle" = "Registrar";
+
+/* Class = "UILabel"; text = "Rua"; ObjectID = "mJP-7r-pTk"; */
+"mJP-7r-pTk.text" = "Rua";
+
+/* Class = "UISegmentedControl"; mgi-8I-KQl.segmentTitles[0] = "Pedidos no Mural"; ObjectID = "mgi-8I-KQl"; */
+"mgi-8I-KQl.segmentTitles[0]" = "Pedidos no Mural";
+
+/* Class = "UISegmentedControl"; mgi-8I-KQl.segmentTitles[1] = "Negociações"; ObjectID = "mgi-8I-KQl"; */
+"mgi-8I-KQl.segmentTitles[1]" = "Negociações";
+
+/* Class = "UIButton"; normalTitle = "Registrar!"; ObjectID = "p9e-MJ-5ro"; */
+"p9e-MJ-5ro.normalTitle" = "Registrar!";
+
+/* Class = "UILabel"; text = "A cada:"; ObjectID = "qKa-JI-Hhn"; */
+"qKa-JI-Hhn.text" = "A cada:";
+
+/* Class = "UILabel"; text = "Categoria:"; ObjectID = "qau-yF-CMG"; */
+"qau-yF-CMG.text" = "Categoria:";
+
+/* Class = "UIViewController"; title = "Mural"; ObjectID = "qdX-c5-C5H"; */
+"qdX-c5-C5H.title" = "Mural";
+
+/* Class = "UILabel"; text = "Bairro"; ObjectID = "qvS-RR-5da"; */
+"qvS-RR-5da.text" = "Bairro";
+
+/* Class = "UIViewController"; title = "Perfil"; ObjectID = "uxC-b3-0WE"; */
+"uxC-b3-0WE.title" = "Perfil";
+
+/* Class = "UILabel"; text = "Por que trocar comigo?"; ObjectID = "whl-zV-Oe6"; */
+"whl-zV-Oe6.text" = "Por que trocar comigo?";
+
+/* Class = "UIButton"; normalTitle = "Finalizar Pedido"; ObjectID = "wqt-jH-1TH"; */
+"wqt-jH-1TH.normalTitle" = "Finalizar Pedido";

@@ -373,6 +373,9 @@
 		15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIEditarEnderecoViewController.m; sourceTree = "<group>"; };
 		1F31693A1B3C95D4003DD6EA /* CustomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarViewController.h; sourceTree = "<group>"; };
 		1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarViewController.m; sourceTree = "<group>"; };
+		1F97A4A01B46D66400C0CFE4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		1F97A4A11B46D66400C0CFE4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1F97A4A31B46D74F00C0CFE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1FC974961B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMeusPedidosTableViewCell.xib; sourceTree = "<group>"; };
 		1FE7D9751B28CB8300656359 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		1FE7DA711B28D07600656359 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -1198,6 +1201,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				0015809F1B275E4700E03E94 /* Base */,
+				1F97A4A01B46D66400C0CFE4 /* pt-BR */,
+				1F97A4A31B46D74F00C0CFE4 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1206,6 +1211,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				001580A41B275E4700E03E94 /* Base */,
+				1F97A4A11B46D66400C0CFE4 /* pt-BR */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
