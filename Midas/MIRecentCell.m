@@ -95,7 +95,6 @@
     NSString *username = @"";
     NSString *messageCount = @"";
     
-    PFUser * user = [PFUser currentUser];
     PFUser * owns = recent[PF_RECENT_REQUESTOWNER];
     if ([[PFUser currentUser].objectId isEqualToString:owns.objectId]) {
         username = recent[PF_RECENT_REQUESTGIVER][PF_USER_USERNAME];

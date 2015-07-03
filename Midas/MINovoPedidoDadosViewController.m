@@ -76,25 +76,7 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     
-   switch ([self.novoPedido.category intValue]) {
-        case RequestCategoryVidro:
-            self.categoryValueLabel.text = @"Vidro";
-            break;
-        case RequestCategoryPlastico:
-            self.categoryValueLabel.text = @"Plástico";
-            break;
-        case RequestCategoryMetal:
-            self.categoryValueLabel.text = @"Metal";
-            break;
-        case RequestCategoryPapel:
-            self.categoryValueLabel.text = @"Papel";
-            break;
-        case RequestCategoryOutros:
-            self.categoryValueLabel.text = @"Outros";
-            break;
-        default:
-            break;
-    }
+    self.categoryValueLabel.text = getCategoryName(self.novoPedido.category);
     
     if (!self.alreadyUpdatedViewWithEditingInformation) {
         _alreadyUpdatedViewWithEditingInformation = YES;
@@ -148,7 +130,7 @@
     if (willGiveValue < 1)	{ [ProgressHUD showError:@"Campo 'Dou' deve ter um valor."]; return; }
 
     
-    [ProgressHUD show:@"Please wait..." Interaction:NO];
+    [ProgressHUD show:@"Aguarde..." Interaction:NO];
     PFUser * user = [PFUser currentUser];
     self.novoPedido.foreachValue = [NSNumber numberWithInteger:forEachValue];
     self.novoPedido.foreach = foreach;
