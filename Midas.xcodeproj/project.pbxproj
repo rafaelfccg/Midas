@@ -112,6 +112,7 @@
 		009363FB1B335139007D82AE /* linha.png in Resources */ = {isa = PBXBuildFile; fileRef = 009363FA1B335139007D82AE /* linha.png */; };
 		157363071B28C1E800259B11 /* MILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157363061B28C1E800259B11 /* MILoginViewController.m */; };
 		15FB16731B2F45C100867173 /* MIEditarEnderecoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */; };
+		1F2B0AA91B483CA8008647A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F2B0AAB1B483CA8008647A1 /* Localizable.strings */; };
 		1F31693C1B3C95D4003DD6EA /* CustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */; };
 		1FC974971B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC974961B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib */; };
 		1FE7DA771B28D07600656359 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA711B28D07600656359 /* Bolts.framework */; };
@@ -367,6 +368,8 @@
 		15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIEditarEnderecoViewController.m; sourceTree = "<group>"; };
 		1F2B0AA51B4828D8008647A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1F2B0AA61B4828D8008647A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1F2B0AAA1B483CA8008647A1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1F2B0AAC1B483CAB008647A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F31693A1B3C95D4003DD6EA /* CustomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarViewController.h; sourceTree = "<group>"; };
 		1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarViewController.m; sourceTree = "<group>"; };
 		1F97A4A01B46D66400C0CFE4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -505,6 +508,7 @@
 		001580941B275E4700E03E94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F2B0AAB1B483CA8008647A1 /* Localizable.strings */,
 				001580951B275E4700E03E94 /* Info.plist */,
 				001580961B275E4700E03E94 /* main.m */,
 			);
@@ -1048,6 +1052,7 @@
 				9155A7E41B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib in Resources */,
 				001580A21B275E4700E03E94 /* Images.xcassets in Resources */,
 				003B252A1B29F54300743D0B /* chat_blank@2x.png in Resources */,
+				1F2B0AA91B483CA8008647A1 /* Localizable.strings in Resources */,
 				003B250E1B29E83B00743D0B /* JSQMessagesAssets.bundle in Resources */,
 				003B24F71B29E7EA00743D0B /* JSQMessagesViewController.xib in Resources */,
 			);
@@ -1204,6 +1209,15 @@
 				1F2B0AA61B4828D8008647A1 /* en */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		1F2B0AAB1B483CA8008647A1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F2B0AAA1B483CA8008647A1 /* pt-BR */,
+				1F2B0AAC1B483CAB008647A1 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
