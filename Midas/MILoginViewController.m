@@ -95,6 +95,9 @@
 }
 
 
+- (IBAction)registrarAction:(id)sender {
+    [self performSegueWithIdentifier:@"FromLoginToRegistrar" sender:self];
+}
 
 -(void) viewWillAppear:(BOOL)animated {
     
@@ -113,11 +116,6 @@
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
-- (IBAction)registrarAction:(id)sender {
-     [self performSegueWithIdentifier:@"FromLoginToRegistrar" sender:self];
-}
-
 
 #pragma mark - Keyboard Notifications
 -(void)keyboardWillShow:(NSNotification *)notification {

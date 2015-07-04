@@ -12,6 +12,12 @@
 #import "camera.h"
 #import "general.h"
 
+@interface MIRegistrarUserViewController()
+
+@property BOOL isUp;
+@property float keyboardHeight;
+
+@end
 
 @implementation MIRegistrarUserViewController
 @synthesize picture;
@@ -64,12 +70,12 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow)
+                                             selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide)
+                                             selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
 }
@@ -163,62 +169,37 @@ scaledToSize:(CGSize)newSize
     return newImage;
 }
 
--(void)keyboardWillShow {
-    // Animate the current view out of the way
-    if (self.view.frame.origin.y >= 0)
-    {
-        [self setViewMovedUp:YES];
-    }
-    else if (self.view.frame.origin.y < 0)
-    {
-        [self setViewMovedUp:NO];
-    }
-}
-
--(void)keyboardWillHide {
-    if (self.view.frame.origin.y >= 0)
-    {
-        [self setViewMovedUp:YES];
-    }
-    else if (self.view.frame.origin.y < 0)
-    {
-        [self setViewMovedUp:NO];
-    }
-}
-
--(void)textFieldDidBeginEditing:(UITextField *)sender
-{
-    if ([sender isEqual:_passwordConfirmationTextField])
-    {
-        //move the main view, so that the keyboard does not hide it.
-        if  (self.view.frame.origin.y >= 0)
-        {
-            [self setViewMovedUp:YES];
+#pragma mark - Keyboard Notifications
+-(void)keyboardWillShow:(NSNotification *)notification {
+    
+    if([notification userInfo]){
+        NSValue * keyboardSize = [notification userInfo][UIKeyboardFrameBeginUserInfoKey];
+        
+        
+        if (!_isUp) {
+            _keyboardHeight = keyboardSize.CGRectValue.size.height;
+            [self animateView:YES];
+            _isUp = YES;
         }
     }
 }
 
-//method to move the view up/down whenever the keyboard is shown/dismissed
--(void)setViewMovedUp:(BOOL)movedUp
-{
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3]; // if you want to slide up the view
+-(void)keyboardWillHide:(NSNotification *)notification {
     
-    CGRect rect = self.view.frame;
-    if (movedUp)
-    {
-        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
-        // 2. increase the size of the view so that the area behind the keyboard is covered up.
-        rect.origin.y -= kOFFSET_FOR_KEYBOARD;
-        rect.size.height += kOFFSET_FOR_KEYBOARD;
+    if (_isUp) {
+        [self animateView:NO];
+        _isUp = NO;
     }
-    else
-    {
-        // revert back to the normal state.
-        rect.origin.y += kOFFSET_FOR_KEYBOARD;
-        rect.size.height -= kOFFSET_FOR_KEYBOARD;
-    }
-    self.view.frame = rect;
+}
+
+-(void) animateView:(BOOL)up {
+    
+    float movement = up ? -_keyboardHeight : _keyboardHeight;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     
     [UIView commitAnimations];
 }
