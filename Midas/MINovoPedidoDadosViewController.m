@@ -31,17 +31,18 @@
     [super viewDidLoad];
     
     UIBarButtonItem *concluirButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:@"Concluir"
+                                       initWithTitle:NSLocalizedString(@"Concluir", @"concluirButton")
                                        style:UIBarButtonItemStylePlain
                                        target:self
                                        action:@selector(concluir:)];
     self.navigationItem.rightBarButtonItem = concluirButton;
     
     if ([self.novoPedido isEditing]){
-        self.navigationItem.title = @"Editando";
+        self.navigationItem.title = NSLocalizedString(@"Editando", @"MINovoPedidoDadosViewController title - isEditing");
     } else {
-        self.navigationItem.title = @"Passo 2";
+         self.navigationItem.title = NSLocalizedString(@"Passo 2", @"MINovoPedidoDadosViewController title - passo 2");
     }
+    
     _scrollView.contentSize = CGSizeMake(self.view.frame.size.width, _scrollView.contentSize.height);
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
@@ -119,18 +120,18 @@
     NSInteger willGiveValue = [self.willGiveValueTextField.text intValue];
     NSString *willgive = self.rewardSecondTextField.text;
     NSString *description = self.descriptionTextView.text;
- 
-    if ([foreach length] < 1)	{ [ProgressHUD showError:@"Campo 'A cada' é obrigatório."];return;}
-    if ([foreach length] > 25)	{ [ProgressHUD showError:@"Campo 'A cada' muito longo (>25)."]; return; }
-    if ([willgive length] < 1)	{ [ProgressHUD showError:@"Campo 'Dou' é obrigatório."];return;}
-    if ([willgive length] > 25)	{ [ProgressHUD showError:@"Campo 'Dou' muito longo (>25)."]; return; }
-    if ([description length] < 1)	{ [ProgressHUD showError:@"A descrição é um campo obrigatório."]; return; }
-    if ([description length] > 140)	{ [ProgressHUD showError:@"Descrição muito longa (>140)."]; return; }
-    if (forEachValue < 1)	{ [ProgressHUD showError:@"Campo 'A cada' deve ter um valor."]; return; }
-    if (willGiveValue < 1)	{ [ProgressHUD showError:@"Campo 'Dou' deve ter um valor."]; return; }
+    
+    if ([foreach length] < 1)	{ [ProgressHUD showError:NSLocalizedString(@"Campo 'A cada' é obrigatório.", @"Campo 'A cada' é obrigatório.")];return;}//@"C"
+    if ([foreach length] > 25)	{ [ProgressHUD showError:NSLocalizedString(@"Campo 'A cada' muito longo (>25)", @"Campo 'A cada' muito longo (>25)")]; return; }//@"."
+    if ([willgive length] < 1)	{ [ProgressHUD showError:NSLocalizedString(@"Campo 'Dou' é obrigatório.", @"Campo 'Dou' é obrigatório.")];return;}//"
+    if ([willgive length] > 25)	{ [ProgressHUD showError:NSLocalizedString(@"Campo 'Dou' muito longo (>25).", @"Campo 'Dou' muito longo (>25).")]; return; }//@""
+    if ([description length] < 1)	{ [ProgressHUD showError:NSLocalizedString(@"A descrição é um campo obrigatório.", @"A descrição é um campo obrigatório.")]; return; }//@""
+    if ([description length] > 140)	{ [ProgressHUD showError:NSLocalizedString(@"Descrição muito longa (>140).", @"Descrição muito longa (>140).")]; return; }//@""
+    if (forEachValue < 1)	{ [ProgressHUD showError:NSLocalizedString(@"Campo 'A cada' deve ter um valor.", @"Campo 'A cada' deve ter um valor.")]; return; }//@""
+    if (willGiveValue < 1)	{ [ProgressHUD showError:NSLocalizedString(@"Campo 'Dou' deve ter um valor.", @"Campo 'Dou' deve ter um valor.")]; return; }//@""
 
     
-    [ProgressHUD show:@"Aguarde..." Interaction:NO];
+    [ProgressHUD show:NSLocalizedString(@"Aguarde...", @"Mensagem Aguarde...") Interaction:NO];
     PFUser * user = [PFUser currentUser];
     self.novoPedido.foreachValue = [NSNumber numberWithInteger:forEachValue];
     self.novoPedido.foreach = foreach;
@@ -147,14 +148,14 @@
         self.novoPedido.image = CreateThumbnail(self.imageView.image, 600.f);
         self.novoPedido.thumbnail = CreateThumbnail(self.imageView.image, 150.f);
     }
-    
+   
     //se editando
     if(self.novoPedido.isEditing) {
         [[MIDatabase sharedInstance]editPedidoInBackGround:self.novoPedido
                                                           block:^(BOOL succeeded, NSError *error) {
                                                               if (succeeded) {
                                                                   // The object has been saved.
-                                                                  [ProgressHUD showSuccess:@"Sucesso."];
+                                                                  [ProgressHUD showSuccess:NSLocalizedString(@"Sucesso.", @"Mensagem Sucesso.")];
                                                                   [self.navigationController popToRootViewControllerAnimated:YES];
                                                               } else {
                                                                   [ProgressHUD showError:error.userInfo[@"error"]];
@@ -168,7 +169,7 @@
                                                       block:^(BOOL succeeded, NSError *error) {
                                                           if (succeeded) {
                                                               // The object has been saved.
-                                                              [ProgressHUD showSuccess:@"Sucesso."];
+                                                              [ProgressHUD showSuccess:NSLocalizedString(@"Sucesso.", @"Mensagem Sucesso.")];
                                                               [self.navigationController popToRootViewControllerAnimated:YES];
                                                           } else {
                                                               [ProgressHUD showError:error.userInfo[@"error"]];
@@ -196,8 +197,8 @@
 
 - (void)pressedGallery:(id)sender {
     
-    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"
-                                          destructiveButtonTitle:nil otherButtonTitles:@"Foto da Galeria",@"Foto da Camera", nil];
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle: NSLocalizedString(@"Cancelar", @"CancelarButton")
+                                          destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Galeria", @"Galeria"),NSLocalizedString(@"Camera", @"Camera"), nil];
     [action showFromTabBar:[[self tabBarController] tabBar]];
 }
 
@@ -217,43 +218,38 @@
     self.didChangeImage = false;
     switch ([self.novoPedido.category intValue]) {
         case RequestCategoryVidro:
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas vazias";
+            self.rewardFirstTextField.placeholder = NSLocalizedString(@"Ex.: garrafas vazias", @"Placeholder Garrafas Vazias");
             self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: cerveja cheia";
+            self.rewardSecondTextField.placeholder = NSLocalizedString(@"Ex.: cerveja cheia", @"Placeholder Cerveja Cheia");
             self.willGiveValueTextField.placeholder = @"1";
-            //self.imageView.image = [UIImage imageNamed:@"VidroIcon" ];
 
             break;
         case RequestCategoryPlastico:
-            self.rewardFirstTextField.placeholder = @"Ex.: garrafas PET 2L";
+            self.rewardFirstTextField.placeholder = NSLocalizedString(@"Ex.: garrafas PET 2L", @"Placeholder Garrafas Pet");
             self.forEachValueTextField.placeholder = @"20";
-            self.rewardSecondTextField.placeholder = @"Ex.: carrinho de plástico";
+            self.rewardSecondTextField.placeholder = NSLocalizedString(@"Ex.: carrinho de plástico", @"Placeholder Carrinhos");
             self.willGiveValueTextField.placeholder = @"1";
-            //self.imageView.image = [UIImage imageNamed:@"PlasticoIcon" ];
 
             break;
         case RequestCategoryMetal:
-            self.rewardFirstTextField.placeholder = @"Ex.: latinhas de coca-cola vazias";
+            self.rewardFirstTextField.placeholder = NSLocalizedString(@"Ex.: latinhas de coca-cola vazias", @"Placeholder Latinhas");
             self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: coca-cola";
+            self.rewardSecondTextField.placeholder = NSLocalizedString(@"Ex.: coca-cola", @"Placeholder Coca");
             self.willGiveValueTextField.placeholder = @"1";
-            //self.imageView.image = [UIImage imageNamed:@"MetalIcon" ];
             
             break;
         case RequestCategoryPapel:
-            self.rewardFirstTextField.placeholder = @"Ex.: jornais velhos";
+            self.rewardFirstTextField.placeholder = NSLocalizedString(@"Ex.: jornais velhos", @"Placeholder Jornais");
             self.forEachValueTextField.placeholder = @"10";
-            self.rewardSecondTextField.placeholder = @"Ex.: 1 origami";
+            self.rewardSecondTextField.placeholder = NSLocalizedString(@"Ex.: 1 origami", @"Placeholder Origami");
             self.willGiveValueTextField.placeholder = @"1";
-            //self.imageView.image = [UIImage imageNamed:@"PapelIcon" ];
 
             break;
         case RequestCategoryOutros:
-            self.rewardFirstTextField.placeholder = @"Ex.: azujelos coloridos";
+            self.rewardFirstTextField.placeholder = NSLocalizedString(@"Ex.: azujelos coloridos", @"Placeholder Azulejos");
             self.forEachValueTextField.placeholder = @"5";
-            self.rewardSecondTextField.placeholder = @"Ex.: mini-mosaico";
+            self.rewardSecondTextField.placeholder = NSLocalizedString(@"Ex.: mini-mosaico", @"Placeholder Mosaico");
             self.willGiveValueTextField.placeholder = @"1";
-            //self.imageView.image = [UIImage imageNamed:@"OutrosIcon" ];
 
             break;
         default:

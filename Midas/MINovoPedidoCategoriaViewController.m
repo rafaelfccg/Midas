@@ -26,13 +26,14 @@
     self.categoryTableView.dataSource = self;
     self.categoryTableView.tableFooterView = [[UIView alloc] initWithFrame : CGRectZero];
     
-    self.navigationItem.title = @"Passo 1";
+    self.navigationItem.title = NSLocalizedString(@"Passo 1", @"MINovoPedidoCategoriaViewController title");
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
     
-    self.categories = @[@"Vidro", @"Plástico", @"Papel", @"Metal", @"Outros"];
+    self.categories = @[NSLocalizedString(@"Vidro", @"Categoria Vidro"), NSLocalizedString(@"Plástico", @"Categoria Plástico"), NSLocalizedString(@"Papel", @"Categoria Papel"), NSLocalizedString(@"Metal", @"Categoria Metal"), NSLocalizedString(@"Outros", @"Categoria Outros")];
+    
     self.categoryIcons = @[@"VidroIcon", @"PlasticoIcon", @"PapelIcon", @"MetalIcon", @"OutrosIcon"];
     self.categoryEnum = @[[NSNumber numberWithInteger:RequestCategoryVidro], [NSNumber numberWithInteger:RequestCategoryPlastico], [NSNumber numberWithInteger:RequestCategoryPapel], [NSNumber numberWithInteger:RequestCategoryMetal], [NSNumber numberWithInteger:RequestCategoryOutros]];
     

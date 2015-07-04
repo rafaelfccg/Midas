@@ -155,9 +155,9 @@
     else
     {
         [self.view endEditing:YES];
-        NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GPSIcon"] title:@"Todos"],
-                               [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"VidroIcon"] title:@"Vidro"],
-                               [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PlasticoIcon"] title:@"Plástico"],
+        NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GPSIcon"] title:NSLocalizedString(@"Todos", @"Filtro Todos.")],
+                               [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"VidroIcon"] title:NSLocalizedString(@"Vidro", @"Categoria Vidro")],
+                               [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PlasticoIcon"] title:NSLocalizedString(@"Plástico", @"Categoria Plástico")],
                                [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"MetalIcon"] title:@"Metal"],
                                [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"PapelIcon"] title:@"Papel"],
                                [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"OutrosIcon"] title:@"Outros"]];
