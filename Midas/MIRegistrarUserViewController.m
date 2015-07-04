@@ -49,8 +49,8 @@
 }
 
 - (void)pressedGallery:(id)sender {
-    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"
-                                          destructiveButtonTitle:nil otherButtonTitles:@"Foto da Galeria",@"Foto da Camera", nil];
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", @"Cancelar Button")
+                                          destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Galeria", @"Galeria Button"),NSLocalizedString(@"Camera", @"Camera Button"), nil];
     [action showFromTabBar:[[self tabBarController] tabBar]];
     
 }
@@ -105,15 +105,15 @@
        file = [PFFile fileWithData:UIImagePNGRepresentation(self.picture)];
     
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    if ([login length] < 4)		{ [ProgressHUD showError:@"O login deve ter pelo menos 4 caracteres."]; return; }
-    if ([login length] > 20)	{ [ProgressHUD showError:@"O login deve ter menos de 20 caracteres."]; return; }
-    if ([email length] == 0)	{ [ProgressHUD showError:@"Email é obrigatório."]; return; }
-    if ([password length] < 6)	{ [ProgressHUD showError:@"A senha deve ter pelo menos 6 caracteres."]; return; }
-    if ([password length] > 30)	{ [ProgressHUD showError:@"A senha deve ter menos de 30 caracteres."]; return; }
-    if (![password isEqualToString:passwordConfirmation]) { [ProgressHUD showError:@"As senhas devem ser iguais."]; return; }
+    if ([login length] < 4)		{ [ProgressHUD showError:NSLocalizedString(@"O login deve ter pelo menos 4 caracteres.", @"Login - Poucos Caracteres Message")]; return; }
+    if ([login length] > 20)	{ [ProgressHUD showError:NSLocalizedString(@"O login deve ter menos de 20 caracteres.", @"Login - Muitos Caracteres Message")]; return; }
+    if ([email length] == 0)	{ [ProgressHUD showError:NSLocalizedString(@"Email é obrigatório.", @"Email Obrigatorio Message")]; return; }
+    if ([password length] < 6)	{ [ProgressHUD showError:NSLocalizedString(@"A senha deve ter pelo menos 6 caracteres.", @"Senha - Poucos Caracteres Message")]; return; }
+    if ([password length] > 30)	{ [ProgressHUD showError:NSLocalizedString(@"A senha deve ter menos de 30 caracteres.", @"Senha - muitos caracteres message")]; return; }
+    if (![password isEqualToString:passwordConfirmation]) { [ProgressHUD showError:NSLocalizedString(@"As senhas devem ser iguais.", @"Senhas devem ser iguais Message")]; return; }
     
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    [ProgressHUD show:@"Registrando..." Interaction:NO];
+    [ProgressHUD show:NSLocalizedString(@"Registrando...", @"Registrando Message") Interaction:NO];
     //---------------------------------------------------------------------------------------------------------------------------------------------
     
      [[MIDatabase sharedInstance] signUpWithUsernameInBackground:login password:password email:email ProfileImage:file block:^(BOOL succeeded, NSError *error)
@@ -121,7 +121,7 @@
          if (error == nil)
          {
              ParsePushUserAssign();
-             [ProgressHUD showSuccess:@"Sucesso"];
+             [ProgressHUD showSuccess:NSLocalizedString(@"Sucesso", @"Sucesso Message")];
              [self.navigationController popToRootViewControllerAnimated:YES];
          }
          else {

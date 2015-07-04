@@ -52,9 +52,9 @@
     NSString *bairro = self.bairroTextField.text;
     NSString *rua = self.ruaTextField.text;
     
-    if ([cidade length] < 4)	{ [ProgressHUD showError:@"City name is too short."]; return; }
-    if ([bairro length] < 4)		{ [ProgressHUD showError:@"Bairro is too short."]; return; }
-    if ([rua length] < 4)		{ [ProgressHUD showError:@"Bairro is too short."]; return; }
+    if ([cidade length] < 1)	{ [ProgressHUD showError:NSLocalizedString(@"Cidade é um campo obrigatório.", @"Cidade - Campo obrigatório Message")]; return; }
+    if ([bairro length] < 1)		{ [ProgressHUD showError:NSLocalizedString(@"Bairro é um campo obrigatório.", @"Bairro - Campo obrigatório Message")]; return; }
+    if ([rua length] < 1)		{ [ProgressHUD showError:NSLocalizedString(@"Rua é um campo obrigatório.", @"Rua - Campo obrigatório Message")]; return; }
     
     NSString *alladdress = [rua stringByAppendingString:@", "];
     alladdress = [alladdress stringByAppendingString:bairro];
@@ -84,7 +84,7 @@
         }
         else
         {
-            [ProgressHUD showError:@"endereço invalido"];
+            [ProgressHUD showError:NSLocalizedString(@"Endereço Inválido",@"Endereço Inválido Message")];
         }
     }];
 }
@@ -95,14 +95,5 @@
     [self.view endEditing:YES];
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

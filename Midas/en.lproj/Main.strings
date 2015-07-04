@@ -51,13 +51,13 @@
 "TAl-iZ-3vd.text" = "Metal";
 
 /* Class = "UIButton"; normalTitle = "Entrar!"; ObjectID = "Upa-Ob-6Dy"; */
-"Upa-Ob-6Dy.normalTitle" = "Log in";
+"Upa-Ob-6Dy.normalTitle" = "Log in!";
 
 /* Class = "UILabel"; text = "Luis"; ObjectID = "YXI-We-8YD"; */
 "YXI-We-8YD.text" = "Luis";
 
 /* Class = "UIButton"; normalTitle = "Alterar Endereço"; ObjectID = "YxI-yM-117"; */
-"YxI-yM-117.normalTitle" = "Change Address";
+"YxI-yM-117.normalTitle" = "Change address";
 
 /* Class = "UIViewController"; title = "Chat"; ObjectID = "bhQ-qo-3i1"; */
 "bhQ-qo-3i1.title" = "Chat";
@@ -84,7 +84,7 @@
 "fZZ-LO-ksF.text" = "City";
 
 /* Class = "UIViewController"; title = "Registrar"; ObjectID = "g5R-Vm-X9Z"; */
-"g5R-Vm-X9Z.title" = "Register!";
+"g5R-Vm-X9Z.title" = "Register";
 
 /* Class = "UILabel"; text = "Metal"; ObjectID = "gMW-Fs-qVF"; */
 "gMW-Fs-qVF.text" = "Metal";
@@ -93,7 +93,7 @@
 "gMi-bR-dNU.text" = "Label";
 
 /* Class = "UILabel"; text = "Confirmar Senha:"; ObjectID = "gXw-IY-xrc"; */
-"gXw-IY-xrc.text" = "Confirm password:";
+"gXw-IY-xrc.text" = "Confirm Password:";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "; ObjectID = "hAR-wN-0Zb"; */
 "hAR-wN-0Zb.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
@@ -105,13 +105,13 @@
 "knW-Lo-CVu.text" = "Password:";
 
 /* Class = "UIButton"; normalTitle = "Registrar"; ObjectID = "lSo-eO-1th"; */
-"lSo-eO-1th.normalTitle" = "Register!";
+"lSo-eO-1th.normalTitle" = "Register";
 
 /* Class = "UILabel"; text = "Rua"; ObjectID = "mJP-7r-pTk"; */
 "mJP-7r-pTk.text" = "Street";
 
 /* Class = "UISegmentedControl"; mgi-8I-KQl.segmentTitles[0] = "Pedidos no Mural"; ObjectID = "mgi-8I-KQl"; */
-"mgi-8I-KQl.segmentTitles[0]" = "My Requests";
+"mgi-8I-KQl.segmentTitles[0]" = "Open Requests";
 
 /* Class = "UISegmentedControl"; mgi-8I-KQl.segmentTitles[1] = "Negociações"; ObjectID = "mgi-8I-KQl"; */
 "mgi-8I-KQl.segmentTitles[1]" = "Negotiations";

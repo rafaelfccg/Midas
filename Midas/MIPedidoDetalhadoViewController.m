@@ -8,7 +8,6 @@
 
 #import "MIPedidoDetalhadoViewController.h"
 #import "MINovoPedidoDadosViewController.h"
-#import "MIFinalizarPedidoViewController.h"
 #import "MIChatViewController.h"
 #import "MIDatabase.h"
 #import "ProgressHUD.h"
@@ -52,7 +51,7 @@
     
     if ([self.currentRequest.owner.objectId isEqualToString:[PFUser currentUser].objectId]) {
         UIBarButtonItem *editarButton = [[UIBarButtonItem alloc]
-                                         initWithTitle:@"Editar"
+                                         initWithTitle:NSLocalizedString(@"Editar", @"Editar Button")
                                          style:UIBarButtonItemStylePlain
                                          target:self
                                          action:@selector(editarPedido:)];
@@ -61,7 +60,7 @@
     
     } else {
         UIBarButtonItem *euTenhoButton = [[UIBarButtonItem alloc]
-                                          initWithTitle:@"Eu tenho!"
+                                          initWithTitle:NSLocalizedString(@"Eu tenho!", @"Eu tenho! Button")
                                           style:UIBarButtonItemStylePlain
                                           target:self
                                           action:@selector(iniciarNegociacao:)];
@@ -166,13 +165,13 @@
 
 -(IBAction)finalizarPedido:(id)sender {
     
+    
     UIAlertController *alertController = [UIAlertController
-                                          alertControllerWithTitle:@"Finalizar Pedido"
-                                          message:@"Deseja realmente finalizar o pedido?"
-                                          preferredStyle:UIAlertControllerStyleAlert];
+                                          alertControllerWithTitle:NSLocalizedString(@"Finalizar Pedido", @"Finalizar Pedido Title")
+                                          message:NSLocalizedString(@"Deseja realmente finalizar o pedido?", @"Confirmação Finalizar Pedido")                                          preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *cancelAction = [UIAlertAction
-                                   actionWithTitle:NSLocalizedString(@"Cancelar", @"Cancel action")
+                                   actionWithTitle:NSLocalizedString(@"Cancelar", @"Cancelar Action")
                                    style:UIAlertActionStyleCancel
                                    handler:^(UIAlertAction *action)
                                    {
@@ -188,7 +187,7 @@
                                                                                       block:^(BOOL succeeded, NSError *error) {
                                                                                           
                                                                                           if(succeeded) {
-                                                                                              [ProgressHUD showSuccess:[NSString stringWithFormat:@"Pedido finalizado com sucesso!"]];
+                                                                                              [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Pedido finalizado com sucesso!", @"Finalizar Pedido Sucesso")]];
                                                                                               [self.navigationController popToRootViewControllerAnimated:YES];
                                                                                           } else{
                                                                                               [ProgressHUD showError:error.userInfo[@"error"]];

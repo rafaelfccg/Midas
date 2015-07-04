@@ -198,7 +198,7 @@
 - (void)pressedGallery:(id)sender {
     
     UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle: NSLocalizedString(@"Cancelar", @"CancelarButton")
-                                          destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Galeria", @"Galeria"),NSLocalizedString(@"Camera", @"Camera"), nil];
+                                          destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Galeria", @"Galeria Button"),NSLocalizedString(@"Camera", @"Camera Button"), nil];
     [action showFromTabBar:[[self tabBarController] tabBar]];
 }
 

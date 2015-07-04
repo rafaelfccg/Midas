@@ -51,7 +51,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBarController.hidesBottomBarWhenPushed = YES;
-    self.title = @"Chat";
+    self.title = NSLocalizedString(@"Chat", @"Chat Title");
     //---------------------------------------------------------------------------------------------------------------------------------------------
     users = [[NSMutableArray alloc] init];
     messages = [[NSMutableArray alloc] init];
@@ -238,7 +238,7 @@
         filePicture = [PFFile fileWithName:@"picture.jpg" data:UIImageJPEGRepresentation(picture, 0.6)];
         [filePicture saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
          {
-             if (error != nil) [ProgressHUD showError:@"Picture save error."];
+             if (error != nil) [ProgressHUD showError:NSLocalizedString(@"Erro ao salvar imagem.", @"Picture save error.")];
          }];
     }
     //---------------------------------------------------------------------------------------------------------------------------------------------
@@ -281,9 +281,9 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     [self.view endEditing:YES];
-    NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"CameraIcon"] title:@"Camera"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GalleryIcon"] title:@"Pictures"],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GPSIcon"] title:@"Location"]];
+    NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"CameraIcon"] title:NSLocalizedString(@"Camera", @"Camera Button")],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GalleryIcon"] title:NSLocalizedString(@"Galeria", @"Galeria Button")],
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GPSIcon"] title:NSLocalizedString(@"Local", @"Local Button")]];
     RNGridMenu *gridMenu = [[RNGridMenu alloc] initWithItems:menuItems];
     gridMenu.delegate = self;
     [gridMenu showInViewController:self center:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/2.f)];
@@ -486,10 +486,10 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     [gridMenu dismissAnimated:NO];
-    if ([item.title isEqualToString:@"Camera"]){
+    if ([item.title isEqualToString:NSLocalizedString(@"Camera", @"Camera Button")]){
         PresentPhotoCamera(self, YES);
     }
-    if ([item.title isEqualToString:@"Pictures"]){
+    if ([item.title isEqualToString:NSLocalizedString(@"Galeria", @"Galeria Button")]){
         PresentPhotoLibrary(self, YES);
     }
 }

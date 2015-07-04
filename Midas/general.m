@@ -42,19 +42,19 @@ NSString * getCategoryName(NSNumber *categoryNumber)
     
     switch ([categoryNumber intValue]) {
         case RequestCategoryVidro:
-            name = @"Vidro";
+            name = NSLocalizedString(@"Vidro", @"Vidro Categoria");
             break;
         case RequestCategoryMetal:
-            name = @"Metal";
+            name = NSLocalizedString(@"Metal", @"Metal Categoria");
             break;
         case RequestCategoryPapel:
-            name = @"Papel";
+            name = NSLocalizedString(@"Papel", @"Papel Categoria");
             break;
         case RequestCategoryPlastico:
-            name = @"Plástico";
+            name = NSLocalizedString(@"Plástico", @"Plástico Categoria");
             break;
         case RequestCategoryOutros:
-            name = @"Outros";
+            name = NSLocalizedString(@"Outros", @"Outros Categoria");
             break;
         default:
             name = @"";
@@ -69,19 +69,19 @@ NSString *localizeErrorMessage(NSError *error) {
     NSString *errorMessage;
     switch (error.code) {
         case 101:
-            errorMessage = @"Login ou senha inválidos.";
+            errorMessage = NSLocalizedString(@"Login ou senha inválidos.", @"Login ou senha inválidos Error Message");
             break;
         case 125:
-            errorMessage = @"Email inválido.";
+            errorMessage = NSLocalizedString(@"Email inválido.", @"Email inválido Error Message");
             break;
         case 202:
-            errorMessage = @"Nome de usuário já está em uso.";
+            errorMessage = NSLocalizedString(@"Nome de usuário já está em uso.", @"Nome do Usuário em Uso Error Message");
             break;
         case 203:
-            errorMessage = @"O email já está em uso.";
+            errorMessage = NSLocalizedString(@"O email já está em uso.", @"Email em Uso Error Message");
             break;
         case 100:
-            errorMessage = @"Erro na conexão.";
+            errorMessage = NSLocalizedString(@"Erro na conexão.", @"Erro na Conexao Error Message");;
             break;
         default:
             errorMessage = error.userInfo[@"error"];

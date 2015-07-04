@@ -18,8 +18,6 @@
 		001580C81B27721400E03E94 /* MIConfiguracoesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580C71B27721400E03E94 /* MIConfiguracoesViewController.m */; };
 		001580CB1B27726600E03E94 /* MIPedidoDetalhadoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580CA1B27726600E03E94 /* MIPedidoDetalhadoViewController.m */; };
 		001580CE1B27728200E03E94 /* MIChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580CD1B27728200E03E94 /* MIChatViewController.m */; };
-		001580D41B2772AB00E03E94 /* MIFinalizarPedidoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580D31B2772AB00E03E94 /* MIFinalizarPedidoViewController.m */; };
-		001580DA1B2772F600E03E94 /* MIEditarPedidoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580D91B2772F600E03E94 /* MIEditarPedidoViewController.m */; };
 		001580DD1B2773B500E03E94 /* MIPedido.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580DC1B2773B500E03E94 /* MIPedido.m */; };
 		001580EC1B27751B00E03E94 /* MIFiltrosDeBusca.m in Sources */ = {isa = PBXBuildFile; fileRef = 001580EB1B27751B00E03E94 /* MIFiltrosDeBusca.m */; };
 		003B24451B28D66400743D0B /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B24441B28D66400743D0B /* ProgressHUD.m */; };
@@ -182,10 +180,6 @@
 		001580CA1B27726600E03E94 /* MIPedidoDetalhadoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIPedidoDetalhadoViewController.m; sourceTree = "<group>"; };
 		001580CC1B27728200E03E94 /* MIChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIChatViewController.h; sourceTree = "<group>"; };
 		001580CD1B27728200E03E94 /* MIChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIChatViewController.m; sourceTree = "<group>"; };
-		001580D21B2772AB00E03E94 /* MIFinalizarPedidoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIFinalizarPedidoViewController.h; sourceTree = "<group>"; };
-		001580D31B2772AB00E03E94 /* MIFinalizarPedidoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIFinalizarPedidoViewController.m; sourceTree = "<group>"; };
-		001580D81B2772F600E03E94 /* MIEditarPedidoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIEditarPedidoViewController.h; sourceTree = "<group>"; };
-		001580D91B2772F600E03E94 /* MIEditarPedidoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIEditarPedidoViewController.m; sourceTree = "<group>"; };
 		001580DB1B2773B500E03E94 /* MIPedido.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIPedido.h; sourceTree = "<group>"; };
 		001580DC1B2773B500E03E94 /* MIPedido.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIPedido.m; sourceTree = "<group>"; };
 		001580EA1B27751B00E03E94 /* MIFiltrosDeBusca.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIFiltrosDeBusca.h; sourceTree = "<group>"; };
@@ -371,11 +365,12 @@
 		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
 		15FB16711B2F45C100867173 /* MIEditarEnderecoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIEditarEnderecoViewController.h; sourceTree = "<group>"; };
 		15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIEditarEnderecoViewController.m; sourceTree = "<group>"; };
+		1F2B0AA51B4828D8008647A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		1F2B0AA61B4828D8008647A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1F31693A1B3C95D4003DD6EA /* CustomTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarViewController.h; sourceTree = "<group>"; };
 		1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarViewController.m; sourceTree = "<group>"; };
 		1F97A4A01B46D66400C0CFE4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		1F97A4A11B46D66400C0CFE4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		1F97A4A31B46D74F00C0CFE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1FC974961B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMeusPedidosTableViewCell.xib; sourceTree = "<group>"; };
 		1FE7D9751B28CB8300656359 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		1FE7DA711B28D07600656359 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -888,10 +883,6 @@
 				001580CA1B27726600E03E94 /* MIPedidoDetalhadoViewController.m */,
 				001580CC1B27728200E03E94 /* MIChatViewController.h */,
 				001580CD1B27728200E03E94 /* MIChatViewController.m */,
-				001580D21B2772AB00E03E94 /* MIFinalizarPedidoViewController.h */,
-				001580D31B2772AB00E03E94 /* MIFinalizarPedidoViewController.m */,
-				001580D81B2772F600E03E94 /* MIEditarPedidoViewController.h */,
-				001580D91B2772F600E03E94 /* MIEditarPedidoViewController.m */,
 				157363051B28C1E800259B11 /* MILoginViewController.h */,
 				157363061B28C1E800259B11 /* MILoginViewController.m */,
 				1FE7DA9F1B28FC1600656359 /* MIDatabase.h */,
@@ -1022,8 +1013,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = 001580881B275E4700E03E94;
 			productRefGroup = 001580921B275E4700E03E94 /* Products */;
@@ -1097,7 +1088,6 @@
 				001580EC1B27751B00E03E94 /* MIFiltrosDeBusca.m in Sources */,
 				003B244A1B28D79100743D0B /* push.m in Sources */,
 				003B25311B2A028000743D0B /* VideoMediaItem.m in Sources */,
-				001580D41B2772AB00E03E94 /* MIFinalizarPedidoViewController.m in Sources */,
 				001580C81B27721400E03E94 /* MIConfiguracoesViewController.m in Sources */,
 				003B24EE1B29E7CA00743D0B /* JSQMessagesTimestampFormatter.m in Sources */,
 				1FE7DAA11B28FC1600656359 /* MIDatabase.m in Sources */,
@@ -1161,7 +1151,6 @@
 				003B248C1B29C9EA00743D0B /* UIProgressView+AFNetworking.m in Sources */,
 				003B24A61B29E77800743D0B /* JSQMessagesAvatarImage.m in Sources */,
 				003B24ED1B29E7CA00743D0B /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
-				001580DA1B2772F600E03E94 /* MIEditarPedidoViewController.m in Sources */,
 				003B25501B2A059200743D0B /* image.m in Sources */,
 				001580CE1B27728200E03E94 /* MIChatViewController.m in Sources */,
 				1FE7DAB11B2C71BE00656359 /* MINovoPedidoDadosViewController.m in Sources */,
@@ -1202,7 +1191,7 @@
 			children = (
 				0015809F1B275E4700E03E94 /* Base */,
 				1F97A4A01B46D66400C0CFE4 /* pt-BR */,
-				1F97A4A31B46D74F00C0CFE4 /* en */,
+				1F2B0AA51B4828D8008647A1 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1212,6 +1201,7 @@
 			children = (
 				001580A41B275E4700E03E94 /* Base */,
 				1F97A4A11B46D66400C0CFE4 /* pt-BR */,
+				1F2B0AA61B4828D8008647A1 /* en */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = @"Midas";
+    self.navigationItem.title = NSLocalizedString(@"Midas", @"App Name");
     
     [self.loginButton.layer setCornerRadius:7.0f];
     [self.loginButton.layer setMasksToBounds:YES];
@@ -71,16 +71,16 @@
     NSString *username = [_fieldUsername.text lowercaseString];
     NSString *password = _fieldPassword.text;
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    if ([username length] == 0)	{ [ProgressHUD showError:@"Login é um campo obrigatório."]; return; }
-    if ([password length] == 0)	{ [ProgressHUD showError:@"Senha é um campo obrigatório."]; return; }
+    if ([username length] == 0)	{ [ProgressHUD showError:NSLocalizedString(@"Login é um campo obrigatório.", @"Login Obrigatorio")]; return; }
+    if ([password length] == 0)	{ [ProgressHUD showError:NSLocalizedString(@"Senha é um campo obrigatório.", @"senha obrigatória")]; return; }
     //---------------------------------------------------------------------------------------------------------------------------------------------
-    [ProgressHUD show:@"Logando..." Interaction:NO];
+    [ProgressHUD show:NSLocalizedString(@"Logando...", @"Logando Message") Interaction:NO];
     [[MIDatabase sharedInstance] logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error)
      {
          if (user != nil)
          {
              ParsePushUserAssign();
-             [ProgressHUD showSuccess:[NSString stringWithFormat:@"Bem-vindo, %@!", user.username]];
+             [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Bem-vindo, %@!", @"Bem-vindo Message"), user.username]];
              [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
             }
          else{

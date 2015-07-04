@@ -14,7 +14,7 @@
 #define HEXCOLOR(c) [UIColor colorWithRed:((c>>24)&0xFF)/255.0 green:((c>>16)&0xFF)/255.0 blue:((c>>8)&0xFF)/255.0 alpha:((c)&0xFF)/255.0]
 
 #define		DEFAULT_TAB							0
-#define kOFFSET_FOR_KEYBOARD 80.0
+#define kOFFSET_FOR_KEYBOARD 192.0
 
 #define		COLOR_OUTGOING						HEXCOLOR(0xF7A46BFF)
 #define		COLOR_INCOMING						HEXCOLOR(0xC6C6C6FF)

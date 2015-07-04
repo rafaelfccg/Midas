@@ -88,7 +88,7 @@
     self.nome.text = user[PF_USER_USERNAME];
     NSString* endereco = user[PF_USER_ADDRESS];
     if([endereco isEqualToString:@""]){
-        self.Address.text = @"Mudar endereço";
+        self.Address.text = NSLocalizedString(@"Mudar endereço", @"Placeholder Mudar Endereço");
     }else{
         self.Address.text = user[PF_USER_ADDRESS];
     }
@@ -118,8 +118,8 @@
 - (void)actionLogout
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-    self.logoutSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"
-                                     destructiveButtonTitle:@"Logout" otherButtonTitles:nil];
+    self.logoutSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", @"Cancelar Button")
+                                     destructiveButtonTitle:NSLocalizedString(@"Logout", @"Logout Button") otherButtonTitles:nil];
     [self.logoutSheet showFromTabBar:[[self tabBarController] tabBar]];
 }
 
@@ -151,8 +151,8 @@
 }
 
 - (void)pressedGallery:(id)sender {
-    self.selectImageSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancelar"
-                                          destructiveButtonTitle:nil otherButtonTitles:@"Foto da Galeria",@"Foto da Camera", nil];
+    self.selectImageSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", @"Cancelar Button")
+                                          destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Galeria", @"Foto da Galeria"),NSLocalizedString(@"Camera", @"Foto da Camera"), nil];
     [self.selectImageSheet showFromTabBar:[[self tabBarController] tabBar]];
     
 }
