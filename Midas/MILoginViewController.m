@@ -9,6 +9,8 @@
 #import "MILoginViewController.h"
 #import "MIDatabase.h"
 #import "general.h"
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface MILoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *fieldUsername;
@@ -54,7 +56,21 @@
     
     if ([PFUser currentUser] != nil)
     {
-        [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
+        if ([PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+            FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil];
+            [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                if (!error) {
+                    [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
+                } else if ([[error userInfo][@"error"][@"type"] isEqualToString: @"OAuthException"]) { // Since the request failed, we can check if it was due to an invalid session
+                    NSLog(@"The facebook session was invalidated");
+                    [PFFacebookUtils unlinkUserInBackground:[PFUser currentUser]];
+                } else {
+                    NSLog(@"Some other error: %@", error);
+                }
+            }];
+        } else{
+            [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
+        }
     }
 }
 
@@ -94,6 +110,83 @@
      }];
 }
 
+
+- (IBAction) _loginWithFacebook:(id)sender {
+    // Set permissions required from the facebook user account
+    NSArray *permissionsArray = @[ @"public_profile", @"email"];
+    
+
+    // Login PFUser using Facebook
+    [PFFacebookUtils logInInBackgroundWithReadPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+        
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+            
+            NSLog(@"%@", error.userInfo[@"error"]);
+            NSString *errorMessage = localizeErrorMessage(error);
+            [ProgressHUD showError:errorMessage];
+        } else if (user.isNew) {
+            
+            //New user: get the needed info
+            FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil];
+            [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                if (!error) {
+                    NSLog(@"VVV");
+                    // result is a dictionary with the user's Facebook data
+                    NSDictionary *userData = (NSDictionary *)result;
+                    
+                    NSString *facebookID = userData[@"id"];
+                    NSString *name = userData[@"name"];
+                    NSString *email = userData[@"email"];
+                    
+                    PFUser* user = [PFUser currentUser];
+                    user[PF_USER_FACEBOOKID] = facebookID;
+                    user[PF_USER_USERNAME] = name;
+                    
+                    if (email) {
+                        user[PF_USER_EMAIL] = email;
+                    }
+                    
+                    [user saveInBackground];
+                    
+                    NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
+                    
+                    //GETTING THE IMAGE
+                    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:pictureURL];
+                    
+                    // Run network request asynchronously
+                    [NSURLConnection sendAsynchronousRequest:urlRequest
+                                                       queue:[NSOperationQueue mainQueue]
+                                           completionHandler:
+                     ^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                         if (connectionError == nil && data != nil) {
+                             PFFile * file = [PFFile fileWithData:data];
+                             PFUser* user = [PFUser currentUser];
+                             user[PF_USER_IMAGE] = file;
+                             [user saveInBackground];
+                             
+                         }
+                     }];
+                    
+                    ParsePushUserAssign();
+                    [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Bem-vindo, %@!", @"Bem-vindo Message"), user.username]];
+                    [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
+                } else {
+                    NSLog(@"%@", error);
+                    NSString *errorMessage = localizeErrorMessage(error);
+                    [ProgressHUD showError:errorMessage];
+                }
+            }];
+            
+        } else {
+            NSLog(@"User logged in through Facebook!");
+            
+            ParsePushUserAssign();
+            [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Bem-vindo, %@!", @"Bem-vindo Message"), user.username]];
+            [self performSegueWithIdentifier:@"loginToMuralSegue" sender:self];
+        }
+    }];
+}
 
 - (IBAction)registrarAction:(id)sender {
     [self performSegueWithIdentifier:@"FromLoginToRegistrar" sender:self];
