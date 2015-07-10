@@ -102,6 +102,7 @@
 		003B254F1B2A059200743D0B /* fileutil.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B254B1B2A059200743D0B /* fileutil.m */; };
 		003B25501B2A059200743D0B /* image.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B254D1B2A059200743D0B /* image.m */; };
 		003B25531B2A0E3A00743D0B /* recent.m in Sources */ = {isa = PBXBuildFile; fileRef = 003B25521B2A0E3A00743D0B /* recent.m */; };
+		00602E8B1B505739004FD061 /* PopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00602E8A1B505739004FD061 /* PopOverViewController.m */; };
 		009363EA1B2B6C6A007D82AE /* MINegociation.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363E91B2B6C6A007D82AE /* MINegociation.m */; };
 		009363ED1B2C710A007D82AE /* LocationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363EC1B2C710A007D82AE /* LocationUtils.m */; };
 		009363F01B2C7527007D82AE /* TestAdressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009363EF1B2C7527007D82AE /* TestAdressController.m */; };
@@ -350,6 +351,8 @@
 		003B254D1B2A059200743D0B /* image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = image.m; sourceTree = "<group>"; };
 		003B25511B2A0E3A00743D0B /* recent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recent.h; sourceTree = "<group>"; };
 		003B25521B2A0E3A00743D0B /* recent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recent.m; sourceTree = "<group>"; };
+		00602E891B505739004FD061 /* PopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopOverViewController.h; sourceTree = "<group>"; };
+		00602E8A1B505739004FD061 /* PopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopOverViewController.m; sourceTree = "<group>"; };
 		009363E81B2B6C6A007D82AE /* MINegociation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINegociation.h; sourceTree = "<group>"; };
 		009363E91B2B6C6A007D82AE /* MINegociation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINegociation.m; sourceTree = "<group>"; };
 		009363EB1B2C710A007D82AE /* LocationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationUtils.h; sourceTree = "<group>"; };
@@ -494,6 +497,8 @@
 				001580991B275E4700E03E94 /* AppDelegate.m */,
 				009363FA1B335139007D82AE /* linha.png */,
 				0015809E1B275E4700E03E94 /* Main.storyboard */,
+				00602E891B505739004FD061 /* PopOverViewController.h */,
+				00602E8A1B505739004FD061 /* PopOverViewController.m */,
 				001580A11B275E4700E03E94 /* Images.xcassets */,
 				009363F81B334B86007D82AE /* recent_blank@2x.png */,
 				001580A31B275E4700E03E94 /* LaunchScreen.xib */,
@@ -1114,6 +1119,7 @@
 				003B24D81B29E7A700743D0B /* JSQMessagesInputToolbar.m in Sources */,
 				003B24D21B29E7A700743D0B /* JSQMessagesCollectionViewCell.m in Sources */,
 				003B248A1B29C9EA00743D0B /* UIButton+AFNetworking.m in Sources */,
+				00602E8B1B505739004FD061 /* PopOverViewController.m in Sources */,
 				001580DD1B2773B500E03E94 /* MIPedido.m in Sources */,
 				003B24D01B29E7A700743D0B /* JSQMessagesCellTextView.m in Sources */,
 				003B24A71B29E77800743D0B /* JSQMessagesBubbleImage.m in Sources */,

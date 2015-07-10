@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-@interface MIConfiguracoesViewController : UIViewController <UIActionSheetDelegate,UIImagePickerControllerDelegate,MKMapViewDelegate>
+@interface MIConfiguracoesViewController : UIViewController <UIActionSheetDelegate,UIImagePickerControllerDelegate,UIPopoverPresentationControllerDelegate  >
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property UIImage *picture;
 @property (weak, nonatomic) IBOutlet UILabel *nome;

@@ -8,6 +8,7 @@
 
 #import "MIConfiguracoesViewController.h"
 #import "MIDatabase.h"
+#import "PopOverViewController.h"
 #import "common.h"
 #import "camera.h"
 #import "MIEditarEnderecoViewController.h"
@@ -20,7 +21,7 @@
 
 @property UIActionSheet *logoutSheet;
 @property UIActionSheet *selectImageSheet;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property(nonatomic,retain)UIPopoverPresentationController *dateTimePopover8;
 
 @end
 
@@ -32,10 +33,10 @@
     // Do any additional setup after loading the view.
     
     
-    self.mapView.zoomEnabled = NO;
-    self.mapView.scrollEnabled = NO;
-    self.mapView.userInteractionEnabled = NO;
-        //[MIDatabase sharedInstance]
+//    self.mapView.zoomEnabled = NO;
+//    self.mapView.scrollEnabled = NO;
+//    self.mapView.userInteractionEnabled = NO;
+//        //[MIDatabase sharedInstance]
     //imageView.image
     
     
@@ -47,7 +48,7 @@
     [self.Address setUserInteractionEnabled:YES];
     [self.Address addGestureRecognizer:enderecoTapRecognizer];
     
-    self.mapView.layer.cornerRadius = 10.0f;
+//    self.mapView.layer.cornerRadius = 10.0f;
 
 }
 
@@ -59,17 +60,17 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self.mapView removeAnnotation:addressPoint];
+//    [self.mapView removeAnnotation:addressPoint];
     PFUser* user = [PFUser currentUser];
     PFGeoPoint * point = user[PF_USER_LOCATION];
     
     CLLocationCoordinate2D localeAt = {point.latitude,point.longitude};
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(localeAt, 400, 400);
+//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(localeAt, 400, 400);
     
-    [self.mapView setRegion:viewRegion animated:NO];
+//    [self.mapView setRegion:viewRegion animated:NO];
     addressPoint = [[MKPointAnnotation alloc]init];
     addressPoint.coordinate = localeAt;
-    [self.mapView addAnnotation:addressPoint];
+//    [self.mapView addAnnotation:addressPoint];
     
     PFFile * image = user[PF_USER_IMAGE];
     
@@ -234,6 +235,39 @@
     }
     return nil;
 }
-
-
+- (IBAction)termosDeUso:(id)sender
+{
+    PopOverViewController* dateVC = [[PopOverViewController alloc]init];
+    UINavigationController *destNav = [[UINavigationController alloc] initWithRootViewController:dateVC];/*Here dateVC is controller you want to show in popover*/
+    dateVC.preferredContentSize = CGSizeMake(280,200);
+    destNav.modalPresentationStyle = UIModalPresentationPopover;
+    _dateTimePopover8 = destNav.popoverPresentationController;
+    _dateTimePopover8.delegate = self;
+    _dateTimePopover8.sourceView = self.view;
+    _dateTimePopover8.sourceRect = [sender frame];
+    destNav.modalPresentationStyle = UIModalPresentationPopover;
+    destNav.navigationBarHidden = YES;
+    [self presentViewController:destNav animated:YES completion:nil];
+}
+- (IBAction)dicasDeUso:(id)sender
+{
+    PopOverViewController* dateVC = [[PopOverViewController alloc]init];
+    UINavigationController *destNav = [[UINavigationController alloc] initWithRootViewController:dateVC];/*Here dateVC is controller you want to show in popover*/
+    dateVC.preferredContentSize = CGSizeMake(280,200);
+    destNav.modalPresentationStyle = UIModalPresentationPopover;
+    _dateTimePopover8 = destNav.popoverPresentationController;
+    _dateTimePopover8.delegate = self;
+    _dateTimePopover8.sourceView = self.view;
+    _dateTimePopover8.sourceRect = [sender frame];
+    destNav.modalPresentationStyle = UIModalPresentationPopover;
+    destNav.navigationBarHidden = YES;
+    [self presentViewController:destNav animated:YES completion:nil];
+}
+- (UIModalPresentationStyle) adaptivePresentationStyleForPresentationController: (UIPresentationController * ) controller {
+    return UIModalPresentationNone;
+}
+-(void)hideIOS8PopOver
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
