@@ -1083,6 +1083,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ppr-Og-gJG"/>
                     <connections>
+                        <outlet property="facebookLogin" destination="v0d-3r-bSC" id="mcK-bV-RJV"/>
                         <outlet property="fieldPassword" destination="R5V-0x-nCN" id="siN-TS-tYG"/>
                         <outlet property="fieldUsername" destination="ELQ-ci-tUO" id="jrj-l6-hy0"/>
                         <outlet property="loginButton" destination="Upa-Ob-6Dy" id="TN9-bT-47Y"/>

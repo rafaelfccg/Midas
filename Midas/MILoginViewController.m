@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *fieldPassword;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIButton *facebookLogin;
 @property float keyboardHeight;
 @property BOOL isUp;
 @end
@@ -36,6 +37,9 @@
     
     [self.registerButton.layer setCornerRadius:7.0f];
     [self.registerButton.layer setMasksToBounds:YES];
+    
+    [self.facebookLogin.layer setCornerRadius:7.0f];
+    [self.facebookLogin.layer setMasksToBounds:YES];
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
