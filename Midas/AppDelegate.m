@@ -48,6 +48,8 @@
     [PFImageView class];
     //[[UIWindow appearance] setBackgroundColor:COLOR_BACKGROUND];
     
+    [NSThread sleepForTimeInterval:1];
+    
     return YES;
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
