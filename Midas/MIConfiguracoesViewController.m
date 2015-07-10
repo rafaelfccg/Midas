@@ -182,8 +182,8 @@
 {
     self.picture = info[UIImagePickerControllerEditedImage];
     
-    if([picture size].width>600 || [picture size].height>600)
-        picture = [self imageWithImage:picture scaledToSize:CGSizeMake([picture size].width*(600/[picture size].width), [picture size].height*(600/[picture size].height))];
+    if([picture size].width>200 || [picture size].height>200)
+        picture = [self imageWithImage:picture scaledToSize:CGSizeMake([picture size].width*(200/[picture size].width), [picture size].height*(200/[picture size].height))];
     
     self.imageView.image = self.picture;
     PFFile * file = [PFFile fileWithData:UIImagePNGRepresentation(self.picture)];
