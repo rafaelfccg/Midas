@@ -11,6 +11,8 @@
 #import <ParseUI/ParseUI.h>
 #import "MIMeusPedidosViewController.h"
 #import "AppConstant.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 @interface AppDelegate ()
 
 @property MIMeusPedidosViewController *recents;
@@ -48,6 +50,9 @@
     [PFImageView class];
     //[[UIWindow appearance] setBackgroundColor:COLOR_BACKGROUND];
     
+    [NSThread sleepForTimeInterval:1];
+    [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
+    
     return YES;
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -65,6 +70,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
@@ -97,5 +103,13 @@
     }
 }
 
-
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
 @end
