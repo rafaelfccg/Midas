@@ -50,6 +50,7 @@
     [PFImageView class];
     //[[UIWindow appearance] setBackgroundColor:COLOR_BACKGROUND];
     
+    [NSThread sleepForTimeInterval:1];
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
     
     return YES;
