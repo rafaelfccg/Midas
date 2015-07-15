@@ -24,6 +24,7 @@
     dispatch_once(&pred, ^{
         sharedInstance = [[MIDatabase alloc] init];
         sharedInstance.imageCache = [[NSCache alloc] init];
+        [sharedInstance.imageCache setCountLimit:50];
     });
     
     return sharedInstance;
@@ -72,7 +73,7 @@
 
 }
 
-- (void) getOpenRequestsFromOtherUsersWithBlock:(nullable MIFiltrosDeBusca*)filtro Block:(PF_NULLABLE_S PFArrayResultBlock)block{
+- (void) getOpenRequestsFromOtherUsersWithBlock:(nullable MIFiltrosDeBusca*)filtro andSkip:(NSInteger)skip Block:(PF_NULLABLE_S PFArrayResultBlock)block{
     
     
     PFQuery *MetalQuery = [PFQuery queryWithClassName:PF_REQUEST_CLASS_NAME];
@@ -149,6 +150,8 @@
 //    [orderDistance includeKey:PF_REQUEST_USER];
 //    //
     [Allquery includeKey:PF_REQUEST_USER];
+    [Allquery setLimit:100];
+    [Allquery setSkip:skip];
     [Allquery orderByDescending:PF_REQUEST_UPDATEDACTION];
     [Allquery findObjectsInBackgroundWithBlock:block];
 }
@@ -258,6 +261,7 @@
         UIImage *cachedImage = [_imageCache objectForKey:file];
         completion(cachedImage, nil);
         NSLog(@"Pegou image do cache.");
+        
     } else{
         
         PFImageView * pfImageView = [[PFImageView alloc] init];
@@ -289,6 +293,8 @@
     [query whereKey:PF_REQUEST_OBJECTID equalTo:requestId];
     [query includeKey:PF_REQUEST_USER];
     [query findObjectsInBackgroundWithBlock:block];
+    
+    
 }
 
 

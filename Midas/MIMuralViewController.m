@@ -22,6 +22,8 @@
 @property MIPedido* selectedRequest;
 @property MIFiltrosDeBusca* filtros;
 
+@property (atomic) BOOL isDownloadingMoreRequests;
+
 @property UIActionSheet *selectImageSheet;
 
 @end
@@ -53,6 +55,7 @@
 -(void) viewWillAppear:(BOOL)animated {
     [self.refreshControl beginRefreshing];
     [self loadRequests];
+    _isDownloadingMoreRequests = false;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,6 +88,11 @@
     MIPedido *request = [_requests objectAtIndex:indexPath.row];
     [cell bindData:request];
     
+    if(indexPath.row > _requests.count-5 && !_isDownloadingMoreRequests){
+        _isDownloadingMoreRequests = true;
+        [self loadMoreRequests];
+    }
+    
     return cell;
 }
 
@@ -114,7 +122,7 @@
 - (void)loadRequests
 {
     
-    [[MIDatabase sharedInstance] getOpenRequestsFromOtherUsersWithBlock:self.filtros Block:^(NSArray *objects, NSError *error)
+    [[MIDatabase sharedInstance] getOpenRequestsFromOtherUsersWithBlock:self.filtros andSkip:0 Block:^(NSArray *objects, NSError *error)
      {
          if (error == nil)
          {
@@ -136,6 +144,29 @@
          }
          [self.refreshControl endRefreshing];
      }/* filtro:self.filtros*/];
+}
+
+-(void) loadMoreRequests {
+
+     NSInteger skip = (NSInteger) _requests.count;
+    
+    [[MIDatabase sharedInstance] getOpenRequestsFromOtherUsersWithBlock:self.filtros andSkip:skip Block:^(NSArray *objects, NSError *error)
+     {
+         if (error == nil)
+         {
+             
+             NSArray *pedidos = [MIPedido pedidosArrayFromPFObjectArray:objects];
+             [_requests addObjectsFromArray:pedidos];
+             [self.muralTableView reloadData];
+         }
+         else {
+             NSLog(@"%@", error.userInfo[@"error"]);
+             NSString *errorMessage = localizeErrorMessage(error);
+             [ProgressHUD showError:errorMessage];
+         }
+          _isDownloadingMoreRequests = false;
+     }];
+
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
@@ -290,6 +321,5 @@
     
     [self loadRequests];
 }
-
 
 @end
