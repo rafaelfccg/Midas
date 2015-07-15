@@ -362,6 +362,8 @@
 		00602EA01B543C5E004FD061 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		00602EA11B543C5E004FD061 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		00602EA21B543C5E004FD061 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		00602EA81B544EF1004FD061 /* MidasPushNoticiationAppStore.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = MidasPushNoticiationAppStore.mobileprovision; sourceTree = "<group>"; };
+		00602EA91B544F0C004FD061 /* MidasPushNotificationAdhoc.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = MidasPushNotificationAdhoc.mobileprovision; sourceTree = "<group>"; };
 		009363E81B2B6C6A007D82AE /* MINegociation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MINegociation.h; sourceTree = "<group>"; };
 		009363E91B2B6C6A007D82AE /* MINegociation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MINegociation.m; sourceTree = "<group>"; };
 		009363EB1B2C710A007D82AE /* LocationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationUtils.h; sourceTree = "<group>"; };
@@ -482,6 +484,8 @@
 				001580931B275E4700E03E94 /* Midas */,
 				001580AD1B275E4700E03E94 /* MidasTests */,
 				001580921B275E4700E03E94 /* Products */,
+				00602EA81B544EF1004FD061 /* MidasPushNoticiationAppStore.mobileprovision */,
+				00602EA91B544F0C004FD061 /* MidasPushNotificationAdhoc.mobileprovision */,
 			);
 			sourceTree = "<group>";
 		};
