@@ -725,7 +725,7 @@
                             <constraint firstItem="3aS-VV-yuO" firstAttribute="centerX" secondItem="zma-px-14N" secondAttribute="centerX" constant="-230" id="8kl-A0-G4g"/>
                             <constraint firstItem="Fc7-cX-n6W" firstAttribute="top" secondItem="isF-9z-q0J" secondAttribute="bottom" constant="-103" id="A9f-Bn-njf"/>
                             <constraint firstItem="3aS-VV-yuO" firstAttribute="leading" secondItem="zma-px-14N" secondAttribute="leadingMargin" constant="231" id="C8F-Bd-dLE"/>
-                            <constraint firstItem="Nqt-XA-TnS" firstAttribute="width" secondItem="2mO-x1-QUi" secondAttribute="width" constant="1" id="DxL-Pc-uhw"/>
+                            <constraint firstItem="Nqt-XA-TnS" firstAttribute="width" secondItem="2mO-x1-QUi" secondAttribute="width" constant="-492" id="DxL-Pc-uhw"/>
                             <constraint firstItem="gMi-bR-dNU" firstAttribute="leading" secondItem="3aS-VV-yuO" secondAttribute="trailing" constant="22" id="EyR-6N-7eT"/>
                             <constraint firstItem="Nqt-XA-TnS" firstAttribute="centerX" secondItem="2mO-x1-QUi" secondAttribute="centerX" constant="-0.5" id="Jot-L0-BVb"/>
                             <constraint firstItem="gMi-bR-dNU" firstAttribute="height" secondItem="3aS-VV-yuO" secondAttribute="height" id="MEv-MV-mQR"/>
@@ -757,6 +757,7 @@
                                 <exclude reference="8kl-A0-G4g"/>
                                 <exclude reference="C8F-Bd-dLE"/>
                                 <exclude reference="xnb-56-CLZ"/>
+                                <exclude reference="Jot-L0-BVb"/>
                                 <exclude reference="Y2S-HJ-LGn"/>
                                 <exclude reference="aKl-b5-bGE"/>
                             </mask>
