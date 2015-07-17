@@ -120,6 +120,8 @@
 		15FB16731B2F45C100867173 /* MIEditarEnderecoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */; };
 		1F2B0AA91B483CA8008647A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F2B0AAB1B483CA8008647A1 /* Localizable.strings */; };
 		1F31693C1B3C95D4003DD6EA /* CustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */; };
+		1FA0EFFB1B59894200C3171A /* MITermosDeUsoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA0EFF91B59894200C3171A /* MITermosDeUsoViewController.m */; };
+		1FA0EFFC1B59894200C3171A /* MITermosDeUsoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FA0EFFA1B59894200C3171A /* MITermosDeUsoViewController.xib */; };
 		1FC974971B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC974961B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib */; };
 		1FE7DA771B28D07600656359 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA711B28D07600656359 /* Bolts.framework */; };
 		1FE7DA781B28D07600656359 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA721B28D07600656359 /* Parse.framework */; };
@@ -388,6 +390,9 @@
 		1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarViewController.m; sourceTree = "<group>"; };
 		1F97A4A01B46D66400C0CFE4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		1F97A4A11B46D66400C0CFE4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1FA0EFF81B59894200C3171A /* MITermosDeUsoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MITermosDeUsoViewController.h; sourceTree = "<group>"; };
+		1FA0EFF91B59894200C3171A /* MITermosDeUsoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MITermosDeUsoViewController.m; sourceTree = "<group>"; };
+		1FA0EFFA1B59894200C3171A /* MITermosDeUsoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MITermosDeUsoViewController.xib; sourceTree = "<group>"; };
 		1FC974961B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMeusPedidosTableViewCell.xib; sourceTree = "<group>"; };
 		1FE7D9751B28CB8300656359 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		1FE7DA711B28D07600656359 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -926,6 +931,9 @@
 				009363F51B33380D007D82AE /* MIRecentCell.xib */,
 				1F31693A1B3C95D4003DD6EA /* CustomTabBarViewController.h */,
 				1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */,
+				1FA0EFF81B59894200C3171A /* MITermosDeUsoViewController.h */,
+				1FA0EFF91B59894200C3171A /* MITermosDeUsoViewController.m */,
+				1FA0EFFA1B59894200C3171A /* MITermosDeUsoViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1076,6 +1084,7 @@
 				001580A51B275E4700E03E94 /* LaunchScreen.xib in Resources */,
 				9155A7E41B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib in Resources */,
 				001580A21B275E4700E03E94 /* Images.xcassets in Resources */,
+				1FA0EFFC1B59894200C3171A /* MITermosDeUsoViewController.xib in Resources */,
 				003B252A1B29F54300743D0B /* chat_blank@2x.png in Resources */,
 				1F2B0AA91B483CA8008647A1 /* Localizable.strings in Resources */,
 				003B250E1B29E83B00743D0B /* JSQMessagesAssets.bundle in Resources */,
@@ -1112,6 +1121,7 @@
 				003B25081B29E7FE00743D0B /* NSString+JSQMessages.m in Sources */,
 				9155A7E31B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.m in Sources */,
 				003B248E1B29C9EA00743D0B /* UIWebView+AFNetworking.m in Sources */,
+				1FA0EFFB1B59894200C3171A /* MITermosDeUsoViewController.m in Sources */,
 				003B24D31B29E7A700743D0B /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				001580C21B2771D400E03E94 /* MIMuralViewController.m in Sources */,
 				1FF00DE11B33272500A3C863 /* general.m in Sources */,

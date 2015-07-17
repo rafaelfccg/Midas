@@ -90,3 +90,11 @@ NSString *localizeErrorMessage(NSError *error) {
     
     return errorMessage;
 }
+
+NSString *getTermosDeUso() {
+
+    NSString *termos = @"1. O Midas não é fornecedor de quaisquer produtos ou serviços anunciados nem se responsabiliza pelas trocas oferecidas pelos usuários. O Midas presta um serviço consistente na oferta de uma plataforma que fornece espaços para que usuários anunciem e possam negociar direta e exclusivamente entre si; \n\n 2. Os usuários só poderão oferecer serviços/produtos como recompensa que possam cumprir diretamente com os termos do anúncio e todas as suas características; \n\n 3. Para utilizar os serviços do Midas, o usuário deverá efetuar um cadastro único, criando um login e senha que são pessoais e intransferíveis. O Midas não se responsabiliza pelo uso inadequado e divulgação destes dados para terceiros. O Midas, nem quaisquer de seus empregados ou prepostos solicitará, por qualquer meio, físico ou eletrônico, que seja informada sua senha; \n\n 4. O Midas, em razão de violação à legislação em vigor ou aos termos gerais de uso do M.das, conforme a situação, poderá, sem prejuízo de outras medidas, recusar qualquer solicitação de cadastro, advertir, suspender, temporária ou definitivamente, a conta de um usuário e seus anúncios; \n\n 5. Não é permitido anunciar produtos expressamente proibidos pela legislação vigente ou pelos Termos e condições gerais de uso do app, que não possuam a devida autorização específica de órgãos reguladores competentes, ou que violem direitos de terceiros;";
+    
+    return termos;
+
+}

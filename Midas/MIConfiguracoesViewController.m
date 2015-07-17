@@ -12,6 +12,7 @@
 #import "common.h"
 #import "camera.h"
 #import "MIEditarEnderecoViewController.h"
+#import "MITermosDeUsoViewController.h"
 
 
 @interface MIConfiguracoesViewController (){
@@ -22,6 +23,8 @@
 @property UIActionSheet *logoutSheet;
 @property UIActionSheet *selectImageSheet;
 @property(nonatomic,retain)UIPopoverPresentationController *dateTimePopover8;
+@property (weak, nonatomic) IBOutlet UIButton *termosButton;
+@property (weak, nonatomic) IBOutlet UIButton *dicasButton;
 
 @end
 
@@ -47,6 +50,13 @@
     UITapGestureRecognizer *enderecoTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mudarEndereco:)];
     [self.Address setUserInteractionEnabled:YES];
     [self.Address addGestureRecognizer:enderecoTapRecognizer];
+    
+    
+    [self.termosButton.layer setCornerRadius:7.0f];
+    [self.termosButton.layer setMasksToBounds:YES];
+    
+    [self.dicasButton.layer setCornerRadius:7.0f];
+    [self.dicasButton.layer setMasksToBounds:YES];
     
 //    self.mapView.layer.cornerRadius = 10.0f;
 
@@ -237,23 +247,31 @@
 }
 - (IBAction)termosDeUso:(id)sender
 {
-    PopOverViewController* dateVC = [[PopOverViewController alloc]init];
-    UINavigationController *destNav = [[UINavigationController alloc] initWithRootViewController:dateVC];/*Here dateVC is controller you want to show in popover*/
-    dateVC.preferredContentSize = CGSizeMake(280,200);
+    MITermosDeUsoViewController* termosVC = [[MITermosDeUsoViewController alloc] init];
+    termosVC.titleText = NSLocalizedString(@"Termos de Uso", @"Titulo Termos de Uso");
+    termosVC.contentText = NSLocalizedString(@"Conteudo Termos de Uso", @"Conteudo Termos de Uso");
+    
+    UINavigationController *destNav = [[UINavigationController alloc] initWithRootViewController:termosVC];/*Here dateVC is controller you want to show in popover*/
+    termosVC.preferredContentSize = CGSizeMake(280,200);
     destNav.modalPresentationStyle = UIModalPresentationPopover;
     _dateTimePopover8 = destNav.popoverPresentationController;
     _dateTimePopover8.delegate = self;
     _dateTimePopover8.sourceView = self.view;
     _dateTimePopover8.sourceRect = [sender frame];
+    
     destNav.modalPresentationStyle = UIModalPresentationPopover;
     destNav.navigationBarHidden = YES;
     [self presentViewController:destNav animated:YES completion:nil];
 }
+
 - (IBAction)dicasDeUso:(id)sender
 {
-    PopOverViewController* dateVC = [[PopOverViewController alloc]init];
-    UINavigationController *destNav = [[UINavigationController alloc] initWithRootViewController:dateVC];/*Here dateVC is controller you want to show in popover*/
-    dateVC.preferredContentSize = CGSizeMake(280,200);
+    MITermosDeUsoViewController* dicasVC = [[MITermosDeUsoViewController alloc] init];
+    dicasVC.titleText = NSLocalizedString(@"Dicas de Uso", @"Titulo Dicas de Uso");
+    dicasVC.contentText = NSLocalizedString(@"Conteudo Dicas de Uso", @"Conteudo Dicas de Uso");
+    
+    UINavigationController *destNav = [[UINavigationController alloc] initWithRootViewController:dicasVC];/*Here dateVC is controller you want to show in popover*/
+    dicasVC.preferredContentSize = CGSizeMake(280,200);
     destNav.modalPresentationStyle = UIModalPresentationPopover;
     _dateTimePopover8 = destNav.popoverPresentationController;
     _dateTimePopover8.delegate = self;
