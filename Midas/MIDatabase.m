@@ -266,16 +266,30 @@
         
         PFImageView * pfImageView = [[PFImageView alloc] init];
         pfImageView.file = file;
-        [pfImageView loadInBackground:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
+        
+        [file getDataInBackgroundWithBlock:^(NSData* das, NSError* err){
             
+            if(!das){
+                NSLog(@"%@", err);
+            }
+            
+            UIImage* image =  [[UIImage alloc]initWithData:das];
             if(image){
                 [_imageCache setObject:image forKey:file];
             }
-            completion(image, error);
-            
+            completion(image, err);
         }];
+        //        [pfImageView loadInBackground:^(UIImage *PFUI_NULLABLE_S image,  NSError *PFUI_NULLABLE_S error){
+        //
+        //            if(image){
+        //                [_imageCache setObject:image forKey:file];
+        //            }
+        //            completion(image, error);
+        //            
+        //        }];
         
     }
+    NSLog(@"aqui");
 }
 
 -(void) getChatWithObjectId:(NSString *)chatId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block{

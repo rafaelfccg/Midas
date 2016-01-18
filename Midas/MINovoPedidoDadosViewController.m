@@ -273,18 +273,18 @@
     {
         [self setViewMovedUp:YES];
     }
-    else if (self.view.frame.origin.y < 0)
-    {
-        [self setViewMovedUp:NO];
-    }
+//    else if (self.view.frame.origin.y < 0)
+//    {
+//        [self setViewMovedUp:NO];
+//    }
 }
 
 -(void)keyboardWillHide {
-    if (self.view.frame.origin.y >= 0)
-    {
-        [self setViewMovedUp:YES];
-    }
-    else if (self.view.frame.origin.y < 0)
+//    if (self.view.frame.origin.y >= 0)
+//    {
+//        [self setViewMovedUp:YES];
+//    }
+    if (self.view.frame.origin.y < 0)
     {
         [self setViewMovedUp:NO];
     }
