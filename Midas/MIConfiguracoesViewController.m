@@ -255,7 +255,7 @@
     termosVC.contentText = NSLocalizedString(@"Conteudo Termos de Uso", @"Conteudo Termos de Uso");
     
     UINavigationController *destNav = [[UINavigationController alloc] initWithRootViewController:termosVC];/*Here dateVC is controller you want to show in popover*/
-    termosVC.preferredContentSize = CGSizeMake(280,200);
+    termosVC.preferredContentSize = CGSizeMake(self.view.bounds.size.width*0.9,self.view.bounds.size.height*0.6);
     destNav.modalPresentationStyle = UIModalPresentationPopover;
     _dateTimePopover8 = destNav.popoverPresentationController;
     _dateTimePopover8.delegate = self;
@@ -274,7 +274,9 @@
     dicasVC.contentText = NSLocalizedString(@"Conteudo Dicas de Uso", @"Conteudo Dicas de Uso");
     
     UINavigationController *destNav = [[UINavigationController alloc] initWithRootViewController:dicasVC];/*Here dateVC is controller you want to show in popover*/
-    dicasVC.preferredContentSize = CGSizeMake(280,200);
+    
+    
+    dicasVC.preferredContentSize = CGSizeMake(self.view.bounds.size.width*0.9,self.view.bounds.size.height*0.6);
     destNav.modalPresentationStyle = UIModalPresentationPopover;
     _dateTimePopover8 = destNav.popoverPresentationController;
     _dateTimePopover8.delegate = self;
