@@ -58,6 +58,9 @@
     [self.dicasButton.layer setCornerRadius:7.0f];
     [self.dicasButton.layer setMasksToBounds:YES];
     
+    [self.termosButton setTitle:NSLocalizedString(@"Termos de Uso", @"Titulo Termos de Uso") forState:UIControlStateNormal];
+    [self.dicasButton setTitle: NSLocalizedString(@"Dicas de Uso", @"Titulo Dicas de Uso") forState:UIControlStateNormal];
+    
 //    self.mapView.layer.cornerRadius = 10.0f;
 
 }

@@ -13,6 +13,7 @@
 
 @interface MIEditarEnderecoViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *alteraEndereco;
+@property (weak, nonatomic) IBOutlet UILabel *enderecoTitle;
 
 @end
 
@@ -34,6 +35,7 @@
     [self.alteraEndereco.layer setCornerRadius:7.0f];
     [self.alteraEndereco.layer setMasksToBounds:YES];
 
+    [self.enderecoTitle setText:NSLocalizedString(@"Endereço", @"Endereço")];
     
 }
 
