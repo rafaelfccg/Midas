@@ -260,7 +260,7 @@
     
         UIImage *cachedImage = [_imageCache objectForKey:file];
         completion(cachedImage, nil);
-        NSLog(@"Pegou image do cache.");
+        //NSLog(@"Pegou image do cache.");
         
     } else{
         
@@ -270,7 +270,7 @@
         [file getDataInBackgroundWithBlock:^(NSData* das, NSError* err){
             
             if(!das){
-                NSLog(@"%@", err);
+                //NSLog(@"%@", err);
             }
             
             UIImage* image =  [[UIImage alloc]initWithData:das];
@@ -289,7 +289,7 @@
         //        }];
         
     }
-    NSLog(@"aqui");
+    //NSLog(@"aqui");
 }
 
 -(void) getChatWithObjectId:(NSString *)chatId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block{
