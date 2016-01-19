@@ -55,6 +55,8 @@
     [self.pedidosSegmentedControl addTarget:self action:@selector(valueChanged:) forControlEvents: UIControlEventValueChanged];
     self.pedidosTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -239,11 +241,17 @@
     {
         if(self.pedidosSegmentedControl.selectedSegmentIndex == 0)
         {
-            self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"meus pedi"]];
+            UIImageView* background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"meus pedi"]];
+            background.contentMode = UIViewContentModeScaleAspectFit;
+            background.backgroundColor = [UIColor whiteColor];
+            self.pedidosTableView.backgroundView = background;
         }
         else
         {
-            self.pedidosTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"minhas nega"]];
+            UIImageView* background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"minhas nega"]];
+            background.contentMode = UIViewContentModeScaleAspectFit;
+            background.backgroundColor = [UIColor whiteColor];
+            self.pedidosTableView.backgroundView = background;
         }
     }
     else
