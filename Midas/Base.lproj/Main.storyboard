@@ -387,7 +387,7 @@
                                         <rect key="frame" x="0.0" y="22" width="568" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cgX-HH-bmU" id="Bdb-5D-0Dc">
-                                            <rect key="frame" x="0.0" y="0.0" width="535" height="66.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="535" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1080,7 +1080,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0d-3r-bSC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0d-3r-bSC">
                                 <rect key="frame" x="255" y="523" width="90" height="30"/>
                                 <color key="backgroundColor" red="0.30597959038787026" green="0.35678692455935235" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1091,6 +1091,9 @@
                                     <color key="titleColor" red="0.94450865319999999" green="0.96277333710000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="_loginWithFacebook:" destination="eHH-UR-7EN" eventType="touchUpInside" id="2Ua-Tb-gHF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87450980392156863" green="0.37647058823529411" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
