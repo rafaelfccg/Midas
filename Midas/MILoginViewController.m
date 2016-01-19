@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @property (weak, nonatomic) IBOutlet UIButton *facebookLogin;
+@property (weak, nonatomic) IBOutlet UILabel *dontHaveAnAccountLabel;
 @property float keyboardHeight;
 @property BOOL isUp;
 @end
@@ -45,6 +46,8 @@
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
 
+    [self.dontHaveAnAccountLabel setText:NSLocalizedString(@"Não tem uma conta?", @"Mensagem de nao tem uma conta")];
+    
     _isUp = NO;
 }
 
