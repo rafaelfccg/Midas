@@ -118,6 +118,7 @@
 		009363FB1B335139007D82AE /* linha.png in Resources */ = {isa = PBXBuildFile; fileRef = 009363FA1B335139007D82AE /* linha.png */; };
 		157363071B28C1E800259B11 /* MILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157363061B28C1E800259B11 /* MILoginViewController.m */; };
 		15FB16731B2F45C100867173 /* MIEditarEnderecoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */; };
+		1F1A864F1C4FFE81005FC20A /* MIRecuperarSenhaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A864E1C4FFE81005FC20A /* MIRecuperarSenhaViewController.m */; };
 		1F2B0AA91B483CA8008647A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F2B0AAB1B483CA8008647A1 /* Localizable.strings */; };
 		1F31693C1B3C95D4003DD6EA /* CustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */; };
 		1FA0EFFB1B59894200C3171A /* MITermosDeUsoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA0EFF91B59894200C3171A /* MITermosDeUsoViewController.m */; };
@@ -382,6 +383,8 @@
 		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
 		15FB16711B2F45C100867173 /* MIEditarEnderecoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIEditarEnderecoViewController.h; sourceTree = "<group>"; };
 		15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIEditarEnderecoViewController.m; sourceTree = "<group>"; };
+		1F1A864D1C4FFE81005FC20A /* MIRecuperarSenhaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRecuperarSenhaViewController.h; sourceTree = "<group>"; };
+		1F1A864E1C4FFE81005FC20A /* MIRecuperarSenhaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRecuperarSenhaViewController.m; sourceTree = "<group>"; };
 		1F2B0AA51B4828D8008647A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1F2B0AA61B4828D8008647A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1F2B0AAA1B483CA8008647A1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -934,6 +937,8 @@
 				1FA0EFF81B59894200C3171A /* MITermosDeUsoViewController.h */,
 				1FA0EFF91B59894200C3171A /* MITermosDeUsoViewController.m */,
 				1FA0EFFA1B59894200C3171A /* MITermosDeUsoViewController.xib */,
+				1F1A864D1C4FFE81005FC20A /* MIRecuperarSenhaViewController.h */,
+				1F1A864E1C4FFE81005FC20A /* MIRecuperarSenhaViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1106,6 +1111,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1A864F1C4FFE81005FC20A /* MIRecuperarSenhaViewController.m in Sources */,
 				003B24721B29C95600743D0B /* AFURLConnectionOperation.m in Sources */,
 				003B253C1B2A02CF00743D0B /* PFUser+Util.m in Sources */,
 				003B24D51B29E7A700743D0B /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
