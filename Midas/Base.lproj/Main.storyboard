@@ -316,7 +316,7 @@
                                         <rect key="frame" x="0.0" y="22" width="568" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cgX-HH-bmU" id="Bdb-5D-0Dc">
-                                            <rect key="frame" x="0.0" y="0.0" width="535" height="66.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="535" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

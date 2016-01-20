@@ -25,7 +25,7 @@
     _pedidoView.layer.borderWidth = 1.5;
     
     self.backgroundColor = [UIColor whiteColor];
-    
+
   }
 
   - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

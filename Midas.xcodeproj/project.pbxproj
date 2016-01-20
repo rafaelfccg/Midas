@@ -116,6 +116,8 @@
 		009363F71B33380D007D82AE /* MIRecentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009363F51B33380D007D82AE /* MIRecentCell.xib */; };
 		009363F91B334B86007D82AE /* recent_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 009363F81B334B86007D82AE /* recent_blank@2x.png */; };
 		009363FB1B335139007D82AE /* linha.png in Resources */ = {isa = PBXBuildFile; fileRef = 009363FA1B335139007D82AE /* linha.png */; };
+		08E2FC171C501020002B3CD3 /* MIStickerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E2FC161C501020002B3CD3 /* MIStickerContainerView.m */; };
+		08E2FC191C501037002B3CD3 /* MIStickerContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08E2FC181C501037002B3CD3 /* MIStickerContainerView.xib */; };
 		157363071B28C1E800259B11 /* MILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157363061B28C1E800259B11 /* MILoginViewController.m */; };
 		15FB16731B2F45C100867173 /* MIEditarEnderecoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */; };
 		1F2B0AA91B483CA8008647A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F2B0AAB1B483CA8008647A1 /* Localizable.strings */; };
@@ -378,6 +380,9 @@
 		009363F51B33380D007D82AE /* MIRecentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIRecentCell.xib; sourceTree = "<group>"; };
 		009363F81B334B86007D82AE /* recent_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recent_blank@2x.png"; sourceTree = "<group>"; };
 		009363FA1B335139007D82AE /* linha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linha.png; sourceTree = "<group>"; };
+		08E2FC151C501020002B3CD3 /* MIStickerContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIStickerContainerView.h; sourceTree = "<group>"; };
+		08E2FC161C501020002B3CD3 /* MIStickerContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIStickerContainerView.m; sourceTree = "<group>"; };
+		08E2FC181C501037002B3CD3 /* MIStickerContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIStickerContainerView.xib; sourceTree = "<group>"; };
 		157363051B28C1E800259B11 /* MILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILoginViewController.h; sourceTree = "<group>"; };
 		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
 		15FB16711B2F45C100867173 /* MIEditarEnderecoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIEditarEnderecoViewController.h; sourceTree = "<group>"; };
@@ -928,6 +933,9 @@
 				1FC974961B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib */,
 				009363F31B33380D007D82AE /* MIRecentCell.h */,
 				009363F41B33380D007D82AE /* MIRecentCell.m */,
+				08E2FC151C501020002B3CD3 /* MIStickerContainerView.h */,
+				08E2FC161C501020002B3CD3 /* MIStickerContainerView.m */,
+				08E2FC181C501037002B3CD3 /* MIStickerContainerView.xib */,
 				009363F51B33380D007D82AE /* MIRecentCell.xib */,
 				1F31693A1B3C95D4003DD6EA /* CustomTabBarViewController.h */,
 				1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */,
@@ -1070,6 +1078,7 @@
 			files = (
 				009363F71B33380D007D82AE /* MIRecentCell.xib in Resources */,
 				003B24471B28D66C00743D0B /* ProgressHUD.bundle in Resources */,
+				08E2FC191C501037002B3CD3 /* MIStickerContainerView.xib in Resources */,
 				009363FB1B335139007D82AE /* linha.png in Resources */,
 				001580A01B275E4700E03E94 /* Main.storyboard in Resources */,
 				003B24DB1B29E7A700743D0B /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
@@ -1130,6 +1139,7 @@
 				003B25311B2A028000743D0B /* VideoMediaItem.m in Sources */,
 				001580C81B27721400E03E94 /* MIConfiguracoesViewController.m in Sources */,
 				003B24EE1B29E7CA00743D0B /* JSQMessagesTimestampFormatter.m in Sources */,
+				08E2FC171C501020002B3CD3 /* MIStickerContainerView.m in Sources */,
 				1FE7DAA11B28FC1600656359 /* MIDatabase.m in Sources */,
 				003B24F61B29E7EA00743D0B /* JSQMessagesViewController.m in Sources */,
 				003B24711B29C95600743D0B /* AFSecurityPolicy.m in Sources */,
