@@ -51,7 +51,7 @@
     _tipoLabel.text = getCategoryName(request.category);
     
     _usuarioImage.clipsToBounds = YES;
-    _usuarioImage.layer.cornerRadius = _usuarioImage.frame.size.height/2;
+    _usuarioImage.layer.cornerRadius = 25.5f;
     
     [_backgroundLocaleImage.layer setMasksToBounds:YES];
     [_backgroundLocaleImage.layer setCornerRadius:_backgroundLocaleImage.frame.size.height/2];
