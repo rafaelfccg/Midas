@@ -1056,6 +1056,9 @@
                                     <color key="titleColor" red="0.94450865319999999" green="0.96277333710000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="_loginWithFacebook:" destination="eHH-UR-7EN" eventType="touchUpInside" id="lue-Bf-P2R"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não possui uma conta?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUS-gs-ZBs">
                                 <rect key="frame" x="139" y="482" width="173" height="21"/>
