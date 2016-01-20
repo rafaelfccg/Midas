@@ -282,8 +282,7 @@
 {
     [self.view endEditing:YES];
     NSArray *menuItems = @[[[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"CameraIcon"] title:NSLocalizedString(@"Camera", @"Camera Button")],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GalleryIcon"] title:NSLocalizedString(@"Galeria", @"Galeria Button")],
-                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GPSIcon"] title:NSLocalizedString(@"Local", @"Local Button")]];
+                           [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"GalleryIcon"] title:NSLocalizedString(@"Galeria", @"Galeria Button")]];
     RNGridMenu *gridMenu = [[RNGridMenu alloc] initWithItems:menuItems];
     gridMenu.delegate = self;
     [gridMenu showInViewController:self center:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/2.f)];
