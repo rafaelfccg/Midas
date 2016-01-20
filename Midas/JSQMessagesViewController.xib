@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JSQMessagesViewController">
@@ -18,7 +19,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="mUa-cS-ru4">
-            <rect key="frame" x="0.0" y="74" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l9u-2b-4LK" customClass="JSQMessagesCollectionView">
@@ -57,13 +58,6 @@
                                 <constraint firstAttribute="width" constant="15" id="fcG-9P-nZD"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bolinhafoto" translatesAutoresizingMaskIntoConstraints="NO" id="yqT-oc-Hgl">
-                            <rect key="frame" x="4" y="2" width="51" height="49"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="49" id="4VN-Ti-eSq"/>
-                                <constraint firstAttribute="width" constant="51" id="jSa-eP-MSD"/>
-                            </constraints>
-                        </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="troc" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-l7-aBE">
                             <rect key="frame" x="60" y="30" width="15" height="19"/>
                             <constraints>
@@ -99,10 +93,8 @@
                         <constraint firstItem="wgC-6d-0PB" firstAttribute="leading" secondItem="uWX-E6-wPf" secondAttribute="leading" id="VrS-If-ngl"/>
                         <constraint firstItem="zn4-tK-YtO" firstAttribute="top" secondItem="uWX-E6-wPf" secondAttribute="top" constant="6" id="YV4-E1-Go4"/>
                         <constraint firstItem="5RJ-9v-86X" firstAttribute="top" secondItem="uWX-E6-wPf" secondAttribute="top" constant="6" id="aHz-MW-pt6"/>
-                        <constraint firstItem="yqT-oc-Hgl" firstAttribute="leading" secondItem="uWX-E6-wPf" secondAttribute="leading" constant="4" id="dpW-jb-gu4"/>
                         <constraint firstItem="Hig-l7-aBE" firstAttribute="top" secondItem="zn4-tK-YtO" secondAttribute="bottom" constant="5" id="itP-4G-bM8"/>
                         <constraint firstItem="97E-4V-wpm" firstAttribute="leading" secondItem="zn4-tK-YtO" secondAttribute="trailing" constant="13" id="owy-9e-5rD"/>
-                        <constraint firstItem="yqT-oc-Hgl" firstAttribute="top" secondItem="uWX-E6-wPf" secondAttribute="top" constant="2" id="pFf-Y7-0mH"/>
                         <constraint firstItem="zn4-tK-YtO" firstAttribute="leading" secondItem="5RJ-9v-86X" secondAttribute="trailing" constant="8" id="sHp-ji-bJh"/>
                         <constraint firstAttribute="trailing" secondItem="wgC-6d-0PB" secondAttribute="trailing" id="w3b-JI-D5p"/>
                         <constraint firstAttribute="trailing" secondItem="97E-4V-wpm" secondAttribute="trailing" constant="8" id="wDt-sd-XEo"/>
@@ -127,15 +119,9 @@
         </view>
     </objects>
     <resources>
-        <image name="bolinhafoto" width="421" height="411"/>
         <image name="david_TabBar" width="228" height="227"/>
         <image name="linha" width="2971" height="13"/>
         <image name="recomp" width="125" height="174"/>
         <image name="troc" width="125" height="174"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
