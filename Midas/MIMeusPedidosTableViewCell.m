@@ -39,7 +39,7 @@
     _tipoLabel.text = getCategoryName(request.category);
     
     _minhaImage.clipsToBounds = YES;
-    _minhaImage.layer.cornerRadius = 22.5f;
+    _minhaImage.layer.cornerRadius = _minhaImage.frame.size.width/2.0f;
     
     [_backgroundTipoImage.layer setMasksToBounds:YES];
     [_backgroundTipoImage.layer setCornerRadius:_backgroundTipoImage.frame.size.height/2];

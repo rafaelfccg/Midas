@@ -24,6 +24,7 @@
     _pedidoView.layer.borderColor = [UIColor orangeColor].CGColor;
     _pedidoView.layer.borderWidth = 1.5;
     
+    self.backgroundColor = [UIColor whiteColor];
     
   }
 
@@ -51,7 +52,7 @@
     _tipoLabel.text = getCategoryName(request.category);
     
     _usuarioImage.clipsToBounds = YES;
-    _usuarioImage.layer.cornerRadius = 25.5f;
+    _usuarioImage.layer.cornerRadius = _usuarioImage.frame.size.width/2.0f;
     
     [_backgroundLocaleImage.layer setMasksToBounds:YES];
     [_backgroundLocaleImage.layer setCornerRadius:_backgroundLocaleImage.frame.size.height/2];
