@@ -23,6 +23,14 @@
 
 @property NSString *temporaryObjectID;
 @property  MINegociation * chat ;
+@property (weak, nonatomic) IBOutlet UIView *containerViewVoceRecebe;
+@property (weak, nonatomic) IBOutlet UIView *containerViewPor;
+@property (weak, nonatomic) IBOutlet UILabel *voceRecebeNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *porNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *whyExchangeWithMeLabel;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 
 @end
 
@@ -31,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _goToChat = NO;
-    [self.closeRequestButton.layer setCornerRadius:7.0f];
+    [self.closeRequestButton.layer setCornerRadius:self.closeRequestButton.bounds.size.height/2];
     [self.closeRequestButton.layer setMasksToBounds:YES];
     
     _userImage.clipsToBounds = YES;
@@ -39,6 +47,12 @@
     _userImage.layer.borderColor = [UIColor whiteColor].CGColor;
     _userImage.layer.borderWidth = 3;
 
+    
+    [self.containerViewVoceRecebe.layer setCornerRadius:self.containerViewVoceRecebe.bounds.size.height/2];
+    [self.containerViewVoceRecebe.layer setMasksToBounds:YES];
+    
+    [self.containerViewPor.layer setCornerRadius:self.containerViewPor.bounds.size.height/2];
+    [self.containerViewPor.layer setMasksToBounds:YES];
     // Do any additional setup after loading the view.
 }
 
@@ -57,6 +71,7 @@
                                          action:@selector(editarPedido:)];
         self.navigationItem.rightBarButtonItem = editarButton;
         
+        self.heightConstraint.constant = 700;
     
     } else {
         UIBarButtonItem *euTenhoButton = [[UIBarButtonItem alloc]
@@ -67,15 +82,18 @@
         self.navigationItem.rightBarButtonItem = euTenhoButton;
         
         self.closeRequestButton.hidden = YES;
+        
+        self.heightConstraint.constant = 650;
     }
     
     NSLog(@"A cada %@, dou %@.", _currentRequest.forEach, _currentRequest.willGive);
     self.userName.text = self.currentRequest.owner.username;
-    self.forEachLabel.text = [NSString stringWithFormat:@"%@ %@", self.currentRequest.forEachValue, self.currentRequest.forEach];
-    self.willGiveLabel.text = [NSString stringWithFormat:@"%@ %@", self.currentRequest.willGiveValue, self.currentRequest.willGive];
-    self.descricaoLabel.text = self.currentRequest.descricao;
+    self.porNumberLabel.text = [NSString stringWithFormat:@"%@", self.currentRequest.forEachValue];
+    self.forEachLabel.text = self.currentRequest.forEach;
     
-    [self.descricaoLabel addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:NULL];
+    self.voceRecebeNumberLabel.text = [NSString stringWithFormat:@"%@", self.currentRequest.willGiveValue];
+    self.willGiveLabel.text = self.currentRequest.willGive;
+    self.whyExchangeWithMeLabel.text = self.currentRequest.descricao;
     
     self.categoryImage.image = getCategoryIcon(self.currentRequest.category);
     self.backgroundImage.image = self.currentRequest.image;
@@ -91,9 +109,6 @@
 
 }
 
--(void) viewWillDisappear:(BOOL)animated{
-    [self.descricaoLabel removeObserver:self forKeyPath:@"contentSize"];
-}
 -(void) viewDidAppear:(BOOL)animated {
     _goToChat = NO;
 }
