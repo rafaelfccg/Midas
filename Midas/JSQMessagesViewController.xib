@@ -59,13 +59,6 @@
                                 <constraint firstAttribute="width" constant="20" id="fcG-9P-nZD"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bolinhafoto" translatesAutoresizingMaskIntoConstraints="NO" id="yqT-oc-Hgl">
-                            <rect key="frame" x="4" y="2" width="51" height="49"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="49" id="4VN-Ti-eSq"/>
-                                <constraint firstAttribute="width" constant="51" id="jSa-eP-MSD"/>
-                            </constraints>
-                        </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-receive" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-l7-aBE">
                             <rect key="frame" x="60" y="28" width="20" height="25"/>
                             <constraints>
@@ -101,10 +94,8 @@
                         <constraint firstItem="wgC-6d-0PB" firstAttribute="leading" secondItem="uWX-E6-wPf" secondAttribute="leading" id="VrS-If-ngl"/>
                         <constraint firstItem="zn4-tK-YtO" firstAttribute="top" secondItem="uWX-E6-wPf" secondAttribute="top" constant="3" id="YV4-E1-Go4"/>
                         <constraint firstItem="5RJ-9v-86X" firstAttribute="top" secondItem="uWX-E6-wPf" secondAttribute="top" constant="6" id="aHz-MW-pt6"/>
-                        <constraint firstItem="yqT-oc-Hgl" firstAttribute="leading" secondItem="uWX-E6-wPf" secondAttribute="leading" constant="4" id="dpW-jb-gu4"/>
                         <constraint firstItem="Hig-l7-aBE" firstAttribute="top" secondItem="zn4-tK-YtO" secondAttribute="bottom" id="itP-4G-bM8"/>
                         <constraint firstItem="97E-4V-wpm" firstAttribute="leading" secondItem="zn4-tK-YtO" secondAttribute="trailing" constant="8" id="owy-9e-5rD"/>
-                        <constraint firstItem="yqT-oc-Hgl" firstAttribute="top" secondItem="uWX-E6-wPf" secondAttribute="top" constant="2" id="pFf-Y7-0mH"/>
                         <constraint firstItem="zn4-tK-YtO" firstAttribute="leading" secondItem="5RJ-9v-86X" secondAttribute="trailing" constant="8" id="sHp-ji-bJh"/>
                         <constraint firstAttribute="trailing" secondItem="wgC-6d-0PB" secondAttribute="trailing" id="w3b-JI-D5p"/>
                         <constraint firstAttribute="trailing" secondItem="97E-4V-wpm" secondAttribute="trailing" constant="8" id="wDt-sd-XEo"/>
@@ -131,7 +122,6 @@
     <resources>
         <image name="arrow-give" width="49" height="15"/>
         <image name="arrow-receive" width="49" height="15"/>
-        <image name="bolinhafoto" width="421" height="411"/>
         <image name="david_TabBar" width="228" height="227"/>
         <image name="linha" width="2971" height="13"/>
     </resources>
