@@ -87,7 +87,7 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3031228E-DFE7-4639-996A-51BB03985591" translatesAutoresizingMaskIntoConstraints="NO" id="oYo-Zz-yhZ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7592E6ED-89EB-47E2-8EB2-E299D12093DE" translatesAutoresizingMaskIntoConstraints="NO" id="oYo-Zz-yhZ">
                         <rect key="frame" x="11" y="18" width="35" height="31"/>
                     </imageView>
                 </subviews>
@@ -129,7 +129,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="3031228E-DFE7-4639-996A-51BB03985591" width="62" height="62">
+        <image name="7592E6ED-89EB-47E2-8EB2-E299D12093DE" width="62" height="62">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

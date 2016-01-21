@@ -44,6 +44,9 @@
     if(point && request.location){
       double val = [point distanceInKilometersTo:request.location];
      
+        _localeImage.hidden = false;
+        _localNoImage.hidden = true;
+      
         if (val < 99.0) {
           _distLabel.text = [NSString stringWithFormat:@"%.0lfkm",val];
         }else{
@@ -51,7 +54,11 @@
         }
       
     }else{
-      _distLabel.text = [NSString stringWithFormat:@"--"];
+    
+      _distLabel.text = [NSString stringWithFormat:@""];
+      _localeImage.hidden = true;
+      _localNoImage.hidden = false;
+    
     }
     
     _tipoImage.image = getCategoryIcon(request.category);

@@ -40,7 +40,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26 garrafas de cervejas vazias" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXc-tn-tYK">
-                                <rect key="frame" x="95" y="29" width="279" height="21"/>
+                                <rect key="frame" x="95" y="30" width="279" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cerveja homemade doghouse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecE-wM-bhA">
-                                <rect key="frame" x="95" y="7" width="279" height="21"/>
+                                <rect key="frame" x="95" y="7" width="279" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.8980392157" green="0.5450980392" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                             <constraint firstItem="1G9-Ar-aHb" firstAttribute="height" secondItem="Fs4-Uv-hSZ" secondAttribute="height" multiplier="0.83" id="FLo-3Y-QiR"/>
                             <constraint firstItem="1G9-Ar-aHb" firstAttribute="centerY" secondItem="Fs4-Uv-hSZ" secondAttribute="centerY" id="Gha-LA-dHL"/>
                             <constraint firstItem="fXA-qV-XsC" firstAttribute="centerY" secondItem="Fs4-Uv-hSZ" secondAttribute="centerY" multiplier="0.6" id="Ris-I0-lIt"/>
-                            <constraint firstItem="WXc-tn-tYK" firstAttribute="centerY" secondItem="UQ3-vL-QOG" secondAttribute="centerY" id="aQR-gG-o7D"/>
+                            <constraint firstItem="WXc-tn-tYK" firstAttribute="centerY" secondItem="UQ3-vL-QOG" secondAttribute="centerY" constant="1" id="aQR-gG-o7D"/>
                             <constraint firstItem="UQ3-vL-QOG" firstAttribute="leading" secondItem="1G9-Ar-aHb" secondAttribute="trailing" constant="6" id="fi9-qt-kkN"/>
                             <constraint firstItem="UQ3-vL-QOG" firstAttribute="centerY" secondItem="Fs4-Uv-hSZ" secondAttribute="centerY" multiplier="1.5" id="h65-zx-geG"/>
                             <constraint firstItem="ecE-wM-bhA" firstAttribute="leading" secondItem="fXA-qV-XsC" secondAttribute="trailing" constant="7" id="k6d-Pr-dVE"/>
@@ -104,12 +104,19 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="local-no" translatesAutoresizingMaskIntoConstraints="NO" id="KZU-Xt-GOQ">
+                        <rect key="frame" x="40" y="17" width="35" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="KZU-Xt-GOQ" secondAttribute="height" multiplier="49:43" constant="-1.0232558139534902" id="5ch-0I-RZv"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="0d7-N8-2kB" firstAttribute="centerY" secondItem="9H3-jj-Fo5" secondAttribute="centerY" multiplier="1.01" id="0ZM-9G-X9P"/>
                     <constraint firstItem="0d7-N8-2kB" firstAttribute="centerX" secondItem="9H3-jj-Fo5" secondAttribute="centerX" multiplier="0.5" id="1bj-wI-ZgK"/>
                     <constraint firstItem="0d7-N8-2kB" firstAttribute="height" secondItem="9H3-jj-Fo5" secondAttribute="height" multiplier="0.7" id="3Si-zP-QmJ"/>
+                    <constraint firstItem="KZU-Xt-GOQ" firstAttribute="centerX" secondItem="tyz-pY-BOC" secondAttribute="centerX" id="8wI-RT-MZR"/>
                     <constraint firstAttribute="leadingMargin" secondItem="tyz-pY-BOC" secondAttribute="leading" id="BqX-Nu-7JU"/>
                     <constraint firstItem="tyz-pY-BOC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="0.39" id="CcY-It-L3a"/>
                     <constraint firstAttribute="trailingMargin" secondItem="vmM-Y5-LDd" secondAttribute="trailing" constant="-8" id="DIL-d3-41q"/>
@@ -127,6 +134,8 @@
                     <constraint firstItem="9H3-jj-Fo5" firstAttribute="height" secondItem="vmM-Y5-LDd" secondAttribute="height" multiplier="0.36" id="gQC-S8-pR0"/>
                     <constraint firstAttribute="leadingMargin" secondItem="9H3-jj-Fo5" secondAttribute="leading" id="ike-vf-1u8"/>
                     <constraint firstItem="9H3-jj-Fo5" firstAttribute="centerY" secondItem="vmM-Y5-LDd" secondAttribute="centerY" multiplier="1.43" id="ita-9U-Vfc"/>
+                    <constraint firstItem="KZU-Xt-GOQ" firstAttribute="centerY" secondItem="tyz-pY-BOC" secondAttribute="centerY" id="mRF-SS-OsC"/>
+                    <constraint firstItem="KZU-Xt-GOQ" firstAttribute="height" secondItem="tyz-pY-BOC" secondAttribute="height" multiplier="0.98" constant="-12.119999999999997" id="mzC-2g-xM4"/>
                     <constraint firstItem="tyz-pY-BOC" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.25" id="nzB-La-gFh"/>
                     <constraint firstItem="vmM-Y5-LDd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="pVq-cj-9zv"/>
                     <constraint firstItem="vmM-Y5-LDd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="qeG-df-fo4"/>
@@ -144,6 +153,7 @@
                 <outlet property="backgroundTipoImage" destination="9H3-jj-Fo5" id="hKF-58-dda"/>
                 <outlet property="destinoLabel" destination="ecE-wM-bhA" id="Qbp-e4-A7C"/>
                 <outlet property="distLabel" destination="WDY-lH-7QC" id="kTv-8g-B2Z"/>
+                <outlet property="localNoImage" destination="KZU-Xt-GOQ" id="gp5-96-5OH"/>
                 <outlet property="localeImage" destination="vfa-xr-liw" id="FYP-fj-9rm"/>
                 <outlet property="pedidoImage" destination="vmM-Y5-LDd" id="CS4-Ra-d2O"/>
                 <outlet property="pedidoLabel" destination="WXc-tn-tYK" id="XJK-El-c59"/>
@@ -159,6 +169,7 @@
         <image name="arrow-give" width="49" height="15"/>
         <image name="arrow-receive" width="49" height="15"/>
         <image name="chat_blank.png" width="30" height="30"/>
+        <image name="local-no" width="59" height="61"/>
         <image name="locale" width="35" height="50"/>
         <image name="paper" width="62" height="62"/>
         <image name="tempImage" width="1920" height="1080"/>
