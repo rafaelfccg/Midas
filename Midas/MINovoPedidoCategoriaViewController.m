@@ -34,7 +34,7 @@
     
     self.categories = @[NSLocalizedString(@"Vidro", @"Categoria Vidro"), NSLocalizedString(@"Plástico", @"Categoria Plástico"), NSLocalizedString(@"Papel", @"Categoria Papel"), NSLocalizedString(@"Metal", @"Categoria Metal"), NSLocalizedString(@"Outros", @"Categoria Outros")];
     
-    self.categoryIcons = @[@"VidroIcon", @"PlasticoIcon", @"PapelIcon", @"MetalIcon", @"OutrosIcon"];
+    self.categoryIcons = @[@"glass", @"plastic", @"paper", @"metal", @"other"];
     self.categoryEnum = @[[NSNumber numberWithInteger:RequestCategoryVidro], [NSNumber numberWithInteger:RequestCategoryPlastico], [NSNumber numberWithInteger:RequestCategoryPapel], [NSNumber numberWithInteger:RequestCategoryMetal], [NSNumber numberWithInteger:RequestCategoryOutros]];
     
     [self.categoryTableView setSeparatorInset:UIEdgeInsetsZero];

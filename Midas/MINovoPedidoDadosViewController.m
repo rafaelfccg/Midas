@@ -141,7 +141,7 @@
     self.novoPedido.location = user[PF_USER_LOCATION];
     
     if(!_didChangeImage){
-        self.imageView.image = self.categoryImageView.image;
+        self.imageView.image = [UIImage imageNamed:@"bg-perfil"];
     }
     
     if(self.imageView.image) {

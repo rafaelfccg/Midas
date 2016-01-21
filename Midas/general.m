@@ -15,22 +15,22 @@ UIImage * getCategoryIcon(NSNumber *categoryNumber)
     
     switch ([categoryNumber intValue]) {
         case RequestCategoryVidro:
-            image = [UIImage imageNamed:@"VidroIcon"];
+            image = [UIImage imageNamed:@"glass"];
             break;
         case RequestCategoryMetal:
-            image = [UIImage imageNamed:@"MetalIcon"];
+            image = [UIImage imageNamed:@"metal"];
             break;
         case RequestCategoryPapel:
-            image = [UIImage imageNamed:@"PapelIcon"];
+            image = [UIImage imageNamed:@"paper"];
             break;
         case RequestCategoryPlastico:
-            image = [UIImage imageNamed:@"PlasticoIcon"];
+            image = [UIImage imageNamed:@"plastic"];
             break;
         case RequestCategoryOutros:
-            image = [UIImage imageNamed:@"OutrosIcon"];
+            image = [UIImage imageNamed:@"other"];
             break;
         default:
-            image = [UIImage imageNamed:@"OutrosIcon"];
+            image = [UIImage imageNamed:@"other"];
             break;
     }
     return image;
