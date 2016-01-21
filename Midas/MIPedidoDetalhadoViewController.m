@@ -88,7 +88,7 @@
         self.heightConstraint.constant = 650;
     }
     
-    NSLog(@"A cada %@, dou %@.", _currentRequest.forEach, _currentRequest.willGive);
+//    NSLog(@"A cada %@, dou %@.", _currentRequest.forEach, _currentRequest.willGive);
     self.userName.text = self.currentRequest.owner.username;
     self.porNumberLabel.text = [NSString stringWithFormat:@"%@", self.currentRequest.forEachValue];
     self.forEachLabel.text = self.currentRequest.forEach;
