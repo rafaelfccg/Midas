@@ -302,6 +302,7 @@
                                 <animations/>
                             </imageView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="C8Q-Vv-v5G" firstAttribute="height" secondItem="gWV-ud-3hL" secondAttribute="height" constant="-44" id="2Jm-Bf-KBt"/>
@@ -353,6 +354,7 @@
                     <view key="view" contentMode="scaleToFill" id="9rW-Mn-duF">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
