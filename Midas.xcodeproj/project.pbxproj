@@ -116,15 +116,16 @@
 		009363F71B33380D007D82AE /* MIRecentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009363F51B33380D007D82AE /* MIRecentCell.xib */; };
 		009363F91B334B86007D82AE /* recent_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 009363F81B334B86007D82AE /* recent_blank@2x.png */; };
 		009363FB1B335139007D82AE /* linha.png in Resources */ = {isa = PBXBuildFile; fileRef = 009363FA1B335139007D82AE /* linha.png */; };
+		0856E6851C514F2600167B1C /* MIMeusPedidosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0856E6841C514F2600167B1C /* MIMeusPedidosTableViewCell.xib */; };
 		08E2FC171C501020002B3CD3 /* MIStickerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E2FC161C501020002B3CD3 /* MIStickerContainerView.m */; };
 		08E2FC191C501037002B3CD3 /* MIStickerContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08E2FC181C501037002B3CD3 /* MIStickerContainerView.xib */; };
 		157363071B28C1E800259B11 /* MILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 157363061B28C1E800259B11 /* MILoginViewController.m */; };
 		15FB16731B2F45C100867173 /* MIEditarEnderecoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */; };
+		1F1A864F1C4FFE81005FC20A /* MIRecuperarSenhaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A864E1C4FFE81005FC20A /* MIRecuperarSenhaViewController.m */; };
 		1F2B0AA91B483CA8008647A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F2B0AAB1B483CA8008647A1 /* Localizable.strings */; };
 		1F31693C1B3C95D4003DD6EA /* CustomTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F31693B1B3C95D4003DD6EA /* CustomTabBarViewController.m */; };
 		1FA0EFFB1B59894200C3171A /* MITermosDeUsoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA0EFF91B59894200C3171A /* MITermosDeUsoViewController.m */; };
 		1FA0EFFC1B59894200C3171A /* MITermosDeUsoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FA0EFFA1B59894200C3171A /* MITermosDeUsoViewController.xib */; };
-		1FC974971B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC974961B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib */; };
 		1FE7DA771B28D07600656359 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA711B28D07600656359 /* Bolts.framework */; };
 		1FE7DA781B28D07600656359 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA721B28D07600656359 /* Parse.framework */; };
 		1FE7DA791B28D07600656359 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7DA731B28D07600656359 /* ParseCrashReporting.framework */; };
@@ -380,6 +381,7 @@
 		009363F51B33380D007D82AE /* MIRecentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIRecentCell.xib; sourceTree = "<group>"; };
 		009363F81B334B86007D82AE /* recent_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recent_blank@2x.png"; sourceTree = "<group>"; };
 		009363FA1B335139007D82AE /* linha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linha.png; sourceTree = "<group>"; };
+		0856E6841C514F2600167B1C /* MIMeusPedidosTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMeusPedidosTableViewCell.xib; sourceTree = "<group>"; };
 		08E2FC151C501020002B3CD3 /* MIStickerContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIStickerContainerView.h; sourceTree = "<group>"; };
 		08E2FC161C501020002B3CD3 /* MIStickerContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIStickerContainerView.m; sourceTree = "<group>"; };
 		08E2FC181C501037002B3CD3 /* MIStickerContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIStickerContainerView.xib; sourceTree = "<group>"; };
@@ -387,6 +389,8 @@
 		157363061B28C1E800259B11 /* MILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILoginViewController.m; sourceTree = "<group>"; };
 		15FB16711B2F45C100867173 /* MIEditarEnderecoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIEditarEnderecoViewController.h; sourceTree = "<group>"; };
 		15FB16721B2F45C100867173 /* MIEditarEnderecoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIEditarEnderecoViewController.m; sourceTree = "<group>"; };
+		1F1A864D1C4FFE81005FC20A /* MIRecuperarSenhaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRecuperarSenhaViewController.h; sourceTree = "<group>"; };
+		1F1A864E1C4FFE81005FC20A /* MIRecuperarSenhaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRecuperarSenhaViewController.m; sourceTree = "<group>"; };
 		1F2B0AA51B4828D8008647A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1F2B0AA61B4828D8008647A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1F2B0AAA1B483CA8008647A1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -398,7 +402,6 @@
 		1FA0EFF81B59894200C3171A /* MITermosDeUsoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MITermosDeUsoViewController.h; sourceTree = "<group>"; };
 		1FA0EFF91B59894200C3171A /* MITermosDeUsoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MITermosDeUsoViewController.m; sourceTree = "<group>"; };
 		1FA0EFFA1B59894200C3171A /* MITermosDeUsoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MITermosDeUsoViewController.xib; sourceTree = "<group>"; };
-		1FC974961B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIMeusPedidosTableViewCell.xib; sourceTree = "<group>"; };
 		1FE7D9751B28CB8300656359 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		1FE7DA711B28D07600656359 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		1FE7DA721B28D07600656359 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -929,8 +932,8 @@
 				9155A7E11B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.m */,
 				9155A7E21B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib */,
 				9155A7E51B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.h */,
+				0856E6841C514F2600167B1C /* MIMeusPedidosTableViewCell.xib */,
 				9155A7E61B31F6F20081A4A3 /* MIMeusPedidosTableViewCell.m */,
-				1FC974961B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib */,
 				009363F31B33380D007D82AE /* MIRecentCell.h */,
 				009363F41B33380D007D82AE /* MIRecentCell.m */,
 				08E2FC151C501020002B3CD3 /* MIStickerContainerView.h */,
@@ -942,6 +945,8 @@
 				1FA0EFF81B59894200C3171A /* MITermosDeUsoViewController.h */,
 				1FA0EFF91B59894200C3171A /* MITermosDeUsoViewController.m */,
 				1FA0EFFA1B59894200C3171A /* MITermosDeUsoViewController.xib */,
+				1F1A864D1C4FFE81005FC20A /* MIRecuperarSenhaViewController.h */,
+				1F1A864E1C4FFE81005FC20A /* MIRecuperarSenhaViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1087,12 +1092,12 @@
 				003B24DE1B29E7A700743D0B /* JSQMessagesToolbarContentView.xib in Resources */,
 				003B24D41B29E7A700743D0B /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				003B25441B2A044C00743D0B /* ProfileView.xib in Resources */,
-				1FC974971B35A6C800E4AC73 /* MIMeusPedidosTableViewCell.xib in Resources */,
 				00602EA31B543C5E004FD061 /* FacebookSDKStrings.bundle in Resources */,
 				003B24D61B29E7A700743D0B /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				001580A51B275E4700E03E94 /* LaunchScreen.xib in Resources */,
 				9155A7E41B31E2860081A4A3 /* MIMuralCellControllerTableViewCell.xib in Resources */,
 				001580A21B275E4700E03E94 /* Images.xcassets in Resources */,
+				0856E6851C514F2600167B1C /* MIMeusPedidosTableViewCell.xib in Resources */,
 				1FA0EFFC1B59894200C3171A /* MITermosDeUsoViewController.xib in Resources */,
 				003B252A1B29F54300743D0B /* chat_blank@2x.png in Resources */,
 				1F2B0AA91B483CA8008647A1 /* Localizable.strings in Resources */,
@@ -1115,6 +1120,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1A864F1C4FFE81005FC20A /* MIRecuperarSenhaViewController.m in Sources */,
 				003B24721B29C95600743D0B /* AFURLConnectionOperation.m in Sources */,
 				003B253C1B2A02CF00743D0B /* PFUser+Util.m in Sources */,
 				003B24D51B29E7A700743D0B /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
@@ -1362,6 +1368,7 @@
 				);
 				INFOPLIST_FILE = Midas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.bepid.bacon.midas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1381,6 +1388,7 @@
 				);
 				INFOPLIST_FILE = Midas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.bepid.bacon.midas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

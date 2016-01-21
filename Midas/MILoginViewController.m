@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @property (weak, nonatomic) IBOutlet UIButton *facebookLogin;
 @property (weak, nonatomic) IBOutlet UILabel *dontHaveAnAccountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *forgotMyPasswordButton;
 @property float keyboardHeight;
 @property BOOL isUp;
 @end
@@ -48,6 +49,7 @@
 
     [self.dontHaveAnAccountLabel setText:NSLocalizedString(@"Não tem uma conta?", @"Mensagem de nao tem uma conta")];
     
+    [self.forgotMyPasswordButton setTitle:NSLocalizedString(@"Esqueci minha senha!", @"Esqueci minha senha!") forState:UIControlStateNormal];
     _isUp = NO;
 }
 
@@ -117,6 +119,9 @@
      }];
 }
 
+- (IBAction)_recoverPassword:(id)sender {
+ [self performSegueWithIdentifier:@"FromLoginToRecuperarSenha" sender:self];
+}
 
 - (IBAction) _loginWithFacebook:(id)sender {
     // Set permissions required from the facebook user account

@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *forEachLabel;
 @property (weak, nonatomic) IBOutlet UILabel *willGiveLabel;
-@property (weak, nonatomic) IBOutlet UITextView *descricaoLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UIImageView *categoryImage;
 @property (weak, nonatomic) IBOutlet UIButton *closeRequestButton;
