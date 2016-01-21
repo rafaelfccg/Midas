@@ -10,128 +10,454 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pedidosCell" rowHeight="173" id="KGk-i7-Jjw" customClass="MIMeusPedidosTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="376" height="173"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="pedidosCell" rowHeight="174" id="7sd-xQ-aBU" customClass="MIMeusPedidosTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="174"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="376" height="172.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7sd-xQ-aBU" id="gvH-uE-etD">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="174"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempImage" translatesAutoresizingMaskIntoConstraints="NO" id="vmM-Y5-LDd">
+                    <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempImage" translatesAutoresizingMaskIntoConstraints="NO" id="Hga-16-ypB">
                         <rect key="frame" x="0.0" y="0.0" width="376" height="121"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8kS-Tg-mi6">
-                        <rect key="frame" x="8" y="10" width="99" height="44"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </imageView>
-                    <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fs4-Uv-hSZ">
+                    <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-iy-4ts">
                         <rect key="frame" x="0.0" y="120" width="375" height="53"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="david_TabBar" translatesAutoresizingMaskIntoConstraints="NO" id="1G9-Ar-aHb">
-                                <rect key="frame" x="8" y="6" width="44" height="44"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_blank.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Td-6Q-rEN">
+                                <rect key="frame" x="8" y="4" width="44" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="1G9-Ar-aHb" secondAttribute="height" multiplier="1:1" id="dQf-cW-p5J"/>
+                                    <constraint firstAttribute="width" secondItem="0Td-6Q-rEN" secondAttribute="height" multiplier="1:1" id="VQb-s5-5jG"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-receive" translatesAutoresizingMaskIntoConstraints="NO" id="xRD-Rj-A3G">
-                                <rect key="frame" x="58" y="24" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="2z2-AC-BfP"/>
-                                    <constraint firstAttribute="height" constant="30" id="eby-OM-GDz"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="26 garrafas de cervejas vazias" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXc-tn-tYK">
-                                <rect key="frame" x="95" y="28" width="279" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="26 garrafas de cervejas vazias" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPe-IH-r1e">
+                                <rect key="frame" x="95" y="30" width="279" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cerveja homemade doghouse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecE-wM-bhA">
-                                <rect key="frame" x="95" y="5" width="279" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-give" translatesAutoresizingMaskIntoConstraints="NO" id="BNs-Qy-eAz">
+                                <rect key="frame" x="58" y="2" width="30" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="2h1-vF-x7h"/>
+                                    <constraint firstAttribute="width" constant="30" id="hL6-GC-tmF"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-receive" translatesAutoresizingMaskIntoConstraints="NO" id="GUE-ly-H3K">
+                                <rect key="frame" x="58" y="24" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Mdd-Og-BFQ"/>
+                                    <constraint firstAttribute="width" constant="30" id="Xix-sj-Kkw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cerveja homemade doghouse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ou-On-D07">
+                                <rect key="frame" x="95" y="7" width="279" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.8980392157" green="0.5450980392" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-give" translatesAutoresizingMaskIntoConstraints="NO" id="nqe-zT-13d">
-                                <rect key="frame" x="57" y="1" width="30" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="578-6G-DFt"/>
-                                    <constraint firstAttribute="height" constant="29" id="IIk-hh-gbk"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1G9-Ar-aHb" firstAttribute="height" secondItem="Fs4-Uv-hSZ" secondAttribute="height" multiplier="0.83" id="3zO-8Q-fGb"/>
-                            <constraint firstAttribute="trailing" secondItem="WXc-tn-tYK" secondAttribute="trailing" constant="1" id="LDu-SP-YRt"/>
-                            <constraint firstItem="nqe-zT-13d" firstAttribute="leading" secondItem="1G9-Ar-aHb" secondAttribute="trailing" constant="5" id="NKS-MG-HZy"/>
-                            <constraint firstItem="xRD-Rj-A3G" firstAttribute="centerY" secondItem="Fs4-Uv-hSZ" secondAttribute="centerY" multiplier="1.45" id="Npe-4w-1hL"/>
-                            <constraint firstItem="WXc-tn-tYK" firstAttribute="centerY" secondItem="xRD-Rj-A3G" secondAttribute="centerY" id="Oh2-yF-8Sx"/>
-                            <constraint firstItem="1G9-Ar-aHb" firstAttribute="centerY" secondItem="Fs4-Uv-hSZ" secondAttribute="centerY" multiplier="1.02" id="RSQ-6n-vZO"/>
-                            <constraint firstItem="ecE-wM-bhA" firstAttribute="leading" secondItem="nqe-zT-13d" secondAttribute="trailing" constant="8" id="Saz-1Z-pau"/>
-                            <constraint firstItem="WXc-tn-tYK" firstAttribute="leading" secondItem="xRD-Rj-A3G" secondAttribute="trailing" constant="7" id="WUA-UR-eVF"/>
-                            <constraint firstItem="nqe-zT-13d" firstAttribute="centerY" secondItem="Fs4-Uv-hSZ" secondAttribute="centerY" multiplier="0.6" id="YNv-hJ-d1r"/>
-                            <constraint firstItem="xRD-Rj-A3G" firstAttribute="leading" secondItem="1G9-Ar-aHb" secondAttribute="trailing" constant="6" id="dRm-YY-vh0"/>
-                            <constraint firstItem="1G9-Ar-aHb" firstAttribute="leading" secondItem="Fs4-Uv-hSZ" secondAttribute="leading" constant="8" id="eFy-M2-2dt"/>
-                            <constraint firstAttribute="trailing" secondItem="ecE-wM-bhA" secondAttribute="trailing" constant="1" id="lsO-le-ey9"/>
-                            <constraint firstItem="ecE-wM-bhA" firstAttribute="centerY" secondItem="nqe-zT-13d" secondAttribute="centerY" id="ol8-HV-01Z"/>
+                            <constraint firstItem="8Ou-On-D07" firstAttribute="leading" secondItem="BNs-Qy-eAz" secondAttribute="trailing" constant="7" id="5wP-uE-pOL"/>
+                            <constraint firstItem="wPe-IH-r1e" firstAttribute="centerY" secondItem="GUE-ly-H3K" secondAttribute="centerY" id="708-jh-Afy"/>
+                            <constraint firstItem="GUE-ly-H3K" firstAttribute="centerY" secondItem="q5f-iy-4ts" secondAttribute="centerY" multiplier="1.5" id="9WS-Jg-XFG"/>
+                            <constraint firstItem="wPe-IH-r1e" firstAttribute="leading" secondItem="GUE-ly-H3K" secondAttribute="trailing" constant="7" id="FFA-4b-IXE"/>
+                            <constraint firstItem="0Td-6Q-rEN" firstAttribute="height" secondItem="q5f-iy-4ts" secondAttribute="height" multiplier="0.83" id="FbV-7r-cPH"/>
+                            <constraint firstAttribute="trailing" secondItem="wPe-IH-r1e" secondAttribute="trailing" constant="1" id="Rgm-Kw-dSJ"/>
+                            <constraint firstItem="0Td-6Q-rEN" firstAttribute="centerY" secondItem="q5f-iy-4ts" secondAttribute="centerY" id="U6Q-vk-9vn"/>
+                            <constraint firstItem="0Td-6Q-rEN" firstAttribute="leading" secondItem="q5f-iy-4ts" secondAttribute="leading" constant="8" id="Z8e-sH-saV"/>
+                            <constraint firstItem="GUE-ly-H3K" firstAttribute="leading" secondItem="0Td-6Q-rEN" secondAttribute="trailing" constant="6" id="mQ1-ul-fQr"/>
+                            <constraint firstItem="8Ou-On-D07" firstAttribute="centerY" secondItem="BNs-Qy-eAz" secondAttribute="centerY" id="qYE-Jf-ppq"/>
+                            <constraint firstAttribute="trailing" secondItem="8Ou-On-D07" secondAttribute="trailing" constant="1" id="tga-ue-zfq"/>
+                            <constraint firstItem="BNs-Qy-eAz" firstAttribute="centerY" secondItem="q5f-iy-4ts" secondAttribute="centerY" multiplier="0.6" id="upM-dv-gCW"/>
+                            <constraint firstItem="BNs-Qy-eAz" firstAttribute="leading" secondItem="0Td-6Q-rEN" secondAttribute="trailing" constant="6" id="w6d-Ok-oZu"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Plastico" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="348-bQ-bg3">
-                        <rect key="frame" x="48" y="21" width="57" height="21"/>
+                    <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rRW-Ir-hrn">
+                        <rect key="frame" x="8" y="11" width="99" height="44"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plastico" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7w-uI-D00">
+                        <rect key="frame" x="47" y="25" width="60" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="57" id="TF1-TZ-kPN"/>
+                            <constraint firstAttribute="height" constant="18" id="Gv3-DN-bBl"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="paper" translatesAutoresizingMaskIntoConstraints="NO" id="0d7-N8-2kB">
-                        <rect key="frame" x="25" y="17" width="35" height="31"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="220C8433-60B6-40E6-8B66-25B251F8E306" translatesAutoresizingMaskIntoConstraints="NO" id="oYo-Zz-yhZ">
+                        <rect key="frame" x="11" y="18" width="35" height="31"/>
                     </imageView>
                 </subviews>
-                <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="8kS-Tg-mi6" firstAttribute="centerY" secondItem="vmM-Y5-LDd" secondAttribute="centerY" multiplier="0.54" id="0IA-JI-9fA"/>
-                    <constraint firstItem="Fs4-Uv-hSZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="2sI-NA-RGz"/>
-                    <constraint firstItem="348-bQ-bg3" firstAttribute="centerY" secondItem="0d7-N8-2kB" secondAttribute="centerY" multiplier="0.99" id="FAC-ix-9cK"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Fs4-Uv-hSZ" secondAttribute="bottom" constant="-8.5" id="HEk-Ec-jOw"/>
-                    <constraint firstItem="8kS-Tg-mi6" firstAttribute="leading" secondItem="0d7-N8-2kB" secondAttribute="trailing" constant="-52" id="HVk-uD-eMz"/>
-                    <constraint firstItem="348-bQ-bg3" firstAttribute="leading" secondItem="0d7-N8-2kB" secondAttribute="trailing" constant="-7" id="L6G-uJ-mjD"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Fs4-Uv-hSZ" secondAttribute="trailing" constant="-7" id="Nhy-JG-BgA"/>
-                    <constraint firstItem="vmM-Y5-LDd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="OlH-0Z-dDB"/>
-                    <constraint firstItem="348-bQ-bg3" firstAttribute="leading" secondItem="8kS-Tg-mi6" secondAttribute="trailing" constant="-59" id="P5I-Rs-uzp"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="vmM-Y5-LDd" secondAttribute="trailing" constant="-8" id="bak-Lh-OoL"/>
-                    <constraint firstItem="vmM-Y5-LDd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="c7s-fG-1GO"/>
-                    <constraint firstItem="Fs4-Uv-hSZ" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.31" id="dAC-Yk-kvC"/>
-                    <constraint firstItem="0d7-N8-2kB" firstAttribute="centerY" secondItem="8kS-Tg-mi6" secondAttribute="centerY" id="j8P-pT-tAS"/>
-                    <constraint firstItem="vmM-Y5-LDd" firstAttribute="leading" secondItem="8kS-Tg-mi6" secondAttribute="trailing" constant="-107" id="jQv-gZ-pae"/>
-                    <constraint firstItem="348-bQ-bg3" firstAttribute="leading" secondItem="8kS-Tg-mi6" secondAttribute="trailing" constant="-59" id="mbg-ID-rLN"/>
-                    <constraint firstItem="0d7-N8-2kB" firstAttribute="height" secondItem="8kS-Tg-mi6" secondAttribute="height" multiplier="0.7" id="uua-WE-7p5"/>
-                    <constraint firstItem="vmM-Y5-LDd" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.7" id="ybS-or-1Pg"/>
-                    <constraint firstItem="8kS-Tg-mi6" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.25" id="ysO-zh-ajp"/>
+                    <constraint firstItem="Hga-16-ypB" firstAttribute="height" secondItem="gvH-uE-etD" secondAttribute="height" multiplier="0.7" id="4fa-uJ-ZSw"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Hga-16-ypB" secondAttribute="trailing" constant="-8" id="DXK-Ez-Z4v"/>
+                    <constraint firstItem="f7w-uI-D00" firstAttribute="centerX" secondItem="rRW-Ir-hrn" secondAttribute="centerX" multiplier="1.34" id="FME-tC-53G"/>
+                    <constraint firstItem="f7w-uI-D00" firstAttribute="leading" secondItem="oYo-Zz-yhZ" secondAttribute="trailing" constant="1" id="J7X-vO-u56"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="q5f-iy-4ts" secondAttribute="trailing" constant="-7" id="LXq-LF-IHQ"/>
+                    <constraint firstItem="q5f-iy-4ts" firstAttribute="leading" secondItem="gvH-uE-etD" secondAttribute="leadingMargin" constant="-8" id="ReS-Bc-FEl"/>
+                    <constraint firstItem="q5f-iy-4ts" firstAttribute="height" secondItem="gvH-uE-etD" secondAttribute="height" multiplier="0.3" id="XfB-uz-AIz"/>
+                    <constraint firstItem="oYo-Zz-yhZ" firstAttribute="centerX" secondItem="rRW-Ir-hrn" secondAttribute="centerX" multiplier="0.5" id="ZBh-0A-uhK"/>
+                    <constraint firstItem="rRW-Ir-hrn" firstAttribute="height" secondItem="Hga-16-ypB" secondAttribute="height" multiplier="0.36" id="fWv-RF-TYA"/>
+                    <constraint firstItem="oYo-Zz-yhZ" firstAttribute="centerY" secondItem="rRW-Ir-hrn" secondAttribute="centerY" multiplier="1.02" id="gjq-Vv-54a"/>
+                    <constraint firstItem="Hga-16-ypB" firstAttribute="top" secondItem="gvH-uE-etD" secondAttribute="topMargin" constant="-8" id="hu5-et-wbR"/>
+                    <constraint firstItem="rRW-Ir-hrn" firstAttribute="centerY" secondItem="Hga-16-ypB" secondAttribute="centerY" multiplier="0.54" id="i6O-MI-w8s"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="q5f-iy-4ts" secondAttribute="bottom" constant="-7.5" id="igh-aO-nvC"/>
+                    <constraint firstItem="Hga-16-ypB" firstAttribute="leading" secondItem="rRW-Ir-hrn" secondAttribute="trailing" constant="-107" id="lva-hf-AVJ"/>
+                    <constraint firstItem="Hga-16-ypB" firstAttribute="leading" secondItem="gvH-uE-etD" secondAttribute="leadingMargin" constant="-8" id="onY-uv-TNg"/>
+                    <constraint firstItem="f7w-uI-D00" firstAttribute="centerY" secondItem="oYo-Zz-yhZ" secondAttribute="centerY" id="pm3-ec-4U4"/>
+                    <constraint firstItem="oYo-Zz-yhZ" firstAttribute="height" secondItem="rRW-Ir-hrn" secondAttribute="height" multiplier="0.7" id="sbg-qE-ovt"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="rRW-Ir-hrn" secondAttribute="leading" id="t7H-Lg-7Xp"/>
+                    <constraint firstItem="f7w-uI-D00" firstAttribute="leading" secondItem="rRW-Ir-hrn" secondAttribute="trailing" constant="-60" id="ugz-jY-YML"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="backgroundTipoImage" destination="8kS-Tg-mi6" id="G9o-s2-5OA"/>
-                <outlet property="categoriaIcon" destination="0d7-N8-2kB" id="yxk-pg-KqP"/>
-                <outlet property="meuPedidoImage" destination="vmM-Y5-LDd" id="PN8-kh-gIE"/>
-                <outlet property="meuPedidoLabel" destination="WXc-tn-tYK" id="6zA-YY-4uA"/>
-                <outlet property="minhaImage" destination="1G9-Ar-aHb" id="vBO-9n-bSy"/>
-                <outlet property="pedidoView" destination="Fs4-Uv-hSZ" id="Lnw-Ev-73P"/>
-                <outlet property="tipoLabel" destination="348-bQ-bg3" id="vkL-ha-8FS"/>
-                <outlet property="trocaLabel" destination="ecE-wM-bhA" id="rwz-17-vRA"/>
+                <outlet property="backgroundTipoImage" destination="rRW-Ir-hrn" id="gnB-Nz-ZLG"/>
+                <outlet property="categoriaIcon" destination="oYo-Zz-yhZ" id="jdy-58-jbp"/>
+                <outlet property="meuPedidoImage" destination="Hga-16-ypB" id="URq-b7-ibi"/>
+                <outlet property="meuPedidoLabel" destination="wPe-IH-r1e" id="Zqw-br-uUy"/>
+                <outlet property="minhaImage" destination="0Td-6Q-rEN" id="E3S-nN-yon"/>
+                <outlet property="pedidoView" destination="q5f-iy-4ts" id="GCO-EH-FxO"/>
+                <outlet property="tipoLabel" destination="f7w-uI-D00" id="ip2-OA-lGJ"/>
+                <outlet property="trocaLabel" destination="8Ou-On-D07" id="Az6-h9-JXQ"/>
             </connections>
-            <point key="canvasLocation" x="254" y="275.5"/>
+            <point key="canvasLocation" x="399" y="355"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="220C8433-60B6-40E6-8B66-25B251F8E306" width="62" height="62">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
+GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
+DBIAwAAAgAKACtISCRMVWk5TLm9iamVjdHOhFIADgAnSEgkXGqIYGYAEgAWACBAA0h0JHh9fEBROU1RJ
+RkZSZXByZXNlbnRhdGlvboAGgAdPEUkeTU0AKgAAPBj///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP9/ShH/f0qx/39K/v9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0o+/39KSf9/SgoAAAAA
+AAAAAAAAAAAAAAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A/39Ksf9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39KrP9/Sgz/f0rl
+/39KgQAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD/f0r+/39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Svn/f0oi
+/39Khf9/Sv//f0r3/39KHgAAAAAAAAAAAAAAAP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39Kif9/SiH/f0r4/39K//9/Sv//f0qpAAAAAAAAAAAAAAAA////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sun/f0oO/39KrP9/Sv//f0r//39K//9/Sv//f0o9AAAAAAAAAAD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD/f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39KgP9/Sj3/f0r//39K//9/Sv//f0r//39K//9/Ss7/f0oCAAAAAP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0pS/39Klv9/Sv//f0r//39K//9/Sv//f0r//39K//9/SmUAAAAA
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/SnX/f0p6/39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K6f9/Sg////8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD/f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K4v9/Shz/f0qu/39K+f9/Sv//f0r/
+/39K//9/Sv//f0r//39Ki////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K1f9/Sk7/f0oW
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A/39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv////8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD/f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K/////wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv////8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD/f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K/////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r/////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A/39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv////8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD/f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K/////wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv////8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD/f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K/////wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv////8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD/f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K/////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r/////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A/39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv////8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD/f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K/////wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv////8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD/f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K/////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r/////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A/39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv////8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD/f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K/////wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP9/StT/f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0re////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+/39KI/9/Sr7/f0r8/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r/
+/39K//9/Sv//f0r//39K//9/Sv//f0r//39K//9/Sv//f0r//39K5P9/SkT///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAA4BAAADAAAAAQA+
+AAABAQADAAAAAQA+AAABAgADAAAABAAAPMYBAwADAAAAAQABAAABBgADAAAAAQACAAABEQAEAAAAAQAA
+AAgBEgADAAAAAQABAAABFQADAAAAAQAEAAABFgADAAAAAQA+AAABFwAEAAAAAQAAPBABHAADAAAAAQAB
+AAABUgADAAAAAQACAAABUwADAAAABAAAPM6HcwAHAAAMSAAAPNYAAAAAAAgACAAIAAgAAQABAAEAAQAA
+DEhMaW5vAhAAAG1udHJSR0IgWFlaIAfOAAIACQAGADEAAGFjc3BNU0ZUAAAAAElFQyBzUkdCAAAAAAAA
+AAAAAAAAAAD21gABAAAAANMtSFAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAEWNwcnQAAAFQAAAAM2Rlc2MAAAGEAAAAbHd0cHQAAAHwAAAAFGJrcHQAAAIEAAAAFHJY
+WVoAAAIYAAAAFGdYWVoAAAIsAAAAFGJYWVoAAAJAAAAAFGRtbmQAAAJUAAAAcGRtZGQAAALEAAAAiHZ1
+ZWQAAANMAAAAhnZpZXcAAAPUAAAAJGx1bWkAAAP4AAAAFG1lYXMAAAQMAAAAJHRlY2gAAAQwAAAADHJU
+UkMAAAQ8AAAIDGdUUkMAAAQ8AAAIDGJUUkMAAAQ8AAAIDHRleHQAAAAAQ29weXJpZ2h0IChjKSAxOTk4
+IEhld2xldHQtUGFja2FyZCBDb21wYW55AABkZXNjAAAAAAAAABJzUkdCIElFQzYxOTY2LTIuMQAAAAAA
+AAAAAAAAEnNSR0IgSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAAAAAAAAAAAAAAAAWFlaIAAA
+AAAAAG+iAAA49QAAA5BYWVogAAAAAAAAYpkAALeFAAAY2lhZWiAAAAAAAAAkoAAAD4QAALbPZGVzYwAA
+AAAAAAAWSUVDIGh0dHA6Ly93d3cuaWVjLmNoAAAAAAAAAAAAAAAWSUVDIGh0dHA6Ly93d3cuaWVjLmNo
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGRlc2MAAAAAAAAALklF
+QyA2MTk2Ni0yLjEgRGVmYXVsdCBSR0IgY29sb3VyIHNwYWNlIC0gc1JHQgAAAAAAAAAAAAAALklFQyA2
+MTk2Ni0yLjEgRGVmYXVsdCBSR0IgY29sb3VyIHNwYWNlIC0gc1JHQgAAAAAAAAAAAAAAAAAAAAAAAAAA
+AABkZXNjAAAAAAAAACxSZWZlcmVuY2UgVmlld2luZyBDb25kaXRpb24gaW4gSUVDNjE5NjYtMi4xAAAA
+AAAAAAAAAAAsUmVmZXJlbmNlIFZpZXdpbmcgQ29uZGl0aW9uIGluIElFQzYxOTY2LTIuMQAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAdmlldwAAAAAAE6T+ABRfLgAQzxQAA+3MAAQTCwADXJ4AAAABWFlaIAAA
+AAAATAlWAFAAAABXH+dtZWFzAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAACjwAAAAJzaWcgAAAAAENS
+VCBjdXJ2AAAAAAAABAAAAAAFAAoADwAUABkAHgAjACgALQAyADcAOwBAAEUASgBPAFQAWQBeAGMAaABt
+AHIAdwB8AIEAhgCLAJAAlQCaAJ8ApACpAK4AsgC3ALwAwQDGAMsA0ADVANsA4ADlAOsA8AD2APsBAQEH
+AQ0BEwEZAR8BJQErATIBOAE+AUUBTAFSAVkBYAFnAW4BdQF8AYMBiwGSAZoBoQGpAbEBuQHBAckB0QHZ
+AeEB6QHyAfoCAwIMAhQCHQImAi8COAJBAksCVAJdAmcCcQJ6AoQCjgKYAqICrAK2AsECywLVAuAC6wL1
+AwADCwMWAyEDLQM4A0MDTwNaA2YDcgN+A4oDlgOiA64DugPHA9MD4APsA/kEBgQTBCAELQQ7BEgEVQRj
+BHEEfgSMBJoEqAS2BMQE0wThBPAE/gUNBRwFKwU6BUkFWAVnBXcFhgWWBaYFtQXFBdUF5QX2BgYGFgYn
+BjcGSAZZBmoGewaMBp0GrwbABtEG4wb1BwcHGQcrBz0HTwdhB3QHhgeZB6wHvwfSB+UH+AgLCB8IMghG
+CFoIbgiCCJYIqgi+CNII5wj7CRAJJQk6CU8JZAl5CY8JpAm6Cc8J5Qn7ChEKJwo9ClQKagqBCpgKrgrF
+CtwK8wsLCyILOQtRC2kLgAuYC7ALyAvhC/kMEgwqDEMMXAx1DI4MpwzADNkM8w0NDSYNQA1aDXQNjg2p
+DcMN3g34DhMOLg5JDmQOfw6bDrYO0g7uDwkPJQ9BD14Peg+WD7MPzw/sEAkQJhBDEGEQfhCbELkQ1xD1
+ERMRMRFPEW0RjBGqEckR6BIHEiYSRRJkEoQSoxLDEuMTAxMjE0MTYxODE6QTxRPlFAYUJxRJFGoUixSt
+FM4U8BUSFTQVVhV4FZsVvRXgFgMWJhZJFmwWjxayFtYW+hcdF0EXZReJF64X0hf3GBsYQBhlGIoYrxjV
+GPoZIBlFGWsZkRm3Gd0aBBoqGlEadxqeGsUa7BsUGzsbYxuKG7Ib2hwCHCocUhx7HKMczBz1HR4dRx1w
+HZkdwx3sHhYeQB5qHpQevh7pHxMfPh9pH5Qfvx/qIBUgQSBsIJggxCDwIRwhSCF1IaEhziH7IiciVSKC
+Iq8i3SMKIzgjZiOUI8Ij8CQfJE0kfCSrJNolCSU4JWgllyXHJfcmJyZXJocmtyboJxgnSSd6J6sn3CgN
+KD8ocSiiKNQpBik4KWspnSnQKgIqNSpoKpsqzysCKzYraSudK9EsBSw5LG4soizXLQwtQS12Last4S4W
+Lkwugi63Lu4vJC9aL5Evxy/+MDUwbDCkMNsxEjFKMYIxujHyMioyYzKbMtQzDTNGM38zuDPxNCs0ZTSe
+NNg1EzVNNYc1wjX9Njc2cjauNuk3JDdgN5w31zgUOFA4jDjIOQU5Qjl/Obw5+To2OnQ6sjrvOy07azuq
+O+g8JzxlPKQ84z0iPWE9oT3gPiA+YD6gPuA/IT9hP6I/4kAjQGRApkDnQSlBakGsQe5CMEJyQrVC90M6
+Q31DwEQDREdEikTORRJFVUWaRd5GIkZnRqtG8Ec1R3tHwEgFSEtIkUjXSR1JY0mpSfBKN0p9SsRLDEtT
+S5pL4kwqTHJMuk0CTUpNk03cTiVObk63TwBPSU+TT91QJ1BxULtRBlFQUZtR5lIxUnxSx1MTU19TqlP2
+VEJUj1TbVShVdVXCVg9WXFapVvdXRFeSV+BYL1h9WMtZGllpWbhaB1pWWqZa9VtFW5Vb5Vw1XIZc1l0n
+XXhdyV4aXmxevV8PX2Ffs2AFYFdgqmD8YU9homH1YklinGLwY0Njl2PrZEBklGTpZT1lkmXnZj1mkmbo
+Zz1nk2fpaD9olmjsaUNpmmnxakhqn2r3a09rp2v/bFdsr20IbWBtuW4SbmtuxG8eb3hv0XArcIZw4HE6
+cZVx8HJLcqZzAXNdc7h0FHRwdMx1KHWFdeF2Pnabdvh3VnezeBF4bnjMeSp5iXnnekZ6pXsEe2N7wnwh
+fIF84X1BfaF+AX5ifsJ/I3+Ef+WAR4CogQqBa4HNgjCCkoL0g1eDuoQdhICE44VHhauGDoZyhteHO4ef
+iASIaYjOiTOJmYn+imSKyoswi5aL/IxjjMqNMY2Yjf+OZo7OjzaPnpAGkG6Q1pE/kaiSEZJ6kuOTTZO2
+lCCUipT0lV+VyZY0lp+XCpd1l+CYTJi4mSSZkJn8mmia1ZtCm6+cHJyJnPedZJ3SnkCerp8dn4uf+qBp
+oNihR6G2oiailqMGo3aj5qRWpMelOKWpphqmi6b9p26n4KhSqMSpN6mpqhyqj6sCq3Wr6axcrNCtRK24
+ri2uoa8Wr4uwALB1sOqxYLHWskuywrM4s660JbSctRO1irYBtnm28Ldot+C4WbjRuUq5wro7urW7Lrun
+vCG8m70VvY++Cr6Evv+/er/1wHDA7MFnwePCX8Lbw1jD1MRRxM7FS8XIxkbGw8dBx7/IPci8yTrJuco4
+yrfLNsu2zDXMtc01zbXONs62zzfPuNA50LrRPNG+0j/SwdNE08bUSdTL1U7V0dZV1tjXXNfg2GTY6Nls
+2fHadtr724DcBdyK3RDdlt4c3qLfKd+v4DbgveFE4cziU+Lb42Pj6+Rz5PzlhOYN5pbnH+ep6DLovOlG
+6dDqW+rl63Dr++yG7RHtnO4o7rTvQO/M8Fjw5fFy8f/yjPMZ86f0NPTC9VD13vZt9vv3ivgZ+Kj5OPnH
++lf65/t3/Af8mP0p/br+S/7c/23//9IiIyQlWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBOU0JpdG1hcElt
+YWdlUmVwoyQmJ1pOU0ltYWdlUmVwWE5TT2JqZWN00iIjKSpXTlNBcnJheaIpJ9IiIywtXk5TTXV0YWJs
+ZUFycmF5oywpJ9MvMAkxMjNXTlNXaGl0ZVxOU0NvbG9yU3BhY2VEMCAwABADgAvSIiM1NldOU0NvbG9y
+ojUn0iIjODlXTlNJbWFnZaI4J18QD05TS2V5ZWRBcmNoaXZlctE8PVRyb290gAEACAARABoAIwAtADIA
+NwBFAEsAVABbAGgAbwB3AHkAfgCAAIIAhwCSAJQAlgCYAJ0AoACiAKQApgCoAK0AxADGAMhJ6knvSfpK
+A0oWShpKJUouSjNKO0o+SkNKUkpWSl1KZUpySndKeUp7SoBKiEqLSpBKmEqbSq1KsEq1AAAAAAAAAgEA
+AAAAAAAAPgAAAAAAAAAAAAAAAAAASrc
+</mutableData>
+        </image>
         <image name="arrow-give" width="49" height="15"/>
         <image name="arrow-receive" width="49" height="15"/>
-        <image name="david_TabBar" width="228" height="227"/>
-        <image name="paper" width="62" height="62"/>
+        <image name="chat_blank.png" width="30" height="30"/>
         <image name="tempImage" width="1920" height="1080"/>
     </resources>
 </document>

@@ -43,7 +43,13 @@
     
     if(point && request.location){
       double val = [point distanceInKilometersTo:request.location];
-      _distLabel.text = [NSString stringWithFormat:@"%.0lfkm",val];
+     
+        if (val < 99.0) {
+          _distLabel.text = [NSString stringWithFormat:@"%.0lfkm",val];
+        }else{
+          _distLabel.text = @"+99km";
+        }
+      
     }else{
       _distLabel.text = [NSString stringWithFormat:@"--"];
     }

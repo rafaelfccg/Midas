@@ -20,6 +20,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *usuarioImage;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundLocaleImage;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundTipoImage;
+@property (weak, nonatomic) IBOutlet UIImageView *localeImage;
 
 
 @property (nonatomic, weak) IBOutlet UILabel *pedidoLabel;
