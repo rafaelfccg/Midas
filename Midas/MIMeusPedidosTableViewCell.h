@@ -12,11 +12,16 @@
 @interface MIMeusPedidosTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *meuPedidoImage;
-@property (weak, nonatomic) IBOutlet UIImageView *minhaImage;
 @property (weak, nonatomic) IBOutlet UIImageView *categoriaIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundTipoImage;
+@property (weak, nonatomic) IBOutlet UIImageView *minhaImage;
 
 @property (weak, nonatomic) IBOutlet UILabel *trocaLabel;
 @property (weak, nonatomic) IBOutlet UILabel *meuPedidoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tipoLabel;
+
+
+@property (weak, nonatomic) IBOutlet UIView *pedidoView;
 
 @property (weak, nonatomic) MIPedido *request;
 

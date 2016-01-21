@@ -35,7 +35,9 @@
     
     self.muralTableView.delegate = self;
     self.muralTableView.dataSource = self;
-    // Do any additional setup after loading the view.
+    self.muralTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+  
+  // Do any additional setup after loading the view.
     self.requests = [[NSMutableArray alloc] init];
     
     self.refreshControl = [[UIRefreshControl alloc] init];

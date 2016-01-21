@@ -18,11 +18,17 @@
 @property (nonatomic, weak) IBOutlet UIImageView *pedidoImage;
 @property (nonatomic, weak) IBOutlet UIImageView *tipoImage;
 @property (nonatomic, weak) IBOutlet UIImageView *usuarioImage;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundLocaleImage;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundTipoImage;
 
 
 @property (nonatomic, weak) IBOutlet UILabel *pedidoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *destinoLabel;
 @property (nonatomic, weak) IBOutlet UILabel *distLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tipoLabel;
+
+
+@property (weak, nonatomic) IBOutlet UIView *pedidoView;
 
 @property (nonatomic) MIPedido *request;
 
