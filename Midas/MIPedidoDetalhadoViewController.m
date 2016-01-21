@@ -48,6 +48,8 @@
     _userImage.layer.cornerRadius = 40.0f;
     _userImage.layer.borderColor = [UIColor whiteColor].CGColor;
     _userImage.layer.borderWidth = 3;
+  
+  
 
     
     [self.containerViewVoceRecebe.layer setCornerRadius:self.containerViewVoceRecebe.bounds.size.height/2];
@@ -98,6 +100,11 @@
     self.whyExchangeWithMeLabel.text = self.currentRequest.descricao;
     
     self.categoryImage.image = getCategoryIcon(self.currentRequest.category);
+    self.categoryLabel.text = getCategoryName(self.currentRequest.category);
+    
+    [self.backgorundCategoryImage.layer setMasksToBounds:YES];
+    [self.backgorundCategoryImage.layer setCornerRadius:self.backgorundCategoryImage.frame.size.height/2];
+    
     self.backgroundImage.image = self.currentRequest.image;
     
     self.voceRecebeLabel.text = NSLocalizedString(@"Você recebe", @"Você recebe");

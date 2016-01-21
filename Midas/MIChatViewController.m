@@ -39,6 +39,10 @@
     JSQMessagesAvatarImage *avatarImageBlank;
 }
 //@property MINegociation * chat;
+
+  @property float keyboardHeight;
+  @property BOOL isUp;
+
 @end
 
 @implementation MIChatViewController
@@ -71,13 +75,19 @@
     //[self hidesBottomBarWhenPushed];
     isLoading = NO;
     initialized = NO;
-    
+  
+  UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+  [self.view addGestureRecognizer:gestureRecognizer];
+  gestureRecognizer.cancelsTouchesInView = NO;
+  
     //informacao do user -- esta no xib JSQMessagesViewController
     self.userImageView.layer.cornerRadius =  self.userImageView.bounds.size.width/2;
     self.userImageView.clipsToBounds = YES;
     [self loadRequestInfo];
     
     [self loadMessages];
+  
+    _isUp = NO;
 
     // Do any additional setup after loading the view.
 }
@@ -86,6 +96,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)dismissKeyboard
+{
+  [self.view endEditing:YES];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
@@ -552,6 +568,41 @@
     
     
 
+}
+
+#pragma mark - Keyboard Notifications
+-(void)keyboardWillShow:(NSNotification *)notification {
+  
+  if([notification userInfo]){
+    NSValue * keyboardSize = [notification userInfo][UIKeyboardFrameBeginUserInfoKey];
+    
+    
+    if (!_isUp) {
+      _keyboardHeight = keyboardSize.CGRectValue.size.height;
+      [self animateView:YES];
+      _isUp = YES;
+    }
+  }
+}
+
+-(void)keyboardWillHide:(NSNotification *)notification {
+  
+  if (_isUp) {
+    [self animateView:NO];
+    _isUp = NO;
+  }
+}
+
+-(void) animateView:(BOOL)up {
+  
+  float movement = up ? -_keyboardHeight : _keyboardHeight;
+  
+  [UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration:0.3];
+  
+  self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+  
+  [UIView commitAnimations];
 }
 
 @end
