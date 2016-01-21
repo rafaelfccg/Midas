@@ -127,9 +127,10 @@
     if ([willgive length] > 25)	{ [ProgressHUD showError:NSLocalizedString(@"Campo 'Dou' muito longo (>25).", @"Campo 'Dou' muito longo (>25).")]; return; }//@""
     if ([description length] < 1)	{ [ProgressHUD showError:NSLocalizedString(@"A descrição é um campo obrigatório.", @"A descrição é um campo obrigatório.")]; return; }//@""
     if ([description length] > 140)	{ [ProgressHUD showError:NSLocalizedString(@"Descrição muito longa (>140).", @"Descrição muito longa (>140).")]; return; }//@""
-    if (forEachValue < 1)	{ [ProgressHUD showError:NSLocalizedString(@"Campo 'A cada' deve ter um valor.", @"Campo 'A cada' deve ter um valor.")]; return; }//@""
-    if (willGiveValue < 1)	{ [ProgressHUD showError:NSLocalizedString(@"Campo 'Dou' deve ter um valor.", @"Campo 'Dou' deve ter um valor.")]; return; }//@""
-
+    if (forEachValue < 1 || forEachValue  > 999)	{ [ProgressHUD showError:NSLocalizedString(@"Campo 'A cada' deve ter um valor entre 1 e 999.", @"Campo 'A cada' deve ter um valor.")]; return; }//@""
+    if (willGiveValue < 1 || willGiveValue > 999)	{ [ProgressHUD showError:NSLocalizedString(@"Campo 'Dou' deve ter um valor entre 1 e 999.", @"Campo 'Dou' deve ter um valor.")]; return; }//@""
+  
+  
     
     [ProgressHUD show:NSLocalizedString(@"Aguarde...", @"Mensagem Aguarde...") Interaction:NO];
     PFUser * user = [PFUser currentUser];
