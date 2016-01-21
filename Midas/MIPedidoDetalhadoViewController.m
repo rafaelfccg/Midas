@@ -28,6 +28,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *voceRecebeNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *porNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *whyExchangeWithMeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *voceRecebeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *porLabel;
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
@@ -97,6 +99,9 @@
     
     self.categoryImage.image = getCategoryIcon(self.currentRequest.category);
     self.backgroundImage.image = self.currentRequest.image;
+    
+    self.voceRecebeLabel.text = NSLocalizedString(@"Você recebe", @"Você recebe");
+    self.porLabel.text = NSLocalizedString(@"Por", @"Por");
     
     //CARREGA A IMAGEM DO USUARIO
     if (self.currentRequest.owner[PF_USER_IMAGE]) {
