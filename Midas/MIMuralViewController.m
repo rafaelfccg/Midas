@@ -133,11 +133,17 @@
              [_requests addObjectsFromArray:pedidos];
              [self.muralTableView reloadData];
              
-             if([_requests count]==0)
-                 self.muralTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Nosso mural"]];
+             if([_requests count]==0){
+                 
+                UIImageView* background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Nosso mural"]];
+                background.contentMode = UIViewContentModeScaleAspectFit;
+                background.backgroundColor = [UIColor whiteColor];
+                self.muralTableView.backgroundView = background;
+             }
              
-             else
+             else{
                  self.muralTableView.backgroundView = nil;
+             }
          }
          else {
              NSLog(@"%@", error.userInfo[@"error"]);
