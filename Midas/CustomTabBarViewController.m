@@ -23,13 +23,16 @@
     
     UITabBarItem *item0 = [[self.tabBar items] objectAtIndex:0];
     item0.accessibilityLabel = @"Mural";
-  item0.image = [UIImage imageNamed:@"mural-tabbar-unpressed"];
-
     UITabBarItem *item1 = [[self.tabBar items] objectAtIndex:1];
     item1.accessibilityLabel = @"Meus Pedidos";
     UITabBarItem *item2 = [[self.tabBar items] objectAtIndex:2];
     item2.accessibilityLabel = @"Perfil";
     // Do any additional setup after loading the view.
+    
+    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *vc, NSUInteger idx, BOOL *stop) {
+        vc.title = nil;
+        vc.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
