@@ -254,11 +254,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-<<<<<<< HEAD
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="D0C3B689-3A07-40E2-8D30-56F1D186636E" translatesAutoresizingMaskIntoConstraints="NO" id="Gaj-DR-Ws1">
-=======
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6657A51A-165E-48C5-9B60-4AC8CF6B2A86" translatesAutoresizingMaskIntoConstraints="NO" id="Gaj-DR-Ws1">
->>>>>>> origin/master
                                                 <rect key="frame" x="18" y="93" width="28" height="31"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DL6-zl-oZa">
@@ -1544,13 +1540,7 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
-        <image name=":camera-04" width="1408" height="1333"/>
-        <image name="CameraIcon" width="50" height="50"/>
-        <image name="D0C3B689-3A07-40E2-8D30-56F1D186636E" width="62" height="62">
-=======
         <image name="6657A51A-165E-48C5-9B60-4AC8CF6B2A86" width="62" height="62">
->>>>>>> origin/master
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
