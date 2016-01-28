@@ -42,6 +42,7 @@
 
   @property float keyboardHeight;
   @property BOOL isUp;
+  @property UIActionSheet *openMoreSheet;
 
 @end
 
@@ -90,6 +91,53 @@
     _isUp = NO;
 
     // Do any additional setup after loading the view.
+    
+//    UIBarButtonItem *editarButton = [[UIBarButtonItem alloc]
+//                                     initWithTitle:nil
+//                                     style:UIBarButtonItemStylePlain
+//                                     target:self
+//                                     action:@selector(openMoreSheet:)];
+//    [editarButton setBackButtonBackgroundImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal barMetrics:0];
+//    self.navigationItem.rightBarButtonItem = editarButton;
+    
+    UIButton* customButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [customButton setImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal];
+    [customButton setTitle:@"" forState:UIControlStateNormal];
+    [customButton setBounds:CGRectMake(0, 0, 20, 20)];
+    [customButton addTarget:self action:@selector(openMoreSheet:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* customBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:customButton];
+    self.navigationItem.rightBarButtonItem = customBarButtonItem;
+}
+
+- (void)openMoreSheet:(id)sender {
+    /*
+    self.openMoreSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", @"Cancelar Button")
+                                      destructiveButtonTitle:NSLocalizedString(@"Apenas Denunciar", @"Apenas Denunciar") otherButtonTitles:@[NSLocalizedString(@"Apenas Bloquear", @"Apenas Bloquear"),NSLocalizedString(@"Denunciar e Bloquear", @"Denunciar e Bloquear")]];
+                                                                                                                                                                                                                    [self.openMoreSheet showFromTabBar:[[self tabBarController] tabBar]];
+     */
+     
+     self.openMoreSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", @"Cancelar Button")
+     destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Apenas Denunciar", @"Apenas Denunciar"),NSLocalizedString(@"Apenas Bloquear", @"Apenas Bloquear"), NSLocalizedString(@"Denunciar e Bloquear", @"Denunciar e Bloquear"),nil];
+     [self.openMoreSheet showFromTabBar:[[self tabBarController] tabBar]];
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    if(actionSheet==self.openMoreSheet)
+    {
+        if (buttonIndex == 0)
+        {
+            NSLog(@"Apertou Apenas Denunciar!");
+        } else if (buttonIndex == 1)
+        {
+            NSLog(@"Apertou Apenas Bloquear!");
+        } else if (buttonIndex == 2)
+        {
+            NSLog(@"Apertou Bloquear e Denunciar!");
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,6 +148,37 @@
 - (void)dismissKeyboard
 {
   [self.view endEditing:YES];
+}
+
+- (UIImage *)imageFromSystemBarButton:(UIBarButtonSystemItem)systemItem {
+    // Holding onto the oldItem (if any) to set it back later
+    // could use left or right, doesn't matter
+    UIBarButtonItem *oldItem = self.navigationItem.rightBarButtonItem;
+    
+    UIBarButtonItem *tempItem = [[UIBarButtonItem alloc]
+                                 initWithBarButtonSystemItem:systemItem
+                                 target:nil
+                                 action:nil];
+    
+    // Setting as our right bar button item so we can traverse its subviews
+    self.navigationItem.rightBarButtonItem = tempItem;
+    
+    // Don't know whether this is considered as PRIVATE API or not
+    UIView *itemView = (UIView *)[self.navigationItem.rightBarButtonItem performSelector:@selector(view)];
+    
+    UIImage *image = nil;
+    // Traversing the subviews to find the ImageView and getting its image
+    for (UIView *subView in itemView.subviews) {
+        if ([subView isKindOfClass:[UIImageView class]]) {
+            image = ((UIImageView *)subView).image;
+            break;
+        }
+    }
+    
+    // Setting our oldItem back since we have the image now
+    self.navigationItem.rightBarButtonItem = oldItem;
+    
+    return image;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -604,5 +683,7 @@
   
   [UIView commitAnimations];
 }
+
+
 
 @end

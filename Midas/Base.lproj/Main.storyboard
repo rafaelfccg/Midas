@@ -254,7 +254,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7E373D1C-AB69-4ED0-B88D-72AEFF2455AE" translatesAutoresizingMaskIntoConstraints="NO" id="Gaj-DR-Ws1">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="D0C3B689-3A07-40E2-8D30-56F1D186636E" translatesAutoresizingMaskIntoConstraints="NO" id="Gaj-DR-Ws1">
                                                 <rect key="frame" x="18" y="93" width="28" height="31"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DL6-zl-oZa">
@@ -1512,7 +1512,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="7E373D1C-AB69-4ED0-B88D-72AEFF2455AE" width="62" height="62">
+        <image name=":camera-04" width="1408" height="1333"/>
+        <image name="CameraIcon" width="50" height="50"/>
+        <image name="D0C3B689-3A07-40E2-8D30-56F1D186636E" width="62" height="62">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1838,8 +1840,6 @@ A0oWShpKJUouSjNKO0o+SkNKUkpWSl1KZUpySndKeUp7SoBKiEqLSpBKmEqbSq1KsEq1AAAAAAAAAgEA
 AAAAAAAAPgAAAAAAAAAAAAAAAAAASrc
 </mutableData>
         </image>
-        <image name=":camera-04" width="1408" height="1333"/>
-        <image name="CameraIcon" width="50" height="50"/>
         <image name="NovoPedido" width="40" height="40"/>
         <image name="add-photo" width="368" height="364"/>
         <image name="adress" width="52" height="75"/>
