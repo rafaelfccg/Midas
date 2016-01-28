@@ -95,6 +95,16 @@
 #define     ENUM_INAPPROPRIATE_CONTENT_STATUS_MARKED_AS_INAPPROPRIATE               @1
 #define     ENUM_INAPPROPRIATE_CONTENT_STATUS_MARKED_AS_NOT_INAPPROPRIATE		    @2
 
+//-----------------------------------------------------------------------
+#define		PF_INAPPROPRIATE_MESSAGE_CLASS_NAME                 @"InappropriateMessage"				//	Class name
+#define		PF_INAPPROPRIATE_MESSAGE_OBJECTID                   @"objectId"                         //  String
+#define		PF_INAPPROPRIATE_MESSAGE_USER_WHO_FLAGGED_CONTENT	@"UserWhoFlaggedMessage"			//	Pointer to User Class
+#define		PF_INAPPROPRIATE_MESSAGE_STATUS                     @"Status"                           //	Number
+
+#define     ENUM_INAPPROPRIATE_MESSAGE_STATUS_OPEN                                  @0
+#define     ENUM_INAPPROPRIATE_MESSAGE_STATUS_MARKED_AS_INAPPROPRIATE               @1
+#define     ENUM_INAPPROPRIATE_MESSAGE_STATUS_MARKED_AS_NOT_INAPPROPRIATE		    @2
+
 //----------------------------------------
 #define		NOTIFICATION_APP_STARTED			@"NCAppStarted"
 #define		NOTIFICATION_USER_LOGGED_IN			@"NCUserLoggedIn"
