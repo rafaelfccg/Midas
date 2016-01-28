@@ -254,7 +254,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="40320AFD-299F-4DF9-84F3-1B9F1C747411" translatesAutoresizingMaskIntoConstraints="NO" id="Gaj-DR-Ws1">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6657A51A-165E-48C5-9B60-4AC8CF6B2A86" translatesAutoresizingMaskIntoConstraints="NO" id="Gaj-DR-Ws1">
                                                 <rect key="frame" x="18" y="93" width="28" height="31"/>
                                             </imageView>
                                         </subviews>
@@ -1508,7 +1508,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="40320AFD-299F-4DF9-84F3-1B9F1C747411" width="62" height="62">
+        <image name="6657A51A-165E-48C5-9B60-4AC8CF6B2A86" width="62" height="62">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

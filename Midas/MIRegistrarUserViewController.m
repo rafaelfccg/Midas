@@ -44,7 +44,7 @@
     [self.registrarButton.layer setMasksToBounds:YES];
   
     self.termosButton.titleLabel.numberOfLines = 0;
-    self.termosButton.titleLabel.lineBreakMode =  NSLineBreakByTruncatingMiddle;
+    [self.termosButton.titleLabel setTextAlignment:UITextAlignmentCenter];
   
   //  [self.termosButton setTitle:NSLocalizedString(@"Termos de Uso", @"Titulo Termos de Uso") forState:UIControlStateNormal];
     
