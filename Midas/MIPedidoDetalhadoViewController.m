@@ -266,13 +266,13 @@
                                        if (error) {
                                            [ProgressHUD showError:error.userInfo[@"error"]];
                                        } else if ([objects count] > 0) {
-                                           [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Conteúdo já denunciado.", @"Conteúdo já denunciado.")]];
+                                           [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Você já denunciou esse post.", @"Você já denunciou esse post.")]];
                                        } else {
                                        
                                            //FLAG AS INAPPROPRIATE
                                            [[MIDatabase sharedInstance] markContentAsInappropriateFromRequest:self.currentRequest withBlock:^(BOOL succeeded, NSError * _Nullable error) {
                                                if(succeeded) {
-                                                   [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Conteúdo denunciado. Obrigado por fazer o Midas melhor.", @"Conteúdo denunciado. Obrigado por fazer o Midas melhor.")]];
+                                                   [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Conteúdo enviado para análise. Obrigado.", @"Conteúdo denunciado. Obrigado por fazer o Midas melhor.")]];
                                                } else{
                                                    [ProgressHUD showError:error.userInfo[@"error"]];
                                                }
