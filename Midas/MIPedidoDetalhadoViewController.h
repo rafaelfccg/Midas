@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeRequestButton;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *backgorundCategoryImage;
+@property (weak, nonatomic) IBOutlet UIButton *flagAsInappropriateButton;
 
 @end

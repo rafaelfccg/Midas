@@ -308,7 +308,27 @@
     [query includeKey:PF_REQUEST_USER];
     [query findObjectsInBackgroundWithBlock:block];
     
+}
+
+- (void) markContentAsInappropriateFromRequest:(nonnull MIPedido *)pedido withBlock:(nullable PFBooleanResultBlock)block {
     
+    
+    PFObject *request = [PFObject objectWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
+    
+    request[PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT] = [PFUser currentUser];
+    request[PF_INAPPROPRIATE_CONTENT_REQUEST] = pedido.object;
+    request[PF_INAPPROPRIATE_CONTENT_STATUS] = ENUM_INAPPROPRIATE_CONTENT_STATUS_OPEN;
+
+    [request saveInBackgroundWithBlock:block];
+}
+
+- (void) checkIfContentIsFlaggedAsInappropriateFromRequest:(nonnull MIPedido *)pedido withBlock:(nullable PFArrayResultBlock)block {
+    
+    PFQuery* query = [PFQuery queryWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
+    [query whereKey:PF_INAPPROPRIATE_CONTENT_REQUEST equalTo:pedido.object];
+    [query whereKey:PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT equalTo:[PFUser currentUser]];
+    [query whereKey:PF_INAPPROPRIATE_CONTENT_STATUS equalTo:ENUM_INAPPROPRIATE_CONTENT_STATUS_OPEN];
+    [query findObjectsInBackgroundWithBlock:block];
 }
 
 

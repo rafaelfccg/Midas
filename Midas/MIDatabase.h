@@ -50,8 +50,12 @@
 
 - (void) loadPFFile:(nonnull PFFile *)file WithBlock:(nullable PFImageViewImageResultBlock)completion;
 
--(void) getChatWithObjectId:(nonnull NSString *)chatId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
+- (void) getChatWithObjectId:(nonnull NSString *)chatId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
 
--(void) getRequestWithObjectId:(nonnull NSString *)requestId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
+- (void) getRequestWithObjectId:(nonnull NSString *)requestId withBlock:(PF_NULLABLE_S PFArrayResultBlock)block;
+
+- (void) markContentAsInappropriateFromRequest:(nonnull MIPedido *)pedido withBlock:(nullable PFBooleanResultBlock)block;
+
+- (void) checkIfContentIsFlaggedAsInappropriateFromRequest:(nonnull MIPedido *)pedido withBlock:(nullable PFArrayResultBlock)block;
                              
 @end
