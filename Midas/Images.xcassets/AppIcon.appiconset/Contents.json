@@ -40,8 +40,9 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "Icon-60@2x-1.png",
       "scale" : "2x"
     },
     {
@@ -143,6 +144,7 @@
     {
       "size" : "29x29",
       "idiom" : "watch",
+      "filename" : "Icon-Small@2x-1.png",
       "role" : "companionSettings",
       "scale" : "2x"
     },
@@ -180,6 +182,10 @@
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "42mm"
+    },
+    {
+      "filename" : "Icon-76@3x-1.png",
+      "unassigned" : true
     },
     {
       "filename" : "Icon-76@3x.png",

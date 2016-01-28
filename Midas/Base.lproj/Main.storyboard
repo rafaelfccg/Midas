@@ -13,7 +13,7 @@
             <objects>
                 <navigationController id="u96-fw-Yp0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="mural-tabbar-unpressed" id="Zpb-Vg-5KV">
-                        <inset key="imageInsets" minX="3" minY="9" maxX="3" maxY="-3"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FEi-RQ-gmm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1026,9 +1026,7 @@
         <scene sceneID="gma-By-cRe">
             <objects>
                 <navigationController id="4e8-Jq-RGm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="profile-tab-bar-disabled" id="osk-Fw-3YX">
-                        <inset key="imageInsets" minX="3" minY="9" maxX="3" maxY="-3"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="profile-tab-bar-disabled" id="osk-Fw-3YX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gPr-TA-Db3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1045,9 +1043,7 @@
         <scene sceneID="p6a-ua-bZ4">
             <objects>
                 <navigationController id="8uO-6A-hiw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="request-tabbar-unpressed" id="dmQ-Ei-OXs">
-                        <inset key="imageInsets" minX="3" minY="9" maxX="3" maxY="-3"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="request-tabbar-unpressed" id="dmQ-Ei-OXs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JhH-Cb-93V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1820,7 +1816,6 @@ A0oWShpKJUouSjNKO0o+SkNKUkpWSl1KZUpySndKeUp7SoBKiEqLSpBKmEqbSq1KsEq1AAAAAAAAAgEA
 AAAAAAAAPgAAAAAAAAAAAAAAAAAASrc
 </mutableData>
         </image>
-        <image name=":camera-04" width="1408" height="1333"/>
         <image name="CameraIcon" width="50" height="50"/>
         <image name="NovoPedido" width="40" height="40"/>
         <image name="add-photo" width="368" height="364"/>
@@ -1828,7 +1823,7 @@ AAAAAAAAPgAAAAAAAAAAAAAAAAAASrc
         <image name="bg-perfil" width="751" height="308"/>
         <image name="buscar" width="40" height="40"/>
         <image name="midas-logo" width="501" height="541"/>
-        <image name="mural-tabbar-unpressed" width="44" height="44"/>
+        <image name="mural-tabbar-unpressed" width="37" height="37"/>
         <image name="profile-tab-bar-disabled" width="44" height="44"/>
         <image name="recent_blank.png" width="50" height="50"/>
         <image name="request-tabbar-unpressed" width="44" height="44"/>
