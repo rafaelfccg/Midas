@@ -96,14 +96,15 @@
 #define     ENUM_INAPPROPRIATE_CONTENT_STATUS_MARKED_AS_NOT_INAPPROPRIATE		    @2
 
 //-----------------------------------------------------------------------
-#define		PF_INAPPROPRIATE_MESSAGE_CLASS_NAME                 @"InappropriateMessage"				//	Class name
-#define		PF_INAPPROPRIATE_MESSAGE_OBJECTID                   @"objectId"                         //  String
-#define		PF_INAPPROPRIATE_MESSAGE_USER_WHO_FLAGGED_CONTENT	@"UserWhoFlaggedMessage"			//	Pointer to User Class
-#define		PF_INAPPROPRIATE_MESSAGE_STATUS                     @"Status"                           //	Number
+#define		PF_INAPPROPRIATE_USER_CLASS_NAME                 @"InappropriateUser"                   //	Class name
+#define		PF_INAPPROPRIATE_USER_OBJECTID                   @"objectId"                            //  String
+#define		PF_INAPPROPRIATE_USER_WHO_FLAGGED_CONTENT        @"UserWhoFlaggedReported"              //	Pointer to User Class
+#define		PF_INAPPROPRIATE_USER_WHO_RECIVE_CONTENT         @"UserWhoRecivereported"               //	Pointer to User Class
+#define		PF_INAPPROPRIATE_USER_STATUS                     @"Status"                              //	Number
 
-#define     ENUM_INAPPROPRIATE_MESSAGE_STATUS_OPEN                                  @0
-#define     ENUM_INAPPROPRIATE_MESSAGE_STATUS_MARKED_AS_INAPPROPRIATE               @1
-#define     ENUM_INAPPROPRIATE_MESSAGE_STATUS_MARKED_AS_NOT_INAPPROPRIATE		    @2
+#define     ENUM_INAPPROPRIATE_USER_STATUS_OPEN                                     @0
+#define     ENUM_INAPPROPRIATE_USER_STATUS_MARKED_AS_INAPPROPRIATE                  @1
+#define     ENUM_INAPPROPRIATE_USER_STATUS_MARKED_AS_NOT_INAPPROPRIATE              @2
 
 //----------------------------------------
 #define     PF_REPORTED_USER                    @"ReportedUser"                                     //	Class name
