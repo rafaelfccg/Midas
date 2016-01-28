@@ -33,6 +33,7 @@
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+@property UIActionSheet *moreSheet;
 
 @end
 
@@ -239,10 +240,32 @@
     txtview.contentOffset = (CGPoint){.x = 0, .y = -topoffset};
 }
 
-- (IBAction)flagAsInappropriate:(id)sender {
+
+- (IBAction)moreOptions:(id)sender {
+    self.moreSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", @"Cancelar Button")
+                                     destructiveButtonTitle:NSLocalizedString(@"Denunciar Post", @"Denunciar Post") otherButtonTitles:nil];
+    [self.moreSheet showFromTabBar:[[self tabBarController] tabBar]];
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+{
+    if(actionSheet==self.moreSheet)
+    {
+        if (buttonIndex != actionSheet.cancelButtonIndex)
+        {
+            [self flagAsInappropriate];
+        }
+    }
+}
+
+- (void)flagAsInappropriate {
+    
+    
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:NSLocalizedString(@"Denunciar conteúdo", @"Denunciar conteúdo Title")
-                                          message:NSLocalizedString(@"Deseja denunciar o conteúdo desse pedido?", @"Deseja denunciar o conteúdo desse pedido?")                                          preferredStyle:UIAlertControllerStyleAlert];
+                                          message:NSLocalizedString(@"Deseja realmente denunciar o conteúdo desse pedido?", @"Deseja denunciar o conteúdo desse pedido?")                                          preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *cancelAction = [UIAlertAction
                                    actionWithTitle:NSLocalizedString(@"Cancelar", @"Cancelar Action")
