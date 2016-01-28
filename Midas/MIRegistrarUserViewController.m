@@ -11,11 +11,16 @@
 #import "MIDatabase.h"
 #import "camera.h"
 #import "general.h"
+#import "MITermosDeUsoViewController.h"
+#import "PopOverViewController.h"
+
 
 @interface MIRegistrarUserViewController()
 
 @property BOOL isUp;
 @property float keyboardHeight;
+@property (weak, nonatomic) IBOutlet UIButton *termosButton;
+@property(nonatomic,retain)UIPopoverPresentationController *dateTimePopover8;
 
 @end
 
@@ -37,6 +42,11 @@
 
     [self.registrarButton.layer setCornerRadius:7.0f];
     [self.registrarButton.layer setMasksToBounds:YES];
+  
+    self.termosButton.titleLabel.numberOfLines = 0;
+    self.termosButton.titleLabel.lineBreakMode =  NSLineBreakByTruncatingMiddle;
+  
+  //  [self.termosButton setTitle:NSLocalizedString(@"Termos de Uso", @"Titulo Termos de Uso") forState:UIControlStateNormal];
     
     self.imageView.layer.cornerRadius = 10.0f;
 }
@@ -202,6 +212,32 @@ scaledToSize:(CGSize)newSize
     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     
     [UIView commitAnimations];
+}
+
+- (IBAction)termosDeUso:(id)sender {
+  MITermosDeUsoViewController* termosVC = [[MITermosDeUsoViewController alloc] init];
+  termosVC.titleText = NSLocalizedString(@"Termos de Uso", @"Titulo Termos de Uso");
+  termosVC.contentText = NSLocalizedString(@"Conteudo Termos de Uso", @"Conteudo Termos de Uso");
+  
+  UINavigationController *destNav = [[UINavigationController alloc] initWithRootViewController:termosVC];/*Here dateVC is controller you want to show in popover*/
+  termosVC.preferredContentSize = CGSizeMake(self.view.bounds.size.width*0.7,self.view.bounds.size.height*0.3);
+  destNav.modalPresentationStyle = UIModalPresentationPopover;
+  _dateTimePopover8 = destNav.popoverPresentationController;
+  _dateTimePopover8.delegate = self;
+  _dateTimePopover8.sourceView = self.view;
+  _dateTimePopover8.sourceRect = [sender frame];
+  
+  destNav.modalPresentationStyle = UIModalPresentationPopover;
+  destNav.navigationBarHidden = YES;
+  [self presentViewController:destNav animated:YES completion:nil];
+
+}
+- (UIModalPresentationStyle) adaptivePresentationStyleForPresentationController: (UIPresentationController * ) controller {
+  return UIModalPresentationNone;
+}
+-(void)hideIOS8PopOver
+{
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
