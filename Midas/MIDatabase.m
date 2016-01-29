@@ -393,12 +393,21 @@
 }
 
 - (void) blokAUser:(nonnull PFUser *)owner withBlock:(nullable PFBooleanResultBlock)block {
+    
     PFObject *request = [PFObject objectWithClassName:PF_BLOCKED_USER_RELATION];
     
     request[PF_BLOCKED_USER_RELATION_USER1] = [PFUser currentUser];
     request[PF_BLOCKED_USER_RELATION_USER2] = owner;
     
     [request saveInBackgroundWithBlock:block];
+    
+    
+    PFObject *request2 = [PFObject objectWithClassName:PF_BLOCKED_USER_RELATION];
+    
+    request2[PF_BLOCKED_USER_RELATION_USER2] = [PFUser currentUser];
+    request2[PF_BLOCKED_USER_RELATION_USER1] = owner;
+    
+    [request2 saveInBackground];
 }
 
 - (void) loadChatInBackGroundWithBlock:(nonnull NSString*)chatID withBlock:(nullable PFArrayResultBlock)block{
