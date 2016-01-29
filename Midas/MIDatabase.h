@@ -62,9 +62,9 @@
 
 - (void) checkIfContentIsFlaggedAsInappropriateFromMessage:(nonnull PFUser *)owner withBlock:(nullable PFArrayResultBlock)block;
 
-- (void) checkIfUserAreReported:(nonnull PFUser *)owner withBlock:(nullable PFArrayResultBlock)block;
+- (void) checkIfUserIsBlocked:(nonnull PFUser *)owner withBlock:(nullable PFArrayResultBlock)block;
 
-- (void) reportAUser:(nonnull PFUser *)owner withBlock:(nullable PFBooleanResultBlock)block;
+- (void) blokAUser:(nonnull PFUser *)owner withBlock:(nullable PFBooleanResultBlock)block;
 
 - (void) loadChatInBackGroundWithBlock:(nonnull NSString*)chatID withBlock:(nullable PFArrayResultBlock)block;
                              

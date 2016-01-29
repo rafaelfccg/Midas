@@ -356,7 +356,7 @@
     [query findObjectsInBackgroundWithBlock:block];
 }
 
-- (void) checkIfUserAreReported:(nonnull PFUser *)owner withBlock:(nullable PFArrayResultBlock)block {
+- (void) checkIfUserIsBlocked:(nonnull PFUser *)owner withBlock:(nullable PFArrayResultBlock)block {
     PFQuery *query = [PFQuery queryWithClassName:PF_REPORTED_USER];
     [query whereKey:PF_USER1 equalTo:owner];
     [query whereKey:PF_USER2 equalTo:[PFUser currentUser]];
@@ -364,7 +364,7 @@
     [query findObjectsInBackgroundWithBlock:block];
 }
 
-- (void) reportAUser:(nonnull PFUser *)owner withBlock:(nullable PFBooleanResultBlock)block {
+- (void) blokAUser:(nonnull PFUser *)owner withBlock:(nullable PFBooleanResultBlock)block {
     PFObject *request = [PFObject objectWithClassName:PF_REPORTED_USER];
     
     request[PF_USER1] = [PFUser currentUser];
