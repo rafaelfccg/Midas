@@ -133,6 +133,23 @@
         {
             NSLog(@"Apertou Apenas Denunciar!");
             
+            [[MIDatabase sharedInstance]checkIfContentIsFlaggedAsInappropriateFromMessage:_neg.owner withBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                if(error){
+                    [ProgressHUD showError:error.userInfo[@"error"]];
+                }
+                else if ([objects count] > 0) {
+                    [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Você já denunciou esse post.", @"Você já denunciou esse post.")]];
+                } else{
+                    [[MIDatabase sharedInstance]markContentAsInappropriateFromMessage:_neg.owner withBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        if(!succeeded){
+                            [ProgressHUD showError:error.userInfo[@"error"]];
+                        }
+                        else{
+                            [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Denuncia enviada para análise. Obrigado.", @"Usuário denunciado. Obrigado por fazer o Midas melhor.")]];
+                        }
+                    }];
+                }
+            }];
             
         } else if (buttonIndex == 1)
         {
