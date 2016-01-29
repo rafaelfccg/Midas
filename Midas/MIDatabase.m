@@ -385,18 +385,18 @@
 }
 
 - (void) checkIfUserIsBlocked:(nonnull PFUser *)owner withBlock:(nullable PFArrayResultBlock)block {
-    PFQuery *query = [PFQuery queryWithClassName:PF_REPORTED_USER];
-    [query whereKey:PF_USER1 equalTo:owner];
-    [query whereKey:PF_USER2 equalTo:[PFUser currentUser]];
+    PFQuery *query = [PFQuery queryWithClassName:PF_BLOCKED_USER_RELATION];
+    [query whereKey:PF_BLOCKED_USER_RELATION_USER1 equalTo:owner];
+    [query whereKey:PF_BLOCKED_USER_RELATION_USER2 equalTo:[PFUser currentUser]];
     
     [query findObjectsInBackgroundWithBlock:block];
 }
 
 - (void) blokAUser:(nonnull PFUser *)owner withBlock:(nullable PFBooleanResultBlock)block {
-    PFObject *request = [PFObject objectWithClassName:PF_REPORTED_USER];
+    PFObject *request = [PFObject objectWithClassName:PF_BLOCKED_USER_RELATION];
     
-    request[PF_USER1] = [PFUser currentUser];
-    request[PF_USER2] = owner;
+    request[PF_BLOCKED_USER_RELATION_USER1] = [PFUser currentUser];
+    request[PF_BLOCKED_USER_RELATION_USER2] = owner;
     
     [request saveInBackgroundWithBlock:block];
 }
