@@ -349,11 +349,11 @@
                               preferredStyle:UIAlertControllerStyleActionSheet];
   
   UIAlertAction* acceptAction = [UIAlertAction
-                                  actionWithTitle:@"Accept" style:UIAlertActionStyleDefault
+                                  actionWithTitle:NSLocalizedString(@"Aceitar termos", @"Aceitar") style:UIAlertActionStyleDefault
                                   handler:^(UIAlertAction * action) {}];
  
   UIAlertAction* refuseAction = [UIAlertAction
-                                 actionWithTitle:@"Refuse" style:UIAlertActionStyleDestructive
+                                 actionWithTitle:NSLocalizedString(@"Recusar termos", @"Recusar") style:UIAlertActionStyleDestructive
                                  handler:^(UIAlertAction * action) {
                                    [[PFUser currentUser] deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
                                    {
