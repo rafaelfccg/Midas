@@ -47,7 +47,7 @@
     self.termosButton.titleLabel.numberOfLines = 0;
   
     [self.termosButton setTitle:NSLocalizedString(@"Termos de Uso", @"Titulo Termos de Uso") forState:UIControlStateNormal];
-   // [self.termosLabel setText:NSLocalizedString(@"Ao se registrar você aceita os", @"Ao se registrar você aceita os")];
+    [self.termosLabel setText:NSLocalizedString(@"Ao se registrar você aceita os", @"Ao se registrar você aceita os")];
   
     self.imageView.layer.cornerRadius = 10.0f;
 }
