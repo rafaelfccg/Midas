@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="376" height="174"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7sd-xQ-aBU" id="gvH-uE-etD">
-                <rect key="frame" x="0.0" y="0.0" width="376" height="174"/>
+                <rect key="frame" x="0.0" y="0.0" width="376" height="173.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempImage" translatesAutoresizingMaskIntoConstraints="NO" id="Hga-16-ypB">
@@ -87,7 +87,7 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C221285A-03BE-42D1-BED0-AAEC64406D9A" translatesAutoresizingMaskIntoConstraints="NO" id="oYo-Zz-yhZ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="366941AF-222D-4ABC-80CC-66DD2AB5141B" translatesAutoresizingMaskIntoConstraints="NO" id="oYo-Zz-yhZ">
                         <rect key="frame" x="11" y="18" width="35" height="31"/>
                     </imageView>
                 </subviews>
@@ -129,7 +129,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="C221285A-03BE-42D1-BED0-AAEC64406D9A" width="62" height="62">
+        <image name="366941AF-222D-4ABC-80CC-66DD2AB5141B" width="62" height="62">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

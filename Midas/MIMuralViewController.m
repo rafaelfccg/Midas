@@ -15,6 +15,9 @@
 #import "MIFiltrosDeBusca.h"
 #import "MIMuralCellControllerTableViewCell.h"
 #import "general.h"
+#import "PopOverViewController.h"
+#import "MITermosDeUsoViewController.h"
+#import "common.h"
 
 @interface MIMuralViewController () <RNGridMenuDelegate>
 
@@ -25,6 +28,8 @@
 @property (atomic) BOOL isDownloadingMoreRequests;
 
 @property UIActionSheet *selectImageSheet;
+
+@property(nonatomic,retain)UIPopoverPresentationController *dateTimePopover8;
 
 @end
 
@@ -52,6 +57,11 @@
     self.filtros = [[MIFiltrosDeBusca alloc]init];
     [self.muralTableView setBackgroundColor:COLOR_BACKGROUND];
     self.muralTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+  
+    if ([PFUser currentUser].isNew && [PFUser currentUser][@"facebookId"] != nil) {
+       [self showTermsOfService];
+    }
+  
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -74,6 +84,7 @@
  // Pass the selected object to the new view controller.
  }
  */
+
 
 #pragma mark - Table View
 
@@ -328,6 +339,39 @@
     }
     
     [self loadRequests];
+}
+
+-(void)showTermsOfService{
+
+  UIAlertController* termsOfServiceAlert = [UIAlertController
+                              alertControllerWithTitle:NSLocalizedString(@"Termos de Uso", @"Titulo Termos de Uso")
+                              message:NSLocalizedString(@"Conteudo Termos de Uso", @"Conteudo Termos de Uso")
+                              preferredStyle:UIAlertControllerStyleActionSheet];
+  
+  UIAlertAction* acceptAction = [UIAlertAction
+                                  actionWithTitle:@"Accept" style:UIAlertActionStyleDefault
+                                  handler:^(UIAlertAction * action) {}];
+ 
+  UIAlertAction* refuseAction = [UIAlertAction
+                                 actionWithTitle:@"Refuse" style:UIAlertActionStyleDestructive
+                                 handler:^(UIAlertAction * action) {
+                                   [[PFUser currentUser] deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+                                   {
+                                     if (succeeded)
+                                     {
+                                       [PFUser logOut];
+                                       ParsePushUserResign();
+                                       PostNotification(NOTIFICATION_USER_LOGGED_OUT);
+                                       LoginUser(self);
+                                     }
+                                   }
+                                    ];
+                                 }];
+  
+  [termsOfServiceAlert addAction:acceptAction];
+  [termsOfServiceAlert addAction:refuseAction];
+  [self presentViewController:termsOfServiceAlert animated:YES completion:nil];
+  
 }
 
 @end
