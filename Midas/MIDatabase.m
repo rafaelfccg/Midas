@@ -149,10 +149,24 @@
 //    }
 //    [orderDistance includeKey:PF_REQUEST_USER];
 //    //
+    
+     PFQuery *BlockedUserFilterQuery = [PFQuery queryWithClassName:PF_BLOCKED_USER_RELATION];
+    [BlockedUserFilterQuery whereKey:PF_BLOCKED_USER_RELATION_USER1 equalTo:[PFUser currentUser]];
+    [BlockedUserFilterQuery includeKey:PF_BLOCKED_USER_RELATION_USER2];
+    [Allquery whereKey:PF_REQUEST_USER doesNotMatchKey:PF_BLOCKED_USER_RELATION_USER2 inQuery:BlockedUserFilterQuery];
+    
+    PFQuery *ReportedContentFilterQuery = [PFQuery queryWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
+    [ReportedContentFilterQuery whereKey:PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT equalTo:[PFUser currentUser]];
+    [ReportedContentFilterQuery includeKey:PF_INAPPROPRIATE_CONTENT_REQUEST];
+    [Allquery whereKey: PF_REQUEST_OBJECTID doesNotMatchKey:PF_INAPPROPRIATE_CONTENT_REQUESTID inQuery:ReportedContentFilterQuery];
+    
+    
     [Allquery includeKey:PF_REQUEST_USER];
     [Allquery setLimit:100];
     [Allquery setSkip:skip];
     [Allquery orderByDescending:PF_REQUEST_UPDATEDACTION];
+    
+   
     [Allquery findObjectsInBackgroundWithBlock:block];
 }
 
@@ -191,6 +205,20 @@
     PFQuery * orQuery = [PFQuery orQueryWithSubqueries:@[queryOwns,queryGiver]];
     [orQuery whereKey:PF_RECENT_REQUESTID matchesKey:PF_REQUEST_OBJECTID inQuery:openRequests];
     [orQuery whereKey:PF_RECENT_LASTMESSAGE notEqualTo:@""];
+    
+    
+    //REMOVE USUARIOS BLOQUEADOS DA LISTA::
+    PFQuery *BlockedUserFilterQuery = [PFQuery queryWithClassName:PF_BLOCKED_USER_RELATION];
+    [BlockedUserFilterQuery whereKey:PF_BLOCKED_USER_RELATION_USER1 equalTo:[PFUser currentUser]];
+    [BlockedUserFilterQuery includeKey:PF_BLOCKED_USER_RELATION_USER2];
+    [orQuery whereKey:PF_RECENT_REQUESTOWNER doesNotMatchKey:PF_BLOCKED_USER_RELATION_USER2 inQuery:BlockedUserFilterQuery];
+    [orQuery whereKey:PF_RECENT_REQUESTGIVER doesNotMatchKey:PF_BLOCKED_USER_RELATION_USER2 inQuery:BlockedUserFilterQuery];
+    
+     //REMOVE CHAT DE CONTEUDO REPORTADO BLOQUEADOS DA LISTA::
+    PFQuery *ReportedContentFilterQuery = [PFQuery queryWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
+    [ReportedContentFilterQuery whereKey:PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT equalTo:[PFUser currentUser]];
+    [orQuery whereKey: PF_RECENT_REQUESTID doesNotMatchKey:PF_INAPPROPRIATE_CONTENT_REQUESTID inQuery:ReportedContentFilterQuery];
+    
     
     [orQuery includeKey:PF_RECENT_REQUESTOWNER];
     [orQuery includeKey:PF_RECENT_REQUESTGIVER];
@@ -318,18 +346,79 @@
     request[PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT] = [PFUser currentUser];
     request[PF_INAPPROPRIATE_CONTENT_REQUEST] = pedido.object;
     request[PF_INAPPROPRIATE_CONTENT_STATUS] = ENUM_INAPPROPRIATE_CONTENT_STATUS_OPEN;
-
+    request[PF_INAPPROPRIATE_CONTENT_REQUESTID] = pedido.object.objectId;
     [request saveInBackgroundWithBlock:block];
 }
 
 - (void) checkIfContentIsFlaggedAsInappropriateFromRequest:(nonnull MIPedido *)pedido withBlock:(nullable PFArrayResultBlock)block {
     
-    PFQuery* query = [PFQuery queryWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
+    PFQuery *query = [PFQuery queryWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
     [query whereKey:PF_INAPPROPRIATE_CONTENT_REQUEST equalTo:pedido.object];
     [query whereKey:PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT equalTo:[PFUser currentUser]];
     [query whereKey:PF_INAPPROPRIATE_CONTENT_STATUS equalTo:ENUM_INAPPROPRIATE_CONTENT_STATUS_OPEN];
+    
     [query findObjectsInBackgroundWithBlock:block];
 }
+
+- (void) markContentAsInappropriateFromMessage:(nonnull PFUser *)owner withBlock:(nullable PFBooleanResultBlock)block {
+    PFObject *request = [PFObject objectWithClassName:PF_INAPPROPRIATE_USER_CLASS_NAME];
+    
+    request[PF_INAPPROPRIATE_USER_WHO_FLAGGED_CONTENT] = [PFUser currentUser];
+    request[PF_INAPPROPRIATE_USER_WHO_RECIVE_CONTENT] = owner;
+    request[PF_INAPPROPRIATE_USER_STATUS] = ENUM_INAPPROPRIATE_USER_STATUS_OPEN;
+    
+    [request saveInBackgroundWithBlock:block];
+}
+
+- (void) checkIfContentIsFlaggedAsInappropriateFromMessage:(nonnull PFUser *)owner withBlock:(nullable PFArrayResultBlock)block {
+
+    if(owner == [PFUser currentUser]){
+        NSLog(@"aqui");
+    }
+    
+    PFQuery *query = [PFQuery queryWithClassName:PF_INAPPROPRIATE_USER_CLASS_NAME];
+    [query whereKey:PF_INAPPROPRIATE_USER_WHO_RECIVE_CONTENT equalTo:owner];
+    [query whereKey:PF_INAPPROPRIATE_USER_WHO_FLAGGED_CONTENT equalTo:[PFUser currentUser]];
+    [query whereKey:PF_INAPPROPRIATE_USER_STATUS equalTo:ENUM_INAPPROPRIATE_USER_STATUS_OPEN];
+    
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
+- (void) checkIfUserIsBlocked:(nonnull PFUser *)owner withBlock:(nullable PFArrayResultBlock)block {
+    PFQuery *query = [PFQuery queryWithClassName:PF_BLOCKED_USER_RELATION];
+    [query whereKey:PF_BLOCKED_USER_RELATION_USER1 equalTo:owner];
+    [query whereKey:PF_BLOCKED_USER_RELATION_USER2 equalTo:[PFUser currentUser]];
+    
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
+- (void) blokAUser:(nonnull PFUser *)owner withBlock:(nullable PFBooleanResultBlock)block {
+    
+    PFObject *request = [PFObject objectWithClassName:PF_BLOCKED_USER_RELATION];
+    
+    request[PF_BLOCKED_USER_RELATION_USER1] = [PFUser currentUser];
+    request[PF_BLOCKED_USER_RELATION_USER2] = owner;
+    
+    [request saveInBackgroundWithBlock:block];
+    
+    
+    PFObject *request2 = [PFObject objectWithClassName:PF_BLOCKED_USER_RELATION];
+    
+    request2[PF_BLOCKED_USER_RELATION_USER2] = [PFUser currentUser];
+    request2[PF_BLOCKED_USER_RELATION_USER1] = owner;
+    
+    [request2 saveInBackground];
+}
+
+- (void) loadChatInBackGroundWithBlock:(nonnull NSString*)chatID withBlock:(nullable PFArrayResultBlock)block{
+    PFQuery *query = [PFQuery queryWithClassName:PF_CHAT_CLASS_NAME];
+    
+    [query whereKey:PF_CHAT_OBJECTID equalTo:chatID];
+    
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
+
 
 
 @end

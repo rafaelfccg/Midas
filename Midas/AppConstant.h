@@ -90,11 +90,27 @@
 #define		PF_INAPPROPRIATE_CONTENT_REQUEST                    @"Request"                          //	Pointer to Request Class
 #define		PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT	@"UserWhoFlaggedContent"			//	Pointer to User Class
 #define		PF_INAPPROPRIATE_CONTENT_STATUS                     @"Status"                           //	Number
+#define		PF_INAPPROPRIATE_CONTENT_REQUESTID                     @"requestId"                           //	Request
 
 #define     ENUM_INAPPROPRIATE_CONTENT_STATUS_OPEN                                  @0
 #define     ENUM_INAPPROPRIATE_CONTENT_STATUS_MARKED_AS_INAPPROPRIATE               @1
 #define     ENUM_INAPPROPRIATE_CONTENT_STATUS_MARKED_AS_NOT_INAPPROPRIATE		    @2
 
+//-----------------------------------------------------------------------
+#define		PF_INAPPROPRIATE_USER_CLASS_NAME                 @"InappropriateUser"                   //	Class name
+#define		PF_INAPPROPRIATE_USER_OBJECTID                   @"objectId"                            //  String
+#define		PF_INAPPROPRIATE_USER_WHO_FLAGGED_CONTENT        @"UserWhoFlaggedReported"              //	Pointer to User Class
+#define		PF_INAPPROPRIATE_USER_WHO_RECIVE_CONTENT         @"UserWhoRecivereported"               //	Pointer to User Class
+#define		PF_INAPPROPRIATE_USER_STATUS                     @"Status"                              //	Number
+
+#define     ENUM_INAPPROPRIATE_USER_STATUS_OPEN                                     @0
+#define     ENUM_INAPPROPRIATE_USER_STATUS_MARKED_AS_INAPPROPRIATE                  @1
+#define     ENUM_INAPPROPRIATE_USER_STATUS_MARKED_AS_NOT_INAPPROPRIATE              @2
+
+//----------------------------------------
+#define     PF_BLOCKED_USER_RELATION                                  @"BlockedUserRelation"         //	Class name
+#define     PF_BLOCKED_USER_RELATION_USER1                            @"User1"                       //	Pointer to User Class
+#define     PF_BLOCKED_USER_RELATION_USER2                            @"User2"                       //	Pointer to User Class
 //----------------------------------------
 #define		NOTIFICATION_APP_STARTED			@"NCAppStarted"
 #define		NOTIFICATION_USER_LOGGED_IN			@"NCUserLoggedIn"
