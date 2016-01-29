@@ -150,10 +150,10 @@
 //    [orderDistance includeKey:PF_REQUEST_USER];
 //    //
     
-     PFQuery *BlockedUserFilterQuery = [PFQuery queryWithClassName:PF_REPORTED_USER];
-    [BlockedUserFilterQuery whereKey:PF_USER1 equalTo:[PFUser currentUser]];
-    [BlockedUserFilterQuery includeKey:PF_USER2];
-    [Allquery whereKey:PF_REQUEST_USER doesNotMatchKey:PF_USER2 inQuery:BlockedUserFilterQuery];
+     PFQuery *BlockedUserFilterQuery = [PFQuery queryWithClassName:PF_BLOCKED_USER_RELATION];
+    [BlockedUserFilterQuery whereKey:PF_BLOCKED_USER_RELATION_USER1 equalTo:[PFUser currentUser]];
+    [BlockedUserFilterQuery includeKey:PF_BLOCKED_USER_RELATION_USER2];
+    [Allquery whereKey:PF_REQUEST_USER doesNotMatchKey:PF_BLOCKED_USER_RELATION_USER2 inQuery:BlockedUserFilterQuery];
     
     PFQuery *ReportedContentFilterQuery = [PFQuery queryWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
     [ReportedContentFilterQuery whereKey:PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT equalTo:[PFUser currentUser]];
@@ -208,11 +208,11 @@
     
     
     //REMOVE USUARIOS BLOQUEADOS DA LISTA::
-    PFQuery *BlockedUserFilterQuery = [PFQuery queryWithClassName:PF_REPORTED_USER];
-    [BlockedUserFilterQuery whereKey:PF_USER1 equalTo:[PFUser currentUser]];
-    [BlockedUserFilterQuery includeKey:PF_USER2];
-    [orQuery whereKey:PF_RECENT_REQUESTOWNER doesNotMatchKey:PF_USER2 inQuery:BlockedUserFilterQuery];
-    [orQuery whereKey:PF_RECENT_REQUESTGIVER doesNotMatchKey:PF_USER2 inQuery:BlockedUserFilterQuery];
+    PFQuery *BlockedUserFilterQuery = [PFQuery queryWithClassName:PF_BLOCKED_USER_RELATION];
+    [BlockedUserFilterQuery whereKey:PF_BLOCKED_USER_RELATION_USER1 equalTo:[PFUser currentUser]];
+    [BlockedUserFilterQuery includeKey:PF_BLOCKED_USER_RELATION_USER2];
+    [orQuery whereKey:PF_RECENT_REQUESTOWNER doesNotMatchKey:PF_BLOCKED_USER_RELATION_USER2 inQuery:BlockedUserFilterQuery];
+    [orQuery whereKey:PF_RECENT_REQUESTGIVER doesNotMatchKey:PF_BLOCKED_USER_RELATION_USER2 inQuery:BlockedUserFilterQuery];
     
      //REMOVE CHAT DE CONTEUDO REPORTADO BLOQUEADOS DA LISTA::
     PFQuery *ReportedContentFilterQuery = [PFQuery queryWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
