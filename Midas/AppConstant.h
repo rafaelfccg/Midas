@@ -90,6 +90,7 @@
 #define		PF_INAPPROPRIATE_CONTENT_REQUEST                    @"Request"                          //	Pointer to Request Class
 #define		PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT	@"UserWhoFlaggedContent"			//	Pointer to User Class
 #define		PF_INAPPROPRIATE_CONTENT_STATUS                     @"Status"                           //	Number
+#define		PF_INAPPROPRIATE_CONTENT_REQUESTID                     @"requestId"                           //	Request
 
 #define     ENUM_INAPPROPRIATE_CONTENT_STATUS_OPEN                                  @0
 #define     ENUM_INAPPROPRIATE_CONTENT_STATUS_MARKED_AS_INAPPROPRIATE               @1
