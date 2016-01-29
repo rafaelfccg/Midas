@@ -131,14 +131,13 @@
         //aqui
         if (buttonIndex == 0)
         {
-            NSLog(@"Apertou Apenas Denunciar!");
             
             [[MIDatabase sharedInstance]checkIfContentIsFlaggedAsInappropriateFromMessage:_neg.owner withBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
                 if(error){
                     [ProgressHUD showError:error.userInfo[@"error"]];
                 }
                 else if ([objects count] > 0) {
-                    [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Você já denunciou esse post.", @"Você já denunciou esse post.")]];
+                    [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Você já denunciou esse usuário.", @"Você já denunciou esse post.")]];
                 } else{
                     [[MIDatabase sharedInstance]markContentAsInappropriateFromMessage:_neg.owner withBlock:^(BOOL succeeded, NSError * _Nullable error) {
                         if(!succeeded){
@@ -151,11 +150,67 @@
                 }
             }];
             
+        NSLog(@"Apertou Apenas Denunciar!");
+            
         } else if (buttonIndex == 1)
         {
+            [[MIDatabase sharedInstance]checkIfUserIsBlocked:_neg.owner withBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                if(error){
+                    [ProgressHUD showError:error.userInfo[@"error"]];
+                }
+                else if ([objects count] > 0){
+                    [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Você já bloqueou esse usuário.", @"Você já bloqueou esse post.")]];
+                }
+                else{
+                    [[MIDatabase sharedInstance]blokAUser:_neg.owner withBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        if(!succeeded){
+                            [ProgressHUD showError:error.userInfo[@"error"]];
+                        }
+                        else{
+                            [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Usuário bloqueado.", @"Usuário bloqueado")]];
+                        }
+                    }];
+                }
+            }];
+            
             NSLog(@"Apertou Apenas Bloquear!");
         } else if (buttonIndex == 2)
         {
+            [[MIDatabase sharedInstance]checkIfContentIsFlaggedAsInappropriateFromMessage:_neg.owner withBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                if(error){
+                    [ProgressHUD showError:error.userInfo[@"error"]];
+                }
+                else if ([objects count] > 0) {
+                    [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Você já denunciou esse usuário.", @"Você já denunciou esse post.")]];
+                } else{
+                    [[MIDatabase sharedInstance]markContentAsInappropriateFromMessage:_neg.owner withBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        if(!succeeded){
+                            [ProgressHUD showError:error.userInfo[@"error"]];
+                        }
+                    }];
+                }
+            }];
+            
+            
+            [[MIDatabase sharedInstance]checkIfUserIsBlocked:_neg.owner withBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                if(error){
+                    [ProgressHUD showError:error.userInfo[@"error"]];
+                }
+                else if ([objects count] > 0){
+                    [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Você já bloqueou esse usuário.", @"Você já bloqueou esse post.")]];
+                }
+                else{
+                    [[MIDatabase sharedInstance]blokAUser:_neg.owner withBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        if(!succeeded){
+                            [ProgressHUD showError:error.userInfo[@"error"]];
+                        }
+                        else{
+                            [ProgressHUD showSuccess:[NSString stringWithFormat:NSLocalizedString(@"Usuário bloqueado e reportado.", @"Usuário bloqueado")]];
+                        }
+                    }];
+                }
+            }];
+            
             NSLog(@"Apertou Bloquear e Denunciar!");
         }
     }
