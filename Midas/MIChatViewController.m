@@ -40,9 +40,9 @@
 }
 //@property MINegociation * chat;
 
-  @property float keyboardHeight;
-  @property BOOL isUp;
-  @property UIActionSheet *openMoreSheet;
+@property float keyboardHeight;
+@property BOOL isUp;
+@property UIActionSheet *openMoreSheet;
 
 @end
 
@@ -76,29 +76,29 @@
     //[self hidesBottomBarWhenPushed];
     isLoading = NO;
     initialized = NO;
-  
-  UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-  [self.view addGestureRecognizer:gestureRecognizer];
-  gestureRecognizer.cancelsTouchesInView = NO;
-  
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+    gestureRecognizer.cancelsTouchesInView = NO;
+    
     //informacao do user -- esta no xib JSQMessagesViewController
     self.userImageView.layer.cornerRadius =  self.userImageView.bounds.size.width/2;
     self.userImageView.clipsToBounds = YES;
     [self loadRequestInfo];
     
     [self loadMessages];
-  
+    
     _isUp = NO;
-
+    
     // Do any additional setup after loading the view.
     
-//    UIBarButtonItem *editarButton = [[UIBarButtonItem alloc]
-//                                     initWithTitle:nil
-//                                     style:UIBarButtonItemStylePlain
-//                                     target:self
-//                                     action:@selector(openMoreSheet:)];
-//    [editarButton setBackButtonBackgroundImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal barMetrics:0];
-//    self.navigationItem.rightBarButtonItem = editarButton;
+    //    UIBarButtonItem *editarButton = [[UIBarButtonItem alloc]
+    //                                     initWithTitle:nil
+    //                                     style:UIBarButtonItemStylePlain
+    //                                     target:self
+    //                                     action:@selector(openMoreSheet:)];
+    //    [editarButton setBackButtonBackgroundImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal barMetrics:0];
+    //    self.navigationItem.rightBarButtonItem = editarButton;
     
     UIButton* customButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [customButton setImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal];
@@ -111,14 +111,14 @@
 
 - (void)openMoreSheet:(id)sender {
     /*
-    self.openMoreSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", @"Cancelar Button")
-                                      destructiveButtonTitle:NSLocalizedString(@"Apenas Denunciar", @"Apenas Denunciar") otherButtonTitles:@[NSLocalizedString(@"Apenas Bloquear", @"Apenas Bloquear"),NSLocalizedString(@"Denunciar e Bloquear", @"Denunciar e Bloquear")]];
-                                                                                                                                                                                                                    [self.openMoreSheet showFromTabBar:[[self tabBarController] tabBar]];
-     */
-     
-     self.openMoreSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", @"Cancelar Button")
-     destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Apenas Denunciar", @"Apenas Denunciar"),NSLocalizedString(@"Apenas Bloquear", @"Apenas Bloquear"), NSLocalizedString(@"Denunciar e Bloquear", @"Denunciar e Bloquear"),nil];
+     self.openMoreSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", @"Cancelar Button")
+     destructiveButtonTitle:NSLocalizedString(@"Apenas Denunciar", @"Apenas Denunciar") otherButtonTitles:@[NSLocalizedString(@"Apenas Bloquear", @"Apenas Bloquear"),NSLocalizedString(@"Denunciar e Bloquear", @"Denunciar e Bloquear")]];
      [self.openMoreSheet showFromTabBar:[[self tabBarController] tabBar]];
+     */
+    
+    self.openMoreSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", @"Cancelar Button")
+                                       destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Apenas Denunciar", @"Apenas Denunciar"),NSLocalizedString(@"Apenas Bloquear", @"Apenas Bloquear"), NSLocalizedString(@"Denunciar e Bloquear", @"Denunciar e Bloquear"),nil];
+    [self.openMoreSheet showFromTabBar:[[self tabBarController] tabBar]];
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -127,25 +127,20 @@
 {
     if(actionSheet==self.openMoreSheet)
     {
-        [[MIDatabase sharedInstance] loadChatInBackGroundWithBlock:_chatId withBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            if(error){
-                NSLog(@"chat not found");
-            }else{
-                //aqui
-                
-                if (buttonIndex == 0)
-                {
-                    NSLog(@"Apertou Apenas Denunciar!");
-
-                } else if (buttonIndex == 1)
-                {
-                    NSLog(@"Apertou Apenas Bloquear!");
-                } else if (buttonIndex == 2)
-                {
-                    NSLog(@"Apertou Bloquear e Denunciar!");
-                }
-            }
-        }];
+        
+        //aqui
+        if (buttonIndex == 0)
+        {
+            NSLog(@"Apertou Apenas Denunciar!");
+            
+            
+        } else if (buttonIndex == 1)
+        {
+            NSLog(@"Apertou Apenas Bloquear!");
+        } else if (buttonIndex == 2)
+        {
+            NSLog(@"Apertou Bloquear e Denunciar!");
+        }
     }
 }
 
@@ -156,7 +151,7 @@
 
 - (void)dismissKeyboard
 {
-  [self.view endEditing:YES];
+    [self.view endEditing:YES];
 }
 
 - (UIImage *)imageFromSystemBarButton:(UIBarButtonSystemItem)systemItem {
@@ -210,14 +205,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 - (void)viewWillDisappear:(BOOL)animated
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
@@ -628,7 +623,7 @@
 }
 
 - (void) loadRequestInfo {
-
+    
     //REDO:: TÁ HORRÍVEL ISSO AQUI
     
     
@@ -655,42 +650,42 @@
     
     
     
-
+    
 }
 
 #pragma mark - Keyboard Notifications
 -(void)keyboardWillShow:(NSNotification *)notification {
-  
-  if([notification userInfo]){
-    NSValue * keyboardSize = [notification userInfo][UIKeyboardFrameBeginUserInfoKey];
     
-    
-    if (!_isUp) {
-      _keyboardHeight = keyboardSize.CGRectValue.size.height;
-      [self animateView:YES];
-      _isUp = YES;
+    if([notification userInfo]){
+        NSValue * keyboardSize = [notification userInfo][UIKeyboardFrameBeginUserInfoKey];
+        
+        
+        if (!_isUp) {
+            _keyboardHeight = keyboardSize.CGRectValue.size.height;
+            [self animateView:YES];
+            _isUp = YES;
+        }
     }
-  }
 }
 
 -(void)keyboardWillHide:(NSNotification *)notification {
-  
-  if (_isUp) {
-    [self animateView:NO];
-    _isUp = NO;
-  }
+    
+    if (_isUp) {
+        [self animateView:NO];
+        _isUp = NO;
+    }
 }
 
 -(void) animateView:(BOOL)up {
-  
-  float movement = up ? -_keyboardHeight : _keyboardHeight;
-  
-  [UIView beginAnimations:nil context:NULL];
-  [UIView setAnimationDuration:0.3];
-  
-  self.view.frame = CGRectOffset(self.view.frame, 0, movement);
-  
-  [UIView commitAnimations];
+    
+    float movement = up ? -_keyboardHeight : _keyboardHeight;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    
+    [UIView commitAnimations];
 }
 
 
