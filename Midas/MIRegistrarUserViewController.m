@@ -20,6 +20,7 @@
 @property BOOL isUp;
 @property float keyboardHeight;
 @property (weak, nonatomic) IBOutlet UIButton *termosButton;
+@property (weak, nonatomic) IBOutlet UILabel *termosLabel;
 @property(nonatomic,retain)UIPopoverPresentationController *dateTimePopover8;
 
 @end
@@ -44,10 +45,10 @@
     [self.registrarButton.layer setMasksToBounds:YES];
   
     self.termosButton.titleLabel.numberOfLines = 0;
-    [self.termosButton.titleLabel setTextAlignment:UITextAlignmentCenter];
   
-  //  [self.termosButton setTitle:NSLocalizedString(@"Termos de Uso", @"Titulo Termos de Uso") forState:UIControlStateNormal];
-    
+    [self.termosButton setTitle:NSLocalizedString(@"Termos de Uso", @"Titulo Termos de Uso") forState:UIControlStateNormal];
+   // [self.termosLabel setText:NSLocalizedString(@"Ao se registrar você aceita os", @"Ao se registrar você aceita os")];
+  
     self.imageView.layer.cornerRadius = 10.0f;
 }
 
@@ -220,7 +221,7 @@ scaledToSize:(CGSize)newSize
   termosVC.contentText = NSLocalizedString(@"Conteudo Termos de Uso", @"Conteudo Termos de Uso");
   
   UINavigationController *destNav = [[UINavigationController alloc] initWithRootViewController:termosVC];/*Here dateVC is controller you want to show in popover*/
-  termosVC.preferredContentSize = CGSizeMake(self.view.bounds.size.width*0.7,self.view.bounds.size.height*0.3);
+  termosVC.preferredContentSize = CGSizeMake(self.view.bounds.size.width*0.8,self.view.bounds.size.height*0.7);
   destNav.modalPresentationStyle = UIModalPresentationPopover;
   _dateTimePopover8 = destNav.popoverPresentationController;
   _dateTimePopover8.delegate = self;
