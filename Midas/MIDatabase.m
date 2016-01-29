@@ -352,12 +352,64 @@
 
 - (void) checkIfContentIsFlaggedAsInappropriateFromRequest:(nonnull MIPedido *)pedido withBlock:(nullable PFArrayResultBlock)block {
     
-    PFQuery* query = [PFQuery queryWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
+    PFQuery *query = [PFQuery queryWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
     [query whereKey:PF_INAPPROPRIATE_CONTENT_REQUEST equalTo:pedido.object];
     [query whereKey:PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT equalTo:[PFUser currentUser]];
     [query whereKey:PF_INAPPROPRIATE_CONTENT_STATUS equalTo:ENUM_INAPPROPRIATE_CONTENT_STATUS_OPEN];
+    
     [query findObjectsInBackgroundWithBlock:block];
 }
+
+- (void) markContentAsInappropriateFromMessage:(nonnull PFUser *)owner withBlock:(nullable PFBooleanResultBlock)block {
+    PFObject *request = [PFObject objectWithClassName:PF_INAPPROPRIATE_USER_CLASS_NAME];
+    
+    request[PF_INAPPROPRIATE_USER_WHO_FLAGGED_CONTENT] = [PFUser currentUser];
+    request[PF_INAPPROPRIATE_USER_WHO_RECIVE_CONTENT] = owner;
+    request[PF_INAPPROPRIATE_USER_STATUS] = ENUM_INAPPROPRIATE_USER_STATUS_OPEN;
+    
+    [request saveInBackgroundWithBlock:block];
+}
+
+- (void) checkIfContentIsFlaggedAsInappropriateFromMessage:(nonnull PFUser *)owner withBlock:(nullable PFArrayResultBlock)block {
+
+    if(owner == [PFUser currentUser]){
+        NSLog(@"aqui");
+    }
+    
+    PFQuery *query = [PFQuery queryWithClassName:PF_INAPPROPRIATE_USER_CLASS_NAME];
+    [query whereKey:PF_INAPPROPRIATE_USER_WHO_RECIVE_CONTENT equalTo:owner];
+    [query whereKey:PF_INAPPROPRIATE_USER_WHO_FLAGGED_CONTENT equalTo:[PFUser currentUser]];
+    [query whereKey:PF_INAPPROPRIATE_USER_STATUS equalTo:ENUM_INAPPROPRIATE_USER_STATUS_OPEN];
+    
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
+- (void) checkIfUserAreReported:(nonnull PFUser *)owner withBlock:(nullable PFArrayResultBlock)block {
+    PFQuery *query = [PFQuery queryWithClassName:PF_REPORTED_USER];
+    [query whereKey:PF_USER1 equalTo:owner];
+    [query whereKey:PF_USER2 equalTo:[PFUser currentUser]];
+    
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
+- (void) reportAUser:(nonnull PFUser *)owner withBlock:(nullable PFBooleanResultBlock)block {
+    PFObject *request = [PFObject objectWithClassName:PF_REPORTED_USER];
+    
+    request[PF_USER1] = [PFUser currentUser];
+    request[PF_USER2] = owner;
+    
+    [request saveInBackgroundWithBlock:block];
+}
+
+- (void) loadChatInBackGroundWithBlock:(nonnull NSString*)chatID withBlock:(nullable PFArrayResultBlock)block{
+    PFQuery *query = [PFQuery queryWithClassName:PF_CHAT_CLASS_NAME];
+    
+    [query whereKey:PF_CHAT_OBJECTID equalTo:chatID];
+    
+    [query findObjectsInBackgroundWithBlock:block];
+}
+
+
 
 
 @end
