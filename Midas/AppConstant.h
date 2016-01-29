@@ -108,9 +108,9 @@
 #define     ENUM_INAPPROPRIATE_USER_STATUS_MARKED_AS_NOT_INAPPROPRIATE              @2
 
 //----------------------------------------
-#define     PF_REPORTED_USER                    @"ReportedUser"                                     //	Class name
-#define     PF_USER1                            @"User1"                                            //	Pointer to User Class
-#define     PF_USER2                            @"User2"                                            //	Pointer to User Class
+#define     PF_BLOCKED_USER_RELATION                                  @"BlockedUserRelation"         //	Class name
+#define     PF_BLOCKED_USER_RELATION_USER1                            @"User1"                       //	Pointer to User Class
+#define     PF_BLOCKED_USER_RELATION_USER2                            @"User2"                       //	Pointer to User Class
 //----------------------------------------
 #define		NOTIFICATION_APP_STARTED			@"NCAppStarted"
 #define		NOTIFICATION_USER_LOGGED_IN			@"NCUserLoggedIn"
