@@ -149,10 +149,24 @@
 //    }
 //    [orderDistance includeKey:PF_REQUEST_USER];
 //    //
+    
+     PFQuery *BlockedUserFilterQuery = [PFQuery queryWithClassName:PF_REPORTED_USER];
+    [BlockedUserFilterQuery whereKey:PF_USER1 equalTo:[PFUser currentUser]];
+    [BlockedUserFilterQuery includeKey:PF_USER2];
+    [Allquery whereKey:PF_REQUEST_USER doesNotMatchKey:PF_USER2 inQuery:BlockedUserFilterQuery];
+    
+    PFQuery *ReportedContentFilterQuery = [PFQuery queryWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
+    [ReportedContentFilterQuery whereKey:PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT equalTo:[PFUser currentUser]];
+    [ReportedContentFilterQuery includeKey:PF_INAPPROPRIATE_CONTENT_REQUEST];
+    [Allquery whereKey: PF_REQUEST_OBJECTID doesNotMatchKey:PF_INAPPROPRIATE_CONTENT_REQUESTID inQuery:ReportedContentFilterQuery];
+    
+    
     [Allquery includeKey:PF_REQUEST_USER];
     [Allquery setLimit:100];
     [Allquery setSkip:skip];
     [Allquery orderByDescending:PF_REQUEST_UPDATEDACTION];
+    
+   
     [Allquery findObjectsInBackgroundWithBlock:block];
 }
 
@@ -191,6 +205,20 @@
     PFQuery * orQuery = [PFQuery orQueryWithSubqueries:@[queryOwns,queryGiver]];
     [orQuery whereKey:PF_RECENT_REQUESTID matchesKey:PF_REQUEST_OBJECTID inQuery:openRequests];
     [orQuery whereKey:PF_RECENT_LASTMESSAGE notEqualTo:@""];
+    
+    
+    //REMOVE USUARIOS BLOQUEADOS DA LISTA::
+    PFQuery *BlockedUserFilterQuery = [PFQuery queryWithClassName:PF_REPORTED_USER];
+    [BlockedUserFilterQuery whereKey:PF_USER1 equalTo:[PFUser currentUser]];
+    [BlockedUserFilterQuery includeKey:PF_USER2];
+    [orQuery whereKey:PF_RECENT_REQUESTOWNER doesNotMatchKey:PF_USER2 inQuery:BlockedUserFilterQuery];
+    [orQuery whereKey:PF_RECENT_REQUESTGIVER doesNotMatchKey:PF_USER2 inQuery:BlockedUserFilterQuery];
+    
+     //REMOVE CHAT DE CONTEUDO REPORTADO BLOQUEADOS DA LISTA::
+    PFQuery *ReportedContentFilterQuery = [PFQuery queryWithClassName:PF_INAPPROPRIATE_CONTENT_CLASS_NAME];
+    [ReportedContentFilterQuery whereKey:PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT equalTo:[PFUser currentUser]];
+    [orQuery whereKey: PF_RECENT_REQUESTID doesNotMatchKey:PF_INAPPROPRIATE_CONTENT_REQUESTID inQuery:ReportedContentFilterQuery];
+    
     
     [orQuery includeKey:PF_RECENT_REQUESTOWNER];
     [orQuery includeKey:PF_RECENT_REQUESTGIVER];
@@ -318,7 +346,7 @@
     request[PF_INAPPROPRIATE_CONTENT_USER_WHO_FLAGGED_CONTENT] = [PFUser currentUser];
     request[PF_INAPPROPRIATE_CONTENT_REQUEST] = pedido.object;
     request[PF_INAPPROPRIATE_CONTENT_STATUS] = ENUM_INAPPROPRIATE_CONTENT_STATUS_OPEN;
-
+    request[PF_INAPPROPRIATE_CONTENT_REQUESTID] = pedido.object.objectId;
     [request saveInBackgroundWithBlock:block];
 }
 
