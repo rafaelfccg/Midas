@@ -132,7 +132,7 @@
                 NSLog(@"chat not found");
             }else{
             
-                
+                //aqui
                 if (buttonIndex == 0)
                 {
                     NSLog(@"Apertou Apenas Denunciar!");
