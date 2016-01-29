@@ -127,16 +127,25 @@
 {
     if(actionSheet==self.openMoreSheet)
     {
-        if (buttonIndex == 0)
-        {
-            NSLog(@"Apertou Apenas Denunciar!");
-        } else if (buttonIndex == 1)
-        {
-            NSLog(@"Apertou Apenas Bloquear!");
-        } else if (buttonIndex == 2)
-        {
-            NSLog(@"Apertou Bloquear e Denunciar!");
-        }
+        [[MIDatabase sharedInstance] loadChatInBackGroundWithBlock:_chatId withBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            if(error){
+                NSLog(@"chat not found");
+            }else{
+            
+                
+                if (buttonIndex == 0)
+                {
+                    NSLog(@"Apertou Apenas Denunciar!");
+
+                } else if (buttonIndex == 1)
+                {
+                    NSLog(@"Apertou Apenas Bloquear!");
+                } else if (buttonIndex == 2)
+                {
+                    NSLog(@"Apertou Bloquear e Denunciar!");
+                }
+            }
+        }];
     }
 }
 

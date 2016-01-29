@@ -57,5 +57,15 @@
 - (void) markContentAsInappropriateFromRequest:(nonnull MIPedido *)pedido withBlock:(nullable PFBooleanResultBlock)block;
 
 - (void) checkIfContentIsFlaggedAsInappropriateFromRequest:(nonnull MIPedido *)pedido withBlock:(nullable PFArrayResultBlock)block;
+
+- (void) markContentAsInappropriateFromMessage:(nonnull MIPedido *)pedido withBlock:(nullable PFBooleanResultBlock)block;
+
+- (void) checkIfContentIsFlaggedAsInappropriateFromMessage:(nonnull MIPedido *)pedido withBlock:(nullable PFArrayResultBlock)block;
+
+- (void) checkIfUserAreReported:(nonnull MIPedido *)pedido withBlock:(nullable PFArrayResultBlock)block;
+
+- (void) reportAUser:(nonnull MIPedido *)pedido withBlock:(nullable PFBooleanResultBlock)block;
+
+- (void) loadChatInBackGroundWithBlock:(nonnull NSString*)chatID withBlock:(nullable PFArrayResultBlock)block;
                              
 @end
